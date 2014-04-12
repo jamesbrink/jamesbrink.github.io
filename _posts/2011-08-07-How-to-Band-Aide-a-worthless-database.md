@@ -1,3 +1,8 @@
+---
+layout: default
+title: How to Band-Aide a worthless database.
+---
+
 Date: August 7 2011
 Categories: MySQL
 
