@@ -28,7 +28,7 @@ My daily tasks and responsibilities include: monitoring and reacting to infrastr
 + Created a Java application that allows associates to document, lookup, and quickly identify support teams and potential business impact for any application running in production.
 + Developed tools that enabled associates to automate the collection data and generation of reports.
 
-__Software Engineer (2011 - 2012), [Media Solutions][mediasolutionscorp] Corp, Phoenix, AZ__
+__Software Engineer (2011 - 2012), [Media Solutions Corp][mediasolutionscorp], Phoenix, AZ__
 
 Contracted to lead an effort to bring a project that was 4 months behind, up to date and in
 production. Utilizing Ruby on Rails, was able to start from scratch and  rapidly develop and deploy the necessary features to bring the product into production within 2 weeks.  Over the following year I mentored and trained another Ruby developer. During this year we focused on bringing the application up to the changing requirements, utilizing agile methodologies and short iterative releases.
