@@ -1,11 +1,23 @@
 <html>
-<head>
+  <head>
     <title>{{ page.title }}</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="/assets/stylesheets/style.css" rel="stylesheet">
+  </head>
+  <body>
     <div class="container">
-        {{ content }}
+      <header class="row">
+        <div class="col-xs-12">
+          <h1 id="logo"><a href="/">James Brink</a></h1>  
+        </div>
+      </header>
+
+      <section class="row">
+        <div class="col-xs-12">
+          {{ content }}
+        </div>
+      </section>
     </div>
-</body>
+  </body>
 </html>
