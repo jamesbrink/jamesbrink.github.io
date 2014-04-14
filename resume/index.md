@@ -20,7 +20,7 @@ _With over ten years of professional experience in application development,  sys
 ### PROFESSIONAL EXPERIENCE
 __Systems Administrator II (2008 - Present), [Edward Jones][edwardjones], Tempe, AZ__
 
-My daily tasks and responsibilities include: monitoring and reacting to infrastructure and application alarms and events, taking action quickly when needed to ensure availability, managing and working incidents, troubleshooting system level issues on both Windows and Linux environments, hardware diagnostics and repair, as well as supporting application teams with web deployments and troubleshooting.
+Initially hired to monitor and maintain infrastructure for a range of enterprise applications.  Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments.  Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
 
 + Promoted to Systems Administrator II
 + Selected as department Datacenter Continuity Coordinator.
