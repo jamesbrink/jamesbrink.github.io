@@ -41,7 +41,7 @@ production. Utilizing Ruby on Rails, was able to start from scratch and  rapidly
 
 __Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ__
 
-While at Accram my time was split between managing internal infrastructure, running the company’s small ISP, as well as managing customers networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
+While at Accram, my time was split between managing internal infrastructure, running the company’s small ISP, as well as managing customers networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
 
 + Planned and led infrastructure initiatives that included networking, server deployment, and cabling.
 + Leveraged open source tools to engineer and implement a monitoring infrastructure for internal and external networks.
