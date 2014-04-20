@@ -36,7 +36,7 @@ production. Utilizing Ruby on Rails, was able to start from scratch and  rapidly
 + Brought a project that was 4 months behind to production within 2 weeks.
 + Responsible for hiring and training 2 additional engineers.
 + Worked closely with customer to resolve any outstanding issues and address new features quickly.
-+ Leveraged agile methodologies for all additional application features.
++ Leveraged Agile methodologies for all additional application features.
 + Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
 
 __Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ__
