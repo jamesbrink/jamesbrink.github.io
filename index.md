@@ -7,7 +7,7 @@ title: James Brink
 <ul class="post-list list-unstyled">
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}"><span class="date">{{ post.date }}</span> {{post.title}}</a>
+      <a href="{{ post.url }}">{{post.title}}</a>
     </li>
   {% endfor %}
 </ul>
