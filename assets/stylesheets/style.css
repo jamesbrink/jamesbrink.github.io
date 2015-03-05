@@ -9,11 +9,11 @@ h1,h2,h3,h4,h5,h6 { font-weight: 700; }
 header { margin-bottom: 40px; }
 
 #logo a {
-  background: url('/assets/images/jbmonogram.png') no-repeat;
+  background: url('/assets/images/bender.png') no-repeat;
   color: #22343E;
   display: block;
-  height: 87px;
-  line-height: 87px;
+  height: 100px;
+  line-height: 100px;
   padding-left: 107px;
   text-transform: uppercase;
 }
