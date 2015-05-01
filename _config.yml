@@ -1,69 +1,46 @@
-source:      .
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-include:     ['.htaccess']
-exclude:     []
-keep_files:  ['.git','.svn']
-gems:        []
-timezone:    nil
-encoding:    nil
+# Site settings
+title: James Brink
+email: brink.james@gmail.com
+url: https://example.github.io
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 
-future:      true
-show_drafts: nil
-limit_posts: 0
-highlighter: pygments
+# Contact form: comment the line below if you want to stick with the default PHP contact form
+contact: static
 
-relative_permalinks: true
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 18bc9c #80B3FF
+  secondary: 2c3e50 #FD6E8A
+  secondary-dark: 233140 #A2122F
 
-permalink:     date
-paginate_path: 'page:num'
-paginate:      nil
+# Footer settings
+footer:
+  copyright: James Brink
+  location: Phoenix, Arizona
+  social: Around the Web
+  credits: Credits
 
-markdown:      redcarpet
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
-textile_ext:   textile
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: http://twitter.com/brinkoo7
+  - title: facebook
+    url: http://www.facebook.com/brink.james
+  - title: linkedin
+    url: http://www.linkedin.com/in/brinkjames
+  - title: docker
+    url: http://registry.hub.docker.com/u/jamesbrink/
+  - title: github
+    url: http://github.com/jamesbrink
 
-excerpt_separator: "\n\n"
+# Postal address (add as many lines as necessary)
+#address:
+#  - line: 3409 S Rural Road
+#  - line: Tempe, AZ, 85282
 
-safe:        false
-watch:       false    # deprecated
-server:      false    # deprecated
-host:        0.0.0.0
-port:        4000
-baseurl:     /
-url:         http://localhost:4000
-lsi:         false
+# Credits content
+credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
 
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
-  fenced_code_blocks: true
-
-rdiscount:
-  extensions: []
-
-redcarpet:
-  extensions: []
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
-
-redcloth:
-  hard_breaks: true
+# Build settings
+markdown: kramdown
+permalink: pretty

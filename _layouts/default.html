@@ -1,23 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ page.title }}</title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="/assets/stylesheets/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <header class="row">
-        <div class="col-xs-12">
-          <h1 id="logo"><a href="/">James Brink</a></h1>  
-        </div>
-      </header>
+    {% include head.html %}
+    <body id="page-top" class="index">
+    {% include nav.html %}
+    {% include header.html %}
+    {% include about.html %}
+    {% include resume.html %}
 
-      <section class="row">
-        <div class="col-xs-12">
-          {{ content }}
-        </div>
-      </section>
-    </div>
-  </body>
+    {% include footer.html %}
+    {% include modals.html %}
+    {% include js.html %}
+    </body>
 </html>
