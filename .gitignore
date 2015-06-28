@@ -1,2 +1,6 @@
-_site/
+# Ignore Jekyll files
+_site
+.sass-cache
+
+# Ignore OSX Files
 .DS_Store
