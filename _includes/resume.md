@@ -10,7 +10,7 @@ _With over ten years of professional experience in application development,  sys
 
 
 ### PROFESSIONAL EXPERIENCE
-__Systems Administrator II (2008 - Present), [Edward Jones][edwardjones], Tempe, AZ__
+__Systems Administrator II (2008 - 2015), [Edward Jones][edwardjones], Tempe, AZ__
 
 Initially hired to monitor and maintain infrastructure for a range of enterprise applications.  Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments.  Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
 
@@ -45,9 +45,9 @@ While at Accram, my time was split between managing internal infrastructure, run
 
 Cisco Certified Network Associate (CCNA) - 2007.
 
-Diploma in Satellite Communications from the Department of the Army - 2001. 
+Diploma in Satellite Communications from the Department of the Army - 2001.
 
-Diploma in Network Switching Systems from General Dynamics - 2001. 
+Diploma in Network Switching Systems from General Dynamics - 2001.
 
 Diploma in Computer Technology from the Arizona Institute of Business Technology - 2000.
 
