@@ -3,7 +3,7 @@ James Brink Personal Website
 
 This repo is for my personal website and blog.
 
-This is a jekyll website with a docker container that extends off of the offical jekyll container
+This is a [jekyll] (http://jekyllrb.com/) website with a docker container that extends off of the [official jekyll container] (https://github.com/jekyll/docker-jekyll)
 
 
 ## Development
