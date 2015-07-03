@@ -10,6 +10,10 @@ _With over ten years of professional experience in application development,  sys
 
 
 ### PROFESSIONAL EXPERIENCE
+__Senior Operations Engineer (2015 - Present), [Yahoo][yahoo], Sunnyvale, CA__
+
+Currently working on the Small Business Services team.
+
 __Systems Administrator II (2008 - 2015), [Edward Jones][edwardjones], Tempe, AZ__
 
 Initially hired to monitor and maintain infrastructure for a range of enterprise applications.  Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments.  Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
@@ -54,6 +58,7 @@ Diploma in Computer Technology from the Arizona Institute of Business Technology
 CompTIA A+ from Stellar International Institute - 2000.
 
 
-[edwardjones]: https://www.edwardjones.com
+[yahoo]: http://yahoo.com/
+[edwardjones]: https://www.edwardjones.com/
 [mediasolutionscorp]: http://mediasolutionscorp.com/
 [accram]: http://accram.com/
