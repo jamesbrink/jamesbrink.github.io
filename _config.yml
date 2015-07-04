@@ -1,8 +1,13 @@
+# baseurl: "/startbootstrap-clean-blog-jekyll"
+# url: "http://yourdomain.com"
+
 # Site settings
 title: James Brink
 email: brink.james@gmail.com
-url: https://example.github.io
+url: http://brink.ninja
 description: "James Brink - DevOps Engineer"
+header-img: img/home-bg.jpg
+baseurl: ""
 
 # Contact form: comment the line below if you want to stick with the default PHP contact form
 contact: static
@@ -16,7 +21,7 @@ color:
 # Footer settings
 footer:
   copyright: James Brink
-  location: Phoenix, Arizona
+  location: Sunnyvale, CA
   social: Around the Web
   credits: Credits
 
@@ -44,6 +49,10 @@ credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a
 # Build settings
 markdown: kramdown
 permalink: pretty
+highlighter: pygments
+paginate: 5
+paginate_path: "blog/page:num"
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 analytics :
   provider : google

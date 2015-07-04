@@ -1,10 +1,17 @@
 ---
-layout: default
+layout: post
 title: yum groupinstall "Network Infrastructure Server"
+subtitle: ""
+date: 2013-12-21
+author: "James Brink"
+header-img: "img/post-bg-01.jpg"
+tags:
+  - Linux
+  - RHEL
+  - CENTOS
+  - ScientificLinux
+  - yum
 ---
-Date: Decemeber 21 2013
-Categories: Linux RHEL CENTOS ScientificLinux
-
 #yum groupinstall "Network Infrastructure Server"#
 
 So when I recently tried to install the Network Infrastructure Server on CENTOS 6.5, yum replied with big "fuck you!".
