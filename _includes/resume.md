@@ -7,6 +7,7 @@ _With over ten years of professional experience in application development,  sys
 + Networking: Cisco IOS, Load Balancers, Firewalls
 + Languages: Ruby, Java, Python, JavaScript, SQL
 + Version Control: Git, CVS, MKS Source
++ Cloud & Virtualization: Docker, OpenStack, AWS
 
 
 ### PROFESSIONAL EXPERIENCE
