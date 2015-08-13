@@ -11,9 +11,14 @@ _With over ten years of professional experience in application development,  sys
 
 
 ### PROFESSIONAL EXPERIENCE
-__Senior Operations Engineer (2015 - Present), [Yahoo][yahoo], Sunnyvale, CA__
+__Senior Operations Engineer (2015 - 2015 | 2 Months), [Yahoo][yahoo], Sunnyvale, CA__
 
-Currently working on the Small Business Services team.
+Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services away from Yahoo.
+
++ Assisted with day to day operations. of production, development and QA environments.
++ Worked with team members to plan for migration of services away from Yahoo.
++ Assisted in build out of new QA environment.
+
 
 __Systems Administrator II (2008 - 2015), [Edward Jones][edwardjones], Tempe, AZ__
 
