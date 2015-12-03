@@ -60,3 +60,5 @@ analytics :
       tracking_id : 'UA-62780996-1'
   getclicky :
     site_id :
+
+gems: [jekyll-paginate]
