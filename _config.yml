@@ -49,7 +49,7 @@ credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a
 # Build settings
 markdown: kramdown
 permalink: pretty
-highlighter: pygments
+highlighter: rouge
 paginate: 5
 paginate_path: "blog/page:num"
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
