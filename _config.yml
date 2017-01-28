@@ -21,10 +21,10 @@ color:
 # Footer settings
 footer:
   copyright: James Brink
-  location: Sunnyvale, CA
+  location: Tempe, AZ
   social: Around the Web
   credits: Credits
-
+  phone: (602) 341-3058
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
