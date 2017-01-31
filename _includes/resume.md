@@ -1,69 +1,80 @@
-_With over ten years of professional experience in application development,  system administration, and networking, I am looking for a position that offers me the greatest challenges and opportunities to grow.  My passion for learning is second only to that of solving complex problems with elegant solutions._
+_With over ten years of professional experience in application development, system administration, and networking, I am looking for a position that offers me the greatest challenges and opportunities to grow. My passion for learning is second only to that of solving complex problems with elegant solutions._
+
 
 ### TECHNICAL SKILLS
 
 + Operating Systems: Linux, Solaris, FreeBSD, Windows Server
-+ Databases: MySQL, MongoDB, PostgreSQL, Oracle
++ Databases: MySQL, PostgreSQL, Oracle, MongoDB
 + Networking: Cisco IOS, Load Balancers, Firewalls
 + Languages: Ruby, Java, Python, JavaScript, SQL
-+ Version Control: Git, CVS, MKS Source
-+ Cloud & Virtualization: Docker, OpenStack, AWS
++ Cloud & Virtualization: AWS, Docker, OpenStack
 
 
 ### PROFESSIONAL EXPERIENCE
+
+__Site Reliability Administrator[a][b] (2015 - 2016), [GoDaddy][godaddy], Gilbert, AZ__
+
+Hired as a Systems Administrator for shared hosting operations, and later progressed into an Engineering role on the Hosting Automation Team.[c][d] Managed a mixed Windows/Linux production environment. Daily tasks included mitigating network attacks, monitoring infrastructure, resolving system configuration, performance, and capacity issues. I later transitioned into an engineering role where our team was able to automate a majority of the daily operational tasks, reducing the workload of the operations team as well as decreasing downtime across the environment.
+ 
+* Assisted with daily operations with primary focus on ensuring customers services were within the acceptable range for response times.
+* Worked extensively with python and fabric to run remedial and deployment tasks across the environment.
+* Became very familiar and effective at identifying and mitigating a wide range of network attacks.
+* Created tools to assist and dramatically improve productivity of the daily operational tasks, further reducing customer downtime.
+* Worked with Sensu to create healthchecks with remediation.  
+
+
 __Senior Operations Engineer (2015 - 2015 | 2 Months), [Yahoo][yahoo], Sunnyvale, CA__
 
-Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services away from Yahoo.
+Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services from Yahoo to Aabaco.
 
-+ Assisted with day to day operations. of production, development and QA environments.
-+ Worked with team members to plan for migration of services away from Yahoo.
-+ Assisted in build out of new QA environment.
+* Assisted with day to day operations. of production, development and QA environments.
+* Worked with team members to plan for migration of services away from Yahoo.
+* Assisted in build out of new QA environment. 
 
 
-__Systems Administrator II (2008 - 2015), [Edward Jones][edwardjones], Tempe, AZ__
+--Systems Administrator II (2008 - 2015), [Edward Jones][edwardjones], Tempe, AZ__
 
-Initially hired to monitor and maintain infrastructure for a range of enterprise applications.  Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments.  Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
+Brought on board to take over management and monitoring  for a range of enterprise applications.  Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments.  Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
 
-+ Promoted to Systems Administrator II
-+ Selected as department Datacenter Continuity Coordinator.
-+ Built and maintained multiple utilities within our department to assist in things from daily tasks to incident troubleshooting. These included both web and desktop applications in addition to command line utilities.
-+ Created a Java application that allows associates to document, lookup, and quickly identify support teams and potential business impact for any application running in production.
-+ Developed tools that enabled associates to automate the collection data and generation of reports.
+* Appointed as department Datacenter Continuity Coordinator.
+* Developed multiple utilities for both desktop and web to assist in daily activities and incident troubleshooting.
+* Created an tool to allow associates to quickly and effortlessly identify system and application anomalies and escalate them to the appropriate teams.
+* Created tools to automate the collection of data and creation of reports, eliminating the need for team members to perform these actions manually.
+
 
 __Software Engineer (2011 - 2012), [Media Solutions Corp][mediasolutionscorp], Phoenix, AZ__
 
-Contracted to lead an effort to bring a project that was 4 months behind, up to date and in
-production. Utilizing Ruby on Rails, was able to start from scratch and  rapidly develop and deploy the necessary features to bring the product into production within 2 weeks.  Over the following year I mentored and trained another Ruby developer. During this year we focused on bringing the application up to the changing requirements, utilizing agile methodologies and short iterative releases.
+Hired to lead efforts to bring a project that was 4 months behind schedule up to date and deployed to production. By Utilizing Ruby on Rails I was able to start anew and rapidly prototype and deploy the requested feature set within 2 weeks.  In addition to application maintenance I was responsible for the oversight and mentorship of new Ruby developers. 
 
-+ Brought a project that was 4 months behind to production within 2 weeks.
-+ Responsible for hiring and training 2 additional engineers.
-+ Worked closely with customer to resolve any outstanding issues and address new features quickly.
-+ Leveraged Agile methodologies for all additional application features.
-+ Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
+* Delivered  a project that was behind schedule to production within 2 weeks.
+* Responsible for hiring and training additional engineers.
+* Worked closely with product management to resolve any outstanding issues and address new features quickly.
+* Leveraged agile methodologies  for project management.
+* Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
+
+
 
 __Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ__
 
 While at Accram, my time was split between managing internal infrastructure, running the company’s small ISP, as well as managing customers networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
 
-+ Planned and led infrastructure initiatives that included networking, server deployment, and cabling.
-+ Leveraged open source tools to engineer and implement a monitoring infrastructure for internal and external networks.
-+ Managed internal web applications, e-mail servers, and DNS.
-+ Responsible for ensuring application redundancy and tested failover.
+* Planned and led infrastructure initiatives that included networking, server deployment, and cabling.
+* Leveraged open source tools to engineer and implement a monitoring infrastructure for internal and external networks.
+* Managed internal web applications, email servers, and DNS.
+* Responsible for ensuring application redundancy and tested failover.
 
 
 ### EDUCATION & CERTIFICATIONS
 
-Cisco Certified Network Associate (CCNA) - 2007.
 
-Diploma in Satellite Communications from the Department of the Army - 2001.
-
-Diploma in Network Switching Systems from General Dynamics - 2001.
-
-Diploma in Computer Technology from the Arizona Institute of Business Technology - 2000.
-
-CompTIA A+ from Stellar International Institute - 2000.
+* Cisco Certified Network Associate (CCNA) - 2007
+* Diploma in Satellite Communications from the Department of the Army - 2001
+* Diploma in Network Switching Systems from General Dynamics - 2001
+* Diploma in Computer Technology from the Arizona Institute of Business Technology - 2000
+* CompTIA A+ from Stellar International Institute - 2000
 
 
+[godaddy]: http://godaddy.com/
 [yahoo]: http://yahoo.com/
 [edwardjones]: https://www.edwardjones.com/
 [mediasolutionscorp]: http://mediasolutionscorp.com/
