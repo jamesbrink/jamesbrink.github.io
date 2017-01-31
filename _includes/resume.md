@@ -1,7 +1,6 @@
 _With over ten years of professional experience in application development, system administration, and networking, I am looking for a position that offers me the greatest challenges and opportunities to grow. My passion for learning is second only to that of solving complex problems with elegant solutions._
 
-
-### TECHNICAL SKILLS
+### TECHNICAL SKILLS ###
 
 + Operating Systems: Linux, Solaris, FreeBSD, Windows Server
 + Databases: MySQL, PostgreSQL, Oracle, MongoDB
@@ -9,8 +8,7 @@ _With over ten years of professional experience in application development, syst
 + Languages: Ruby, Java, Python, JavaScript, SQL
 + Cloud & Virtualization: AWS, Docker, OpenStack
 
-
-### PROFESSIONAL EXPERIENCE
+### PROFESSIONAL EXPERIENCE ###
 
 __Site Reliability Administrator (2015 - 2016), [GoDaddy][godaddy], Gilbert, AZ__
 
@@ -22,7 +20,8 @@ Hired as a Systems Administrator for shared hosting operations, and later progre
 * Created tools to assist and dramatically improve productivity of the daily operational tasks, further reducing customer downtime.
 * Worked with Sensu to create health checks with remediation.
 
-__Senior Operations Engineer (2015 - 2015 | 2 Months), [Yahoo][yahoo], Sunnyvale, CA__
+
+__Senior Operations Engineer (2015 - 2015 &#124; 2 Months), [Yahoo][yahoo], Sunnyvale, CA__
 
 Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services from Yahoo to Aabaco.
 
@@ -52,7 +51,6 @@ Hired to lead efforts to bring a project that was 4 months behind schedule up to
 * Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
 
 
-
 __Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ__
 
 While at Accram, my time was split between managing internal infrastructure, running the company’s small ISP, as well as managing customers networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
@@ -62,16 +60,13 @@ While at Accram, my time was split between managing internal infrastructure, run
 * Managed internal web applications, email servers, and DNS.
 * Responsible for ensuring application redundancy and tested failover.
 
-
-### EDUCATION & CERTIFICATIONS
-
+### EDUCATION & CERTIFICATIONS ###
 
 * Cisco Certified Network Associate (CCNA) - 2007
 * Diploma in Satellite Communications from the Department of the Army - 2001
 * Diploma in Network Switching Systems from General Dynamics - 2001
 * Diploma in Computer Technology from the Arizona Institute of Business Technology - 2000
 * CompTIA A+ from Stellar International Institute - 2000
-
 
 [godaddy]: http://godaddy.com/
 [yahoo]: http://yahoo.com/
