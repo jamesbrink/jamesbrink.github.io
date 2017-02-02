@@ -1,0 +1,42 @@
+main:
+  - title: Operations
+    content: I do operations.. kinda
+    skills:
+      - name: Linux
+        number: 95
+      - name: Solaris
+        number: 90
+      - name: FreeBSD
+        number: 70
+      - name: Windows
+        number: 65
+      - name: MySql
+        number: 75
+      - name: PostgreSQL
+        number: 70
+      - name: Oracle
+        number: 65
+      - name: MongoDB
+        number: 65
+      - name: Load Balancers
+        number: 95
+      - name: Cisco IOS
+        number: 70
+
+  - title: Development
+    content: I make and break
+    skills:
+      - name: Java
+        number: 80
+      - name: Python
+        number: 90
+      - name: JavaScript
+        number: 70
+      - name: Ruby
+        number: 75
+      - name: SQL
+        number: 85
+      - name: Fabric
+        number: 90
+      - name: Git
+        number: 85

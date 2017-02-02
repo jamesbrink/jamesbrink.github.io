@@ -1,0 +1,27 @@
+main:
+  - date:
+    month: Nov
+    year: 2016
+    jobs:
+    - title: GoDaddy
+      start: 09/22/2015
+      end: 11/14/2016
+      month: Nov
+      year: 2016
+      content: Site Reliability Engineering - Managed a mixed Windows/Linux production environment. Automated a majority of the daily operational tasks, reducing the workload of the operations team as well as decreasing downtime across the environment.
+  - date:
+    month: Jul
+    year: 2015
+    jobs:
+    - title: Yahoo
+      start: 07/01/2015
+      end: 08/25/2015
+      month: Jul
+      year: 2015
+      content: Senior Operations Engineer - Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services from Yahoo to Aabaco.
+    - title: Taste.com
+      start: 04/01/2015
+      end: 09/10/2015
+      month: May
+      year: 2015
+      content: Lead Software Engineer

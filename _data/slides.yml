@@ -1,0 +1,11 @@
+main:
+  - title: Operating Systems
+    content: Linux, Solaris, FreeBSD, Windows Server
+  - title: Databases
+    content: MySQL, PostgreSQL, Oracle, MongoDB
+  - title: Networking
+    content: Cisco IOS, Load Balancers, Firewalls
+  - title: Languages
+    content: Ruby, Java, Python, JavaScript, SQL
+  - title: Cloud & Virtualization
+    content: AWS, Docker, OpenStack
