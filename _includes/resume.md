@@ -21,7 +21,7 @@ Hired as a Systems Administrator for shared hosting operations, and later progre
 * Worked with Sensu to create health checks with remediation.
 
 
-__Senior Operations Engineer (2015 - 2015 &#124; 2 Months), [Yahoo][yahoo], Sunnyvale, CA__
+__Senior Operations Engineer (2015 - 2015), [Yahoo][yahoo], Sunnyvale, CA__
 
 Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services from Yahoo to Aabaco.
 
