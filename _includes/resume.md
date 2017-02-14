@@ -9,7 +9,7 @@ Hired as a Systems Administrator for shared hosting operations, and later progre
 * Worked with Sensu to create health checks with remediation.
 
 
-#### Senior Operations Engineer (2015 - 2015 &#124; 2 Months), [Yahoo][yahoo], Sunnyvale, CA ####
+#### Senior Operations Engineer (2015 - 2015), [Yahoo][yahoo], Sunnyvale, CA ####
 
 Contracted to work on the Small Business Services Team for an effort to migrate all Yahoo Small Business Services from Yahoo to Aabaco.
 
@@ -28,7 +28,7 @@ Brought on board to take over management and monitoring  for a range of enterpri
 * Created tools to automate the collection of data and creation of reports, eliminating the need for team members to perform these actions manually.
 
 
-#### Software Engineer (2011 - 2012), [Media Solutions Corp][mediasolutionscorp], Phoenix, AZ #### 
+#### Software Engineer (2011 - 2012), [Media Solutions Corp][mediasolutionscorp], Phoenix, AZ ####
 
 Hired to lead efforts to bring a project that was 4 months behind schedule up to date and deployed to production. By Utilizing Ruby on Rails I started anew and rapidly prototyped and deployed the requested feature set within 2 weeks.  In addition to application maintenance I was responsible for the oversight and mentorship of new Ruby developers.
 
@@ -39,7 +39,7 @@ Hired to lead efforts to bring a project that was 4 months behind schedule up to
 * Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
 
 
-#### Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ #### 
+#### Network Engineer/Systems Integrator (2004 - 2008), [Accram][accram], Phoenix, AZ ####
 
 While at Accram, my time was split between managing internal infrastructure, running the company’s small ISP, as well as managing customers networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
 
