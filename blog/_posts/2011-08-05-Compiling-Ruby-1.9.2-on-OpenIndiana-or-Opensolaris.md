@@ -6,7 +6,7 @@ tags:
   - OpenIndiana
   - Ruby
 ---
-#Compiling Ruby 1.9.2 on OpenIndiana/OpenSolaris
+# Compiling Ruby 1.9.2 on OpenIndiana/OpenSolaris
 
 After fighting for a few hours trying to install RVM(Ruby Version Manager) and Ruby-1.9.2, I thought I would share how I managed to get it done. My environment was a fresh install of OpenIndiana b151, and I was installing into a Solaris container (zone). I chose to install RVM in multi-user mode, but these steps should work the same for single user mode as well. To get started  you will need to install the following packages:
 

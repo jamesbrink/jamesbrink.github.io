@@ -6,7 +6,7 @@ tags:
   - OpenIndiana
   - MongoDB
 ---
-#Installing MongoDB on OpenIndiana/OpenSolaris
+# Installing MongoDB on OpenIndiana/OpenSolaris
 
 Okay so installing MongoDB on OpenIndiana was a few more steps than I would have expected. I figured I should share my process of installing MongoDB in hopes it will help any others who have issues with the install. When I initially downloaded MongoDB I realized right away that it would not run on my system(OpenIndiana build 151).When I attempted to run any of the MongoDB binaries I got the following result: "**ld.so.1: mongod: fatal: libstdc++.so.6: open failed: No such file or directory**"
 

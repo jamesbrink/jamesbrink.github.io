@@ -12,7 +12,7 @@ tags:
   - ScientificLinux
   - yum
 ---
-#yum groupinstall "Network Infrastructure Server"#
+# yum groupinstall "Network Infrastructure Server"#
 
 So when I recently tried to install the Network Infrastructure Server on CENTOS 6.5, yum replied with big "fuck you!".
 

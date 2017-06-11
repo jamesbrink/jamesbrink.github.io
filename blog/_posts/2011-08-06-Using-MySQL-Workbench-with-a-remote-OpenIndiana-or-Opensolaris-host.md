@@ -6,7 +6,7 @@ tags:
   - OpenIndiana
   - MySQL
 ---
-#Using MySQL Workbench with a remote OpenIndiana/OpenSolaris host.
+# Using MySQL Workbench with a remote OpenIndiana/OpenSolaris host.
 
 For anyone having issues connecting the MySQL Workbench via SSH Tunnel to an OpenIndian/OpenSolaris host with error messages like:
 
