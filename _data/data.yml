@@ -35,11 +35,12 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      With over ten years of professional experience in application
+      With over fifteen years of professional experience in application
       development, system administration, and networking, I am
       looking for a position that offers me the greatest challenges and
       opportunities to grow. My passion for learning is second only to that
-      of solving complex problems with elegant solutions.
+      of solving complex problems with elegant solutions. I take great pride in what I do, 
+      and truly enjoy sharing and mentoring other engineers in anyway possible.
 
 education:
     - degree: Certification, CCNA
@@ -64,9 +65,17 @@ experiences:
       time: December 2017 - Present
       company: Kadima Ventures, Phoenix AZ
       details: |
-        Building awesome stuff!
+        Building awesome stuff, with an amazing team. Initially hired into a SysOps/DevOps role which also included R&D work,
+        and building proof of concepts for various products. Was quickly promoted to Director of Infrastructure 
+        where I became responsible for for managing the the operations team, and all production infrastructure.
 
           - Extensive work with AWS, Kubernetes, Docker, Terraform and CI/CD pipelines.
+          - Created automated pipelines for an existing production application drastically reducing deployment times.
+          - Migrated existing infrastructure to version controlled solutions using tools such as Packer and Terraform.
+          - Created a highly available & resilient containerized VPN solution to address some very complex network and security restrictions.
+          - Deployed Kubernetes clusters and migrated many services away from AWS specific deployments/products which greatly increased deployment times, resiliency while reducing cost and vendor lock.
+          - Member of multiple architecture teams which made me accountable for both high level decisions, as well as lower level implementation details.  
+          - Mentored fellow DevOps & Software Engineers regularly, on many topics such as Docker, Kubernetes, Code Quality, refactoring techniques and unit testing. 
         
 
     - role: Site Reliability Engineer
