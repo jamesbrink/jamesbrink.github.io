@@ -20,7 +20,7 @@ sidebar:
     gitlab:
     bitbucket:
     twitter: '@brinkoo7'
-    stack-overflow: # Number/Username, e.g. 123456/alandoe
+    # stack-overflow: 646856/brinkoo7
     codewars:
     goodreads: # Number-Username, e.g. 123456-alandoe
 
@@ -235,7 +235,10 @@ skills:
         level: 80%
 
       - name: Go
-        level: 75%
+        level: 60%
+      
+      - name: Rust
+        level: 30%
         
 
 footer: >
