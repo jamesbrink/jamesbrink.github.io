@@ -172,7 +172,7 @@ projects:
 
     assignments:
       - title: AUR Package Maintainer
-        link: "https://aur.archlinux.org/account/jamesbrink"
+        link: "https://aur.archlinux.org/packages/?K=jamesbrink&SeB=m"
         tagline: "Arch Linux User Repo"
 
       - title: brinkOS
