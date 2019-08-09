@@ -50,7 +50,6 @@ permalink: pretty
 highlighter: rouge
 paginate: 20
 paginate_path: "blog/page:num"
-# exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # Development Settings
 port: 4000
