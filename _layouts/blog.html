@@ -11,6 +11,9 @@
 
     {% include blog_footer.html %}
 
+    {% if site.analytics %}
+        {% include analytics.html %}
+    {% endif %}
 </body>
 
 </html>
