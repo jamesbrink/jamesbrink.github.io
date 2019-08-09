@@ -14,7 +14,8 @@ sidebar:
     # Sidebar links
     email: brink.james@gmail.com
     phone: 602-341-3058
-    website: # blog.webjeda.com #do not add http://
+    website: /blog/ #do not add http://
+    website_name: Blog
     linkedin: brinkjames
     github: jamesbrink
     gitlab:

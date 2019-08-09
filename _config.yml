@@ -28,6 +28,29 @@ compress_html: # - http://jch.penibelst.de/
   ignore:
     envs: development
 
+plugins:
+  - jekyll-paginate
+
+exclude:
+  - deprecated
+  - less
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+
+blog-header-img: img/home-bg.jpg
+
+markdown: kramdown
+permalink: pretty
+highlighter: rouge
+paginate: 20
+paginate_path: "blog/page:num"
+# exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
 # Development Settings
 port: 4000
 host: 0.0.0.0
