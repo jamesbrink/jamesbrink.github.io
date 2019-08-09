@@ -176,6 +176,10 @@ projects:
         link: "https://aur.archlinux.org/packages/?K=jamesbrink&SeB=m"
         tagline: "Arch Linux User Repo"
 
+      - title: Essex
+        link: "https://github.com/utensils/essex"
+        tagline: "Boilerplate for Docker Based Projects"
+
       - title: brinkOS
         link: "https://sourceforge.net/projects/brinkos/"
         tagline: "Experimental Linux distribution based off of Arch Linux"
@@ -183,6 +187,10 @@ projects:
       - title: Envisaged
         link: "https://github.com/utensils/Envisaged"
         tagline: "Effortless Gource Visualizations with Docker"
+
+      - title: docker-darling
+        link: "https://github.com/utensils/docker-darling"
+        tagline: "Experimental docker container with Darling for macOS runtime"
 
       - title: docker-opengl
         link: "https://github.com/utensils/docker-opengl"
