@@ -30,6 +30,7 @@ compress_html: # - http://jch.penibelst.de/
 
 plugins:
   - jekyll-paginate
+  - jekyll-sitemap
 
 exclude:
   - deprecated
