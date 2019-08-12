@@ -2,7 +2,7 @@
 
 # Site Settings
 title: James Brink - DevOps Engineer
-url: 'https://jamesbrink.github.io/'
+url: 'https://jamesbrink.github.io'
 baseurl: '' #change it according to your repository name
 description: James Brink - DevOps Egnineer
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
