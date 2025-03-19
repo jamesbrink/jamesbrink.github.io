@@ -13,6 +13,7 @@ includes = [
   "**/*.md",
   "**/*.yml",
   "**/*.yaml",
+  "**/*.js",
 ]
 excludes = [
   "_site/**",
@@ -23,7 +24,11 @@ excludes = [
   "css/**",
   "_layouts/**",
   "_includes/**",
-  "js/**",
+  # We're not excluding js/ anymore to allow formatting
+  # But we might need to exclude minified JS
+  "**/min/**",
+  "**/min.*",
+  "**/*.min.js",
 ]
 
 [formatter.yamlfmt]

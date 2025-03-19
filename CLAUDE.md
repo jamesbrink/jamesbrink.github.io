@@ -13,7 +13,7 @@
 ## Code Style Guidelines
 - Formatting:
   - Use `format` command to automatically format all files
-  - HTML, CSS, SCSS, JSON, MD: nodePackages.prettier
+  - HTML, CSS, SCSS, JSON, MD, JS: nodePackages.prettier
   - YAML: yamlfmt
   - Nix files: nixfmt
   - See treefmt.toml for configuration details
