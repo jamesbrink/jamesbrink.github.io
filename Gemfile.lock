@@ -78,7 +78,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 4.3)
+  jekyll (~> 4.4.1)
   jekyll-paginate (~> 1.1)
   jekyll-sitemap (~> 1.4)
 
