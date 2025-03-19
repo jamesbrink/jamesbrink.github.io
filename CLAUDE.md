@@ -1,7 +1,6 @@
 # Development Guidelines for jamesbrink.github.io
 
 ## Build Commands
-- Before using Nix commands: `git add flake.nix` (add flake files to git first)
 - Setup environment: `nix develop` or `direnv allow` (if using direnv)
 - Install dependencies: `setup`
 - Start local server: `serve` 
@@ -9,8 +8,15 @@
 - Create new blog post: `new-post "Your Post Title"`
 - Clean build files: `clean`
 - Update dependencies: `update`
+- Format all files: `format` (uses treefmt)
 
 ## Code Style Guidelines
+- Formatting:
+  - Use `format` command to automatically format all files
+  - HTML, CSS, SCSS, JSON, MD: nodePackages.prettier
+  - YAML: yamlfmt
+  - Nix files: nixfmt
+  - See treefmt.toml for configuration details
 - Jekyll/Ruby:
   - Use Jekyll 4.3+ conventions
   - Follow kramdown syntax for markdown

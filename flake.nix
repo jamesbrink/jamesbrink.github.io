@@ -2,28 +2,22 @@
   description = "James Brink's Personal Website";
 
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
-    devshell = {
-      url = "github:numtide/devshell";
-    };
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    devshell = { url = "github:numtide/devshell"; };
   };
 
   outputs = { self, nixpkgs, devshell }:
     let
       supportedSystems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-    in
-    {
+    in {
       devShells = forAllSystems (system:
         let
           pkgs = import nixpkgs {
             inherit system;
             overlays = [ devshell.overlays.default ];
           };
-        in
-        {
+        in {
           default = pkgs.devshell.mkShell {
             name = "jamesbrink-website";
 
@@ -33,13 +27,18 @@
               bundler
               rubyPackages.jekyll-paginate
               rubyPackages.jekyll-sitemap
-              
+
               # Development tools
               git
               imagemagick
               libxml2
               libxslt
-              nixfmt-rfc-style
+
+              # Formatters
+              nixfmt
+              nodePackages.prettier
+              yamlfmt
+              treefmt
             ];
 
             commands = [
@@ -72,32 +71,32 @@
                 category = "jekyll";
                 help = "Create a new blog post";
                 command = ''
-                  if [ -z "$1" ]; then
-                    echo "Error: Post title is required"
-                    echo "Usage: new-post \"Your Post Title\""
-                    exit 1
-                  fi
-                  
-                  # Convert title to filename format
-                  TITLE="$1"
-                  DATE=$(date +%Y-%m-%d)
-                  FILENAME="_posts/$DATE-$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g').md"
-                  
-                  echo "Creating new post: $FILENAME"
-                  
-                  # Create post with front matter
-                  cat > "$FILENAME" << EOF
----
-layout: post
-title: "$TITLE"
-date: $DATE $(date +%H:%M:%S) -0700
-categories: blog
----
+                                    if [ -z "$1" ]; then
+                                      echo "Error: Post title is required"
+                                      echo "Usage: new-post \"Your Post Title\""
+                                      exit 1
+                                    fi
+                                    
+                                    # Convert title to filename format
+                                    TITLE="$1"
+                                    DATE=$(date +%Y-%m-%d)
+                                    FILENAME="_posts/$DATE-$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g').md"
+                                    
+                                    echo "Creating new post: $FILENAME"
+                                    
+                                    # Create post with front matter
+                                    cat > "$FILENAME" << EOF
+                  ---
+                  layout: post
+                  title: "$TITLE"
+                  date: $DATE $(date +%H:%M:%S) -0700
+                  categories: blog
+                  ---
 
-Write your content here.
-EOF
-                  
-                  echo "✅ Post created: $FILENAME"
+                  Write your content here.
+                  EOF
+                                    
+                                    echo "✅ Post created: $FILENAME"
                 '';
               }
               {
@@ -151,10 +150,10 @@ EOF
               {
                 name = "format";
                 category = "development";
-                help = "Format Nix files";
+                help = "Format all files using treefmt";
                 command = ''
-                  echo "Formatting Nix files..."
-                  nixfmt-rfc-style *.nix
+                  echo "Formatting all files with treefmt..."
+                  treefmt
                   echo "✅ Formatting complete!"
                 '';
               }
@@ -165,17 +164,16 @@ EOF
                 command = ''
                   echo "Jekyll version:"
                   bundle exec jekyll --version
-                  
+
                   echo "\nRuby version:"
                   ruby --version
-                  
+
                   echo "\nBundler version:"
                   bundle --version
                 '';
               }
             ];
           };
-        }
-      );
+        });
     };
 }

@@ -1,0 +1,38 @@
+# Using nixfmt directly instead of nixfmt-rfc-style
+[formatter.nixfmt]
+command = "nixfmt"
+includes = ["*.nix"]
+
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = [
+  "**/*.html",
+  "**/*.scss",
+  "**/*.json",
+  "**/*.md",
+  "**/*.yml",
+  "**/*.yaml",
+]
+excludes = [
+  "_site/**",
+  ".jekyll-cache/**",
+  "vendor/**",
+  "deprecated/**",
+  "assets/plugins/**",
+  "css/**",
+  "_layouts/**",
+  "_includes/**",
+  "js/**",
+]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+options = []
+includes = ["**/*.{yml,yaml}"]
+excludes = [
+  "vendor/**", 
+  "_site/**", 
+  ".jekyll-cache/**", 
+  "deprecated/**"
+]
