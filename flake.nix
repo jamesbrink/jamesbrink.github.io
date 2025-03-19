@@ -2,22 +2,38 @@
   description = "James Brink's Personal Website";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    devshell = { url = "github:numtide/devshell"; };
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    devshell = {
+      url = "github:numtide/devshell";
+    };
   };
 
-  outputs = { self, nixpkgs, devshell }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      devshell,
+    }:
     let
-      supportedSystems = [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      supportedSystems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-    in {
-      devShells = forAllSystems (system:
+    in
+    {
+      devShells = forAllSystems (
+        system:
         let
           pkgs = import nixpkgs {
             inherit system;
             overlays = [ devshell.overlays.default ];
           };
-        in {
+        in
+        {
           default = pkgs.devshell.mkShell {
             name = "jamesbrink-website";
 
@@ -35,7 +51,7 @@
               libxslt
 
               # Formatters
-              nixfmt # Use the default nixfmt (will be replaced by RFC-style formatter in future)
+              nixfmt-rfc-style # Do not replace this, this is the RFC-style formatter available as nixfmt
               nodePackages.prettier
               yamlfmt
               treefmt
@@ -174,6 +190,7 @@
               }
             ];
           };
-        });
+        }
+      );
     };
 }
