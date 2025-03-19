@@ -61,9 +61,6 @@ excludes = [
   "css/**",
   "js/**",         # Exclude all JavaScript in js/ folder
   
-  # Deprecated/legacy code
-  "deprecated/**",
-  
   # Minified and compiled files
   "**/min/**",
   "**/min.*",
@@ -91,8 +88,6 @@ excludes = [
   "assets/plugins/**/*.yaml",
   "assets/plugins/font-awesome/metadata/**",
   
-  # Deprecated/legacy code
-  "deprecated/**"
 ]
 
 # This catch-all formatter prevents warnings for files we don't want to format
@@ -139,7 +134,6 @@ includes = [
   "assets/plugins/**",
   "css/**",
   "js/**",
-  "deprecated/**",
   "**/font-awesome/**",
   
   # Minified files

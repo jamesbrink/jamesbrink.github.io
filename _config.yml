@@ -31,7 +31,6 @@ plugins:
   - jekyll-sitemap
 
 exclude:
-  - deprecated
   - less
   - node_modules
   - Gruntfile.js
