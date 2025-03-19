@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title:
 subtitle: ""
 date: 2016-12-08
 author: "James Brink"
@@ -10,10 +10,10 @@ tags:
   - stoken
   - secureid
 ---
+
 # Faster VPN Login
 
 ## For the ADHD and impatient
-
 
 ![logo](/assets/blog/rsa-logo.png)
 
@@ -24,7 +24,6 @@ Like many other corporate networks Godaddy used a VPN with an RSA-SecureID token
 Below is the gist of the script, feel free to clean it up and submit any modifications. This thing was a life saver for me.
 
 [https://gist.github.com/jamesbrink/115a16bc2aecac4bcc4d57c843124d74](https://gist.github.com/jamesbrink/115a16bc2aecac4bcc4d57c843124d74)
-
 
 ```shell
 vpn(){

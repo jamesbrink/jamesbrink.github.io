@@ -4,16 +4,22 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2>Resume</h2>
-        <hr class="star-primary">
-        <a class="fa fa-lg fa-file-pdf-o" href="/resume/JamesBrinkResume.pdf"></a>
-        <a class="fa fa-lg fa-file-word-o" href="/resume/JamesBrinkResume.docx"></a>
+        <hr class="star-primary" />
+        <a
+          class="fa fa-lg fa-file-pdf-o"
+          href="/resume/JamesBrinkResume.pdf"
+        ></a>
+        <a
+          class="fa fa-lg fa-file-word-o"
+          href="/resume/JamesBrinkResume.docx"
+        ></a>
         <hr />
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12">
-        {% capture resume %}{% include resume.md %}{% endcapture %}
-        {{ resume | markdownify }}
+        {% capture resume %}{% include resume.md %}{% endcapture %} {{ resume |
+        markdownify }}
       </div>
     </div>
   </div>

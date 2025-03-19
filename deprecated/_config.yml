@@ -1,6 +1,5 @@
 # baseurl: "/startbootstrap-clean-blog-jekyll"
 # url: "http://yourdomain.com"
-
 # Site settings
 title: James Brink
 email: brink.james@gmail.com
@@ -8,16 +7,13 @@ url: https://jamesbrink.github.io
 description: "James Brink - DevOps Engineer"
 header-img: img/home-bg.jpg
 baseurl: ""
-
 # Contact form: comment the line below if you want to stick with the default PHP contact form
 contact: static
-
 # Color settings (hex-codes without the leading hash-tag)
 color:
   primary: 18bc9c #80B3FF
   secondary: 2c3e50 #FD6E8A
   secondary-dark: 233140 #A2122F
-
 # Footer settings
 footer:
   copyright: James Brink
@@ -37,7 +33,6 @@ social:
     url: http://registry.hub.docker.com/u/jamesbrink/
   - title: github
     url: http://github.com/jamesbrink
-
 # Postal address (add as many lines as necessary)
 #address:
 #  - line: 3409 S Rural Road
@@ -45,20 +40,17 @@ social:
 
 # Credits content
 credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
-
 # Build settings
 markdown: kramdown
 permalink: pretty
 highlighter: rouge
 paginate: 5
 paginate_path: "blog/page:num"
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-
-analytics :
-  provider : google
-  google : 
-      tracking_id : 'UA-62780996-2'
-  getclicky :
-    site_id :
-
+exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
+analytics:
+  provider: google
+  google:
+    tracking_id: "UA-62780996-2"
+  getclicky:
+    site_id:
 gems: [jekyll-paginate]

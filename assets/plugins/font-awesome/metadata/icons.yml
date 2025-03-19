@@ -1,6 +1,6 @@
 500px:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: 500px
   search:
@@ -33,7 +33,7 @@ accusoft:
   unicode: f369
 address-book:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.3
   label: Address Book
@@ -45,7 +45,7 @@ address-book:
   unicode: f2b9
 address-card:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.3
   label: Address Card
@@ -57,7 +57,7 @@ address-card:
   unicode: f2bb
 adjust:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: adjust
   search:
@@ -68,7 +68,7 @@ adjust:
   unicode: f042
 adn:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: App.net
   search:
@@ -105,7 +105,7 @@ algolia:
   unicode: f36c
 align-center:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: align-center
   search:
@@ -117,7 +117,7 @@ align-center:
   unicode: f037
 align-justify:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: align-justify
   search:
@@ -128,7 +128,7 @@ align-justify:
   unicode: f039
 align-left:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: align-left
   search:
@@ -139,7 +139,7 @@ align-left:
   unicode: f036
 align-right:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: align-right
   search:
@@ -164,7 +164,7 @@ allergies:
   unicode: f461
 amazon:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Amazon
   search:
@@ -183,7 +183,7 @@ amazon-pay:
   unicode: f42c
 ambulance:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
     - 5.0.7
   label: ambulance
@@ -198,7 +198,7 @@ ambulance:
   unicode: f0f9
 american-sign-language-interpreting:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: American Sign Language Interpreting
   search:
@@ -217,7 +217,7 @@ amilia:
   unicode: f36d
 anchor:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Anchor
   search:
@@ -228,7 +228,7 @@ anchor:
   unicode: f13d
 android:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Android
   search:
@@ -239,7 +239,7 @@ android:
   unicode: f17b
 angellist:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: AngelList
   search:
@@ -249,7 +249,7 @@ angellist:
   unicode: f209
 angle-double-down:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Angle Double Down
   search:
@@ -260,7 +260,7 @@ angle-double-down:
   unicode: f103
 angle-double-left:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Angle Double Left
   search:
@@ -275,7 +275,7 @@ angle-double-left:
   unicode: f100
 angle-double-right:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Angle Double Right
   search:
@@ -290,7 +290,7 @@ angle-double-right:
   unicode: f101
 angle-double-up:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Angle Double Up
   search:
@@ -301,7 +301,7 @@ angle-double-up:
   unicode: f102
 angle-down:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: angle-down
   search:
@@ -312,7 +312,7 @@ angle-down:
   unicode: f107
 angle-left:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: angle-left
   search:
@@ -325,7 +325,7 @@ angle-left:
   unicode: f104
 angle-right:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: angle-right
   search:
@@ -338,7 +338,7 @@ angle-right:
   unicode: f105
 angle-up:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: angle-up
   search:
@@ -409,7 +409,7 @@ apper:
   unicode: f371
 apple:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
     - 5.0.7
   label: Apple
@@ -432,7 +432,7 @@ apple-pay:
   unicode: f415
 archive:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
     - 5.0.9
   label: Archive
@@ -508,7 +508,7 @@ arrow-alt-circle-up:
   unicode: f35b
 arrow-circle-down:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Arrow Circle Down
   search:
@@ -519,7 +519,7 @@ arrow-circle-down:
   unicode: f0ab
 arrow-circle-left:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Arrow Circle Left
   search:
@@ -531,7 +531,7 @@ arrow-circle-left:
   unicode: f0a8
 arrow-circle-right:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Arrow Circle Right
   search:
@@ -543,7 +543,7 @@ arrow-circle-right:
   unicode: f0a9
 arrow-circle-up:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Arrow Circle Up
   search:
@@ -553,7 +553,7 @@ arrow-circle-up:
   unicode: f0aa
 arrow-down:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: arrow-down
   search:
@@ -564,7 +564,7 @@ arrow-down:
   unicode: f063
 arrow-left:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: arrow-left
   search:
@@ -576,7 +576,7 @@ arrow-left:
   unicode: f060
 arrow-right:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: arrow-right
   search:
@@ -588,7 +588,7 @@ arrow-right:
   unicode: f061
 arrow-up:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: arrow-up
   search:
@@ -598,7 +598,7 @@ arrow-up:
   unicode: f062
 arrows-alt:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Alternate Arrows
   search:
@@ -640,7 +640,7 @@ arrows-alt-v:
   unicode: f338
 assistive-listening-systems:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Assistive Listening Systems
   search:
@@ -650,7 +650,7 @@ assistive-listening-systems:
   unicode: f2a2
 asterisk:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: asterisk
   search:
@@ -662,7 +662,7 @@ asterisk:
 asymmetrik:
   changes:
     - 5.0.0
-  label: 'Asymmetrik, Ltd.'
+  label: "Asymmetrik, Ltd."
   search:
     terms: []
   styles:
@@ -670,7 +670,7 @@ asymmetrik:
   unicode: f372
 at:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: At
   search:
@@ -705,7 +705,7 @@ audible:
   unicode: f373
 audio-description:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Audio Description
   search:
@@ -779,7 +779,7 @@ backspace:
   unicode: f55a
 backward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: backward
   search:
@@ -791,7 +791,7 @@ backward:
   unicode: f04a
 balance-scale:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.0.13
   label: Balance Scale
@@ -807,7 +807,7 @@ balance-scale:
   unicode: f24e
 ban:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: ban
   search:
@@ -839,7 +839,7 @@ band-aid:
   unicode: f462
 bandcamp:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Bandcamp
   search:
@@ -849,7 +849,7 @@ bandcamp:
   unicode: f2d5
 barcode:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: barcode
   search:
@@ -860,7 +860,7 @@ barcode:
   unicode: f02a
 bars:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Bars
   search:
@@ -900,7 +900,7 @@ basketball-ball:
   unicode: f434
 bath:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Bath
   search:
@@ -910,7 +910,7 @@ bath:
   unicode: f2cd
 battery-empty:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Battery Empty
   search:
@@ -922,7 +922,7 @@ battery-empty:
   unicode: f244
 battery-full:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Battery Full
   search:
@@ -934,7 +934,7 @@ battery-full:
   unicode: f240
 battery-half:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Battery 1/2 Full
   search:
@@ -946,7 +946,7 @@ battery-half:
   unicode: f242
 battery-quarter:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Battery 1/4 Full
   search:
@@ -958,7 +958,7 @@ battery-quarter:
   unicode: f243
 battery-three-quarters:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Battery 3/4 Full
   search:
@@ -970,7 +970,7 @@ battery-three-quarters:
   unicode: f241
 bed:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.1.0
   label: Bed
@@ -984,7 +984,7 @@ bed:
   unicode: f236
 beer:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: beer
   search:
@@ -1000,7 +1000,7 @@ beer:
   unicode: f0fc
 behance:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Behance
   search:
@@ -1010,7 +1010,7 @@ behance:
   unicode: f1b4
 behance-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.0.3
   label: Behance Square
@@ -1021,7 +1021,7 @@ behance-square:
   unicode: f1b5
 bell:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: bell
   search:
@@ -1035,7 +1035,7 @@ bell:
   unicode: f0f3
 bell-slash:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Bell Slash
   search:
@@ -1060,7 +1060,7 @@ bezier-curve:
   unicode: f55b
 bicycle:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Bicycle
   search:
@@ -1083,7 +1083,7 @@ bimobject:
   unicode: f378
 binoculars:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Binoculars
   search:
@@ -1093,7 +1093,7 @@ binoculars:
   unicode: f1e5
 birthday-cake:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Birthday Cake
   search:
@@ -1103,7 +1103,7 @@ birthday-cake:
   unicode: f1fd
 bitbucket:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Bitbucket
   search:
@@ -1133,7 +1133,7 @@ bity:
   unicode: f37a
 black-tie:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Font Awesome Black Tie
   search:
@@ -1161,7 +1161,7 @@ blender:
   unicode: f517
 blind:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Blind
   search:
@@ -1189,7 +1189,7 @@ blogger-b:
   unicode: f37d
 bluetooth:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Bluetooth
   search:
@@ -1199,7 +1199,7 @@ bluetooth:
   unicode: f293
 bluetooth-b:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Bluetooth
   search:
@@ -1209,7 +1209,7 @@ bluetooth-b:
   unicode: f294
 bold:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: bold
   search:
@@ -1219,7 +1219,7 @@ bold:
   unicode: f032
 bolt:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Lightning Bolt
   search:
@@ -1233,7 +1233,7 @@ bolt:
   unicode: f0e7
 bomb:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Bomb
   search:
@@ -1258,7 +1258,7 @@ bong:
   unicode: f55c
 book:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: book
   search:
@@ -1285,7 +1285,7 @@ book-open:
   unicode: f518
 bookmark:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: bookmark
   search:
@@ -1334,7 +1334,7 @@ boxes:
   unicode: f468
 braille:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Braille
   search:
@@ -1344,7 +1344,7 @@ braille:
   unicode: f2a1
 briefcase:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Briefcase
   search:
@@ -1403,7 +1403,7 @@ brush:
   unicode: f55d
 btc:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: BTC
   search:
@@ -1413,7 +1413,7 @@ btc:
   unicode: f15a
 bug:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Bug
   search:
@@ -1425,7 +1425,7 @@ bug:
   unicode: f188
 building:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Building
   search:
@@ -1441,7 +1441,7 @@ building:
   unicode: f1ad
 bullhorn:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: bullhorn
   search:
@@ -1456,7 +1456,7 @@ bullhorn:
   unicode: f0a1
 bullseye:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Bullseye
   search:
@@ -1486,7 +1486,7 @@ buromobelexperte:
   unicode: f37f
 bus:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
     - 5.1.0
   label: Bus
@@ -1514,7 +1514,7 @@ bus-alt:
   unicode: f55e
 buysellads:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: BuySellAds
   search:
@@ -1524,7 +1524,7 @@ buysellads:
   unicode: f20d
 calculator:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Calculator
   search:
@@ -1534,7 +1534,7 @@ calculator:
   unicode: f1ec
 calendar:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Calendar
   search:
@@ -1551,7 +1551,7 @@ calendar:
   unicode: f133
 calendar-alt:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Alternate Calendar
   search:
@@ -1568,7 +1568,7 @@ calendar-alt:
   unicode: f073
 calendar-check:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Calendar Check
   search:
@@ -1589,7 +1589,7 @@ calendar-check:
   unicode: f274
 calendar-minus:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Calendar Minus
   search:
@@ -1600,7 +1600,7 @@ calendar-minus:
   unicode: f272
 calendar-plus:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Calendar Plus
   search:
@@ -1611,7 +1611,7 @@ calendar-plus:
   unicode: f271
 calendar-times:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Calendar Times
   search:
@@ -1622,7 +1622,7 @@ calendar-times:
   unicode: f273
 camera:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: camera
   search:
@@ -1635,7 +1635,7 @@ camera:
   unicode: f030
 camera-retro:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Retro Camera
   search:
@@ -1682,7 +1682,7 @@ capsules:
   unicode: f46b
 car:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Car
   search:
@@ -1695,7 +1695,7 @@ car:
   unicode: f1b9
 caret-down:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Caret Down
   search:
@@ -1710,7 +1710,7 @@ caret-down:
   unicode: f0d7
 caret-left:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Caret Left
   search:
@@ -1724,7 +1724,7 @@ caret-left:
   unicode: f0d9
 caret-right:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Caret Right
   search:
@@ -1738,7 +1738,7 @@ caret-right:
   unicode: f0da
 caret-square-down:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Caret Square Down
   search:
@@ -1753,7 +1753,7 @@ caret-square-down:
   unicode: f150
 caret-square-left:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Caret Square Left
   search:
@@ -1767,7 +1767,7 @@ caret-square-left:
   unicode: f191
 caret-square-right:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Caret Square Right
   search:
@@ -1781,7 +1781,7 @@ caret-square-right:
   unicode: f152
 caret-square-up:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Caret Square Up
   search:
@@ -1793,7 +1793,7 @@ caret-square-up:
   unicode: f151
 caret-up:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Caret Up
   search:
@@ -1805,7 +1805,7 @@ caret-up:
   unicode: f0d8
 cart-arrow-down:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Shopping Cart Arrow Down
   search:
@@ -1816,7 +1816,7 @@ cart-arrow-down:
   unicode: f218
 cart-plus:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Add to Shopping Cart
   search:
@@ -1837,7 +1837,7 @@ cc-amazon-pay:
   unicode: f42d
 cc-amex:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: American Express Credit Card
   search:
@@ -1857,7 +1857,7 @@ cc-apple-pay:
   unicode: f416
 cc-diners-club:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Diner's Club Credit Card
   search:
@@ -1867,7 +1867,7 @@ cc-diners-club:
   unicode: f24c
 cc-discover:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Discover Credit Card
   search:
@@ -1877,7 +1877,7 @@ cc-discover:
   unicode: f1f2
 cc-jcb:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: JCB Credit Card
   search:
@@ -1887,7 +1887,7 @@ cc-jcb:
   unicode: f24b
 cc-mastercard:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: MasterCard Credit Card
   search:
@@ -1897,7 +1897,7 @@ cc-mastercard:
   unicode: f1f1
 cc-paypal:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Paypal Credit Card
   search:
@@ -1907,7 +1907,7 @@ cc-paypal:
   unicode: f1f4
 cc-stripe:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Stripe Credit Card
   search:
@@ -1917,7 +1917,7 @@ cc-stripe:
   unicode: f1f5
 cc-visa:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Visa Credit Card
   search:
@@ -1936,7 +1936,7 @@ centercode:
   unicode: f380
 certificate:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: certificate
   search:
@@ -1979,7 +1979,7 @@ chalkboard-teacher:
   unicode: f51c
 chart-area:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Area Chart
   search:
@@ -1992,7 +1992,7 @@ chart-area:
   unicode: f1fe
 chart-bar:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Bar Chart
   search:
@@ -2006,7 +2006,7 @@ chart-bar:
   unicode: f080
 chart-line:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Line Chart
   search:
@@ -2021,7 +2021,7 @@ chart-line:
   unicode: f201
 chart-pie:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Pie Chart
   search:
@@ -2034,7 +2034,7 @@ chart-pie:
   unicode: f200
 check:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Check
   search:
@@ -2053,13 +2053,13 @@ check:
       - success
       - tick
       - todo
-      - 'yes'
+      - "yes"
   styles:
     - solid
   unicode: f00c
 check-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Check Circle
   search:
@@ -2073,7 +2073,7 @@ check-circle:
       - select
       - success
       - todo
-      - 'yes'
+      - "yes"
   styles:
     - solid
     - regular
@@ -2103,7 +2103,7 @@ check-double:
   unicode: f560
 check-square:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Check Square
   search:
@@ -2118,7 +2118,7 @@ check-square:
       - select
       - success
       - todo
-      - 'yes'
+      - "yes"
   styles:
     - solid
     - regular
@@ -2197,7 +2197,7 @@ chess-rook:
   unicode: f447
 chevron-circle-down:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Chevron Circle Down
   search:
@@ -2211,7 +2211,7 @@ chevron-circle-down:
   unicode: f13a
 chevron-circle-left:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Chevron Circle Left
   search:
@@ -2224,7 +2224,7 @@ chevron-circle-left:
   unicode: f137
 chevron-circle-right:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Chevron Circle Right
   search:
@@ -2237,7 +2237,7 @@ chevron-circle-right:
   unicode: f138
 chevron-circle-up:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Chevron Circle Up
   search:
@@ -2248,7 +2248,7 @@ chevron-circle-up:
   unicode: f139
 chevron-down:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: chevron-down
   search:
@@ -2258,7 +2258,7 @@ chevron-down:
   unicode: f078
 chevron-left:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: chevron-left
   search:
@@ -2271,7 +2271,7 @@ chevron-left:
   unicode: f053
 chevron-right:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: chevron-right
   search:
@@ -2284,7 +2284,7 @@ chevron-right:
   unicode: f054
 chevron-up:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: chevron-up
   search:
@@ -2294,7 +2294,7 @@ chevron-up:
   unicode: f077
 child:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Child
   search:
@@ -2304,7 +2304,7 @@ child:
   unicode: f1ae
 chrome:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Chrome
   search:
@@ -2327,7 +2327,7 @@ church:
   unicode: f51d
 circle:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Circle
   search:
@@ -2341,7 +2341,7 @@ circle:
   unicode: f111
 circle-notch:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Circle Notched
   search:
@@ -2375,7 +2375,7 @@ clipboard-check:
       - select
       - success
       - todo
-      - 'yes'
+      - "yes"
   styles:
     - solid
   unicode: f46c
@@ -2399,7 +2399,7 @@ clipboard-list:
   unicode: f46d
 clock:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Clock
   search:
@@ -2416,7 +2416,7 @@ clock:
   unicode: f017
 clone:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Clone
   search:
@@ -2429,7 +2429,7 @@ clone:
   unicode: f24d
 closed-captioning:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Closed Captioning
   search:
@@ -2441,7 +2441,7 @@ closed-captioning:
   unicode: f20a
 cloud:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.11
   label: Cloud
@@ -2513,7 +2513,7 @@ cocktail:
   unicode: f561
 code:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Code
   search:
@@ -2543,7 +2543,7 @@ code-branch:
   unicode: f126
 codepen:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Codepen
   search:
@@ -2553,7 +2553,7 @@ codepen:
   unicode: f1cb
 codiepie:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Codie Pie
   search:
@@ -2563,7 +2563,7 @@ codiepie:
   unicode: f284
 coffee:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Coffee
   search:
@@ -2579,7 +2579,7 @@ coffee:
   unicode: f0f4
 cog:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: cog
   search:
@@ -2590,7 +2590,7 @@ cog:
   unicode: f013
 cogs:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: cogs
   search:
@@ -2611,7 +2611,7 @@ coins:
   unicode: f51e
 columns:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Columns
   search:
@@ -2624,7 +2624,7 @@ columns:
   unicode: f0db
 comment:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: comment
@@ -2646,7 +2646,7 @@ comment:
   unicode: f075
 comment-alt:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Alternate Comment
   search:
@@ -2688,7 +2688,7 @@ comment-slash:
   unicode: f4b3
 comments:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: comments
@@ -2723,7 +2723,7 @@ compact-disc:
   unicode: f51f
 compass:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Compass
   search:
@@ -2765,7 +2765,7 @@ concierge-bell:
   unicode: f562
 connectdevelop:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Connect Develop
   search:
@@ -2775,7 +2775,7 @@ connectdevelop:
   unicode: f20e
 contao:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Contao
   search:
@@ -2817,7 +2817,7 @@ cookie-bite:
   unicode: f564
 copy:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Copy
   search:
@@ -2832,7 +2832,7 @@ copy:
   unicode: f0c5
 copyright:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Copyright
   search:
@@ -2861,7 +2861,7 @@ cpanel:
   unicode: f388
 creative-commons:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.0.11
     - 5.1.0
@@ -2981,7 +2981,7 @@ creative-commons-share:
   unicode: f4f2
 credit-card:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Credit Card
   search:
@@ -2999,7 +2999,7 @@ credit-card:
   unicode: f09d
 crop:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.1.0
   label: crop
@@ -3020,7 +3020,7 @@ crop-alt:
   unicode: f565
 crosshairs:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Crosshairs
   search:
@@ -3054,7 +3054,7 @@ crown:
   unicode: f521
 css3:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: CSS 3 Logo
   search:
@@ -3074,7 +3074,7 @@ css3-alt:
   unicode: f38b
 cube:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Cube
   search:
@@ -3085,7 +3085,7 @@ cube:
   unicode: f1b2
 cubes:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Cubes
   search:
@@ -3096,7 +3096,7 @@ cubes:
   unicode: f1b3
 cut:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.1.0
   label: Cut
@@ -3127,7 +3127,7 @@ d-and-d:
   unicode: f38d
 dashcube:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.3
   label: DashCube
@@ -3138,7 +3138,7 @@ dashcube:
   unicode: f210
 database:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Database
   search:
@@ -3148,7 +3148,7 @@ database:
   unicode: f1c0
 deaf:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Deaf
   search:
@@ -3158,7 +3158,7 @@ deaf:
   unicode: f2a4
 delicious:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Delicious Logo
   search:
@@ -3186,7 +3186,7 @@ deskpro:
   unicode: f38f
 desktop:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Desktop
   search:
@@ -3205,7 +3205,7 @@ desktop:
   unicode: f108
 deviantart:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: deviantART
   search:
@@ -3315,7 +3315,7 @@ dice-two:
   unicode: f528
 digg:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Digg Logo
   search:
@@ -3415,7 +3415,7 @@ docker:
   unicode: f395
 dollar-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
     - 5.0.9
   label: Dollar Sign
@@ -3478,7 +3478,7 @@ door-open:
   unicode: f52b
 dot-circle:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Dot Circle
   search:
@@ -3501,7 +3501,7 @@ dove:
   unicode: f4ba
 download:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Download
   search:
@@ -3551,7 +3551,7 @@ dribbble-square:
   unicode: f397
 dropbox:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
     - 5.0.1
   label: Dropbox
@@ -3594,7 +3594,7 @@ drum-steelpan:
   unicode: f56a
 drupal:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Drupal Logo
   search:
@@ -3645,7 +3645,7 @@ ebay:
   unicode: f4f4
 edge:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Edge Browser
   search:
@@ -3657,7 +3657,7 @@ edge:
   unicode: f282
 edit:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Edit
   search:
@@ -3673,7 +3673,7 @@ edit:
   unicode: f044
 eject:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: eject
   search:
@@ -3692,7 +3692,7 @@ elementor:
   unicode: f430
 ellipsis-h:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Horizontal Ellipsis
   search:
@@ -3713,7 +3713,7 @@ ellipsis-h:
   unicode: f141
 ellipsis-v:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Vertical Ellipsis
   search:
@@ -3744,7 +3744,7 @@ ember:
   unicode: f423
 empire:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Galactic Empire
   search:
@@ -3754,7 +3754,7 @@ empire:
   unicode: f1d1
 envelope:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Envelope
   search:
@@ -3772,7 +3772,7 @@ envelope:
   unicode: f0e0
 envelope-open:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Envelope Open
   search:
@@ -3790,7 +3790,7 @@ envelope-open:
   unicode: f2b6
 envelope-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Envelope Square
   search:
@@ -3807,7 +3807,7 @@ envelope-square:
   unicode: f199
 envira:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Envira Gallery
   search:
@@ -3827,7 +3827,7 @@ equals:
   unicode: f52c
 eraser:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: eraser
   search:
@@ -3858,7 +3858,7 @@ ethereum:
   unicode: f42e
 etsy:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Etsy
   search:
@@ -3868,7 +3868,7 @@ etsy:
   unicode: f2d7
 euro-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Euro Sign
   search:
@@ -3896,7 +3896,7 @@ exchange-alt:
   unicode: f362
 exclamation:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: exclamation
   search:
@@ -3915,7 +3915,7 @@ exclamation:
   unicode: f12a
 exclamation-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Exclamation Circle
   search:
@@ -3934,7 +3934,7 @@ exclamation-circle:
   unicode: f06a
 exclamation-triangle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Exclamation Triangle
   search:
@@ -3979,7 +3979,7 @@ expand-arrows-alt:
   unicode: f31e
 expeditedssl:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: ExpeditedSSL
   search:
@@ -4013,7 +4013,7 @@ external-link-square-alt:
   unicode: f360
 eye:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Eye
   search:
@@ -4031,7 +4031,7 @@ eye:
   unicode: f06e
 eye-dropper:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
     - 5.1.0
   label: Eye Dropper
@@ -4043,7 +4043,7 @@ eye-dropper:
   unicode: f1fb
 eye-slash:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Eye Slash
   search:
@@ -4062,7 +4062,7 @@ eye-slash:
   unicode: f070
 facebook:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Facebook
   search:
@@ -4093,7 +4093,7 @@ facebook-messenger:
   unicode: f39f
 facebook-square:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Facebook Square
   search:
@@ -4104,7 +4104,7 @@ facebook-square:
   unicode: f082
 fast-backward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: fast-backward
   search:
@@ -4119,7 +4119,7 @@ fast-backward:
   unicode: f049
 fast-forward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: fast-forward
   search:
@@ -4132,7 +4132,7 @@ fast-forward:
   unicode: f050
 fax:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Fax
   search:
@@ -4169,7 +4169,7 @@ feather-alt:
   unicode: f56b
 female:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Female
   search:
@@ -4184,7 +4184,7 @@ female:
   unicode: f182
 fighter-jet:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: fighter-jet
   search:
@@ -4204,7 +4204,7 @@ fighter-jet:
   unicode: f0fb
 file:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: File
   search:
@@ -4220,7 +4220,7 @@ file:
   unicode: f15b
 file-alt:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Alternate File
   search:
@@ -4237,7 +4237,7 @@ file-alt:
   unicode: f15c
 file-archive:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Archive File
   search:
@@ -4254,7 +4254,7 @@ file-archive:
   unicode: f1c6
 file-audio:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Audio File
   search:
@@ -4265,7 +4265,7 @@ file-audio:
   unicode: f1c7
 file-code:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Code File
   search:
@@ -4299,7 +4299,7 @@ file-download:
   unicode: f56d
 file-excel:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Excel File
   search:
@@ -4319,7 +4319,7 @@ file-export:
   unicode: f56e
 file-image:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Image File
   search:
@@ -4385,7 +4385,7 @@ file-medical-alt:
   unicode: f478
 file-pdf:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: PDF File
   search:
@@ -4396,7 +4396,7 @@ file-pdf:
   unicode: f1c1
 file-powerpoint:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Powerpoint File
   search:
@@ -4442,7 +4442,7 @@ file-upload:
   unicode: f574
 file-video:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Video File
   search:
@@ -4453,7 +4453,7 @@ file-video:
   unicode: f1c8
 file-word:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Word File
   search:
@@ -4492,7 +4492,7 @@ fill-drip:
   unicode: f576
 film:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Film
   search:
@@ -4503,7 +4503,7 @@ film:
   unicode: f008
 filter:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Filter
   search:
@@ -4532,7 +4532,7 @@ fingerprint:
   unicode: f577
 fire:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: fire
   search:
@@ -4545,7 +4545,7 @@ fire:
   unicode: f06d
 fire-extinguisher:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: fire-extinguisher
   search:
@@ -4555,7 +4555,7 @@ fire-extinguisher:
   unicode: f134
 firefox:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.0.1
   label: Firefox
@@ -4576,7 +4576,7 @@ first-aid:
   unicode: f479
 first-order:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: First Order
   search:
@@ -4613,7 +4613,7 @@ fish:
   unicode: f578
 flag:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: flag
   search:
@@ -4628,7 +4628,7 @@ flag:
   unicode: f024
 flag-checkered:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: flag-checkered
   search:
@@ -4642,7 +4642,7 @@ flag-checkered:
   unicode: f11e
 flask:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Flask
   search:
@@ -4656,7 +4656,7 @@ flask:
   unicode: f0c3
 flickr:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Flickr
   search:
@@ -4698,7 +4698,7 @@ fly:
   unicode: f417
 folder:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Folder
   search:
@@ -4709,7 +4709,7 @@ folder:
   unicode: f07b
 folder-open:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Folder Open
   search:
@@ -4720,7 +4720,7 @@ folder-open:
   unicode: f07c
 font:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: font
   search:
@@ -4731,7 +4731,7 @@ font:
   unicode: f031
 font-awesome:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Font Awesome
   search:
@@ -4775,7 +4775,7 @@ font-awesome-logo-full:
   unicode: f4e6
 fonticons:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Fonticons
   search:
@@ -4803,7 +4803,7 @@ football-ball:
   unicode: f44e
 fort-awesome:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
     - 5.0.3
   label: Fort Awesome
@@ -4825,7 +4825,7 @@ fort-awesome-alt:
   unicode: f3a3
 forumbee:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Forumbee
   search:
@@ -4835,7 +4835,7 @@ forumbee:
   unicode: f211
 forward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: forward
   search:
@@ -4847,7 +4847,7 @@ forward:
   unicode: f04e
 foursquare:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Foursquare
   search:
@@ -4857,7 +4857,7 @@ foursquare:
   unicode: f180
 free-code-camp:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Free Code Camp
   search:
@@ -4891,7 +4891,7 @@ frog:
   unicode: f52e
 frown:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.9
     - 5.1.0
@@ -4933,7 +4933,7 @@ fulcrum:
   unicode: f50b
 futbol:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
     - 5.0.5
   label: Futbol
@@ -4966,7 +4966,7 @@ galactic-senate:
   unicode: f50d
 gamepad:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Gamepad
   search:
@@ -4986,7 +4986,7 @@ gas-pump:
   unicode: f52f
 gavel:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Gavel
   search:
@@ -5011,7 +5011,7 @@ gem:
   unicode: f3a5
 genderless:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Genderless
   search:
@@ -5021,7 +5021,7 @@ genderless:
   unicode: f22d
 get-pocket:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Get Pocket
   search:
@@ -5031,7 +5031,7 @@ get-pocket:
   unicode: f265
 gg:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: GG Currency
   search:
@@ -5041,7 +5041,7 @@ gg:
   unicode: f260
 gg-circle:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: GG Currency Circle
   search:
@@ -5051,7 +5051,7 @@ gg-circle:
   unicode: f261
 gift:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: gift
@@ -5067,7 +5067,7 @@ gift:
   unicode: f06b
 git:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Git
   search:
@@ -5077,7 +5077,7 @@ git:
   unicode: f1d3
 git-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Git Square
   search:
@@ -5087,7 +5087,7 @@ git-square:
   unicode: f1d2
 github:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: GitHub
   search:
@@ -5098,7 +5098,7 @@ github:
   unicode: f09b
 github-alt:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Alternate GitHub
   search:
@@ -5109,7 +5109,7 @@ github-alt:
   unicode: f113
 github-square:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: GitHub Square
   search:
@@ -5129,7 +5129,7 @@ gitkraken:
   unicode: f3a6
 gitlab:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: GitLab
   search:
@@ -5149,7 +5149,7 @@ gitter:
   unicode: f426
 glass-martini:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.1.0
   label: Martini Glass
@@ -5190,7 +5190,7 @@ glasses:
   unicode: f530
 glide:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Glide
   search:
@@ -5200,7 +5200,7 @@ glide:
   unicode: f2a5
 glide-g:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Glide G
   search:
@@ -5210,7 +5210,7 @@ glide-g:
   unicode: f2a6
 globe:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.9
   label: Globe
@@ -5345,7 +5345,7 @@ goodreads-g:
   unicode: f3a9
 google:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Google Logo
   search:
@@ -5373,7 +5373,7 @@ google-play:
   unicode: f3ab
 google-plus:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Google Plus
   search:
@@ -5385,7 +5385,7 @@ google-plus:
   unicode: f2b3
 google-plus-g:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Google Plus G
   search:
@@ -5397,7 +5397,7 @@ google-plus-g:
   unicode: f0d5
 google-plus-square:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Google Plus Square
   search:
@@ -5408,7 +5408,7 @@ google-plus-square:
   unicode: f0d4
 google-wallet:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Google Wallet
   search:
@@ -5418,7 +5418,7 @@ google-wallet:
   unicode: f1ee
 graduation-cap:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Graduation Cap
   search:
@@ -5431,7 +5431,7 @@ graduation-cap:
   unicode: f19d
 gratipay:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Gratipay (Gittip)
   search:
@@ -5445,7 +5445,7 @@ gratipay:
   unicode: f184
 grav:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Grav
   search:
@@ -5693,7 +5693,7 @@ grip-vertical:
 gripfire:
   changes:
     - 5.0.0
-  label: 'Gripfire, Inc.'
+  label: "Gripfire, Inc."
   search:
     terms: []
   styles:
@@ -5719,7 +5719,7 @@ gulp:
   unicode: f3ae
 h-square:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: H Square
   search:
@@ -5731,7 +5731,7 @@ h-square:
   unicode: f0fd
 hacker-news:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Hacker News
   search:
@@ -5783,7 +5783,7 @@ hand-holding-usd:
   unicode: f4c0
 hand-lizard:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Lizard (Hand)
   search:
@@ -5794,7 +5794,7 @@ hand-lizard:
   unicode: f258
 hand-paper:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Paper (Hand)
   search:
@@ -5806,7 +5806,7 @@ hand-paper:
   unicode: f256
 hand-peace:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Peace (Hand)
   search:
@@ -5817,7 +5817,7 @@ hand-peace:
   unicode: f25b
 hand-point-down:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Hand Pointing Down
   search:
@@ -5831,7 +5831,7 @@ hand-point-down:
   unicode: f0a7
 hand-point-left:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Hand Pointing Left
   search:
@@ -5848,7 +5848,7 @@ hand-point-left:
   unicode: f0a5
 hand-point-right:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Hand Pointing Right
   search:
@@ -5865,7 +5865,7 @@ hand-point-right:
   unicode: f0a4
 hand-point-up:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Hand Pointing Up
   search:
@@ -5879,7 +5879,7 @@ hand-point-up:
   unicode: f0a6
 hand-pointer:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Pointer (Hand)
   search:
@@ -5891,7 +5891,7 @@ hand-pointer:
   unicode: f25a
 hand-rock:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Rock (Hand)
   search:
@@ -5902,7 +5902,7 @@ hand-rock:
   unicode: f255
 hand-scissors:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Scissors (Hand)
   search:
@@ -5913,7 +5913,7 @@ hand-scissors:
   unicode: f257
 hand-spock:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Spock (Hand)
   search:
@@ -5946,7 +5946,7 @@ hands-helping:
   unicode: f4c4
 handshake:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.9
   label: Handshake
@@ -5960,7 +5960,7 @@ handshake:
   unicode: f2b5
 hashtag:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Hashtag
   search:
@@ -5970,7 +5970,7 @@ hashtag:
   unicode: f292
 hdd:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: HDD
   search:
@@ -5987,7 +5987,7 @@ hdd:
   unicode: f0a0
 heading:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: heading
   search:
@@ -5999,7 +5999,7 @@ heading:
   unicode: f1dc
 headphones:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: headphones
   search:
@@ -6047,7 +6047,7 @@ headset:
   unicode: f590
 heart:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: Heart
@@ -6062,7 +6062,7 @@ heart:
   unicode: f004
 heartbeat:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.7
   label: Heartbeat
@@ -6122,7 +6122,7 @@ hire-a-helper:
   unicode: f3b0
 history:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: History
   search:
@@ -6141,7 +6141,7 @@ hockey-puck:
   unicode: f453
 home:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: home
   search:
@@ -6171,7 +6171,7 @@ hornbill:
   unicode: f592
 hospital:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: hospital
   search:
@@ -6235,7 +6235,7 @@ hotjar:
   unicode: f3b1
 hourglass:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Hourglass
   search:
@@ -6246,7 +6246,7 @@ hourglass:
   unicode: f254
 hourglass-end:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Hourglass End
   search:
@@ -6256,7 +6256,7 @@ hourglass-end:
   unicode: f253
 hourglass-half:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Hourglass Half
   search:
@@ -6266,7 +6266,7 @@ hourglass-half:
   unicode: f252
 hourglass-start:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Hourglass Start
   search:
@@ -6276,7 +6276,7 @@ hourglass-start:
   unicode: f251
 houzz:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.0.9
   label: Houzz
@@ -6287,7 +6287,7 @@ houzz:
   unicode: f27c
 html5:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: HTML 5 Logo
   search:
@@ -6306,7 +6306,7 @@ hubspot:
   unicode: f3b2
 i-cursor:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: I Beam Cursor
   search:
@@ -6316,7 +6316,7 @@ i-cursor:
   unicode: f246
 id-badge:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.3
   label: Identification Badge
@@ -6328,7 +6328,7 @@ id-badge:
   unicode: f2c1
 id-card:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.3
   label: Identification Card
@@ -6353,7 +6353,7 @@ id-card-alt:
   unicode: f47f
 image:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Image
   search:
@@ -6368,7 +6368,7 @@ image:
   unicode: f03e
 images:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Images
   search:
@@ -6382,7 +6382,7 @@ images:
   unicode: f302
 imdb:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: IMDB
   search:
@@ -6392,7 +6392,7 @@ imdb:
   unicode: f2d8
 inbox:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: inbox
   search:
@@ -6402,7 +6402,7 @@ inbox:
   unicode: f01c
 indent:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Indent
   search:
@@ -6412,7 +6412,7 @@ indent:
   unicode: f03c
 industry:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Industry
   search:
@@ -6433,7 +6433,7 @@ infinity:
   unicode: f534
 info:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Info
   search:
@@ -6447,7 +6447,7 @@ info:
   unicode: f129
 info-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Info Circle
   search:
@@ -6461,7 +6461,7 @@ info-circle:
   unicode: f05a
 instagram:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Instagram
   search:
@@ -6471,7 +6471,7 @@ instagram:
   unicode: f16d
 internet-explorer:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Internet-explorer
   search:
@@ -6483,7 +6483,7 @@ internet-explorer:
   unicode: f26b
 ioxhost:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: ioxhost
   search:
@@ -6493,7 +6493,7 @@ ioxhost:
   unicode: f208
 italic:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: italic
   search:
@@ -6576,7 +6576,7 @@ joint:
   unicode: f595
 joomla:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Joomla Logo
   search:
@@ -6605,7 +6605,7 @@ js-square:
   unicode: f3b9
 jsfiddle:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: jsFiddle
   search:
@@ -6615,7 +6615,7 @@ jsfiddle:
   unicode: f1cc
 key:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: key
   search:
@@ -6636,7 +6636,7 @@ keybase:
   unicode: f4f5
 keyboard:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Keyboard
   search:
@@ -6740,7 +6740,7 @@ korvue:
   unicode: f42f
 language:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Language
   search:
@@ -6756,7 +6756,7 @@ language:
   unicode: f1ab
 laptop:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Laptop
   search:
@@ -6787,7 +6787,7 @@ laravel:
   unicode: f3bd
 lastfm:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: last.fm
   search:
@@ -6797,7 +6797,7 @@ lastfm:
   unicode: f202
 lastfm-square:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
     - 5.0.11
   label: last.fm Square
@@ -6861,7 +6861,7 @@ laugh-wink:
   unicode: f59c
 leaf:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: leaf
@@ -6875,7 +6875,7 @@ leaf:
   unicode: f06c
 leanpub:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Leanpub
   search:
@@ -6885,7 +6885,7 @@ leanpub:
   unicode: f212
 lemon:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Lemon
   search:
@@ -6944,7 +6944,7 @@ level-up-alt:
   unicode: f3bf
 life-ring:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Life Ring
   search:
@@ -6956,7 +6956,7 @@ life-ring:
   unicode: f1cd
 lightbulb:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Lightbulb
   search:
@@ -6978,7 +6978,7 @@ line:
   unicode: f3c0
 link:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Link
   search:
@@ -6989,7 +6989,7 @@ link:
   unicode: f0c1
 linkedin:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: LinkedIn
   search:
@@ -7000,7 +7000,7 @@ linkedin:
   unicode: f08c
 linkedin-in:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: LinkedIn In
   search:
@@ -7011,7 +7011,7 @@ linkedin-in:
   unicode: f0e1
 linode:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Linode
   search:
@@ -7021,7 +7021,7 @@ linode:
   unicode: f2b8
 linux:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Linux
   search:
@@ -7032,7 +7032,7 @@ linux:
   unicode: f17c
 lira-sign:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Turkish Lira Sign
   search:
@@ -7045,7 +7045,7 @@ lira-sign:
   unicode: f195
 list:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: List
   search:
@@ -7062,7 +7062,7 @@ list:
   unicode: f03a
 list-alt:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Alternate List
   search:
@@ -7080,7 +7080,7 @@ list-alt:
   unicode: f022
 list-ol:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: list-ol
   search:
@@ -7097,7 +7097,7 @@ list-ol:
   unicode: f0cb
 list-ul:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: list-ul
   search:
@@ -7112,7 +7112,7 @@ list-ul:
   unicode: f0ca
 location-arrow:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: location-arrow
   search:
@@ -7129,7 +7129,7 @@ location-arrow:
   unicode: f124
 lock:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: lock
   search:
@@ -7142,7 +7142,7 @@ lock:
   unicode: f023
 lock-open:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.1
   label: Lock Open
@@ -7200,7 +7200,7 @@ long-arrow-alt-up:
   unicode: f30c
 low-vision:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Low Vision
   search:
@@ -7237,7 +7237,7 @@ magento:
   unicode: f3c4
 magic:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.1.0
   label: magic
@@ -7251,7 +7251,7 @@ magic:
   unicode: f0d0
 magnet:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: magnet
   search:
@@ -7270,7 +7270,7 @@ mailchimp:
   unicode: f59e
 male:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Male
   search:
@@ -7294,7 +7294,7 @@ mandalorian:
   unicode: f50f
 map:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.1.0
   label: Map
@@ -7359,7 +7359,7 @@ map-marked-alt:
   unicode: f5a0
 map-marker:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: map-marker
   search:
@@ -7400,7 +7400,7 @@ map-marker-alt:
   unicode: f3c5
 map-pin:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Map Pin
   search:
@@ -7421,7 +7421,7 @@ map-pin:
   unicode: f276
 map-signs:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Map Signs
   search:
@@ -7444,7 +7444,7 @@ marker:
   unicode: f5a1
 mars:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mars
   search:
@@ -7455,7 +7455,7 @@ mars:
   unicode: f222
 mars-double:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mars Double
   search:
@@ -7465,7 +7465,7 @@ mars-double:
   unicode: f227
 mars-stroke:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mars Stroke
   search:
@@ -7475,7 +7475,7 @@ mars-stroke:
   unicode: f229
 mars-stroke-h:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mars Stroke Horizontal
   search:
@@ -7485,7 +7485,7 @@ mars-stroke-h:
   unicode: f22b
 mars-stroke-v:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mars Stroke Vertical
   search:
@@ -7504,7 +7504,7 @@ mastodon:
   unicode: f4f6
 maxcdn:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: MaxCDN
   search:
@@ -7532,7 +7532,7 @@ medapps:
   unicode: f3c6
 medium:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Medium
   search:
@@ -7551,7 +7551,7 @@ medium-m:
   unicode: f3c7
 medkit:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: medkit
   search:
@@ -7575,7 +7575,7 @@ medrt:
   unicode: f3c8
 meetup:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Meetup
   search:
@@ -7594,7 +7594,7 @@ megaport:
   unicode: f5a3
 meh:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.9
     - 5.1.0
@@ -7650,7 +7650,7 @@ memory:
   unicode: f538
 mercury:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Mercury
   search:
@@ -7661,7 +7661,7 @@ mercury:
   unicode: f223
 microchip:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Microchip
   search:
@@ -7673,7 +7673,7 @@ microchip:
   unicode: f2db
 microphone:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.13
   label: microphone
@@ -7714,7 +7714,7 @@ microphone-alt-slash:
   unicode: f539
 microphone-slash:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.13
   label: Microphone Slash
@@ -7739,7 +7739,7 @@ microsoft:
   unicode: f3ca
 minus:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: minus
   search:
@@ -7756,7 +7756,7 @@ minus:
   unicode: f068
 minus-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Minus Circle
   search:
@@ -7770,7 +7770,7 @@ minus-circle:
   unicode: f056
 minus-square:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Minus Square
   search:
@@ -7798,7 +7798,7 @@ mix:
   unicode: f3cb
 mixcloud:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Mixcloud
   search:
@@ -7817,7 +7817,7 @@ mizuni:
   unicode: f3cc
 mobile:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Mobile Phone
   search:
@@ -7856,7 +7856,7 @@ mobile-alt:
   unicode: f3cd
 modx:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: MODX
   search:
@@ -7875,7 +7875,7 @@ monero:
   unicode: f3d0
 money-bill:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.13
   label: Money Bill
@@ -7963,7 +7963,7 @@ monument:
   unicode: f5a6
 moon:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Moon
   search:
@@ -7992,7 +7992,7 @@ mortar-pestle:
   unicode: f5a7
 motorcycle:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Motorcycle
   search:
@@ -8006,7 +8006,7 @@ motorcycle:
   unicode: f21c
 mouse-pointer:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
     - 5.0.3
   label: Mouse Pointer
@@ -8018,7 +8018,7 @@ mouse-pointer:
   unicode: f245
 music:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Music
   search:
@@ -8039,7 +8039,7 @@ napster:
   unicode: f3d2
 neuter:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Neuter
   search:
@@ -8049,7 +8049,7 @@ neuter:
   unicode: f22c
 newspaper:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Newspaper
   search:
@@ -8144,7 +8144,7 @@ nutritionix:
   unicode: f3d6
 object-group:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Object Group
   search:
@@ -8156,7 +8156,7 @@ object-group:
   unicode: f247
 object-ungroup:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Object Ungroup
   search:
@@ -8168,7 +8168,7 @@ object-ungroup:
   unicode: f248
 odnoklassniki:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Odnoklassniki
   search:
@@ -8178,7 +8178,7 @@ odnoklassniki:
   unicode: f263
 odnoklassniki-square:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Odnoklassniki Square
   search:
@@ -8197,7 +8197,7 @@ old-republic:
   unicode: f510
 opencart:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: OpenCart
   search:
@@ -8207,7 +8207,7 @@ opencart:
   unicode: f23d
 openid:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: OpenID
   search:
@@ -8217,7 +8217,7 @@ openid:
   unicode: f19b
 opera:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Opera
   search:
@@ -8227,7 +8227,7 @@ opera:
   unicode: f26a
 optin-monster:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Optin Monster
   search:
@@ -8246,7 +8246,7 @@ osi:
   unicode: f41a
 outdent:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Outdent
   search:
@@ -8265,7 +8265,7 @@ page4:
   unicode: f3d7
 pagelines:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Pagelines
   search:
@@ -8281,7 +8281,7 @@ pagelines:
   unicode: f18c
 paint-brush:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
     - 5.1.0
   label: Paint Brush
@@ -8334,7 +8334,7 @@ pallet:
   unicode: f482
 paper-plane:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Paper Plane
   search:
@@ -8345,7 +8345,7 @@ paper-plane:
   unicode: f1d8
 paperclip:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Paperclip
   search:
@@ -8369,7 +8369,7 @@ parachute-box:
   unicode: f4cd
 paragraph:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: paragraph
   search:
@@ -8400,7 +8400,7 @@ passport:
   unicode: f5ab
 paste:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Paste
   search:
@@ -8422,7 +8422,7 @@ patreon:
   unicode: f3d9
 pause:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: pause
   search:
@@ -8433,7 +8433,7 @@ pause:
   unicode: f04c
 pause-circle:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Pause Circle
   search:
@@ -8444,7 +8444,7 @@ pause-circle:
   unicode: f28b
 paw:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Paw
   search:
@@ -8455,7 +8455,7 @@ paw:
   unicode: f1b0
 paypal:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Paypal
   search:
@@ -8521,7 +8521,7 @@ pen-nib:
   unicode: f5ad
 pen-square:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Pen Square
   search:
@@ -8568,7 +8568,7 @@ people-carry:
   unicode: f4ce
 percent:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Percent
   search:
@@ -8624,7 +8624,7 @@ phoenix-squadron:
   unicode: f511
 phone:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Phone
   search:
@@ -8650,7 +8650,7 @@ phone-slash:
   unicode: f3dd
 phone-square:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Phone Square
   search:
@@ -8665,7 +8665,7 @@ phone-square:
   unicode: f098
 phone-volume:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
     - 5.0.3
   label: Phone Volume
@@ -8687,7 +8687,7 @@ php:
   unicode: f457
 pied-piper:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
     - 5.0.10
   label: Pied Piper Logo
@@ -8698,7 +8698,7 @@ pied-piper:
   unicode: f2ae
 pied-piper-alt:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Alternate Pied Piper Logo
   search:
@@ -8718,7 +8718,7 @@ pied-piper-hat:
   unicode: f4e5
 pied-piper-pp:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Pied Piper PP Logo (Old)
   search:
@@ -8750,7 +8750,7 @@ pills:
   unicode: f484
 pinterest:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Pinterest
   search:
@@ -8760,7 +8760,7 @@ pinterest:
   unicode: f0d2
 pinterest-p:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Pinterest P
   search:
@@ -8770,7 +8770,7 @@ pinterest-p:
   unicode: f231
 pinterest-square:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Pinterest Square
   search:
@@ -8780,7 +8780,7 @@ pinterest-square:
   unicode: f0d3
 plane:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.13
   label: plane
@@ -8836,7 +8836,7 @@ plane-departure:
   unicode: f5b0
 play:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: play
   search:
@@ -8850,7 +8850,7 @@ play:
   unicode: f04b
 play-circle:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Play Circle
   search:
@@ -8872,7 +8872,7 @@ playstation:
   unicode: f3df
 plug:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Plug
   search:
@@ -8885,7 +8885,7 @@ plug:
   unicode: f1e6
 plus:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.13
   label: plus
@@ -8900,7 +8900,7 @@ plus:
   unicode: f067
 plus-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Plus Circle
   search:
@@ -8914,7 +8914,7 @@ plus-circle:
   unicode: f055
 plus-square:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Plus Square
   search:
@@ -8929,7 +8929,7 @@ plus-square:
   unicode: f0fe
 podcast:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Podcast
   search:
@@ -8959,7 +8959,7 @@ portrait:
   unicode: f3e0
 pound-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Pound Sign
   search:
@@ -8971,12 +8971,12 @@ pound-sign:
   unicode: f154
 power-off:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Power Off
   search:
     terms:
-      - 'on'
+      - "on"
       - reboot
       - restart
   styles:
@@ -9023,7 +9023,7 @@ prescription-bottle-alt:
   unicode: f486
 print:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: print
   search:
@@ -9042,7 +9042,7 @@ procedures:
   unicode: f487
 product-hunt:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Product Hunt
   search:
@@ -9070,7 +9070,7 @@ pushed:
   unicode: f3e1
 puzzle-piece:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Puzzle Piece
   search:
@@ -9092,7 +9092,7 @@ python:
   unicode: f3e2
 qq:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: QQ
   search:
@@ -9102,7 +9102,7 @@ qq:
   unicode: f1d6
 qrcode:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: qrcode
   search:
@@ -9113,7 +9113,7 @@ qrcode:
   unicode: f029
 question:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Question
   search:
@@ -9127,7 +9127,7 @@ question:
   unicode: f128
 question-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Question Circle
   search:
@@ -9160,7 +9160,7 @@ quinscape:
   unicode: f459
 quora:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Quora
   search:
@@ -9170,7 +9170,7 @@ quora:
   unicode: f2c4
 quote-left:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
     - 5.0.9
   label: quote-left
@@ -9181,7 +9181,7 @@ quote-left:
   unicode: f10d
 quote-right:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
     - 5.0.9
   label: quote-right
@@ -9202,7 +9202,7 @@ r-project:
   unicode: f4f7
 random:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: random
   search:
@@ -9214,7 +9214,7 @@ random:
   unicode: f074
 ravelry:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Ravelry
   search:
@@ -9243,7 +9243,7 @@ readme:
   unicode: f4d5
 rebel:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Rebel Alliance
   search:
@@ -9265,7 +9265,7 @@ receipt:
   unicode: f543
 recycle:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Recycle
   search:
@@ -9284,7 +9284,7 @@ red-river:
   unicode: f3e3
 reddit:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: reddit Logo
   search:
@@ -9294,7 +9294,7 @@ reddit:
   unicode: f1a1
 reddit-alien:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: reddit Alien
   search:
@@ -9304,7 +9304,7 @@ reddit-alien:
   unicode: f281
 reddit-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: reddit Square
   search:
@@ -9314,7 +9314,7 @@ reddit-square:
   unicode: f1a2
 redo:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Redo
   search:
@@ -9338,7 +9338,7 @@ redo-alt:
   unicode: f2f9
 registered:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Registered Trademark
   search:
@@ -9358,7 +9358,7 @@ rendact:
   unicode: f3e4
 renren:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Renren
   search:
@@ -9368,7 +9368,7 @@ renren:
   unicode: f18b
 reply:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Reply
   search:
@@ -9378,7 +9378,7 @@ reply:
   unicode: f3e5
 reply-all:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: reply-all
   search:
@@ -9415,7 +9415,7 @@ resolving:
   unicode: f3e7
 retweet:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Retweet
   search:
@@ -9452,7 +9452,7 @@ ribbon:
   unicode: f4d6
 road:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: road
   search:
@@ -9472,7 +9472,7 @@ robot:
   unicode: f544
 rocket:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: rocket
   search:
@@ -9501,7 +9501,7 @@ rockrms:
   unicode: f3e9
 rss:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: rss
   search:
@@ -9512,7 +9512,7 @@ rss:
   unicode: f09e
 rss-square:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: RSS Square
   search:
@@ -9524,7 +9524,7 @@ rss-square:
   unicode: f143
 ruble-sign:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Ruble Sign
   search:
@@ -9572,7 +9572,7 @@ ruler-vertical:
   unicode: f548
 rupee-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Indian Rupee Sign
   search:
@@ -9612,7 +9612,7 @@ sad-tear:
   unicode: f5b4
 safari:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Safari
   search:
@@ -9632,7 +9632,7 @@ sass:
   unicode: f41e
 save:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Save
   search:
@@ -9678,7 +9678,7 @@ screwdriver:
   unicode: f54a
 scribd:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Scribd
   search:
@@ -9688,7 +9688,7 @@ scribd:
   unicode: f28a
 search:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Search
   search:
@@ -9703,7 +9703,7 @@ search:
   unicode: f002
 search-minus:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.13
   label: Search Minus
@@ -9719,7 +9719,7 @@ search-minus:
   unicode: f010
 search-plus:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Search Plus
   search:
@@ -9762,7 +9762,7 @@ sellcast:
   unicode: f2da
 sellsy:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Sellsy
   search:
@@ -9772,7 +9772,7 @@ sellsy:
   unicode: f213
 server:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Server
   search:
@@ -9792,7 +9792,7 @@ servicestack:
   unicode: f3ec
 share:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Share
   search:
@@ -9802,7 +9802,7 @@ share:
   unicode: f064
 share-alt:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Alternate Share
   search:
@@ -9812,7 +9812,7 @@ share-alt:
   unicode: f1e0
 share-alt-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Alternate Share Square
   search:
@@ -9822,7 +9822,7 @@ share-alt-square:
   unicode: f1e1
 share-square:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Share Square
   search:
@@ -9835,7 +9835,7 @@ share-square:
   unicode: f14d
 shekel-sign:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Shekel Sign
   search:
@@ -9857,7 +9857,7 @@ shield-alt:
   unicode: f3ed
 ship:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Ship
   search:
@@ -9878,7 +9878,7 @@ shipping-fast:
   unicode: f48b
 shirtsinbulk:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Shirts in Bulk
   search:
@@ -9900,7 +9900,7 @@ shoe-prints:
   unicode: f54b
 shopping-bag:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Shopping Bag
   search:
@@ -9910,7 +9910,7 @@ shopping-bag:
   unicode: f290
 shopping-basket:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Shopping Basket
   search:
@@ -9920,7 +9920,7 @@ shopping-basket:
   unicode: f291
 shopping-cart:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: shopping-cart
   search:
@@ -9943,7 +9943,7 @@ shopware:
   unicode: f5b5
 shower:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Shower
   search:
@@ -9994,7 +9994,7 @@ sign-in-alt:
   unicode: f2f6
 sign-language:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Sign Language
   search:
@@ -10019,7 +10019,7 @@ sign-out-alt:
   unicode: f2f5
 signal:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: signal
   search:
@@ -10046,7 +10046,7 @@ signature:
   unicode: f5b7
 simplybuilt:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: SimplyBuilt
   search:
@@ -10065,7 +10065,7 @@ sistrix:
   unicode: f3ee
 sitemap:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.13
   label: Sitemap
@@ -10102,7 +10102,7 @@ skull:
   unicode: f54c
 skyatlas:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.3
   label: skyatlas
@@ -10113,7 +10113,7 @@ skyatlas:
   unicode: f216
 skype:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Skype
   search:
@@ -10123,7 +10123,7 @@ skype:
   unicode: f17e
 slack:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Slack Logo
   search:
@@ -10148,7 +10148,7 @@ slack-hash:
   unicode: f3ef
 sliders-h:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.0.11
   label: Horizontal Sliders
@@ -10161,7 +10161,7 @@ sliders-h:
   unicode: f1de
 slideshare:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Slideshare
   search:
@@ -10171,7 +10171,7 @@ slideshare:
   unicode: f1e7
 smile:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
     - 5.0.9
     - 5.1.0
@@ -10239,7 +10239,7 @@ smoking-ban:
   unicode: f54d
 snapchat:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Snapchat
   search:
@@ -10249,7 +10249,7 @@ snapchat:
   unicode: f2ab
 snapchat-ghost:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Snapchat Ghost
   search:
@@ -10259,7 +10259,7 @@ snapchat-ghost:
   unicode: f2ac
 snapchat-square:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Snapchat Square
   search:
@@ -10269,7 +10269,7 @@ snapchat-square:
   unicode: f2ad
 snowflake:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Snowflake
   search:
@@ -10294,7 +10294,7 @@ solar-panel:
   unicode: f5ba
 sort:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Sort
   search:
@@ -10305,7 +10305,7 @@ sort:
   unicode: f0dc
 sort-alpha-down:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Alpha Down
   search:
@@ -10316,7 +10316,7 @@ sort-alpha-down:
   unicode: f15d
 sort-alpha-up:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Alpha Up
   search:
@@ -10327,7 +10327,7 @@ sort-alpha-up:
   unicode: f15e
 sort-amount-down:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Amount Down
   search:
@@ -10338,7 +10338,7 @@ sort-amount-down:
   unicode: f160
 sort-amount-up:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Amount Up
   search:
@@ -10349,7 +10349,7 @@ sort-amount-up:
   unicode: f161
 sort-down:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Sort Down (Descending)
   search:
@@ -10362,7 +10362,7 @@ sort-down:
   unicode: f0dd
 sort-numeric-down:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Numeric Down
   search:
@@ -10374,7 +10374,7 @@ sort-numeric-down:
   unicode: f162
 sort-numeric-up:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sort Numeric Up
   search:
@@ -10386,7 +10386,7 @@ sort-numeric-up:
   unicode: f163
 sort-up:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Sort Up (Ascending)
   search:
@@ -10399,7 +10399,7 @@ sort-up:
   unicode: f0de
 soundcloud:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: SoundCloud
   search:
@@ -10421,7 +10421,7 @@ spa:
   unicode: f5bb
 space-shuttle:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Space Shuttle
   search:
@@ -10445,7 +10445,7 @@ speakap:
   unicode: f3f3
 spinner:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: Spinner
   search:
@@ -10466,7 +10466,7 @@ splotch:
   unicode: f5bc
 spotify:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Spotify
   search:
@@ -10485,7 +10485,7 @@ spray-can:
   unicode: f5bd
 square:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Square
   search:
@@ -10516,7 +10516,7 @@ squarespace:
   unicode: f5be
 stack-exchange:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
     - 5.0.3
   label: Stack Exchange
@@ -10527,7 +10527,7 @@ stack-exchange:
   unicode: f18d
 stack-overflow:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Stack Overflow
   search:
@@ -10546,7 +10546,7 @@ stamp:
   unicode: f5bf
 star:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Star
   search:
@@ -10564,7 +10564,7 @@ star:
   unicode: f005
 star-half:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: star-half
   search:
@@ -10605,7 +10605,7 @@ staylinked:
   unicode: f3f5
 steam:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Steam
   search:
@@ -10615,7 +10615,7 @@ steam:
   unicode: f1b6
 steam-square:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Steam Square
   search:
@@ -10634,7 +10634,7 @@ steam-symbol:
   unicode: f3f6
 step-backward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: step-backward
   search:
@@ -10649,7 +10649,7 @@ step-backward:
   unicode: f048
 step-forward:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: step-forward
   search:
@@ -10662,7 +10662,7 @@ step-forward:
   unicode: f051
 stethoscope:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
     - 5.0.7
   label: Stethoscope
@@ -10682,7 +10682,7 @@ sticker-mule:
   unicode: f3f7
 sticky-note:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Sticky Note
   search:
@@ -10693,7 +10693,7 @@ sticky-note:
   unicode: f249
 stop:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: stop
   search:
@@ -10706,7 +10706,7 @@ stop:
   unicode: f04d
 stop-circle:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: Stop Circle
   search:
@@ -10764,7 +10764,7 @@ stream:
   unicode: f550
 street-view:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Street View
   search:
@@ -10775,7 +10775,7 @@ street-view:
   unicode: f21d
 strikethrough:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Strikethrough
   search:
@@ -10826,7 +10826,7 @@ studiovinari:
   unicode: f3f8
 stumbleupon:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: StumbleUpon Logo
   search:
@@ -10836,7 +10836,7 @@ stumbleupon:
   unicode: f1a4
 stumbleupon-circle:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: StumbleUpon Circle
   search:
@@ -10846,7 +10846,7 @@ stumbleupon-circle:
   unicode: f1a3
 subscript:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: subscript
   search:
@@ -10856,7 +10856,7 @@ subscript:
   unicode: f12c
 subway:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Subway
   search:
@@ -10871,7 +10871,7 @@ subway:
   unicode: f239
 suitcase:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
     - 5.0.9
   label: Suitcase
@@ -10897,7 +10897,7 @@ suitcase-rolling:
   unicode: f5c1
 sun:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Sun
   search:
@@ -10913,7 +10913,7 @@ sun:
   unicode: f185
 superpowers:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Superpowers
   search:
@@ -10923,7 +10923,7 @@ superpowers:
   unicode: f2dd
 superscript:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: superscript
   search:
@@ -10991,7 +10991,7 @@ swimming-pool:
   unicode: f5c5
 sync:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Sync
   search:
@@ -11029,7 +11029,7 @@ syringe:
   unicode: f48e
 table:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: table
   search:
@@ -11051,7 +11051,7 @@ table-tennis:
   unicode: f45d
 tablet:
   changes:
-    - '3'
+    - "3"
     - 5.0.0
   label: tablet
   search:
@@ -11102,7 +11102,7 @@ tachometer-alt:
   unicode: f3fd
 tag:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: tag
   search:
@@ -11113,7 +11113,7 @@ tag:
   unicode: f02b
 tags:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: tags
   search:
@@ -11133,7 +11133,7 @@ tape:
   unicode: f4db
 tasks:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Tasks
   search:
@@ -11148,7 +11148,7 @@ tasks:
   unicode: f0ae
 taxi:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.1.0
   label: Taxi
@@ -11178,7 +11178,7 @@ teamspeak:
   unicode: f4f9
 telegram:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Telegram
   search:
@@ -11197,7 +11197,7 @@ telegram-plane:
   unicode: f3fe
 tencent-weibo:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Tencent Weibo
   search:
@@ -11207,7 +11207,7 @@ tencent-weibo:
   unicode: f1d5
 terminal:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Terminal
   search:
@@ -11221,7 +11221,7 @@ terminal:
   unicode: f120
 text-height:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: text-height
   search:
@@ -11231,7 +11231,7 @@ text-height:
   unicode: f034
 text-width:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: text-width
   search:
@@ -11241,7 +11241,7 @@ text-width:
   unicode: f035
 th:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: th
   search:
@@ -11255,7 +11255,7 @@ th:
   unicode: f00a
 th-large:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: th-large
   search:
@@ -11269,7 +11269,7 @@ th-large:
   unicode: f009
 th-list:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: th-list
   search:
@@ -11295,7 +11295,7 @@ themeco:
   unicode: f5c6
 themeisle:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: ThemeIsle
   search:
@@ -11316,7 +11316,7 @@ thermometer:
   unicode: f491
 thermometer-empty:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Thermometer Empty
   search:
@@ -11327,7 +11327,7 @@ thermometer-empty:
   unicode: f2cb
 thermometer-full:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Thermometer Full
   search:
@@ -11338,7 +11338,7 @@ thermometer-full:
   unicode: f2c7
 thermometer-half:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Thermometer 1/2 Full
   search:
@@ -11349,7 +11349,7 @@ thermometer-half:
   unicode: f2c9
 thermometer-quarter:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Thermometer 1/4 Full
   search:
@@ -11360,7 +11360,7 @@ thermometer-quarter:
   unicode: f2ca
 thermometer-three-quarters:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Thermometer 3/4 Full
   search:
@@ -11371,7 +11371,7 @@ thermometer-three-quarters:
   unicode: f2c8
 thumbs-down:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: thumbs-down
   search:
@@ -11387,7 +11387,7 @@ thumbs-down:
   unicode: f165
 thumbs-up:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: thumbs-up
   search:
@@ -11401,7 +11401,7 @@ thumbs-up:
       - okay
       - success
       - thumbs-o-up
-      - 'yes'
+      - "yes"
       - you got it dude
   styles:
     - solid
@@ -11409,7 +11409,7 @@ thumbs-up:
   unicode: f164
 thumbtack:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Thumbtack
   search:
@@ -11434,7 +11434,7 @@ ticket-alt:
   unicode: f3ff
 times:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.13
   label: Times
@@ -11456,7 +11456,7 @@ times:
   unicode: f00d
 times-circle:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Times Circle
   search:
@@ -11477,7 +11477,7 @@ times-circle:
   unicode: f057
 tint:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.1.0
   label: tint
@@ -11514,7 +11514,7 @@ tired:
   unicode: f5c8
 toggle-off:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Toggle Off
   search:
@@ -11525,7 +11525,7 @@ toggle-off:
   unicode: f204
 toggle-on:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Toggle On
   search:
@@ -11574,7 +11574,7 @@ trade-federation:
   unicode: f513
 trademark:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Trademark
   search:
@@ -11584,7 +11584,7 @@ trademark:
   unicode: f25c
 train:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Train
   search:
@@ -11597,7 +11597,7 @@ train:
   unicode: f238
 transgender:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Transgender
   search:
@@ -11608,7 +11608,7 @@ transgender:
   unicode: f224
 transgender-alt:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Alternate Transgender
   search:
@@ -11618,7 +11618,7 @@ transgender-alt:
   unicode: f225
 trash:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Trash
   search:
@@ -11648,7 +11648,7 @@ trash-alt:
   unicode: f2ed
 tree:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Tree
   search:
@@ -11658,7 +11658,7 @@ tree:
   unicode: f1bb
 trello:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Trello
   search:
@@ -11668,7 +11668,7 @@ trello:
   unicode: f181
 tripadvisor:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: TripAdvisor
   search:
@@ -11678,7 +11678,7 @@ tripadvisor:
   unicode: f262
 trophy:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: trophy
   search:
@@ -11693,7 +11693,7 @@ trophy:
   unicode: f091
 truck:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.7
   label: truck
@@ -11735,7 +11735,7 @@ tshirt:
   unicode: f553
 tty:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: TTY
   search:
@@ -11745,7 +11745,7 @@ tty:
   unicode: f1e4
 tumblr:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Tumblr
   search:
@@ -11755,7 +11755,7 @@ tumblr:
   unicode: f173
 tumblr-square:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Tumblr Square
   search:
@@ -11765,7 +11765,7 @@ tumblr-square:
   unicode: f174
 tv:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Television
   search:
@@ -11779,7 +11779,7 @@ tv:
   unicode: f26c
 twitch:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Twitch
   search:
@@ -11789,7 +11789,7 @@ twitch:
   unicode: f1e8
 twitter:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Twitter
   search:
@@ -11801,7 +11801,7 @@ twitter:
   unicode: f099
 twitter-square:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Twitter Square
   search:
@@ -11840,7 +11840,7 @@ uikit:
   unicode: f403
 umbrella:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Umbrella
   search:
@@ -11864,7 +11864,7 @@ umbrella-beach:
   unicode: f5ca
 underline:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Underline
   search:
@@ -11874,7 +11874,7 @@ underline:
   unicode: f0cd
 undo:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: Undo
   search:
@@ -11915,7 +11915,7 @@ uniregistry:
   unicode: f404
 universal-access:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Universal Access
   search:
@@ -11925,7 +11925,7 @@ universal-access:
   unicode: f29a
 university:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.0.3
   label: University
@@ -11938,7 +11938,7 @@ university:
   unicode: f19c
 unlink:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: unlink
   search:
@@ -11951,7 +11951,7 @@ unlink:
   unicode: f127
 unlock:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
   label: unlock
   search:
@@ -11965,7 +11965,7 @@ unlock:
   unicode: f09c
 unlock-alt:
   changes:
-    - '3.1'
+    - "3.1"
     - 5.0.0
   label: Alternate Unlock
   search:
@@ -11988,7 +11988,7 @@ untappd:
   unicode: f405
 upload:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: Upload
   search:
@@ -12000,7 +12000,7 @@ upload:
   unicode: f093
 usb:
   changes:
-    - '4.5'
+    - "4.5"
     - 5.0.0
   label: USB
   search:
@@ -12010,7 +12010,7 @@ usb:
   unicode: f287
 user:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12078,7 +12078,7 @@ user-check:
   unicode: f4fc
 user-circle:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12157,7 +12157,7 @@ user-lock:
   unicode: f502
 user-md:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.3
     - 5.0.7
@@ -12198,7 +12198,7 @@ user-ninja:
   unicode: f504
 user-plus:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12212,7 +12212,7 @@ user-plus:
   unicode: f234
 user-secret:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12271,7 +12271,7 @@ user-tie:
   unicode: f508
 user-times:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12283,7 +12283,7 @@ user-times:
   unicode: f235
 users:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.3
     - 5.0.11
@@ -12363,7 +12363,7 @@ vector-square:
   unicode: f5cb
 venus:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Venus
   search:
@@ -12374,7 +12374,7 @@ venus:
   unicode: f221
 venus-double:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Venus Double
   search:
@@ -12384,7 +12384,7 @@ venus-double:
   unicode: f226
 venus-mars:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Venus Mars
   search:
@@ -12394,7 +12394,7 @@ venus-mars:
   unicode: f228
 viacoin:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: Viacoin
   search:
@@ -12404,7 +12404,7 @@ viacoin:
   unicode: f237
 viadeo:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Viadeo
   search:
@@ -12414,7 +12414,7 @@ viadeo:
   unicode: f2a9
 viadeo-square:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: Viadeo Square
   search:
@@ -12455,7 +12455,7 @@ viber:
   unicode: f409
 video:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
     - 5.0.9
   label: Video
@@ -12489,7 +12489,7 @@ vimeo:
   unicode: f40a
 vimeo-square:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Vimeo Square
   search:
@@ -12499,7 +12499,7 @@ vimeo-square:
   unicode: f194
 vimeo-v:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Vimeo
   search:
@@ -12510,7 +12510,7 @@ vimeo-v:
   unicode: f27d
 vine:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: Vine
   search:
@@ -12520,7 +12520,7 @@ vine:
   unicode: f1ca
 vk:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: VK
   search:
@@ -12548,7 +12548,7 @@ volleyball-ball:
   unicode: f45f
 volume-down:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: volume-down
   search:
@@ -12564,7 +12564,7 @@ volume-down:
   unicode: f027
 volume-off:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: volume-off
   search:
@@ -12578,7 +12578,7 @@ volume-off:
   unicode: f026
 volume-up:
   changes:
-    - '1'
+    - "1"
     - 5.0.0
   label: volume-up
   search:
@@ -12639,7 +12639,7 @@ weebly:
   unicode: f5cc
 weibo:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Weibo
   search:
@@ -12673,7 +12673,7 @@ weight-hanging:
   unicode: f5cd
 weixin:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.0.3
   label: Weixin (WeChat)
@@ -12684,7 +12684,7 @@ weixin:
   unicode: f1d7
 whatsapp:
   changes:
-    - '4.3'
+    - "4.3"
     - 5.0.0
   label: What's App
   search:
@@ -12703,7 +12703,7 @@ whatsapp-square:
   unicode: f40c
 wheelchair:
   changes:
-    - '4'
+    - "4"
     - 5.0.0
   label: Wheelchair
   search:
@@ -12724,7 +12724,7 @@ whmcs:
   unicode: f40d
 wifi:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: WiFi
   search:
@@ -12734,7 +12734,7 @@ wifi:
   unicode: f1eb
 wikipedia-w:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Wikipedia W
   search:
@@ -12744,7 +12744,7 @@ wikipedia-w:
   unicode: f266
 window-close:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Window Close
   search:
@@ -12755,7 +12755,7 @@ window-close:
   unicode: f410
 window-maximize:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Window Maximize
   search:
@@ -12766,7 +12766,7 @@ window-maximize:
   unicode: f2d0
 window-minimize:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Window Minimize
   search:
@@ -12777,7 +12777,7 @@ window-minimize:
   unicode: f2d1
 window-restore:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: Window Restore
   search:
@@ -12788,7 +12788,7 @@ window-restore:
   unicode: f2d2
 windows:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Windows
   search:
@@ -12836,7 +12836,7 @@ wolf-pack-battalion:
   unicode: f514
 won-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Won Sign
   search:
@@ -12848,7 +12848,7 @@ won-sign:
   unicode: f159
 wordpress:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
   label: WordPress Logo
   search:
@@ -12867,7 +12867,7 @@ wordpress-simple:
   unicode: f411
 wpbeginner:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: WPBeginner
   search:
@@ -12877,7 +12877,7 @@ wpbeginner:
   unicode: f297
 wpexplorer:
   changes:
-    - '4.7'
+    - "4.7"
     - 5.0.0
   label: WPExplorer
   search:
@@ -12887,7 +12887,7 @@ wpexplorer:
   unicode: f2de
 wpforms:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
   label: WPForms
   search:
@@ -12897,7 +12897,7 @@ wpforms:
   unicode: f298
 wrench:
   changes:
-    - '2'
+    - "2"
     - 5.0.0
     - 5.0.13
   label: Wrench
@@ -12933,7 +12933,7 @@ xbox:
   unicode: f412
 xing:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Xing
   search:
@@ -12943,7 +12943,7 @@ xing:
   unicode: f168
 xing-square:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Xing Square
   search:
@@ -12953,7 +12953,7 @@ xing-square:
   unicode: f169
 y-combinator:
   changes:
-    - '4.4'
+    - "4.4"
     - 5.0.0
   label: Y Combinator
   search:
@@ -12963,7 +12963,7 @@ y-combinator:
   unicode: f23b
 yahoo:
   changes:
-    - '4.1'
+    - "4.1"
     - 5.0.0
     - 5.0.3
   label: Yahoo Logo
@@ -12992,7 +12992,7 @@ yandex-international:
   unicode: f414
 yelp:
   changes:
-    - '4.2'
+    - "4.2"
     - 5.0.0
   label: Yelp
   search:
@@ -13002,7 +13002,7 @@ yelp:
   unicode: f1e9
 yen-sign:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: Yen Sign
   search:
@@ -13014,7 +13014,7 @@ yen-sign:
   unicode: f157
 yoast:
   changes:
-    - '4.6'
+    - "4.6"
     - 5.0.0
     - 5.0.3
   label: Yoast
@@ -13025,7 +13025,7 @@ yoast:
   unicode: f2b1
 youtube:
   changes:
-    - '3.2'
+    - "3.2"
     - 5.0.0
   label: YouTube
   search:

@@ -6,12 +6,12 @@ tags:
   - MySQL
   - FAIL
 ---
+
 # How to Band-Aide a worthless database.
 
 So I am working on a project with an absolutely terrible database. The tables do not have the usual tableA.tableB_id with a tableX used for associations. The associations on this spectacular database are setup like so.
 
 **tableA**
-
 
 ```SQL
 id | a_sad_attempt_at_association (ids of rows in tableB) | someDataField
@@ -21,7 +21,6 @@ id | a_sad_attempt_at_association (ids of rows in tableB) | someDataField
 As you can see where we would normally have an id field pointing to a table for associations, we have a string with with a "||" delimiter. Now normally any sane person would come along and create a new schema, but somehow this one managed to land in production(that is another story). So, how does one work with a database like this from a programming perspective without actually fixing it? This solution I am about to offer is very scary, ugly, and not very scalable. I got around this horse shit by creating a couple of views to act as the associative table between a many-to-many relationship. The following queries could probably be cleaned up a bit and simplified, but here it is (and yes, it is about as nasty as the underlying problem, as well as a performance hit on larger databases).
 
 We need to be able to determine the association between tableA (as shown above) to tableB, by using a new View, which we will refer to as tableX. Before we can create tableX I had to create another view called tableXsub (a good DBA should be able to avoid this - as well as finding himself with this schema). tableXsub simply looks like so:
-
 
 ```SQL
 CREATE VIEW tableXsub AS

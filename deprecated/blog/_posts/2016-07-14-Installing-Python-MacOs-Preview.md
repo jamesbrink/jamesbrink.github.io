@@ -1,19 +1,20 @@
 ---
 layout: post
-title: Installing Python via Homebrew on MacOS Sierra 10.12 (Developer Preview) 
+title: Installing Python via Homebrew on MacOS Sierra 10.12 (Developer Preview)
 date: 2016-07-14
 author: "James Brink"
 tags:
   - MacOs
   - Python
 ---
-# Installing Python via Homebrew on MacOS Sierra 10.12 (Developer Preview) 
+
+# Installing Python via Homebrew on MacOS Sierra 10.12 (Developer Preview)
 
 For anyone installing Python 2.7 via Homebrew on the new MacOS Sierra Developer preview, you may run into compilation failure during the build of component (PythonLauncher). I quickly ran through the open issues and pull requests and did not see any fixes on Github. If you are like me and do not require this component the quick workaround is as follows.
 
 **brew edit python**
 
-Simply comment out the *with-tcl-tk* option.
+Simply comment out the _with-tcl-tk_ option.
 
 ```
 # Please don’t add a wide/ucs4 option as it won’t be accepted.
@@ -25,6 +26,5 @@ option “with-poll”, “Enable select.poll, which is not fully implemented on
 ```
 
 ![screenshot](/assets/blog/python-macos.png)
-
 
 If anyone has a better fix for this at the moment please let me know, hopefully it will be updated soon. When time permits I will look for a better solution.

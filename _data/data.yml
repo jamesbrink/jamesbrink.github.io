@@ -1,250 +1,186 @@
 #
 # Be aware that even a small syntax error here can lead to failures in output.
 #
-
 sidebar:
-    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: True # set to False if you want education in main section instead of in sidebar
-
-    # Profile information
-    name: James Brink
-    tagline: DevOps Engineer
-    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
-
-    # Sidebar links
-    email: brink.james@gmail.com
-    phone: 602-341-3058
-    website: /blog/ #do not add http://
-    website_name: Blog
-    linkedin: brinkjames
-    github: jamesbrink
-    gitlab:
-    bitbucket:
-    twitter: '@brinkoo7'
-    # stack-overflow: 646856/brinkoo7
-    codewars:
-    goodreads: # Number-Username, e.g. 123456-alandoe
-
-    languages:
-      - idiom: English
-        level: Native
-
-    interests:
-      - item: Photography
-        link: http://instagram.com/brink.james/
-
+  about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+  education: True # set to False if you want education in main section instead of in sidebar
+  # Profile information
+  name: James Brink
+  tagline: DevOps Engineer
+  avatar: profile.png #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+  # Sidebar links
+  email: brink.james@gmail.com
+  phone: 602-341-3058
+  website: /blog/ #do not add http://
+  website_name: Blog
+  linkedin: brinkjames
+  github: jamesbrink
+  gitlab:
+  bitbucket:
+  twitter: "@brinkoo7"
+  # stack-overflow: 646856/brinkoo7
+  codewars:
+  goodreads: # Number-Username, e.g. 123456-alandoe
+  languages:
+    - idiom: English
+      level: Native
+  interests:
+    - item: Photography
+      link: http://instagram.com/brink.james/
 career-profile:
-    title: Career Profile
-    summary: |
-      My passion for learning is second only to that
-      of solving complex problems with elegant solutions.
-
+  title: Career Profile
+  summary: |
+    My passion for learning is second only to that
+    of solving complex problems with elegant solutions.
 education:
-    - degree: Certification, CCNA
-      university: Cisco
-      time: 2007
-      details: |
-        
-
-    - degree: Diploma, Network Switching Systems
-      university: General Dynamics
-      time: 2000 - 2001
-      details: |
-
-    - degree: Diploma, Satellite Communications
-      university: Department of the Army
-      time: 2000 - 2001
-      details: |
-       
-
+  - degree: Certification, CCNA
+    university: Cisco
+    time: 2007
+    details: ""
+  - degree: Diploma, Network Switching Systems
+    university: General Dynamics
+    time: 2000 - 2001
+    details: ""
+  - degree: Diploma, Satellite Communications
+    university: Department of the Army
+    time: 2000 - 2001
+    details: ""
 experiences:
-    - role: Director Of Infrastructure
-      time: December 2017 - Present
-      company: Kadima Ventures, Phoenix AZ
-      details: |
-        Building awesome stuff, with an amazing team. Initially hired into a SysOps/DevOps role which also included R&D work,
-        and building proof of concepts for various products. Was quickly promoted to Director of Infrastructure 
-        where I became responsible for for managing the the operations team, and all production infrastructure.
+  - role: Director Of Infrastructure
+    time: December 2017 - Present
+    company: Kadima Ventures, Phoenix AZ
+    details: "Building awesome stuff, with an amazing team. Initially hired into a SysOps/DevOps role which also included R&D work,\nand building proof of concepts for various products. Was quickly promoted to Director of Infrastructure \nwhere I became responsible for for managing the the operations team, and all production infrastructure.\n\n  - Extensive work with AWS, Kubernetes, Docker, Terraform and CI/CD pipelines.\n  - Created automated pipelines for an existing production application drastically reducing deployment times.\n  - Migrated existing infrastructure to version controlled solutions using tools such as Packer and Terraform.\n  - Created a highly available & resilient containerized VPN solution to address some very complex network and security restrictions.\n  - Deployed Kubernetes clusters and migrated many services away from AWS specific deployments/products which greatly increased deployment times, resiliency while reducing cost and vendor lock.\n  - Member of multiple architecture teams which made me accountable for both high level decisions, as well as lower level implementation details.  \n  - Mentored fellow DevOps & Software Engineers regularly, on many topics such as Docker, Kubernetes, Code Quality, refactoring techniques and unit testing.\n"
+  - role: Site Reliability Engineer
+    time: September 2015 - November 2016
+    company: GoDaddy, Gilbert AZ
+    details: |
+      Hired as a Systems Administrator for shared hosting operations, and later
+      progressed into an Engineering role on the Hosting Automation Team.
+      Managed a mixed Windows/Linux production environment. Daily tasks
+      included mitigating network attacks, monitoring infrastructure, resolving system
+      configuration, performance, and capacity issues. I later transitioned into an
+      engineering role where our team automated most of the daily operational
+      tasks, reducing the workload of the operations team as well as decreasing
+      downtime across the environment.
 
-          - Extensive work with AWS, Kubernetes, Docker, Terraform and CI/CD pipelines.
-          - Created automated pipelines for an existing production application drastically reducing deployment times.
-          - Migrated existing infrastructure to version controlled solutions using tools such as Packer and Terraform.
-          - Created a highly available & resilient containerized VPN solution to address some very complex network and security restrictions.
-          - Deployed Kubernetes clusters and migrated many services away from AWS specific deployments/products which greatly increased deployment times, resiliency while reducing cost and vendor lock.
-          - Member of multiple architecture teams which made me accountable for both high level decisions, as well as lower level implementation details.  
-          - Mentored fellow DevOps & Software Engineers regularly, on many topics such as Docker, Kubernetes, Code Quality, refactoring techniques and unit testing. 
-        
+        - Assisted with daily operations with primary focus on ensuring customers services were within the acceptable range for response times.
+        - Worked extensively with python and fabric to run remedial and deployment tasks across the environment.
+        - Became very familiar and effective at identifying and mitigating a wide range of network attacks.
+        - Created tools to assist and dramatically improve productivity of the daily operational tasks, further reducing customer downtime.
+        - Worked with Sensu to create health checks with remediation.
+  - role: Lead Engineer
+    time: May 2015 - September 2015
+    company: Taste.com, San Francisco CA
+    details: ""
+  - role: Senior Operations Engineer
+    time: July 2015 - August 2015
+    company: Yahoo, Sunnyvale CA
+    details: "Contracted to work on the Small Business Services Team for an effort to \nmigrate all Yahoo Small Business Services from Yahoo to Aabaco.\n\n  - Assisted with day to day operations of production, development and QA environments.\n  - Worked with team members to plan for migration of services away from Yahoo.\n  - Assisted in the build out a new QA environment.\n"
+  - role: Systems Administrator II
+    time: January 2008 - May 2015
+    company: Edward Jones, Tempe AZ
+    details: |
+      Brought on board to take over management and monitoring for a range of
+      enterprise applications. Responsibilities included application deployment,
+      incident triage, and troubleshooting Linux and Windows environments.
+      Promoted to System Administrator II after demonstrating an aptitude for
+      tackling complicated infrastructure problems from availability to disaster
+      recovery.
 
-    - role: Site Reliability Engineer
-      time: September 2015 - November 2016
-      company: GoDaddy, Gilbert AZ
-      details: |
-        Hired as a Systems Administrator for shared hosting operations, and later
-        progressed into an Engineering role on the Hosting Automation Team.
-        Managed a mixed Windows/Linux production environment. Daily tasks
-        included mitigating network attacks, monitoring infrastructure, resolving system
-        configuration, performance, and capacity issues. I later transitioned into an
-        engineering role where our team automated most of the daily operational
-        tasks, reducing the workload of the operations team as well as decreasing
-        downtime across the environment.
+        - Appointed as department Datacenter Continuity Coordinator.
+        - Developed multiple utilities for both desktop and web to assist in daily activities and incident troubleshooting.
+        - Created tools to allow associates to quickly and effortlessly identify system and application anomalies and escalate them to the appropriate teams.
+        - Created tools to automate the collection of data and creation of reports, eliminating the need for team members to perform these actions manually.
+  - role: Software Engineer
+    time: September 2011 - October 2012
+    company: Media Solutions Corporation, Tempe AZ
+    details: |
+      Hired to lead efforts to bring a project that was 4 months behind schedule up
+      to date and deployed to production. By Utilizing Ruby on Rails, I started anew
+      and rapidly prototyped and deployed the requested feature set within 2 weeks.
+      In addition to application maintenance I was responsible for the oversight and
+      mentorship of new Ruby developers.
 
-          - Assisted with daily operations with primary focus on ensuring customers services were within the acceptable range for response times.
-          - Worked extensively with python and fabric to run remedial and deployment tasks across the environment.
-          - Became very familiar and effective at identifying and mitigating a wide range of network attacks.
-          - Created tools to assist and dramatically improve productivity of the daily operational tasks, further reducing customer downtime.
-          - Worked with Sensu to create health checks with remediation.
+        - Delivered a project that was behind schedule to production within 2 weeks.
+        - Responsible for hiring and training additional engineers.
+        - Worked closely with product management to resolve any outstanding issues and address new features quickly.
+        - Leveraged agile methodologies for project management.
+        - Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
+  - role: Network Engineer/Systems Integrator
+    time: January 2004 - January 2008
+    company: ACCRAM, Phoenix AZ
+    details: |
+      While at Accram, my time was split between managing internal infrastructure,
+      running the company’s small ISP, as well as managing customer’s networks
+      and servers. My daily duties varied dramatically from one day to another, as
+      we were always taking on new customers with new challenges. Spent a lot of
+      time on projects, generally working as a lead. Selected to manage and lead
+      customer technical onboarding and integrations. Worked directly with sales
+      teams to identify and pursue new customers and deliver solutions specific to
+      their needs.
 
-    - role: Lead Engineer
-      time: May 2015 - September 2015
-      company: Taste.com, San Francisco CA
-      details: |
-        
-
-    - role: Senior Operations Engineer
-      time: July 2015 - August 2015
-      company: Yahoo, Sunnyvale CA
-      details: |
-        Contracted to work on the Small Business Services Team for an effort to 
-        migrate all Yahoo Small Business Services from Yahoo to Aabaco.
-
-          - Assisted with day to day operations of production, development and QA environments.
-          - Worked with team members to plan for migration of services away from Yahoo.
-          - Assisted in the build out a new QA environment.
-
-    - role: Systems Administrator II
-      time: January 2008 - May 2015
-      company: Edward Jones, Tempe AZ
-      details: |
-        Brought on board to take over management and monitoring for a range of
-        enterprise applications. Responsibilities included application deployment,
-        incident triage, and troubleshooting Linux and Windows environments.
-        Promoted to System Administrator II after demonstrating an aptitude for
-        tackling complicated infrastructure problems from availability to disaster
-        recovery.
-
-          - Appointed as department Datacenter Continuity Coordinator.
-          - Developed multiple utilities for both desktop and web to assist in daily activities and incident troubleshooting.
-          - Created tools to allow associates to quickly and effortlessly identify system and application anomalies and escalate them to the appropriate teams.
-          - Created tools to automate the collection of data and creation of reports, eliminating the need for team members to perform these actions manually.
-
-    - role: Software Engineer
-      time: September 2011 - October 2012
-      company: Media Solutions Corporation, Tempe AZ
-      details: |
-        Hired to lead efforts to bring a project that was 4 months behind schedule up
-        to date and deployed to production. By Utilizing Ruby on Rails, I started anew
-        and rapidly prototyped and deployed the requested feature set within 2 weeks.
-        In addition to application maintenance I was responsible for the oversight and
-        mentorship of new Ruby developers.
-
-          - Delivered a project that was behind schedule to production within 2 weeks.
-          - Responsible for hiring and training additional engineers.
-          - Worked closely with product management to resolve any outstanding issues and address new features quickly.
-          - Leveraged agile methodologies for project management.
-          - Managed the Rackspace cloud infrastructure including maintenance, backups, and security updates.
-
-    - role: Network Engineer/Systems Integrator
-      time: January 2004 - January 2008
-      company: ACCRAM, Phoenix AZ
-      details: |
-        While at Accram, my time was split between managing internal infrastructure,
-        running the company’s small ISP, as well as managing customer’s networks
-        and servers. My daily duties varied dramatically from one day to another, as
-        we were always taking on new customers with new challenges. Spent a lot of
-        time on projects, generally working as a lead. Selected to manage and lead
-        customer technical onboarding and integrations. Worked directly with sales
-        teams to identify and pursue new customers and deliver solutions specific to
-        their needs.
-
-          - Planned and led infrastructure initiatives that included networking, server deployment, and cabling.
-          - Leveraged open source tools to engineer and implement a monitoring infrastructure for internal and external networks.
-          - Managed internal web applications, email servers, and DNS.
-          - Responsible for ensuring application redundancy and tested failover.
-
-
+        - Planned and led infrastructure initiatives that included networking, server deployment, and cabling.
+        - Leveraged open source tools to engineer and implement a monitoring infrastructure for internal and external networks.
+        - Managed internal web applications, email servers, and DNS.
+        - Responsible for ensuring application redundancy and tested failover.
 projects:
-    title: Projects
-    intro: >
-      
-
-    assignments:
-      - title: AUR Package Maintainer
-        link: "https://aur.archlinux.org/packages/?K=jamesbrink&SeB=m"
-        tagline: "Arch Linux User Repo"
-
-      - title: Essex
-        link: "https://github.com/utensils/essex"
-        tagline: "Boilerplate for Docker Based Projects"
-
-      - title: brinkOS
-        link: "https://sourceforge.net/projects/brinkos/"
-        tagline: "Experimental Linux distribution based off of Arch Linux"
-
-      - title: Envisaged
-        link: "https://github.com/utensils/Envisaged"
-        tagline: "Effortless Gource Visualizations with Docker"
-
-      - title: docker-darling
-        link: "https://github.com/utensils/docker-darling"
-        tagline: "Experimental docker container with Darling for macOS runtime"
-
-      - title: docker-opengl
-        link: "https://github.com/utensils/docker-opengl"
-        tagline: "Docker Container - Mesa 3D OpenGL Software Rendering (Gallium) - LLVMpipe, and OpenSWR Drivers"
-
-      - title: barcoded
-        link: "https://github.com/utensils/barcoded"
-        tagline: "A dynamic barcode generation web service."
-
-
+  title: Projects
+  intro: ""
+  assignments:
+    - title: AUR Package Maintainer
+      link: "https://aur.archlinux.org/packages/?K=jamesbrink&SeB=m"
+      tagline: "Arch Linux User Repo"
+    - title: Essex
+      link: "https://github.com/utensils/essex"
+      tagline: "Boilerplate for Docker Based Projects"
+    - title: brinkOS
+      link: "https://sourceforge.net/projects/brinkos/"
+      tagline: "Experimental Linux distribution based off of Arch Linux"
+    - title: Envisaged
+      link: "https://github.com/utensils/Envisaged"
+      tagline: "Effortless Gource Visualizations with Docker"
+    - title: docker-darling
+      link: "https://github.com/utensils/docker-darling"
+      tagline: "Experimental docker container with Darling for macOS runtime"
+    - title: docker-opengl
+      link: "https://github.com/utensils/docker-opengl"
+      tagline: "Docker Container - Mesa 3D OpenGL Software Rendering (Gallium) - LLVMpipe, and OpenSWR Drivers"
+    - title: barcoded
+      link: "https://github.com/utensils/barcoded"
+      tagline: "A dynamic barcode generation web service."
 # publications:
 #     title: Publications
 #     intro: |
-      
 
 #     papers:
 #       - title: The Art of Computer Programming
 #         authors: Donald E. Knuth
 #         conference: Addison-Wesley, 1968
-
-
 skills:
-    title: Skills &amp; Proficiency
-
-    toolset:
-      - name: Docker
-        level: 99%
-
-      - name: CI/CD Pipelines
-        level: 99%
-
-      - name: Kubernetes
-        level: 95%
-
-      - name: AWS
-        level: 95%
-
-      - name: Python
-        level: 90%
-
-      - name: Bash Scripting
-        level: 90%
-
-      - name: Terraform
-        level: 90%
-
-      - name: Fabric
-        level: 85%
-
-      - name: Ansible
-        level: 80%
-
-      - name: Go
-        level: 60%
-      
-      - name: Rust
-        level: 30%
-        
-
+  title: Skills &amp; Proficiency
+  toolset:
+    - name: Docker
+      level: 99%
+    - name: CI/CD Pipelines
+      level: 99%
+    - name: Kubernetes
+      level: 95%
+    - name: AWS
+      level: 95%
+    - name: Python
+      level: 90%
+    - name: Bash Scripting
+      level: 90%
+    - name: Terraform
+      level: 90%
+    - name: Fabric
+      level: 85%
+    - name: Ansible
+      level: 80%
+    - name: Go
+      level: 60%
+    - name: Rust
+      level: 30%
 footer: >
-        Copyright © James Brink 2019    
+  Copyright © James Brink 2019
+

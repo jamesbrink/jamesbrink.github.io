@@ -1,19 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  {% include blog_head.html %}
 
-{% include blog_head.html %}
-
-<body>
-
-    {% include blog_nav.html %}
-
-    {{ content }}
-
-    {% include blog_footer.html %}
-
-    {% if site.analytics %}
-        {% include analytics.html %}
-    {% endif %}
-</body>
-
+  <body>
+    {% include blog_nav.html %} {{ content }} {% include blog_footer.html %} {%
+    if site.analytics %} {% include analytics.html %} {% endif %}
+  </body>
 </html>
