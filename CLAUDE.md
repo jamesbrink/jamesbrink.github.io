@@ -1,7 +1,10 @@
 # Development Guidelines for jamesbrink.github.io
 
-## Build Commands
+## Environment Setup
+- Prerequisites: Install [Nix](https://nixos.org/download.html) with flakes enabled
 - Setup environment: `nix develop` or `direnv allow` (if using direnv)
+
+## Build Commands
 - Install dependencies: `setup`
 - Start local server: `serve` 
 - Build for production: `build`
@@ -9,6 +12,8 @@
 - Clean build files: `clean`
 - Update dependencies: `update`
 - Format all files: `format` (uses treefmt)
+- Optimize images: `optimize-images`
+- Check versions: `version`
 
 ## Code Style Guidelines
 - Formatting:

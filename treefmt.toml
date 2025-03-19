@@ -46,7 +46,6 @@ excludes = [
   
   # Config and metadata files
   ".gitignore",
-  ".dockerignore",
   ".envrc",
   "LICENSE*",
   "CNAME",
@@ -112,7 +111,6 @@ includes = [
   
   # Config files
   ".gitignore",
-  ".dockerignore",
   ".envrc",
   "LICENSE*",
   "CNAME",

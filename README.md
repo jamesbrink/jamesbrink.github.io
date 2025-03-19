@@ -3,21 +3,48 @@ James Brink Personal Website
 
 This repo is for my personal website and blog.
 
-This is a [jekyll] (http://jekyllrb.com/) website with a docker container that extends off of the [official jekyll container] (https://github.com/jekyll/docker-jekyll)
-
+This is a [Jekyll](http://jekyllrb.com/) website managed with [Nix](https://nixos.org/) for consistent development environments.
 
 ## Development
 
+### Prerequisites
+- [Nix](https://nixos.org/download.html) (with flakes enabled)
+- Optionally [direnv](https://direnv.net/) for automatic environment loading
+
+### Setup
+
+Using Nix directly:
 ```sh
-docker run -it --rm --volume=$(pwd):/srv/jekyll -p 4000:4000 jamesbrink/website jekyll s
+# Enter the development environment
+nix develop
+
+# Install dependencies
+setup
+
+# Start the development server
+serve
+```
+
+With direnv (after initial setup):
+```sh
+# Allow the .envrc file
+direnv allow
+
+# Install dependencies
+setup
+
+# Start the development server
+serve
 ```
 
 ## Production
 
-This container uses nginx for production. Build and deploy with the following.
+Build the site for production:
 
 ```sh
-docker build -t jamesbrink/website .
-docker run -t -d -p 80:80 jamesbrink/website
+# Build the site
+build
+
+# The site will be generated in the _site directory
 ```
 
