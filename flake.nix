@@ -35,7 +35,7 @@
               libxslt
 
               # Formatters
-              nixfmt
+              nixfmt # Use the default nixfmt (will be replaced by RFC-style formatter in future)
               nodePackages.prettier
               yamlfmt
               treefmt
