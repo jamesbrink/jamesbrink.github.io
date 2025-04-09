@@ -23,8 +23,12 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: true
+          ruby-version: '3.2.8'
+          bundler-cache: false # Disable bundler cache for first run
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
