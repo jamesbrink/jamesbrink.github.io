@@ -1,0 +1,109 @@
+/*
+   Footer
+   ========================================================================== */
+
+// Light theme footer with Rosé Pine Dawn styling
+.page__footer {
+  color: $rose-pine-text !important;
+  background-color: $rose-pine-surface !important;
+  border-top: 1px solid $rose-pine-highlight-med;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  padding: 1em 0;
+
+  a {
+    color: $rose-pine-pine;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: $rose-pine-pine;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    &:hover {
+      color: $rose-pine-rose;
+      background-color: rgba($rose-pine-rose, 0.05);
+
+      &:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+        background-color: $rose-pine-rose;
+      }
+    }
+
+    &:visited {
+      color: $rose-pine-iris;
+
+      &:after {
+        background-color: $rose-pine-iris;
+      }
+
+      &:hover {
+        background-color: rgba($rose-pine-iris, 0.05);
+      }
+    }
+  }
+
+  .page__footer-copyright {
+    font-size: 0.8em;
+    color: $rose-pine-subtle;
+  }
+
+  .page__footer-follow {
+    li {
+      &:before {
+        content: "~";
+        color: $rose-pine-rose;
+        margin-right: 0.5em;
+        display: inline-block;
+      }
+    }
+  }
+
+  .social-icons {
+    .fa,
+    .fas,
+    .fab,
+    .far {
+      color: $rose-pine-text;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5em;
+      border-radius: 50%;
+      margin: 0 0.2em;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background-color: transparent;
+
+      &:after {
+        display: none;
+      }
+
+      &:hover {
+        background-color: rgba($rose-pine-pine, 0.1);
+        transform: translateY(-2px);
+
+        .fa,
+        .fas,
+        .fab,
+        .far {
+          color: $rose-pine-pine;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

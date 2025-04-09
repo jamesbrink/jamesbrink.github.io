@@ -1,0 +1,105 @@
+/* 
+   Responsive layout fixes
+   ========================================================================== */
+
+// Global container constraints to prevent excessive width
+#main {
+  @media (min-width: $large) {
+    max-width: 1440px; // Increased from 1280px
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+// Fix for wide screens to prevent excessive blank space
+@media (min-width: $large) {
+  .sidebar {
+    &.sticky {
+      // Ensure sidebar stays at a reasonable width
+      width: $right-sidebar-width-narrow;
+    }
+  }
+  
+  #main {
+    .page {
+      float: right;
+      width: calc(100% - #{$right-sidebar-width-narrow});
+      padding-right: $right-sidebar-width-narrow;
+    }
+  }
+}
+
+@media (min-width: $x-large) {
+  .sidebar {
+    &.sticky {
+      width: $right-sidebar-width;
+    }
+  }
+  
+  #main {
+    .page {
+      width: calc(100% - #{$right-sidebar-width});
+      padding-right: $right-sidebar-width;
+    }
+  }
+}
+
+// Fix for the author profile in sidebar to maintain proper width
+.author__avatar {
+  @include breakpoint($large) {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  
+  img {
+    max-width: 110px;
+    border-radius: 50%;
+    
+    @include breakpoint($large) {
+      padding: 5px;
+      border: 1px solid $border-color;
+    }
+  }
+}
+
+// Ensure proper text width for readability on all screen sizes
+.page__content {
+  p, li, dl {
+    @media (min-width: $large) {
+      max-width: 90ch; // Increased from 80ch for more content width
+    }
+  }
+}
+
+// Fix sidebar positioning for all screen sizes
+.sidebar__right {
+  @include breakpoint($large) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $right-sidebar-width-narrow;
+    margin-right: -1 * $right-sidebar-width-narrow;
+    padding-left: 1em;
+    z-index: 10;
+    
+    &.sticky {
+      position: sticky;
+    }
+  }
+  
+  @include breakpoint($x-large) {
+    width: $right-sidebar-width;
+    margin-right: -1 * $right-sidebar-width;
+  }
+}
+
+// Ensure the sidebar stays in view on all screen sizes
+.initial-content {
+  @media (min-width: $large) {
+    position: relative;
+    max-width: 1440px; // Increased from 1280px to match #main
+    margin: 0 auto;
+  }
+}

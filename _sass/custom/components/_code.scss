@@ -1,0 +1,245 @@
+/*
+   Code Blocks
+   ========================================================================== */
+
+// Inline code styling within content
+.page__content {
+  // Improve code blocks appearance to match terminal/Vim with Rosé Pine (dark theme)
+  code {
+    border-radius: 4px;
+    font-family:
+      "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, Monaco,
+      "Liberation Mono", monospace;
+    background-color: $rose-pine-code-surface;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: $rose-pine-code-text;
+    padding: 0.2em 0.4em;
+  }
+
+  pre {
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: $rose-pine-code-base;
+    padding: 1em;
+    margin: 1em 0;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+    > code {
+      border: none;
+      background: none;
+      padding: 0;
+      color: $rose-pine-code-text;
+      font-size: 0.9em;
+      line-height: 1.5;
+
+      // Terminal/Vim-like syntax highlighting
+      .c,
+      .c1,
+      .cm,
+      .cp,
+      .cs {
+        color: $rose-pine-muted;
+      } // Comments
+      .k,
+      .kd,
+      .kn,
+      .kp,
+      .kr,
+      .kt {
+        color: $rose-pine-pine;
+      } // Keywords
+      .o,
+      .p {
+        color: $rose-pine-subtle;
+      } // Operators, punctuation
+      .s,
+      .s1,
+      .s2,
+      .sb,
+      .sc,
+      .sd,
+      .se,
+      .sh,
+      .si,
+      .sx {
+        color: $rose-pine-gold;
+      } // Strings
+      .na,
+      .nb,
+      .nc,
+      .no,
+      .nd,
+      .ni,
+      .ne,
+      .nf,
+      .nl,
+      .nn,
+      .nx,
+      .py {
+        color: $rose-pine-rose;
+      } // Names, functions
+      .m,
+      .mf,
+      .mh,
+      .mi,
+      .mo {
+        color: $rose-pine-gold;
+      } // Numbers
+      .nt,
+      .nv,
+      .vc,
+      .vg,
+      .vi {
+        color: $rose-pine-foam;
+      } // Tags, variables
+      .w {
+        color: $rose-pine-text;
+      } // Whitespace
+      .err {
+        color: $rose-pine-love;
+      } // Errors
+      .bp,
+      .n {
+        color: $rose-pine-text;
+      } // Built-ins, names
+      .kc,
+      .l,
+      .ld {
+        color: $rose-pine-rose;
+      } // Constants, literals
+      .sr,
+      .ss {
+        color: $rose-pine-foam;
+      } // Regex
+      .gd {
+        color: $rose-pine-love;
+      } // Deleted
+      .gi {
+        color: $rose-pine-foam;
+      } // Inserted
+      .gh,
+      .gu {
+        color: $rose-pine-subtle;
+      } // Headers
+      .gp {
+        color: $rose-pine-muted;
+      } // Prompt
+    }
+  }
+}
+
+// Modern code blocks
+div.highlighter-rouge,
+figure.highlight {
+  background-color: $rose-pine-surface;
+  color: $rose-pine-text;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  border-radius: 8px;
+  margin: 1.5em 0;
+  padding: 0;
+  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, $rose-pine-pine, $rose-pine-rose);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  pre.highlight {
+    padding: 1.2em 1em;
+    margin: 0;
+    overflow-x: auto;
+    line-height: 1.6;
+    font-size: 0.9em;
+
+    // Line numbers
+    .lineno {
+      color: $rose-pine-subtle;
+      margin-right: 1em;
+      padding-right: 0.5em;
+      border-right: 1px solid rgba($rose-pine-highlight-low, 0.5);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    // Code comments
+    .c,
+    .c1,
+    .cm,
+    .cp,
+    .cs {
+      font-style: italic;
+    }
+
+    // Code strings
+    .s,
+    .s1,
+    .s2,
+    .sb,
+    .sc,
+    .sd,
+    .se,
+    .sh,
+    .si,
+    .sx {
+      color: $rose-pine-rose;
+    }
+
+    // Keywords
+    .k,
+    .kc,
+    .kd,
+    .kn,
+    .kp,
+    .kr,
+    .kt {
+      color: $rose-pine-pine;
+      font-weight: 600;
+    }
+
+    // Functions
+    .nf,
+    .fm {
+      color: $rose-pine-iris;
+    }
+  }
+}
+
+// Inline code styling
+code.highlighter-rouge {
+  background-color: rgba($rose-pine-highlight-low, 0.4);
+  color: $rose-pine-pine;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid rgba($rose-pine-highlight-low, 0.3);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba($rose-pine-highlight-low, 0.6);
+    border-color: rgba($rose-pine-highlight-low, 0.5);
+  }
+}

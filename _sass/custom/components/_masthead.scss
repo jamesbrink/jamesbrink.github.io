@@ -1,0 +1,121 @@
+/*
+   Masthead
+   ========================================================================== */
+
+// Terminal-inspired header with Rosé Pine Dawn theme
+.masthead {
+  background-color: $rose-pine-surface;
+  border-bottom: 1px solid $rose-pine-highlight-med;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+
+  &__inner-wrap {
+    padding: 0.8em 1em;
+    
+    @media (min-width: $large) {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  .greedy-nav {
+    background: transparent;
+
+    a {
+      color: $rose-pine-text;
+      position: relative;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-family: inherit;
+      letter-spacing: -0.02em;
+      padding: 0.3em 0.5em;
+      border-radius: 4px;
+
+      &:hover {
+        color: $rose-pine-pine;
+        background-color: rgba($rose-pine-pine, 0.08);
+        transform: translateY(-1px);
+      }
+    }
+
+    .visible-links {
+      a {
+        margin: 0 0.2em;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $rose-pine-pine;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        &:hover {
+          &:before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+        }
+
+        &.active {
+          &:before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+
+    .site-title {
+      color: $rose-pine-pine;
+      font-weight: bold;
+      position: relative;
+      padding: 0.3em 0.6em;
+      border-radius: 4px;
+      background-color: rgba($rose-pine-pine, 0.08);
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      &:before {
+        content: ">";
+        color: $rose-pine-rose;
+        margin-right: 0.4em;
+        font-weight: bold;
+        display: inline-block;
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      &:hover {
+        background-color: rgba($rose-pine-pine, 0.15);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+        &:before {
+          transform: translateX(2px);
+        }
+      }
+    }
+
+    .hidden-links {
+      background: $rose-pine-surface;
+      border: 1px solid $rose-pine-highlight-med;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      a {
+        color: $rose-pine-text;
+
+        &:hover {
+          color: $rose-pine-pine;
+          background: $rose-pine-overlay;
+        }
+      }
+    }
+  }
+}

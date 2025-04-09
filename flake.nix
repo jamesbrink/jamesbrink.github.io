@@ -32,23 +32,99 @@
             inherit system;
             overlays = [ devshell.overlays.default ];
           };
+
+          # Define minimal-mistakes-jekyll theme as a Ruby gem
+          minimal-mistakes-jekyll = pkgs.buildRubyGem rec {
+            pname = "minimal-mistakes-jekyll";
+            gemName = "minimal-mistakes-jekyll";
+            version = "4.26.2";
+
+            src = pkgs.fetchFromGitHub {
+              owner = "mmistakes";
+              repo = "minimal-mistakes";
+              rev = "4.26.2";
+              sha256 = "sha256-s+w1lSMKCqg1MTrZMJMq6Zx/OhAmvh4FqBKSjF9R5RY=";
+            };
+
+            # Create a proper gemspec file
+            postPatch = ''
+              cat > minimal-mistakes-jekyll.gemspec <<EOF
+              # -*- encoding: utf-8 -*-
+              Gem::Specification.new do |s|
+                s.name = "minimal-mistakes-jekyll"
+                s.version = "4.26.2"
+                s.summary = "A flexible Jekyll theme"
+                s.description = "A flexible Jekyll theme with a minimalist aesthetic."
+                s.authors = ["Michael Rose"]
+                s.email = ["michael@mademistakes.com"]
+                s.homepage = "https://github.com/mmistakes/minimal-mistakes"
+                s.licenses = ["MIT"]
+                s.files = Dir["**/*"]
+                s.require_paths = ["lib"]
+                s.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
+                s.add_runtime_dependency "jekyll-paginate", ">= 1.1", "< 2.0"
+                s.add_runtime_dependency "jekyll-sitemap", ">= 1.3", "< 2.0"
+                s.add_runtime_dependency "jekyll-include-cache", ">= 0.1", "< 1.0"
+              end
+              EOF
+            '';
+          };
+
+          # Define the Ruby environment with all required gems
+          rubyEnv = pkgs.ruby.withPackages (
+            ps: with ps; [
+              # Using 'with ps;' is generally fine
+              # Jekyll Core and Required Runtime
+              jekyll
+              webrick
+
+              # Jekyll plugins (all needed plugins from _config.yml)
+              jekyll-feed
+              jekyll-seo-tag
+              jekyll-sitemap
+              jekyll-paginate
+              jekyll-include-cache
+              jekyll-remote-theme
+              jekyll-watch
+              kramdown-parser-gfm
+              kramdown
+              # Make sure all plugins are included
+              jekyll-sass-converter
+
+              # Additional plugins for minimal-mistakes theme
+              jekyll-gist
+              jemoji
+
+              # Add the minimal-mistakes-jekyll theme as a gem
+              minimal-mistakes-jekyll
+
+              # Native extensions are handled by Nix automatically
+            ]
+          );
+
         in
         {
           default = pkgs.devshell.mkShell {
             name = "jamesbrink-website";
 
-            packages = with pkgs; [
-              # Jekyll and dependencies
-              jekyll
-              bundler
-              rubyPackages.jekyll-paginate
-              rubyPackages.jekyll-sitemap
+            # Set environment variables
+            env = [
+              {
+                name = "JEKYLL_ENV";
+                value = "development";
+              }
+            ];
 
-              # Development tools
+            packages = with pkgs; [
+              # The Ruby environment defined above
+              rubyEnv
+              minimal-mistakes-jekyll
+
+              # Other non-Ruby dependencies
               git
               imagemagick
-              libxml2
-              libxslt
+              libxml2 # Often needed by Nokogiri (a common dep)
+              libxslt # Often needed by Nokogiri (a common dep)
 
               # Formatters
               nixfmt-rfc-style # Do not replace this, this is the RFC-style formatter available as nixfmt
@@ -63,88 +139,33 @@
               # ───────────────────────────────────────────────────────
               {
                 name = "serve";
-                category = "workflow";
+                category = "jekyll";
                 help = "Start Jekyll development server";
                 command = ''
                   echo "Starting Jekyll server at http://localhost:4000"
-                  bundle exec jekyll serve --livereload
+                  jekyll serve --livereload
                 '';
               }
               {
                 name = "build";
-                category = "workflow";
+                category = "jekyll";
                 help = "Build Jekyll site";
                 command = ''
                   echo "Building Jekyll site for production"
-                  JEKYLL_ENV=production bundle exec jekyll build
+                  export JEKYLL_ENV=production
+                  jekyll build
                 '';
               }
               # ───────────────────────────────────────────────────────
               # JEKYLL COMMANDS
               # ───────────────────────────────────────────────────────
               {
-                name = "new-post";
-                category = "jekyll";
-                help = "Create a new blog post";
-                command = ''
-                                    if [ -z "$1" ]; then
-                                      echo "Error: Post title is required"
-                                      echo "Usage: new-post \"Your Post Title\""
-                                      exit 1
-                                    fi
-                                    
-                                    # Convert title to filename format
-                                    TITLE="$1"
-                                    DATE=$(date +%Y-%m-%d)
-                                    FILENAME="_posts/$DATE-$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g').md"
-                                    
-                                    echo "Creating new post: $FILENAME"
-                                    
-                                    # Create post with front matter
-                                    cat > "$FILENAME" << EOF
-                  ---
-                  layout: post
-                  title: "$TITLE"
-                  date: $DATE $(date +%H:%M:%S) -0700
-                  categories: blog
-                  ---
-
-                  Write your content here.
-                  EOF
-                                    
-                                    echo "✅ Post created: $FILENAME"
-                '';
-              }
-              {
                 name = "clean";
                 category = "jekyll";
                 help = "Clean Jekyll build files";
                 command = ''
                   echo "Cleaning Jekyll build files..."
-                  bundle exec jekyll clean
-                '';
-              }
-              # ───────────────────────────────────────────────────────
-              # BUNDLE COMMANDS
-              # ───────────────────────────────────────────────────────
-              {
-                name = "setup";
-                category = "development";
-                help = "Setup project dependencies";
-                command = ''
-                  echo "Installing project dependencies..."
-                  bundle install
-                  echo "✅ Dependencies installed!"
-                '';
-              }
-              {
-                name = "update";
-                category = "development";
-                help = "Update project dependencies";
-                command = ''
-                  echo "Updating project dependencies..."
-                  bundle update
-                  echo "✅ Dependencies updated!"
+                  jekyll clean
                 '';
               }
               # ───────────────────────────────────────────────────────
@@ -165,7 +186,7 @@
               }
               {
                 name = "format";
-                category = "development";
+                category = "utility";
                 help = "Format all files using treefmt";
                 command = ''
                   echo "Formatting all files with treefmt..."
@@ -174,18 +195,22 @@
                 '';
               }
               {
-                name = "version";
-                category = "jekyll";
-                help = "Show Jekyll version";
+                name = "generate-gemfile";
+                category = "utility";
+                help = "Generate Gemfile and Gemfile.lock from current Nix environment";
                 command = ''
-                  echo "Jekyll version:"
-                  bundle exec jekyll --version
-
-                  echo "\nRuby version:"
-                  ruby --version
-
-                  echo "\nBundler version:"
-                  bundle --version
+                  ruby -r rubygems -e '
+                    # Filter non-std gems → write Gemfile
+                    g = Gem::Specification.group_by(&:name)
+                      .reject { |_, s| s.any? { |x| x.default_gem? || 
+                        (Gem::Specification.respond_to?(:bundled_gem?) && x.bundled_gem?) || 
+                        x.full_require_paths.any? { |p| $LOAD_PATH.grep(/ruby/).any? { |l| p.start_with?(l) } } }}
+                      .transform_values { |s| s.map(&:version).max.to_s }
+                    File.write("Gemfile", "source \"https://rubygems.org\"\n\n# Generated from Nix environment on #{Time.now}\n" +
+                      "# DO NOT EDIT MANUALLY\n\n" + g.sort.map { |n,v| "gem \"#{n}\", \"#{v}\"" }.join("\n"))
+                  '
+                  rm -f Gemfile.lock && bundle lock --local
+                  echo "✅ Gemfile and Gemfile.lock generated!"
                 '';
               }
             ];

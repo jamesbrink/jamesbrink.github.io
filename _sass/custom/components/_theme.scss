@@ -1,0 +1,119 @@
+/*
+   Theme Variables & Mixins
+   ========================================================================== */
+
+// Rosé Pine Dawn Theme Variables
+// These variables centralize the theme's color palette and design tokens
+
+// Base Colors
+$theme-base: $rose-pine-base !default; // Primary background
+$theme-surface: $rose-pine-surface !default; // Secondary background
+$theme-overlay: $rose-pine-overlay !default; // Tertiary background
+
+// Text Colors
+$theme-text-primary: $rose-pine-text !default; // Primary text
+$theme-text-secondary: $rose-pine-subtle !default; // Secondary text
+$theme-text-muted: $rose-pine-muted !default; // Muted text
+
+// Accent Colors
+$theme-accent-primary: $rose-pine-pine !default; // Primary accent (buttons, links)
+$theme-accent-secondary: $rose-pine-rose !default; // Secondary accent
+$theme-accent-tertiary: $rose-pine-iris !default; // Tertiary accent
+
+// Semantic Colors
+$theme-success: mix($rose-pine-pine, $rose-pine-foam, 50%) !default;
+$theme-info: $rose-pine-foam !default;
+$theme-warning: $rose-pine-gold !default;
+$theme-danger: $rose-pine-love !default;
+
+// Border Colors
+$theme-border-light: $rose-pine-highlight-low !default;
+$theme-border-medium: $rose-pine-highlight-med !default;
+$theme-border-dark: $rose-pine-highlight-high !default;
+
+// Shadow Levels
+$theme-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05) !default;
+$theme-shadow-md: 0 4px 10px rgba(0, 0, 0, 0.08) !default;
+$theme-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1) !default;
+
+// Spacing Scale
+$theme-spacing-xs: 0.25rem !default;
+$theme-spacing-sm: 0.5rem !default;
+$theme-spacing-md: 1rem !default;
+$theme-spacing-lg: 1.5rem !default;
+$theme-spacing-xl: 2rem !default;
+
+// Border Radius
+$theme-radius-sm: 4px !default;
+$theme-radius-md: 6px !default;
+$theme-radius-lg: 8px !default;
+$theme-radius-pill: 9999px !default;
+
+// Typography
+$theme-font-mono: "JetBrains Mono", "Fira Code", monospace !default;
+$theme-font-sans:
+  -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue",
+  Arial, sans-serif !default;
+
+// Theme Mixins
+
+// Button variant mixin
+@mixin theme-button-variant($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($bg-color, 5%);
+    box-shadow: 0 4px 8px rgba($bg-color, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: darken($bg-color, 10%);
+    transform: translateY(-1px);
+  }
+}
+
+// Card style mixin
+@mixin theme-card {
+  background-color: $theme-surface;
+  border-radius: $theme-radius-md;
+  box-shadow: $theme-shadow-sm;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    box-shadow: $theme-shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+// Notice variant mixin
+@mixin theme-notice-variant($color) {
+  border-left: 4px solid $color;
+  background-color: rgba($color, 0.1);
+
+  &:before {
+    color: $color;
+  }
+
+  &:hover {
+    background-color: rgba($color, 0.15);
+    box-shadow: 0 4px 8px rgba($color, 0.1);
+  }
+}
+
+// Terminal-style element mixin
+@mixin theme-terminal {
+  font-family: $theme-font-mono;
+  background-color: $theme-surface;
+  border-radius: $theme-radius-md;
+  padding: $theme-spacing-md;
+  border: 1px solid $theme-border-medium;
+
+  &:before {
+    content: "> ";
+    color: $theme-accent-secondary;
+    font-weight: bold;
+  }
+}

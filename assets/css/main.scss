@@ -1,7 +1,47 @@
 ---
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
 @charset "utf-8";
 
-@import "skins/{{ site.theme_skin | default: 'blue' }}"; // skin
-@import "default"; // main partials
+// Import the theme's variables first
+@import "minimal-mistakes/variables";
+
+// Import custom variable overrides
+@import "custom/variables";
+
+// Import the theme's mixins
+@import "minimal-mistakes/mixins";
+
+// Import custom mixins (if any)
+// @import "custom/mixins";
+
+// Import the theme's vendor dependencies
+@import "minimal-mistakes/vendor/breakpoint/breakpoint";
+@include breakpoint-set("to ems", true);
+
+// Import the theme's core styles
+@import "minimal-mistakes/reset";
+@import "minimal-mistakes/base";
+@import "minimal-mistakes/forms";
+@import "minimal-mistakes/tables";
+@import "minimal-mistakes/animations";
+
+// Import the theme's components
+@import "minimal-mistakes/buttons";
+@import "minimal-mistakes/notices";
+@import "minimal-mistakes/masthead";
+@import "minimal-mistakes/navigation";
+@import "minimal-mistakes/footer";
+@import "minimal-mistakes/search";
+@import "minimal-mistakes/syntax";
+
+// Import the theme's layouts
+@import "minimal-mistakes/page";
+@import "minimal-mistakes/archive";
+@import "minimal-mistakes/sidebar";
+@import "minimal-mistakes/print";
+
+// Import custom styles
+@import "custom/custom";
+@import "custom/resume";

@@ -1,0 +1,46 @@
+/*
+   Pagination
+   ========================================================================== */
+
+// Light theme pagination with modern borderless design
+.pagination {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+
+  a {
+    border: none;
+    border-radius: 6px;
+    background: $rose-pine-overlay;
+    color: $rose-pine-text;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0.6em 1em;
+    margin: 0 0.2em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      background: rgba($rose-pine-pine, 0.15);
+      color: $rose-pine-pine;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .current {
+    background: $rose-pine-pine;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 5px rgba($rose-pine-pine, 0.3);
+    padding: 0.6em 1em;
+    margin: 0 0.2em;
+    border-radius: 6px;
+  }
+
+  .disabled {
+    color: $rose-pine-muted;
+    background: rgba($rose-pine-muted, 0.1);
+    border: none;
+    opacity: 0.7;
+    padding: 0.6em 1em;
+    margin: 0 0.2em;
+    border-radius: 6px;
+  }
+}

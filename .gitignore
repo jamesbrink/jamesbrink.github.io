@@ -1,7 +1,32 @@
+# Jekyll build files
 _site/
 .sass-cache/
-.jekyll-metadata
 .jekyll-cache/
+.jekyll-metadata
+.jekyll-build-cache/
+
+# Bundler files
+.bundle/
+vendor/
+.gem/
+Gemfile.lock
+
+# NixOS files
 .direnv/
 result
-result-*
+
+# OS files
+.DS_Store
+*.swp
+*~
+
+# Editor settings
+.idea/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.*
+!.env.example

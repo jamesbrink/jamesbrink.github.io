@@ -1,0 +1,115 @@
+/*
+   Form Elements
+   ========================================================================== */
+
+// Modern form elements with Rosé Pine Dawn theme
+input,
+select,
+textarea {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border-radius: 6px;
+  padding: 0.8em 1em;
+  background-color: rgba($rose-pine-overlay, 0.3);
+  color: $rose-pine-text;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-size: 0.95em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+
+  &:focus {
+    outline: none;
+    border-color: $rose-pine-pine;
+    background-color: rgba($rose-pine-overlay, 0.5);
+    box-shadow:
+      0 3px 8px rgba(0, 0, 0, 0.04),
+      0 0 0 2px rgba($rose-pine-pine, 0.1);
+  }
+
+  &:hover:not(:focus) {
+    border-color: rgba($rose-pine-highlight-high, 0.8);
+    background-color: rgba($rose-pine-overlay, 0.4);
+  }
+}
+
+// Custom checkbox styling
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border-radius: 4px;
+  margin-right: 0.5em;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+
+  &:checked {
+    background-color: $rose-pine-pine;
+    border-color: $rose-pine-pine;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0.25em;
+      left: 0.4em;
+      width: 0.3em;
+      height: 0.6em;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover:not(:checked) {
+    background-color: rgba($rose-pine-pine, 0.1);
+  }
+}
+
+// Custom radio button styling
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border-radius: 50%;
+  margin-right: 0.5em;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+
+  &:checked {
+    border: 2px solid $rose-pine-pine;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.6em;
+      height: 0.6em;
+      background-color: $rose-pine-pine;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover:not(:checked) {
+    background-color: rgba($rose-pine-pine, 0.1);
+  }
+}
+
+// Form labels
+form label {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-weight: 500;
+  color: $rose-pine-pine;
+  margin-bottom: 0.5em;
+  display: block;
+  font-size: 0.95em;
+}

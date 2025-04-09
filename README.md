@@ -1,50 +1,61 @@
-James Brink Personal Website
-============================
+# James Brink's Personal Website
 
-This repo is for my personal website and blog.
-
-This is a [Jekyll](http://jekyllrb.com/) website managed with [Nix](https://nixos.org/) for consistent development environments.
+This is the source code for my personal website and blog, built with Jekyll and the Minimal Mistakes theme. The site is designed to be deployed to GitHub Pages but can also be run locally using Nix or Docker.
 
 ## Development
 
-### Prerequisites
-- [Nix](https://nixos.org/download.html) (with flakes enabled)
-- Optionally [direnv](https://direnv.net/) for automatic environment loading
+### Using Nix (Recommended)
 
-### Setup
+This project uses [Nix](https://nixos.org/) with flakes for dependency management. If you have Nix installed with flakes enabled:
 
-Using Nix directly:
-```sh
-# Enter the development environment
+```bash
+# Enter development shell
 nix develop
 
-# Install dependencies
-setup
-
-# Start the development server
-serve
+# Start Jekyll server
+jekyll serve
 ```
 
-With direnv (after initial setup):
-```sh
-# Allow the .envrc file
-direnv allow
+### Using Docker
 
-# Install dependencies
-setup
+Alternatively, you can use Docker to build and run the site:
 
-# Start the development server
-serve
+```bash
+# Build the Docker image
+podman build -t jamesbrink-site-ghpages .
+
+# Run the container
+podman run --rm -it -p 4000:4000 localhost/jamesbrink-site-ghpages:latest
 ```
 
-## Production
+The site will be available at http://localhost:4000
 
-Build the site for production:
+## Project Structure
 
-```sh
-# Build the site
-build
+- `_posts/`: Blog posts in Markdown format
+- `_pages/`: Static pages
+- `assets/`: Images, CSS, and other static assets
+- `_data/`: Data files for navigation and other site configuration
+- `_config.yml`: Main Jekyll configuration
 
-# The site will be generated in the _site directory
-```
+## Dependency Management
 
+This project uses a hybrid approach to dependency management:
+
+- **Local Development**: Dependencies are managed through `flake.nix`
+- **Docker/CI**: Dependencies are resolved using the Gemfile
+- **GitHub Pages**: Uses standard GitHub Pages gem dependencies
+
+The Gemfile.lock is intentionally excluded from Git and Docker to allow each environment to resolve its own dependencies.
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+
+---
+
+## Resources
+
+- [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Minimal Mistakes Theme Documentation](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)

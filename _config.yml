@@ -1,54 +1,142 @@
-#Update all the sections by editing the data.yml file inside _data folder.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Site Settings
-title: James Brink - DevOps Engineer
-url: 'https://jamesbrink.github.io'
-baseurl: '' #change it according to your repository name
-description: James Brink - DevOps Egnineer
-# Style will be applied only after restarting the build or serve. Just choose one of the options.
-theme_skin: ceramic # blue turquoise green berry orange ceramic
-chrome_mobile_color: #use hex colors (ex:#1976d2) or leave empty if you don't want a color for chrome mobile searchbar
-
-# Tracker
-analytics: UA-62780996-2
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: James Brink
+email: brink.james@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Personal website and blog of James Brink - Technology Architect, 
+  DevOps Engineer, and Problem Solver.
+twitter_username: brinkoo7
+github_username: jamesbrink
+minimal_mistakes_skin: "air" # Using air as base, but our custom SCSS will override with Rosé Pine
+search: false
+baseurl: ""
+url: "https://jamesbrink.online"
 
 # Build settings
-compress-site: yes
+markdown: kramdown
+theme: minimal-mistakes-jekyll
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-encoding: "utf-8"
-compress_html: # - http://jch.penibelst.de/
-  clippings: all
-  ignore:
-    envs: development
+include:
+  - _pages
 
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
-exclude:
-  - less
-  - node_modules
-  - Gruntfile.js
-  - package.json
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+# Custom head HTML
+head_scripts:
+  - /assets/js/clickable-cards.js
 
+author:
+  name   : "James Brink"
+  avatar : "/assets/images/profile.png"
+  bio    : "My passion for learning is second only to that of solving complex problems with elegant solutions."
+  location: "Phoenix, AZ"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:brink.james@gmail.com"
+    - label: "Phone"
+      icon: "fas fa-fw fa-phone"
+      url: "tel:602-341-3058"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/brinkjames"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jamesbrink"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/brinkoo7"
+    - label: "Bluesky"
+      icon: "fas fa-fw fa-cloud"
+      url: "https://bsky.app/profile/jamesbrink.bsky.social"
+    - label: "Medium"
+      icon: "fab fa-fw fa-medium"
+      url: "https://medium.com/@jamesbrink"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "http://instagram.com/brink.james/"
 
-blog-header-img: img/home-bg.jpg
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/brinkjames"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jamesbrink"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/brinkoo7"
+    - label: "Bluesky"
+      icon: "fas fa-fw fa-cloud"
+      url: "https://bsky.app/profile/jamesbrink.bsky.social"
+    - label: "Medium"
+      icon: "fab fa-fw fa-medium"
+      url: "https://medium.com/@jamesbrink"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "http://instagram.com/brink.james/"
 
-markdown: kramdown
-permalink: pretty
-highlighter: rouge
-paginate: 20
-paginate_path: "blog/page:num"
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
-# Development Settings
-port: 4000
-host: 0.0.0.0
-safe: false
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

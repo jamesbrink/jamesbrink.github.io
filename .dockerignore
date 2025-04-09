@@ -1,0 +1,8 @@
+.git
+.sass-cache
+.jekyll-cache
+_site
+vendor
+.direnv
+.envrc
+Gemfile.lock
