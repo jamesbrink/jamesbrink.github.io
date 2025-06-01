@@ -69,31 +69,35 @@ Managed internal infrastructure and ISP operations while supporting customer net
 
 <div class="projects-grid">
   <div class="project-item">
-    <h3>Arch Linux</h3>
+    <h3><a href="https://github.com/utensils/mcp-nixos" target="_blank">MCP NixOS</a></h3>
+    <p>NixOS-based MCP Server</p>
+  </div>
+  <div class="project-item">
+    <h3><a href="https://github.com/jamesbrink/arch-aur" target="_blank">Arch Linux</a></h3>
     <p>AUR Package Maintainer</p>
   </div>
   <div class="project-item">
-    <h3>Essex</h3>
+    <h3><a href="https://github.com/utensils/essex" target="_blank">Essex</a></h3>
     <p>Docker-Based Project Boilerplate</p>
   </div>
   <div class="project-item">
-    <h3>brinkOS</h3>
+    <h3><a href="https://github.com/brinkOS/brinkOS" target="_blank">brinkOS</a></h3>
     <p>Experimental Arch Linux Distribution</p>
   </div>
   <div class="project-item">
-    <h3>Envisaged</h3>
+    <h3><a href="https://github.com/utensils/Envisaged" target="_blank">Envisaged</a></h3>
     <p>Docker-based Gource Visualizations</p>
   </div>
   <div class="project-item">
-    <h3>Docker Darling</h3>
+    <h3><a href="https://github.com/utensils/docker-darling" target="_blank">Docker Darling</a></h3>
     <p>macOS Runtime in Docker</p>
   </div>
   <div class="project-item">
-    <h3>Docker OpenGL</h3>
+    <h3><a href="https://github.com/utensils/docker-opengl" target="_blank">Docker OpenGL</a></h3>
     <p>Mesa 3D Software Rendering in Docker</p>
   </div>
   <div class="project-item">
-    <h3>Barcoded</h3>
+    <h3><a href="https://github.com/jamesbrink/barcoded" target="_blank">Barcoded</a></h3>
     <p>Dynamic Barcode Generation Service</p>
   </div>
 </div>
