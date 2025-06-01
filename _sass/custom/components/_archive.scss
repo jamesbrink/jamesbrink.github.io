@@ -124,3 +124,12 @@
     transform: scale(1.03);
   }
 }
+
+// Blog page specific archive styling
+.layout--home {
+  // Ensure archive items have consistent spacing
+  .entries-list {
+    margin: 0;
+    padding: 0;
+  }
+}

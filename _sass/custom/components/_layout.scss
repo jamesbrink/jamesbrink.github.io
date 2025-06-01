@@ -127,3 +127,32 @@
     }
   }
 }
+
+// Home layout (blog page) consistency fix
+.layout--home {
+  // Style the Recent Posts heading to match other page titles
+  .archive__subtitle {
+    h3 {
+      color: $rose-pine-pine;
+      margin-top: 0;
+      margin-bottom: 1.5em;
+      line-height: 1.2;
+      font-weight: 600;
+      font-size: 1.6em;
+      position: relative;
+      
+      &:after {
+        content: "";
+        display: block;
+        width: 3em;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          $rose-pine-pine,
+          rgba($rose-pine-pine, 0.3)
+        );
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
