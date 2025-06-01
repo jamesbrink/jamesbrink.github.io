@@ -5,11 +5,14 @@
 // General layout styles
 .page {
   padding: 0;
-
-  @media (min-width: 80em) {
-    padding: 0;
-    float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
+  
+  // Default styles for pages without sidebar
+  @media (min-width: $large) {
+    &:not(.has-sidebar) {
+      max-width: $container-max-width;
+      margin: 0 auto;
+      padding: 0 1em;
+    }
   }
 }
 
@@ -122,8 +125,8 @@
 // Two column layout
 .layout--single {
   .page {
-    @media (min-width: 80em) {
-      padding-right: 2em;
+    @media (min-width: $large) {
+      padding: 0 2em;
     }
   }
 }
@@ -154,5 +157,19 @@
         margin-top: 0.5em;
       }
     }
+  }
+}
+
+// Fix spacing for the blog/home page when sidebar is present
+// This adds padding to the archive content to create space between sidebar and content
+.archive {
+  @media (min-width: $large) {
+    // Add left padding when sidebar is present on larger screens
+    padding-left: 3em !important;
+  }
+  
+  @media (min-width: $x-large) {
+    // Increase padding on extra-large screens
+    padding-left: 4em !important;
   }
 }

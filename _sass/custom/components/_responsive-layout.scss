@@ -23,9 +23,7 @@
   
   #main {
     .page {
-      float: right;
-      width: calc(100% - #{$right-sidebar-width-narrow});
-      padding-right: $right-sidebar-width-narrow;
+      // Removed conflicting styles - now handled in _layout.scss
     }
   }
 }
@@ -39,8 +37,7 @@
   
   #main {
     .page {
-      width: calc(100% - #{$right-sidebar-width});
-      padding-right: $right-sidebar-width;
+      // Removed conflicting styles - now handled in _layout.scss
     }
   }
 }

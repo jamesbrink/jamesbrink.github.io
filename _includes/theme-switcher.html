@@ -1,0 +1,55 @@
+<!-- Theme Switcher Component -->
+<div class="theme-switcher">
+  <label for="theme-select">Theme:</label>
+  <select id="theme-select" onchange="switchTheme(this.value)">
+    <option value="rose-pine">Rosé Pine Dawn</option>
+    <option value="nord" selected>Nord</option>
+    <option value="dracula">Dracula</option>
+    <option value="gruvbox">Gruvbox</option>
+    <option value="catppuccin-latte">Catppuccin Latte</option>
+  </select>
+</div>
+
+<script>
+function switchTheme(theme) {
+  // Store theme preference
+  localStorage.setItem('preferred-theme', theme);
+  
+  // Reload page to apply new theme
+  window.location.reload();
+}
+
+// Apply saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('preferred-theme');
+  if (savedTheme) {
+    document.getElementById('theme-select').value = savedTheme;
+  }
+});
+</script>
+
+<style>
+.theme-switcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.theme-switcher label {
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.theme-switcher select {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+</style>

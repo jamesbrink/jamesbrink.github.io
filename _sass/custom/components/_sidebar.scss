@@ -74,12 +74,13 @@
   }
 }
 
-// Sidebar styling with Rosé Pine Dawn theme
+// Sidebar styling with theme-agnostic approach
 .sidebar {
   opacity: 0.95;
   background: $theme-surface;
-  border-right: 1px solid $theme-border-medium;
-  padding: 1em; // Add proper padding to center content
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5em; // Better padding for content
 
   &.sticky {
     // Override the default max-height calculation to prevent scrollbar
@@ -89,7 +90,7 @@
 
     // Subtle scrollbar styling (only shown when needed)
     scrollbar-width: thin;
-    scrollbar-color: rgba($theme-text-secondary, 0.5) transparent;
+    scrollbar-color: rgba($theme-text-muted, 0.3) transparent;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -100,14 +101,14 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba($theme-text-secondary, 0.5);
+      background-color: rgba($theme-text-muted, 0.3);
       border-radius: 6px;
     }
   }
 
-  @media (max-width: 768px) {
-    border-right: none;
-    border-bottom: 1px solid $theme-border-medium;
+  @media (max-width: $large - 1px) {
+    // On mobile, sidebar is full width with some margin
+    margin: 0 1em;
   }
 
   // Center avatar and name, left-align other content
