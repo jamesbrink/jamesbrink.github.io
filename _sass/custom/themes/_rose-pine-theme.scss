@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Rosé Pine Dawn Theme - Original theme
+   ========================================================================== */
+
+/*
+   Rosé Pine Colors
+   ========================================================================== */
+
+// Rosé Pine Dawn (Light Variant) Colors
+$rose-pine-base: #faf4ed !default; // Primary background (main panels)
+$rose-pine-surface: #fffaf3 !default; // Secondary background (cards, inputs)
+$rose-pine-overlay: #f2e9e1 !default; // Tertiary background (popovers, dialogs)
+$rose-pine-muted: #9893a5 !default; // Low contrast text (comments, disabled)
+$rose-pine-subtle: #797593 !default; // Medium contrast text (punctuation, operators)
+$rose-pine-text: #575279 !default; // High contrast text (variables, normal text)
+$rose-pine-love: #b4637a !default; // Terminal red (errors, deleted files)
+$rose-pine-gold: #ea9d34 !default; // Terminal yellow (warnings, strings)
+$rose-pine-rose: #d7827e !default; // Terminal cyan (modified files, booleans, functions)
+$rose-pine-pine: #286983 !default; // Terminal green (conditionals, keywords)
+$rose-pine-foam: #56949f !default; // Terminal blue (info, additions, types, tags)
+$rose-pine-iris: #907aa9 !default; // Terminal magenta (hints, methods, parameters)
+$rose-pine-highlight-low: rgba(110, 106, 134, 0.1) !default; // Cursorline background
+$rose-pine-highlight-med: rgba(110, 106, 134, 0.2) !default; // Selection background
+$rose-pine-highlight-high: rgba(110, 106, 134, 0.3) !default; // Borders, visual dividers
+
+// Keep original dark colors for code blocks
+$rose-pine-code-base: #191724 !default; // Code block background
+$rose-pine-code-surface: #1f1d2e !default; // Code inline background
+$rose-pine-code-text: #e0def4 !default; // Code text color
+
+// Theme variable overrides
+$background-color: $rose-pine-base !default;
+$text-color: $rose-pine-text !default;
+$primary-color: $rose-pine-pine !default;
+$link-color: $rose-pine-iris !default;
+$link-color-hover: lighten($link-color, 10%) !default;
+$link-color-visited: $rose-pine-rose !default;
+$masthead-link-color: $rose-pine-text !default;
+$masthead-link-color-hover: $rose-pine-foam !default;
+$navicon-link-color-hover: mix($rose-pine-text, $rose-pine-base, 80%) !default;
+
+// Buttons
+$btn-primary-background-color: $rose-pine-pine !default;
+
+// Code highlighting
+$code-background-color: $rose-pine-surface !default;
+$code-background-color-dark: $rose-pine-overlay !default;
+
+// Syntax highlighting colors (Rosé Pine terminal/Vim inspired)
+$base00: $rose-pine-base !default; // Default Background
+$base01: $rose-pine-surface !default; // Lighter Background
+$base02: $rose-pine-overlay !default; // Selection Background
+$base03: $rose-pine-muted !default; // Comments, Invisibles
+$base04: $rose-pine-subtle !default; // Operators, Punctuation
+$base05: $rose-pine-text !default; // Default Foreground, Variables
+$base06: lighten($rose-pine-text, 5%) !default; // Light Foreground
+$base07: lighten($rose-pine-text, 10%) !default; // Light Background
+$base08: $rose-pine-love !default; // Errors, Deleted, Terminal Red
+$base09: $rose-pine-gold !default; // Strings, Terminal Yellow
+$base0a: $rose-pine-rose !default; // Booleans, Functions, Terminal Cyan
+$base0b: $rose-pine-pine !default; // Keywords, Conditionals, Terminal Green
+$base0c: $rose-pine-foam !default; // Types, Tags, Terminal Blue
+$base0d: $rose-pine-foam !default; // Info, Additions
+$base0e: $rose-pine-iris !default; // Methods, Parameters, Terminal Magenta
+$base0f: $rose-pine-love !default; // Deprecated
+
+// Notice colors
+$notice-background-mix: 90% !default;
+$notice-text-mix: 40% !default;
+$notice-primary-color: $rose-pine-pine !default;
+$notice-info-color: $rose-pine-foam !default;
+$notice-warning-color: $rose-pine-gold !default;
+$notice-danger-color: $rose-pine-love !default;
+$notice-success-color: mix($rose-pine-pine, $rose-pine-foam, 50%) !default;
+
+// Border colors
+$border-color: $rose-pine-highlight-med !default;
+
+// Footer colors
+$footer-background-color: $rose-pine-surface !default;
+
+/*
+   Typography
+   ========================================================================== */
+
+// You can override font settings
+$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
+
+// Container width
+$container-max-width: 1280px !default;

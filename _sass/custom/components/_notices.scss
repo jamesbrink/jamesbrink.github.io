@@ -8,7 +8,7 @@
   border-left: none;
   font-family: "JetBrains Mono", "Fira Code", monospace;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  background-color: $rose-pine-overlay !important;
+  background-color: $theme-overlay !important;
   padding: 1em 1.5em;
   position: relative;
   overflow: hidden;
@@ -30,31 +30,31 @@
 
   &--primary {
     &:before {
-      background-color: $rose-pine-pine;
+      background-color: $primary-color;
     }
   }
 
   &--info {
     &:before {
-      background-color: $rose-pine-foam;
+      background-color: $theme-info;
     }
   }
 
   &--warning {
     &:before {
-      background-color: $rose-pine-gold;
+      background-color: $theme-warning;
     }
   }
 
   &--danger {
     &:before {
-      background-color: $rose-pine-love;
+      background-color: $theme-danger;
     }
   }
 
   &--success {
     &:before {
-      background-color: mix($rose-pine-pine, $rose-pine-foam, 50%);
+      background-color: mix($primary-color, $theme-info, 50%);
     }
   }
 }

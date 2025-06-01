@@ -10,9 +10,9 @@
   margin-bottom: 1.5em;
   position: relative;
   overflow: hidden;
-  background-color: rgba($rose-pine-overlay, 0.5);
+  background-color: rgba($theme-overlay, 0.5);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba($rose-pine-highlight-low, 0.5);
+  border: 1px solid rgba($theme-border-light, 0.5);
   cursor: pointer !important; /* Use pointer cursor to indicate clickability */
   user-select: text; /* Allow text selection */
 
@@ -34,7 +34,7 @@
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, $rose-pine-pine, $rose-pine-rose);
+    background: linear-gradient(to bottom, $primary-color, $theme-accent-secondary);
     opacity: 0.6;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     pointer-events: none; /* Don't interfere with cursor */
@@ -43,7 +43,7 @@
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
-    background-color: rgba($rose-pine-overlay, 0.8);
+    background-color: rgba($theme-overlay, 0.8);
 
     &:before {
       width: 6px;
@@ -59,7 +59,7 @@
   transition: all 0.3s ease;
 
   a {
-    color: $rose-pine-pine;
+    color: $primary-color;
     text-decoration: none;
     position: relative;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -80,14 +80,14 @@
       height: 2px;
       bottom: -2px;
       left: 0;
-      background-color: $rose-pine-rose;
+      background-color: $theme-accent-secondary;
       transform-origin: bottom right;
       transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       pointer-events: none; /* Don't interfere with cursor */
     }
 
     &:hover {
-      color: $rose-pine-rose;
+      color: $theme-accent-secondary;
       text-decoration: none;
       transform: translateY(-1px);
 
@@ -100,7 +100,7 @@
 }
 
 .archive__item-excerpt {
-  color: $rose-pine-subtle;
+  color: $theme-text-secondary;
   margin-top: 0.8em;
   line-height: 1.6;
   font-size: 0.9em; /* Added to match site-wide typography */

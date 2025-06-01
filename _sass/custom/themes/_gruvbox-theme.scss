@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Gruvbox Theme - Retro groove color scheme
+   ========================================================================== */
+
+/*
+   Gruvbox Colors (Light Mode)
+   ========================================================================== */
+
+// Light mode colors
+$gruvbox-light-bg0: #fbf1c7 !default;
+$gruvbox-light-bg0-hard: #f9f5d7 !default;
+$gruvbox-light-bg0-soft: #f2e5bc !default;
+$gruvbox-light-bg1: #ebdbb2 !default;
+$gruvbox-light-bg2: #d5c4a1 !default;
+$gruvbox-light-bg3: #bdae93 !default;
+$gruvbox-light-bg4: #a89984 !default;
+
+$gruvbox-light-fg0: #282828 !default;
+$gruvbox-light-fg1: #3c3836 !default;
+$gruvbox-light-fg2: #504945 !default;
+$gruvbox-light-fg3: #665c54 !default;
+$gruvbox-light-fg4: #7c6f64 !default;
+
+// Accent colors
+$gruvbox-red: #cc241d !default;
+$gruvbox-green: #98971a !default;
+$gruvbox-yellow: #d79921 !default;
+$gruvbox-blue: #458588 !default;
+$gruvbox-purple: #b16286 !default;
+$gruvbox-aqua: #689d6a !default;
+$gruvbox-orange: #d65d0e !default;
+
+// Bright variants
+$gruvbox-bright-red: #fb4934 !default;
+$gruvbox-bright-green: #b8bb26 !default;
+$gruvbox-bright-yellow: #fabd2f !default;
+$gruvbox-bright-blue: #83a598 !default;
+$gruvbox-bright-purple: #d3869b !default;
+$gruvbox-bright-aqua: #8ec07c !default;
+$gruvbox-bright-orange: #fe8019 !default;
+
+// Dark mode for code blocks
+$gruvbox-dark-bg: #282828 !default;
+$gruvbox-dark-bg1: #3c3836 !default;
+$gruvbox-dark-fg: #ebdbb2 !default;
+
+// Theme variable overrides
+$background-color: $gruvbox-light-bg0 !default;
+$text-color: $gruvbox-light-fg1 !default;
+$primary-color: $gruvbox-blue !default;
+$link-color: $gruvbox-blue !default;
+$link-color-hover: $gruvbox-bright-blue !default;
+$link-color-visited: $gruvbox-purple !default;
+$masthead-link-color: $gruvbox-light-fg1 !default;
+$masthead-link-color-hover: $gruvbox-blue !default;
+$navicon-link-color-hover: $gruvbox-light-fg2 !default;
+
+// Buttons
+$btn-primary-background-color: $gruvbox-blue !default;
+
+// Code highlighting
+$code-background-color: $gruvbox-light-bg1 !default;
+$code-background-color-dark: $gruvbox-light-bg2 !default;
+
+// Dark code blocks
+$gruvbox-code-base: $gruvbox-dark-bg !default;
+$gruvbox-code-surface: $gruvbox-dark-bg1 !default;
+$gruvbox-code-text: $gruvbox-dark-fg !default;
+
+// Syntax highlighting colors
+$base00: $gruvbox-light-bg0 !default;
+$base01: $gruvbox-light-bg1 !default;
+$base02: $gruvbox-light-bg2 !default;
+$base03: $gruvbox-light-fg4 !default;
+$base04: $gruvbox-light-fg3 !default;
+$base05: $gruvbox-light-fg1 !default;
+$base06: $gruvbox-light-fg0 !default;
+$base07: $gruvbox-light-fg0 !default;
+$base08: $gruvbox-red !default;
+$base09: $gruvbox-orange !default;
+$base0a: $gruvbox-yellow !default;
+$base0b: $gruvbox-green !default;
+$base0c: $gruvbox-aqua !default;
+$base0d: $gruvbox-blue !default;
+$base0e: $gruvbox-purple !default;
+$base0f: $gruvbox-orange !default;
+
+// Notice colors
+$notice-primary-color: $gruvbox-blue !default;
+$notice-info-color: $gruvbox-aqua !default;
+$notice-warning-color: $gruvbox-yellow !default;
+$notice-danger-color: $gruvbox-red !default;
+$notice-success-color: $gruvbox-green !default;
+
+// Border colors
+$border-color: $gruvbox-light-bg3 !default;
+
+// Footer colors
+$footer-background-color: $gruvbox-light-bg1 !default;
+
+// Container width
+$container-max-width: 1280px !default;

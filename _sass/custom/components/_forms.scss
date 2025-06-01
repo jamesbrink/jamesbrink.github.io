@@ -7,27 +7,27 @@ input,
 select,
 textarea {
   font-family: "JetBrains Mono", "Fira Code", monospace;
-  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border: 1px solid rgba($theme-border-light, 0.6);
   border-radius: 6px;
   padding: 0.8em 1em;
-  background-color: rgba($rose-pine-overlay, 0.3);
-  color: $rose-pine-text;
+  background-color: rgba($theme-overlay, 0.3);
+  color: $text-color;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   font-size: 0.95em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
 
   &:focus {
     outline: none;
-    border-color: $rose-pine-pine;
-    background-color: rgba($rose-pine-overlay, 0.5);
+    border-color: $primary-color;
+    background-color: rgba($theme-overlay, 0.5);
     box-shadow:
       0 3px 8px rgba(0, 0, 0, 0.04),
-      0 0 0 2px rgba($rose-pine-pine, 0.1);
+      0 0 0 2px rgba($primary-color, 0.1);
   }
 
   &:hover:not(:focus) {
-    border-color: rgba($rose-pine-highlight-high, 0.8);
-    background-color: rgba($rose-pine-overlay, 0.4);
+    border-color: rgba($theme-border-dark, 0.8);
+    background-color: rgba($theme-overlay, 0.4);
   }
 }
 
@@ -38,7 +38,7 @@ input[type="checkbox"] {
   -moz-appearance: none;
   width: 1.2em;
   height: 1.2em;
-  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border: 1px solid rgba($theme-border-light, 0.6);
   border-radius: 4px;
   margin-right: 0.5em;
   position: relative;
@@ -47,8 +47,8 @@ input[type="checkbox"] {
   transition: all 0.2s ease;
 
   &:checked {
-    background-color: $rose-pine-pine;
-    border-color: $rose-pine-pine;
+    background-color: $primary-color;
+    border-color: $primary-color;
 
     &:after {
       content: "";
@@ -64,7 +64,7 @@ input[type="checkbox"] {
   }
 
   &:hover:not(:checked) {
-    background-color: rgba($rose-pine-pine, 0.1);
+    background-color: rgba($primary-color, 0.1);
   }
 }
 
@@ -75,7 +75,7 @@ input[type="radio"] {
   -moz-appearance: none;
   width: 1.2em;
   height: 1.2em;
-  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border: 1px solid rgba($theme-border-light, 0.6);
   border-radius: 50%;
   margin-right: 0.5em;
   position: relative;
@@ -84,7 +84,7 @@ input[type="radio"] {
   transition: all 0.2s ease;
 
   &:checked {
-    border: 2px solid $rose-pine-pine;
+    border: 2px solid $primary-color;
 
     &:after {
       content: "";
@@ -94,13 +94,13 @@ input[type="radio"] {
       transform: translate(-50%, -50%);
       width: 0.6em;
       height: 0.6em;
-      background-color: $rose-pine-pine;
+      background-color: $primary-color;
       border-radius: 50%;
     }
   }
 
   &:hover:not(:checked) {
-    background-color: rgba($rose-pine-pine, 0.1);
+    background-color: rgba($primary-color, 0.1);
   }
 }
 
@@ -108,7 +108,7 @@ input[type="radio"] {
 form label {
   font-family: "JetBrains Mono", "Fira Code", monospace;
   font-weight: 500;
-  color: $rose-pine-pine;
+  color: $primary-color;
   margin-bottom: 0.5em;
   display: block;
   font-size: 0.95em;

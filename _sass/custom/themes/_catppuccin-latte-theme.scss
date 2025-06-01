@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Catppuccin Latte Theme - Soothing pastel theme
+   ========================================================================== */
+
+/*
+   Catppuccin Latte Colors
+   ========================================================================== */
+
+// Base colors
+$latte-rosewater: #dc8a78 !default;
+$latte-flamingo: #dd7878 !default;
+$latte-pink: #ea76cb !default;
+$latte-mauve: #8839ef !default;
+$latte-red: #d20f39 !default;
+$latte-maroon: #e64553 !default;
+$latte-peach: #fe640b !default;
+$latte-yellow: #df8e1d !default;
+$latte-green: #40a02b !default;
+$latte-teal: #179299 !default;
+$latte-sky: #04a5e5 !default;
+$latte-sapphire: #209fb5 !default;
+$latte-blue: #1e66f5 !default;
+$latte-lavender: #7287fd !default;
+
+// Neutral colors
+$latte-text: #4c4f69 !default;
+$latte-subtext1: #5c5f77 !default;
+$latte-subtext0: #6c6f85 !default;
+$latte-overlay2: #7c7f93 !default;
+$latte-overlay1: #8c8fa1 !default;
+$latte-overlay0: #9ca0b0 !default;
+$latte-surface2: #acb0be !default;
+$latte-surface1: #bcc0cc !default;
+$latte-surface0: #ccd0da !default;
+$latte-base: #eff1f5 !default;
+$latte-mantle: #e6e9ef !default;
+$latte-crust: #dce0e8 !default;
+
+// Dark mode for code blocks
+$latte-dark-base: #1e1e2e !default;
+$latte-dark-surface: #313244 !default;
+$latte-dark-text: #cdd6f4 !default;
+
+// Theme variable overrides
+$background-color: $latte-base !default;
+$text-color: $latte-text !default;
+$primary-color: $latte-blue !default;
+$link-color: $latte-blue !default;
+$link-color-hover: $latte-sapphire !default;
+$link-color-visited: $latte-mauve !default;
+$masthead-link-color: $latte-text !default;
+$masthead-link-color-hover: $latte-blue !default;
+$navicon-link-color-hover: $latte-subtext1 !default;
+
+// Buttons
+$btn-primary-background-color: $latte-blue !default;
+
+// Code highlighting
+$code-background-color: $latte-mantle !default;
+$code-background-color-dark: $latte-crust !default;
+
+// Dark code blocks
+$latte-code-base: $latte-dark-base !default;
+$latte-code-surface: $latte-dark-surface !default;
+$latte-code-text: $latte-dark-text !default;
+
+// Syntax highlighting colors
+$base00: $latte-base !default;
+$base01: $latte-mantle !default;
+$base02: $latte-surface0 !default;
+$base03: $latte-overlay0 !default;
+$base04: $latte-overlay1 !default;
+$base05: $latte-text !default;
+$base06: $latte-subtext0 !default;
+$base07: $latte-subtext1 !default;
+$base08: $latte-red !default;
+$base09: $latte-peach !default;
+$base0a: $latte-yellow !default;
+$base0b: $latte-green !default;
+$base0c: $latte-teal !default;
+$base0d: $latte-blue !default;
+$base0e: $latte-mauve !default;
+$base0f: $latte-flamingo !default;
+
+// Notice colors
+$notice-primary-color: $latte-blue !default;
+$notice-info-color: $latte-sky !default;
+$notice-warning-color: $latte-yellow !default;
+$notice-danger-color: $latte-red !default;
+$notice-success-color: $latte-green !default;
+
+// Border colors
+$border-color: $latte-surface0 !default;
+
+// Footer colors
+$footer-background-color: $latte-mantle !default;
+
+// Container width
+$container-max-width: 1280px !default;

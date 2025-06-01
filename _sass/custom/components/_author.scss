@@ -6,7 +6,7 @@
 .author__avatar {
   img {
     border-radius: 50%;
-    border: 2px solid $rose-pine-pine;
+    border: 2px solid $primary-color;
     transition: all 0.3s ease;
     max-width: 110px;
 
@@ -24,7 +24,7 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 1.2em;
-    color: $rose-pine-pine;
+    color: $primary-color;
     font-weight: 600;
 
     &:after {
@@ -34,8 +34,8 @@
       height: 2px;
       background: linear-gradient(
         to right,
-        $rose-pine-pine,
-        rgba($rose-pine-pine, 0.3)
+        $primary-color,
+        rgba($primary-color, 0.3)
       );
       margin-top: 0.3em;
       margin-bottom: 0.5em;
@@ -46,7 +46,7 @@
     font-size: 0.9em;
     line-height: 1.5;
     margin-bottom: 0.5em;
-    color: $rose-pine-text;
+    color: $text-color;
   }
 }
 
@@ -55,14 +55,14 @@
     margin-bottom: 0.5em;
     font-size: 0.9em;
     padding: 0.5em 1em;
-    background-color: rgba($rose-pine-pine, 0.1);
-    color: $rose-pine-pine;
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
     border: none;
     border-radius: 4px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     &:hover {
-      background-color: rgba($rose-pine-pine, 0.2);
+      background-color: rgba($primary-color, 0.2);
       transform: translateY(-1px);
     }
 
@@ -80,7 +80,7 @@
   .fas,
   .fab,
   .far {
-    color: $rose-pine-text;
+    color: $text-color;
     transition: all 0.3s ease;
   }
 
@@ -110,13 +110,13 @@
     }
 
     &:hover {
-      background-color: rgba($rose-pine-pine, 0.08);
+      background-color: rgba($primary-color, 0.08);
 
       .fa,
       .fas,
       .fab,
       .far {
-        color: $rose-pine-pine;
+        color: $primary-color;
         transform: scale(1.1);
       }
     }

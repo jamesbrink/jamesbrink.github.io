@@ -4,8 +4,8 @@
 
 // Terminal-inspired header with Rosé Pine Dawn theme
 .masthead {
-  background-color: $rose-pine-surface;
-  border-bottom: 1px solid $rose-pine-highlight-med;
+  background-color: $theme-surface;
+  border-bottom: 1px solid $theme-border-medium;
   font-family: "JetBrains Mono", "Fira Code", monospace;
 
   &__inner-wrap {
@@ -23,7 +23,7 @@
     background: transparent;
 
     a {
-      color: $rose-pine-text;
+      color: $text-color;
       position: relative;
       text-decoration: none;
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -33,8 +33,8 @@
       border-radius: 4px;
 
       &:hover {
-        color: $rose-pine-pine;
-        background-color: rgba($rose-pine-pine, 0.08);
+        color: $primary-color;
+        background-color: rgba($primary-color, 0.08);
         transform: translateY(-1px);
       }
     }
@@ -52,7 +52,7 @@
           height: 2px;
           bottom: 0;
           left: 0;
-          background-color: $rose-pine-pine;
+          background-color: $primary-color;
           transform: scaleX(0);
           transform-origin: bottom right;
           transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -74,17 +74,17 @@
     }
 
     .site-title {
-      color: $rose-pine-pine;
+      color: $primary-color;
       font-weight: bold;
       position: relative;
       padding: 0.3em 0.6em;
       border-radius: 4px;
-      background-color: rgba($rose-pine-pine, 0.08);
+      background-color: rgba($primary-color, 0.08);
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
       &:before {
         content: ">";
-        color: $rose-pine-rose;
+        color: $theme-accent-secondary;
         margin-right: 0.4em;
         font-weight: bold;
         display: inline-block;
@@ -92,7 +92,7 @@
       }
 
       &:hover {
-        background-color: rgba($rose-pine-pine, 0.15);
+        background-color: rgba($primary-color, 0.15);
         transform: translateY(-1px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
@@ -103,17 +103,17 @@
     }
 
     .hidden-links {
-      background: $rose-pine-surface;
-      border: 1px solid $rose-pine-highlight-med;
+      background: $theme-surface;
+      border: 1px solid $theme-border-medium;
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
       a {
-        color: $rose-pine-text;
+        color: $text-color;
 
         &:hover {
-          color: $rose-pine-pine;
-          background: $rose-pine-overlay;
+          color: $primary-color;
+          background: $theme-overlay;
         }
       }
     }

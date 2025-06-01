@@ -2,7 +2,7 @@
    Layout
    ========================================================================== */
 
-// General layout styles with Rosé Pine Dawn theme
+// General layout styles
 .page {
   padding: 0;
 
@@ -14,7 +14,7 @@
 }
 
 .page__inner-wrap {
-  background-color: $rose-pine-base;
+  background-color: $background-color;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   padding: 2em;
@@ -49,7 +49,7 @@
 }
 
 .page__title {
-  color: $rose-pine-pine;
+  color: $primary-color;
   margin-top: 0;
   line-height: 1.2;
   font-weight: 600;
@@ -63,8 +63,8 @@
     height: 2px;
     background: linear-gradient(
       to right,
-      $rose-pine-pine,
-      rgba($rose-pine-pine, 0.3)
+      $primary-color,
+      rgba($primary-color, 0.3)
     );
     margin-top: 0.5em;
   }
@@ -89,7 +89,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: $rose-pine-base;
+  background-color: $background-color;
 }
 
 // Main content area
@@ -133,7 +133,7 @@
   // Style the Recent Posts heading to match other page titles
   .archive__subtitle {
     h3 {
-      color: $rose-pine-pine;
+      color: $primary-color;
       margin-top: 0;
       margin-bottom: 1.5em;
       line-height: 1.2;
@@ -148,8 +148,8 @@
         height: 2px;
         background: linear-gradient(
           to right,
-          $rose-pine-pine,
-          rgba($rose-pine-pine, 0.3)
+          $primary-color,
+          rgba($primary-color, 0.3)
         );
         margin-top: 0.5em;
       }

@@ -5,9 +5,9 @@
 // Light theme buttons with modern styling and hover animations
 .btn {
   font-family: "JetBrains Mono", "Fira Code", monospace;
-  background-color: $rose-pine-overlay;
+  background-color: $theme-overlay;
   border: none;
-  color: $rose-pine-text;
+  color: $text-color;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -26,7 +26,7 @@
     background: linear-gradient(
       120deg,
       transparent,
-      rgba($rose-pine-pine, 0.2),
+      rgba($primary-color, 0.2),
       transparent
     );
     transform: translateX(-100%);
@@ -35,8 +35,8 @@
   }
 
   &:hover {
-    background-color: rgba($rose-pine-pine, 0.1);
-    color: $rose-pine-pine;
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 
@@ -46,8 +46,8 @@
   }
 
   &--primary {
-    background-color: $rose-pine-pine;
-    color: #ffffff;
+    background-color: $primary-color;
+    color: $theme-text-contrast;
 
     &:before {
       background: linear-gradient(
@@ -59,14 +59,14 @@
     }
 
     &:hover {
-      background-color: darken($rose-pine-pine, 5%);
-      color: #ffffff;
+      background-color: darken($primary-color, 5%);
+      color: $theme-text-contrast;
     }
   }
 
   &--success {
-    background-color: $rose-pine-foam;
-    color: #ffffff;
+    background-color: $theme-info;
+    color: $theme-text-contrast;
 
     &:before {
       background: linear-gradient(
@@ -78,13 +78,13 @@
     }
 
     &:hover {
-      background-color: darken($rose-pine-foam, 5%);
+      background-color: darken($theme-info, 5%);
     }
   }
 
   &--danger {
-    background-color: $rose-pine-love;
-    color: #ffffff;
+    background-color: $theme-danger;
+    color: $theme-text-contrast;
 
     &:before {
       background: linear-gradient(
@@ -96,13 +96,13 @@
     }
 
     &:hover {
-      background-color: darken($rose-pine-love, 5%);
+      background-color: darken($theme-danger, 5%);
     }
   }
 
   &--info {
-    background-color: $rose-pine-iris;
-    color: #ffffff;
+    background-color: $link-color;
+    color: $theme-text-contrast;
 
     &:before {
       background: linear-gradient(
@@ -114,25 +114,25 @@
     }
 
     &:hover {
-      background-color: darken($rose-pine-iris, 5%);
+      background-color: darken($link-color, 5%);
     }
   }
 
   &--warning {
-    background-color: $rose-pine-gold;
-    color: $rose-pine-base;
+    background-color: $theme-warning;
+    color: $background-color;
 
     &:before {
       background: linear-gradient(
         120deg,
         transparent,
-        rgba($rose-pine-base, 0.1),
+        rgba($background-color, 0.1),
         transparent
       );
     }
 
     &:hover {
-      background-color: darken($rose-pine-gold, 5%);
+      background-color: darken($theme-warning, 5%);
     }
   }
 }

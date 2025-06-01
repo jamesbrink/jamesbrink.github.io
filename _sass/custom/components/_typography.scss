@@ -4,8 +4,8 @@
 
 // Light theme body styling
 body {
-  background-color: var(--background-color, $rose-pine-base);
-  color: var(--text-color, $rose-pine-text);
+  background-color: var(--background-color, $background-color);
+  color: var(--text-color, $text-color);
   font-feature-settings:
     "calt" 1,
     "ss01" 1,
@@ -26,7 +26,7 @@ body {
     position: relative;
     margin-top: 1.2em; /* Reduced from 1.5em */
     margin-bottom: 0.6em; /* Reduced from 0.8em */
-    color: $rose-pine-text;
+    color: $text-color;
     font-weight: 600;
     line-height: 1.3;
 
@@ -39,8 +39,8 @@ body {
       height: 3px;
       background: linear-gradient(
         to right,
-        $rose-pine-pine,
-        rgba($rose-pine-pine, 0)
+        $primary-color,
+        rgba($primary-color, 0)
       );
       border-radius: 3px;
       transition: width 0.3s ease;
@@ -53,13 +53,13 @@ body {
 
   h1 {
     font-size: 1.8em; /* Reduced from 2em */
-    color: $rose-pine-pine;
+    color: $primary-color;
 
     &:after {
       background: linear-gradient(
         to right,
-        $rose-pine-pine,
-        rgba($rose-pine-pine, 0)
+        $primary-color,
+        rgba($primary-color, 0)
       );
     }
   }
@@ -70,8 +70,8 @@ body {
     &:after {
       background: linear-gradient(
         to right,
-        $rose-pine-rose,
-        rgba($rose-pine-rose, 0)
+        $theme-accent-secondary,
+        rgba($theme-accent-secondary, 0)
       );
     }
   }
@@ -82,8 +82,8 @@ body {
     &:after {
       background: linear-gradient(
         to right,
-        mix($rose-pine-pine, $rose-pine-rose, 50%),
-        rgba(mix($rose-pine-pine, $rose-pine-rose, 50%), 0)
+        mix($primary-color, $theme-accent-secondary, 50%),
+        rgba(mix($primary-color, $theme-accent-secondary, 50%), 0)
       );
     }
   }
@@ -94,8 +94,8 @@ body {
     &:after {
       background: linear-gradient(
         to right,
-        $rose-pine-foam,
-        rgba($rose-pine-foam, 0)
+        $theme-info,
+        rgba($theme-info, 0)
       );
     }
   }
@@ -106,8 +106,8 @@ body {
     &:after {
       background: linear-gradient(
         to right,
-        $rose-pine-iris,
-        rgba($rose-pine-iris, 0)
+        $link-color,
+        rgba($link-color, 0)
       );
     }
   }
@@ -118,8 +118,8 @@ body {
     &:after {
       background: linear-gradient(
         to right,
-        $rose-pine-gold,
-        rgba($rose-pine-gold, 0)
+        $theme-warning,
+        rgba($theme-warning, 0)
       );
     }
   }
@@ -136,7 +136,7 @@ body {
 
   a:not(.btn) {
     text-decoration: none;
-    color: $rose-pine-pine;
+    color: $primary-color;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     font-weight: 500;
@@ -149,13 +149,13 @@ body {
       height: 2px;
       bottom: -2px;
       left: 0;
-      background-color: $rose-pine-rose;
+      background-color: $theme-accent-secondary;
       transform-origin: bottom right;
       transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
     &:hover {
-      color: $rose-pine-rose;
+      color: $theme-accent-secondary;
       text-decoration: none;
 
       &:after {
@@ -165,10 +165,10 @@ body {
     }
 
     &:visited {
-      color: $rose-pine-iris;
+      color: $link-color-visited;
 
       &:after {
-        background-color: $rose-pine-iris;
+        background-color: $link-color-visited;
       }
     }
   }

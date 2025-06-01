@@ -2,34 +2,35 @@
    Theme Variables & Mixins
    ========================================================================== */
 
-// Rosé Pine Dawn Theme Variables
+// Theme Variables - These map to whichever theme is active
 // These variables centralize the theme's color palette and design tokens
 
 // Base Colors
-$theme-base: $rose-pine-base !default; // Primary background
-$theme-surface: $rose-pine-surface !default; // Secondary background
-$theme-overlay: $rose-pine-overlay !default; // Tertiary background
+$theme-base: $background-color !default; // Primary background
+$theme-surface: darken($background-color, 3%) !default; // Secondary background
+$theme-overlay: darken($background-color, 5%) !default; // Tertiary background
 
 // Text Colors
-$theme-text-primary: $rose-pine-text !default; // Primary text
-$theme-text-secondary: $rose-pine-subtle !default; // Secondary text
-$theme-text-muted: $rose-pine-muted !default; // Muted text
+$theme-text-primary: $text-color !default; // Primary text
+$theme-text-secondary: lighten($text-color, 20%) !default; // Secondary text
+$theme-text-muted: lighten($text-color, 40%) !default; // Muted text
+$theme-text-contrast: if(lightness($background-color) > 50%, #000000, #ffffff) !default; // High contrast text
 
 // Accent Colors
-$theme-accent-primary: $rose-pine-pine !default; // Primary accent (buttons, links)
-$theme-accent-secondary: $rose-pine-rose !default; // Secondary accent
-$theme-accent-tertiary: $rose-pine-iris !default; // Tertiary accent
+$theme-accent-primary: $primary-color !default; // Primary accent (buttons, links)
+$theme-accent-secondary: if(variable-exists('notice-danger-color'), $notice-danger-color, #e74c3c) !default; // Secondary accent
+$theme-accent-tertiary: $link-color !default; // Tertiary accent
 
 // Semantic Colors
-$theme-success: mix($rose-pine-pine, $rose-pine-foam, 50%) !default;
-$theme-info: $rose-pine-foam !default;
-$theme-warning: $rose-pine-gold !default;
-$theme-danger: $rose-pine-love !default;
+$theme-success: $notice-success-color !default;
+$theme-info: $notice-info-color !default;
+$theme-warning: $notice-warning-color !default;
+$theme-danger: $notice-danger-color !default;
 
 // Border Colors
-$theme-border-light: $rose-pine-highlight-low !default;
-$theme-border-medium: $rose-pine-highlight-med !default;
-$theme-border-dark: $rose-pine-highlight-high !default;
+$theme-border-light: rgba($border-color, 0.3) !default;
+$theme-border-medium: rgba($border-color, 0.5) !default;
+$theme-border-dark: $border-color !default;
 
 // Shadow Levels
 $theme-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05) !default;

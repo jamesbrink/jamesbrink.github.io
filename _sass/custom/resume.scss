@@ -18,24 +18,24 @@
 .project-item {
   padding: 1rem;
   border-radius: 8px;
-  background-color: rgba(245, 240, 255, 0.4);
+  background-color: $theme-surface;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: $theme-shadow-md;
   }
   
   h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1rem; /* Reduced from 1.1rem */
-    color: #31748f; /* Pine color from Rosé Pine theme */
+    color: $primary-color;
   }
   
   p {
     margin: 0;
     font-size: 0.85rem; /* Reduced from 0.9rem */
-    color: #797593; /* Subtle text color */
+    color: $theme-text-secondary;
   }
 }
 
@@ -44,14 +44,14 @@
   h2 {
     margin-top: 2.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(107, 114, 128, 0.2);
-    color: #907aa9; /* Iris color from Rosé Pine theme */
+    border-bottom: 1px solid $theme-border-light;
+    color: $theme-accent-secondary;
     font-size: 1.5em; /* Reduced from default */
   }
   
   h3 {
     margin-top: 1.5rem;
-    color: #31748f; /* Pine color from Rosé Pine theme */
+    color: $primary-color;
     font-size: 1.15em; /* Reduced from default */
   }
   
@@ -66,7 +66,7 @@
   h3 + p {
     margin-top: 0;
     font-style: italic;
-    color: #797593; /* Subtle text color */
+    color: $theme-text-muted;
   }
   
   h3 + p + p {
@@ -99,7 +99,7 @@
       
       &:before {
         content: "•";
-        color: #ebbcba; /* Rose color from Rosé Pine theme */
+        color: $theme-accent-secondary;
         display: inline-block;
         width: 1em;
         margin-left: 0;

@@ -8,7 +8,7 @@
   .fas,
   .fab,
   .far {
-    color: $rose-pine-text;
+    color: $text-color;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
@@ -25,14 +25,14 @@
     }
 
     &:hover {
-      background-color: rgba($rose-pine-pine, 0.1);
+      background-color: rgba($primary-color, 0.1);
       transform: translateY(-2px);
 
       .fa,
       .fas,
       .fab,
       .far {
-        color: $rose-pine-pine;
+        color: $primary-color;
         transform: scale(1.1);
       }
     }
@@ -54,19 +54,19 @@
       .fab,
       .far {
         margin-right: 0.5em;
-        color: $rose-pine-subtle;
+        color: $theme-text-secondary;
         transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
 
       &:hover {
-        background-color: rgba($rose-pine-pine, 0.08);
+        background-color: rgba($primary-color, 0.08);
         transform: translateX(2px);
 
         .fa,
         .fas,
         .fab,
         .far {
-          color: $rose-pine-pine;
+          color: $primary-color;
         }
       }
     }
@@ -78,7 +78,7 @@
   li {
     &:before {
       content: "~";
-      color: $rose-pine-rose;
+      color: $theme-accent-secondary;
       margin-right: 0.5em;
       display: inline-block;
     }

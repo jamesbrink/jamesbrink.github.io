@@ -4,32 +4,33 @@
 
 // Inline code styling within content
 .page__content {
-  // Improve code blocks appearance to match terminal/Vim with Rosé Pine (dark theme)
+  // Improve code blocks appearance to match terminal/Vim with dark theme
   code {
     border-radius: 4px;
     font-family:
       "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, Monaco,
       "Liberation Mono", monospace;
-    background-color: $rose-pine-code-surface;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: $rose-pine-code-text;
+    background-color: if(variable-exists('theme-surface'), $theme-surface, darken($background-color, 5%));
+    border: 1px solid $border-color;
+    color: if(variable-exists('nord11'), $nord11, $primary-color);
     padding: 0.2em 0.4em;
+    font-size: 0.95em;
   }
 
   pre {
     border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: $rose-pine-code-base;
+    border: 1px solid $border-color;
+    background-color: if(variable-exists('nord0'), $nord0, #2E3440);
     padding: 1em;
     margin: 1em 0;
     overflow-x: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     > code {
       border: none;
       background: none;
       padding: 0;
-      color: $rose-pine-code-text;
+      color: if(variable-exists('nord6'), $nord6, #ECEFF4);
       font-size: 0.9em;
       line-height: 1.5;
 
@@ -39,7 +40,7 @@
       .cm,
       .cp,
       .cs {
-        color: $rose-pine-muted;
+        color: $theme-text-muted;
       } // Comments
       .k,
       .kd,
@@ -47,11 +48,11 @@
       .kp,
       .kr,
       .kt {
-        color: $rose-pine-pine;
+        color: $primary-color;
       } // Keywords
       .o,
       .p {
-        color: $rose-pine-subtle;
+        color: $theme-text-secondary;
       } // Operators, punctuation
       .s,
       .s1,
@@ -63,7 +64,7 @@
       .sh,
       .si,
       .sx {
-        color: $rose-pine-gold;
+        color: $theme-warning;
       } // Strings
       .na,
       .nb,
@@ -77,53 +78,53 @@
       .nn,
       .nx,
       .py {
-        color: $rose-pine-rose;
+        color: $theme-accent-secondary;
       } // Names, functions
       .m,
       .mf,
       .mh,
       .mi,
       .mo {
-        color: $rose-pine-gold;
+        color: $theme-warning;
       } // Numbers
       .nt,
       .nv,
       .vc,
       .vg,
       .vi {
-        color: $rose-pine-foam;
+        color: $theme-info;
       } // Tags, variables
       .w {
-        color: $rose-pine-text;
+        color: $text-color;
       } // Whitespace
       .err {
-        color: $rose-pine-love;
+        color: $theme-danger;
       } // Errors
       .bp,
       .n {
-        color: $rose-pine-text;
+        color: $text-color;
       } // Built-ins, names
       .kc,
       .l,
       .ld {
-        color: $rose-pine-rose;
+        color: $theme-accent-secondary;
       } // Constants, literals
       .sr,
       .ss {
-        color: $rose-pine-foam;
+        color: $theme-info;
       } // Regex
       .gd {
-        color: $rose-pine-love;
+        color: $theme-danger;
       } // Deleted
       .gi {
-        color: $rose-pine-foam;
+        color: $theme-info;
       } // Inserted
       .gh,
       .gu {
-        color: $rose-pine-subtle;
+        color: $theme-text-secondary;
       } // Headers
       .gp {
-        color: $rose-pine-muted;
+        color: $theme-text-muted;
       } // Prompt
     }
   }
@@ -132,13 +133,13 @@
 // Modern code blocks
 div.highlighter-rouge,
 figure.highlight {
-  background-color: $rose-pine-surface;
-  color: $rose-pine-text;
+  background-color: $theme-surface;
+  color: $text-color;
   font-family: "JetBrains Mono", "Fira Code", monospace;
   border-radius: 8px;
   margin: 1.5em 0;
   padding: 0;
-  border: 1px solid rgba($rose-pine-highlight-low, 0.6);
+  border: 1px solid rgba($theme-border-light, 0.6);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
   position: relative;
   overflow: hidden;
@@ -151,7 +152,7 @@ figure.highlight {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(to right, $rose-pine-pine, $rose-pine-rose);
+    background: linear-gradient(to right, $primary-color, $theme-accent-secondary);
     opacity: 0.7;
     z-index: 1;
   }
@@ -174,10 +175,10 @@ figure.highlight {
 
     // Line numbers
     .lineno {
-      color: $rose-pine-subtle;
+      color: $theme-text-secondary;
       margin-right: 1em;
       padding-right: 0.5em;
-      border-right: 1px solid rgba($rose-pine-highlight-low, 0.5);
+      border-right: 1px solid rgba($theme-border-light, 0.5);
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -204,7 +205,7 @@ figure.highlight {
     .sh,
     .si,
     .sx {
-      color: $rose-pine-rose;
+      color: $theme-accent-secondary;
     }
 
     // Keywords
@@ -215,31 +216,31 @@ figure.highlight {
     .kp,
     .kr,
     .kt {
-      color: $rose-pine-pine;
+      color: $primary-color;
       font-weight: 600;
     }
 
     // Functions
     .nf,
     .fm {
-      color: $rose-pine-iris;
+      color: $link-color;
     }
   }
 }
 
 // Inline code styling
 code.highlighter-rouge {
-  background-color: rgba($rose-pine-highlight-low, 0.4);
-  color: $rose-pine-pine;
+  background-color: rgba($theme-border-light, 0.4);
+  color: $primary-color;
   font-family: "JetBrains Mono", "Fira Code", monospace;
   padding: 0.2em 0.4em;
   border-radius: 4px;
   font-size: 0.9em;
-  border: 1px solid rgba($rose-pine-highlight-low, 0.3);
+  border: 1px solid rgba($theme-border-light, 0.3);
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: rgba($rose-pine-highlight-low, 0.6);
-    border-color: rgba($rose-pine-highlight-low, 0.5);
+    background-color: rgba($theme-border-light, 0.6);
+    border-color: rgba($theme-border-light, 0.5);
   }
 }

@@ -11,18 +11,18 @@ table {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba($rose-pine-highlight-low, 0.5);
+  border: 1px solid rgba($theme-border-light, 0.5);
   font-family: "JetBrains Mono", "Fira Code", monospace;
 
   thead {
-    background-color: rgba($rose-pine-pine, 0.1);
+    background-color: rgba($primary-color, 0.1);
 
     th {
       padding: 0.8em 1em;
       text-align: left;
       font-weight: 600;
-      color: $rose-pine-pine;
-      border-bottom: 2px solid rgba($rose-pine-pine, 0.2);
+      color: $primary-color;
+      border-bottom: 2px solid rgba($primary-color, 0.2);
       position: relative;
       transition: all 0.3s ease;
 
@@ -33,7 +33,7 @@ table {
         left: 0;
         width: 0;
         height: 2px;
-        background-color: $rose-pine-pine;
+        background-color: $primary-color;
         transition: width 0.3s ease;
       }
 
@@ -48,17 +48,17 @@ table {
       transition: all 0.2s ease;
 
       &:nth-child(even) {
-        background-color: rgba($rose-pine-overlay, 0.5);
+        background-color: rgba($theme-overlay, 0.5);
       }
 
       &:hover {
-        background-color: rgba($rose-pine-rose, 0.05);
+        background-color: rgba($theme-accent-secondary, 0.05);
       }
 
       td {
         padding: 0.8em 1em;
-        border-bottom: 1px solid rgba($rose-pine-highlight-low, 0.5);
-        color: $rose-pine-text;
+        border-bottom: 1px solid rgba($theme-border-light, 0.5);
+        color: $text-color;
         transition: all 0.3s ease;
       }
 

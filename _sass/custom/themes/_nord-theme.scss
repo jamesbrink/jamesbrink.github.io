@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Nord Theme - Arctic, north-bluish color palette
+   ========================================================================== */
+
+/*
+   Nord Colors
+   ========================================================================== */
+
+// Polar Night (dark backgrounds)
+$nord0: #2E3440 !default;  // Darkest
+$nord1: #3B4252 !default;
+$nord2: #434C5E !default;
+$nord3: #4C566A !default;  // Lightest dark
+
+// Snow Storm (light colors)
+$nord4: #D8DEE9 !default;  // Dark white
+$nord5: #E5E9F0 !default;  // Medium white
+$nord6: #ECEFF4 !default;  // Pure white
+
+// Frost (blue colors)
+$nord7: #8FBCBB !default;  // Frozen polar water
+$nord8: #88C0D0 !default;  // Pure arctic water
+$nord9: #81A1C1 !default;  // Arctic ocean
+$nord10: #5E81AC !default; // Deep arctic ocean
+
+// Aurora (accent colors)
+$nord11: #BF616A !default; // Red
+$nord12: #D08770 !default; // Orange
+$nord13: #EBCB8B !default; // Yellow
+$nord14: #A3BE8C !default; // Green
+$nord15: #B48EAD !default; // Purple
+
+// Theme variable overrides
+$background-color: $nord6 !default;
+$text-color: $nord0 !default;  // Changed to darkest for better contrast
+$primary-color: $nord10 !default;
+$link-color: $nord10 !default;  // Changed to match primary
+$link-color-hover: $nord8 !default;
+$link-color-visited: $nord9 !default;
+$masthead-link-color: $nord2 !default;  // Darker for header
+$masthead-link-color-hover: $nord10 !default;
+$navicon-link-color-hover: mix($nord3, $nord6, 80%) !default;
+
+// Buttons
+$btn-primary-background-color: $nord10 !default;
+
+// Code highlighting
+$code-background-color: $nord5 !default;
+$code-background-color-dark: $nord4 !default;
+
+// Dark code blocks
+$nord-code-base: $nord0 !default;
+$nord-code-surface: $nord1 !default;
+$nord-code-text: $nord6 !default;
+
+// Syntax highlighting colors
+$base00: $nord6 !default; // Default Background
+$base01: $nord5 !default; // Lighter Background
+$base02: $nord4 !default; // Selection Background
+$base03: $nord3 !default; // Comments, Invisibles
+$base04: $nord2 !default; // Operators, Punctuation
+$base05: $nord3 !default; // Default Foreground, Variables
+$base06: $nord2 !default; // Light Foreground
+$base07: $nord1 !default; // Light Background
+$base08: $nord11 !default; // Red
+$base09: $nord12 !default; // Orange
+$base0a: $nord13 !default; // Yellow
+$base0b: $nord14 !default; // Green
+$base0c: $nord7 !default; // Cyan
+$base0d: $nord9 !default; // Blue
+$base0e: $nord15 !default; // Purple
+$base0f: $nord12 !default; // Brown
+
+// Notice colors
+$notice-primary-color: $nord10 !default;
+$notice-info-color: $nord8 !default;
+$notice-warning-color: $nord13 !default;
+$notice-danger-color: $nord11 !default;
+$notice-success-color: $nord14 !default;
+
+// Border colors
+$border-color: $nord4 !default;
+
+// Footer colors
+$footer-background-color: $nord5 !default;
+
+// Forms
+$form-background-color: $nord6 !default;
+$form-border-color: $nord4 !default;
+
+// Tables
+$table-background-color: $nord6 !default;
+$table-border-color: $nord4 !default;
+$table-header-color: $nord5 !default;
+
+// Additional theme-specific variables
+$theme-surface: $nord5 !default;
+$theme-overlay: $nord4 !default;
+$theme-muted: $nord3 !default;
+$theme-subtle: $nord2 !default;
+$theme-text: $nord0 !default;
+$theme-text-muted: $nord3 !default;
+$theme-text-contrast: $nord6 !default;  // White text for dark backgrounds
+
+// Semantic colors
+$theme-info: $nord8 !default;
+$theme-success: $nord14 !default;
+$theme-warning: $nord13 !default;
+$theme-danger: $nord11 !default;
+
+// Accent colors
+$theme-accent-primary: $nord10 !default;
+$theme-accent-secondary: $nord9 !default;
+$theme-accent-tertiary: $nord7 !default;
+
+// Borders
+$theme-border-light: rgba($nord3, 0.1) !default;
+$theme-border-medium: rgba($nord3, 0.2) !default;
+$theme-border-heavy: rgba($nord3, 0.3) !default;
+
+// Container width
+$container-max-width: 1280px !default;
