@@ -1,50 +1,59 @@
 ---
 name: resume
 description: Edit and regenerate the PDF resume. Use when the user wants to update resume content, add jobs, modify skills, or regenerate the PDF.
-argument-hint: '[action: edit|build|open]'
-allowed-tools: Read, Edit, Write, Bash(typst *), Bash(open *)
+argument-hint: '[full|condensed] [edit|build|open]'
+allowed-tools: Read, Edit, Write, Bash(typst *), Bash(open *), Bash(cp *)
 ---
 
 # Resume Management
 
-Source file: `resume/resume.typ` (Typst format)
-Output: `public/JamesBrink-Resume.pdf`
+## Templates
 
-## Actions
+| Template  | Source                        | Output                                   | Pages |
+| --------- | ----------------------------- | ---------------------------------------- | ----- |
+| Full      | `resume/resume.typ`           | `public/JamesBrink-Resume.pdf`           | 2     |
+| Condensed | `resume/resume-condensed.typ` | `public/JamesBrink-Resume-Condensed.pdf` | 1     |
 
-Based on `$ARGUMENTS`:
+## Usage
 
-- **edit** or no args: Read the source file and help the user make changes
-- **build**: Compile the resume to PDF
-- **open**: Compile and open the PDF
+`/resume [template] [action]`
 
-## Build Command
+**Templates:** `full` (default), `condensed`
+**Actions:** `edit` (default), `build`, `open`
+
+Examples:
+
+- `/resume` — Edit full resume
+- `/resume condensed` — Edit condensed resume
+- `/resume build` — Build full resume
+- `/resume condensed build` — Build condensed resume
+- `/resume open` — Build and open full resume
+- `/resume condensed open` — Build and open condensed resume
+
+## Build Commands
 
 ```bash
+# Full (2-page)
 typst compile resume/resume.typ public/JamesBrink-Resume.pdf
+
+# Condensed (1-page)
+typst compile resume/resume-condensed.typ public/JamesBrink-Resume-Condensed.pdf
 ```
 
-## File Structure
+## Helper Functions
 
-The Typst file has these sections:
+Both templates use:
 
-- **Header**: Name, tagline, contact info
-- **Experience**: Job entries with company, location, role, dates, description
-- **Open Source Projects**: Project name, role, description
-- **Sidebar**: Contact, Technical Expertise, Education, Languages
+- `#job(company, location, role, dates)[description]` — Job entry
+- `#project(name, role, desc)` — Project entry
+- `#section(title)` — Section header
+- `#sidebar-entry(title, subtitle)` — Sidebar item
 
-## Helper Functions in resume.typ
+## Workflow
 
-- `#job(company, location, role, dates)[description]` - Add a job entry
-- `#project(name, role, desc)` - Add a project entry
-- `#section(title)` - Add a section header
-- `#sidebar-entry(title, subtitle)` - Add sidebar item
+1. Read the appropriate `.typ` file
+2. Make requested changes
+3. Compile to PDF
+4. Open for review
 
-## When Editing
-
-1. Read `resume/resume.typ` first
-2. Make the requested changes
-3. Compile with `typst compile resume/resume.typ public/JamesBrink-Resume.pdf`
-4. Open with `open public/JamesBrink-Resume.pdf` so user can review
-
-Always preserve the existing style and formatting.
+When editing content that applies to both (new job, updated skills), update both templates.

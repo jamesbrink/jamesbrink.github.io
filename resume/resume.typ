@@ -1,4 +1,4 @@
-// James Brink Resume
+// James Brink Resume - Full Version
 // Compile: typst compile resume.typ ../public/JamesBrink-Resume.pdf
 
 #let accent = rgb("#2563eb")
@@ -7,18 +7,15 @@
 
 #set document(title: "James Brink - Resume", author: "James Brink")
 #set page(paper: "us-letter", margin: (x: 0.5in, y: 0.5in))
-#set text(font: "Georgia", size: 10pt, fill: dark)
-#set par(justify: true, leading: 0.65em)
-#set text(hyphenate: false)
+#set text(font: "Georgia", size: 10pt, fill: dark, hyphenate: false)
+#set par(justify: false, leading: 0.65em)
 
-// Section header
 #let section(title) = {
   v(12pt)
   text(fill: accent, weight: "bold", size: 10pt, tracking: 0.08em, upper(title))
   v(4pt)
 }
 
-// Job entry
 #let job(company, location, role, dates, body) = {
   v(8pt)
   grid(
@@ -30,7 +27,6 @@
   text(size: 9.5pt)[#body]
 }
 
-// Project entry
 #let project(name, role, desc) = {
   v(6pt)
   [*#name* #h(4pt) #text(style: "italic", fill: muted, size: 9pt)[— #role]]
@@ -38,7 +34,6 @@
   text(size: 9pt, fill: muted)[#desc]
 }
 
-// Sidebar entry
 #let sidebar-entry(title, sub) = {
   v(4pt)
   text(weight: "bold", size: 9.5pt)[#title]
@@ -53,7 +48,7 @@
     #text(font: "Georgia", size: 36pt, weight: "regular")[James Brink]
     #v(6pt)
     #text(size: 10pt, fill: muted)[
-      I specialize in infrastructure as code, AI/ML integration, and building highly efficient, fault-tolerant environments using modern DevOps practices.
+      I specialize in infrastructure as code, and building out highly efficient and fault-tolerant environments using CI/CD pipelines.
     ]
   ],
   align(right)[
@@ -73,11 +68,12 @@
   columns: (1fr, 170pt),
   column-gutter: 20pt,
   [
-    // Experience
     #section("Experience")
 
+    #text(size: 9.5pt)[Extensive experience with Docker, Terraform, Ansible, Packer, AWS, Apache CloudStack, Kubernetes, Prometheus, InfluxDB, and various other relational database systems.]
+
     #job("Infosys, iCETS Department", "Remote", "Technology Architect", "Oct 2023 - Present")[
-      Technology Architect in R&D-focused department, incubating NextGen services and offerings. Building technology capabilities to accelerate innovation in AI & ML, cloud technologies, and advanced analytics. Pioneering agentic AI workflows and LLM tooling integration.
+      Working as a Technology Architect in the Research and Development (R&D) focused Infosys Center for Emerging Technology Solutions (iCETS) department, focusing on incubating NextGen services and offerings. Involved in identifying and building technology capabilities to accelerate innovation in areas including AI & ML, cloud technologies, and advanced analytics. Contributing to the development of emerging technology solutions that help enterprises navigate their digital transformation journey through adaptive systems, automation, and cognitive solutions.
     ]
 
     #job("Quantierra", "Remote", "Principal Consultant", "Sep 2023 - Present")[
@@ -85,43 +81,59 @@
     ]
 
     #job("NFTCO/Unblocked", "Remote", "Site Reliability Engineer", "Aug 2022 - Apr 2023")[
-      Maintained AWS infrastructure and CI/CD pipelines. Reduced operating costs by 45% through infrastructure optimization. Built custom Prometheus exporters and optimized GitHub Actions with self-hosted runners.
+      Worked within a small engineering team and maintained the AWS infrastructure, monitoring, and all things CI/CD related. Spent a good amount of effort to drastically reduce our applications operating costs by about 45%. Built out custom monitoring, including Prometheus exporters. Did a lot of work with GitHub Actions, and leveraged self-hosted runners for faster pipelines.
     ]
 
     #job("Blockfolio/FTX", "Remote", "Site Reliability Engineer", "Nov 2020 - Aug 2022")[
-      Maintained AWS infrastructure for event-driven applications. Managed large-scale data with InfluxDB. Led infrastructure security initiatives and attack mitigation.
+      Worked directly with a small and highly talented team of engineers to maintain and improve an AWS infrastructure for an event-driven, and very active application. This role required me to become familiar with Cassandra, and InfluxDB and ensure we stayed ahead of the curve on scaling both as we had very massive data sets. In addition to the usual DevOps/SRE tasks, I assisted in mitigating multiple attacks on the infrastructure regularly.
     ]
 
     #job("Synapse Studios", "Tempe, AZ", "Director of Infrastructure", "Jan 2020 - Oct 2020")[
-      Designed modular Terraform infrastructure for AWS. Managed 15+ customer AWS environments with custom monitoring and CI/CD pipelines.
+      Worked closely with software engineering teams to build out a reusable and modular terraform covering a very specific application stack on AWS. Managed & monitored around 15 different AWS accounts owned by customers. Set up custom monitoring and VPN solutions as well as maintain CI/CD pipelines and improve build times.
     ]
 
     #job("Solid Command Inc", "Phoenix, AZ", "Director of Infrastructure", "Aug 2019 - Aug 2022")[
-      Built private cloud on bare metal using Apache CloudStack. Infrastructure as code with Ansible, Terraform, Packer, and Docker.
+      Built out a private cloud on bare metal servers using Apache Cloudstack. Built out infrastructure that ran on top of the private cloud. All of this work was infrastructure as code using Ansible, Terraform, Packer, and Docker.
     ]
 
     #job("Kadima Ventures", "Phoenix, AZ", "Director of Infrastructure", "Dec 2017 - 2019")[
-      Promoted from SysOps/DevOps to Director. Led operations team, managed AWS/Kubernetes infrastructure. Automated pipelines to drastically reduce deployment times.
+      Building awesome stuff, with an amazing team. Initially hired into a SysOps/DevOps role which also included R&D work and building proof of concepts for various products. Was quickly promoted to Director of Infrastructure where I became responsible for managing the operations team, and all production infrastructure. Extensive work with AWS, Kubernetes, Docker, Terraform, and CI/CD pipelines. Created automated pipelines for an existing production application drastically reducing deployment times.
     ]
 
     #job("GoDaddy", "Gilbert, AZ", "Site Reliability Engineer", "Sep 2015 - Nov 2016")[
-      Progressed from Systems Administrator to SRE. Managed mixed Windows/Linux environments, mitigated network attacks, automated operational tasks.
+      Hired as a Systems Administrator for shared hosting operations, and later progressed into an Engineering role on the Hosting Automation Team. Managed a mixed Windows/Linux production environment. Daily tasks included mitigating network attacks, monitoring infrastructure, resolving system configuration, performance, and capacity issues. I later transitioned into an engineering role where our team automated most of the daily operational tasks, reducing the workload of the operations team as well as decreasing downtime across the environment.
+    ]
+
+    #job("Taste.com", "San Francisco, CA", "Lead Engineer", "May 2015 - Sep 2015")[
+      Lead engineer for an online catering company based in San Francisco, CA. This role involved re-factoring and improving upon an existing Ruby on Rails application.
+    ]
+
+    #job("Yahoo", "Sunnyvale, CA", "Senior Services Engineer", "Jul 2015 - Aug 2015")[
+      Contracted to work on the Small Business Services Team to migrate all Yahoo Small Business Services from Yahoo to Aabaco. Assisted with day-to-day operations of production, development, and QA environments.
     ]
 
     #job("Edward Jones", "Tempe, AZ", "Systems Administrator II", "Jan 2008 - May 2015")[
-      Managed enterprise applications in mixed Linux/Windows environments. Application deployment, incident response, and infrastructure troubleshooting.
+      Brought on board to take over management and monitoring for a range of enterprise applications. Responsibilities included application deployment, incident triage, and troubleshooting Linux and Windows environments. Promoted to System Administrator II after demonstrating an aptitude for tackling complicated infrastructure problems from availability to disaster recovery.
     ]
 
-    // Projects
-    #section("Open Source Projects")
+    #job("Media Solutions Corp", "Tempe, AZ", "Software Engineer", "Sep 2011 - Oct 2012")[
+      Hired to lead efforts to bring a project that was 4 months behind schedule up to date and deployed to production. By Utilizing Ruby on Rails, I started a new and rapidly prototyped and deployed the requested feature set within 2 weeks. In addition to application maintenance, I was responsible for the oversight and mentorship of new Ruby developers.
+    ]
 
-    #project("MCP NixOS", "Creator", "Model Context Protocol Server for NixOS resources")
-    #project("nxv", "Creator", "Blazingly fast CLI for finding any Nix package version")
-    #project("Envisaged", "Creator", "Effortless Gource Visualizations with Docker")
-    #project("Docker OpenGL", "Creator", "Mesa 3D OpenGL Software Rendering in Docker")
-    #project("ComfyUI Nix", "Creator", "Nix flake for ComfyUI with curated custom nodes")
-    #project("brinkOS", "Creator", "Arch-based Linux distribution for Engineers")
-    #project("Essex", "Creator", "Docker project template generator in Rust")
+    #job("Accram", "Phoenix, AZ", "Network Engineer/Systems Integrator", "Jan 2004 - Jan 2008")[
+      While at Accram, my time was split between managing internal infrastructure, running the company's small ISP, as well as managing customers' networks and servers. My daily duties varied dramatically from one day to another, as we were always taking on new customers with new challenges. Spent a lot of time on projects, generally working as a lead. Selected to manage and lead customer technical onboarding and integrations. Worked directly with sales teams to identify and pursue new customers and deliver solutions specific to their needs.
+    ]
+
+    #section("Projects")
+
+    #project("MCP NixOS", "Creator / Maintainer", "Model Context Protocol Server for NixOS resources.")
+    #project("nxv", "Creator", "Blazingly fast CLI for finding any version of any Nix package.")
+    #project("ComfyUI Nix", "Creator / Maintainer", "Nix flake for ComfyUI with curated custom nodes.")
+    #project("Envisaged", "Creator / Maintainer", "Effortless Gource Visualizations with Docker.")
+    #project("Docker OpenGL", "Creator / Maintainer", "Mesa 3D OpenGL Software Rendering (Gallium) - LLVMpipe, and OpenSWR Drivers.")
+    #project("brinkOS", "Creator", "Experimental Linux distribution based on Arch Linux.")
+    #project("Essex", "Creator / Maintainer", "Docker project template generator written in Rust.")
+    #project("Arch Linux", "AUR Package Maintainer", "Maintaining packages not included in the distributions primary repository.")
   ],
   [
     // Sidebar
@@ -134,20 +146,6 @@
     #link("https://github.com/jamesbrink")[GitHub] \
     #link("https://linkedin.com/in/jamesbrink")[LinkedIn] \
     #link("https://jamesbrink.me")[jamesbrink.me]
-
-    #section("Technical Expertise")
-    #set text(size: 9pt)
-    Docker, Terraform, Ansible \
-    Packer, AWS, Kubernetes \
-    Prometheus, InfluxDB \
-    Apache CloudStack \
-    CI/CD, Linux, NixOS
-    #v(6pt)
-    *AI/ML:* \
-    Agentic AI \
-    Agentic Workflows \
-    LLM Tooling \
-    AI-Augmented Dev
 
     #section("Education")
     #sidebar-entry("Certification, CCNA", "Cisco Systems - 2007")
