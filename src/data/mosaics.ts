@@ -67,6 +67,23 @@ export const mosaics: AstroMosaic[] = [
     },
     featured: true,
   },
+  {
+    id: 'horsehead-ha',
+    title: 'Horsehead Nebula (Ha)',
+    catalogId: 'Barnard 33 / IC 434',
+    description:
+      'A 3-panel hydrogen-alpha mosaic of the iconic Horsehead Nebula in Orion. This monochrome image reveals the intricate structure of the dark nebula silhouetted against the glowing emission nebula IC 434, about 1,500 light-years away.',
+    thumbnail: `${BASE_PATH}/thumbnails/horsehead-ha.jpg`,
+    preview: `${BASE_PATH}/grid/horsehead-ha.jpg`,
+    dzi: `${BASE_PATH}/mosaics/horsehead-ha/horsehead-ha.dzi`,
+    dimensions: { width: 8000, height: 4700 },
+    captureInfo: {
+      location: 'Phoenix, Arizona',
+      equipment: '11" RASA',
+      panels: 3,
+    },
+    featured: true,
+  },
 ];
 
 /** Mosaics to display in featured section */

@@ -168,6 +168,105 @@ export const astrophotos: AstroPhoto[] = [
     fullSize: `${BASE_PATH}/full/pillars-of-creation.jpg`,
     featured: false,
   },
+  {
+    id: 'lagoon-nebula-wide',
+    title: 'Lagoon Nebula',
+    catalogId: 'M8 / NGC 6523',
+    description:
+      'A giant interstellar cloud in Sagittarius, one of only two star-forming nebulae visible to the naked eye from mid-northern latitudes. This wide-field view spans 110 by 50 light-years at a distance of about 4,100 light-years.',
+    thumbnail: `${BASE_PATH}/thumbnails/lagoon-nebula-wide.jpg`,
+    grid: `${BASE_PATH}/grid/lagoon-nebula-wide.jpg`,
+    fullSize: `${BASE_PATH}/full/lagoon-nebula-wide.jpg`,
+    featured: false,
+  },
+  {
+    id: 'double-cluster',
+    title: 'Double Cluster',
+    catalogId: 'NGC 869 / NGC 884',
+    description:
+      'A pair of open star clusters in Perseus, about 7,500 light-years away. These neighboring clusters are each a few hundred stars and only a few hundred light-years apart, making them a stunning binocular and telescope target.',
+    thumbnail: `${BASE_PATH}/thumbnails/double-cluster.jpg`,
+    grid: `${BASE_PATH}/grid/double-cluster.jpg`,
+    fullSize: `${BASE_PATH}/full/double-cluster.jpg`,
+    featured: false,
+  },
+  {
+    id: 'california-nebula',
+    title: 'California Nebula',
+    catalogId: 'NGC 1499',
+    description:
+      'An emission nebula in Perseus, named for its resemblance to the state of California. Located about 1,000 light-years away, it spans nearly 2.5 degrees of sky and is illuminated by the nearby star Xi Persei.',
+    thumbnail: `${BASE_PATH}/thumbnails/california-nebula.jpg`,
+    grid: `${BASE_PATH}/grid/california-nebula.jpg`,
+    fullSize: `${BASE_PATH}/full/california-nebula.jpg`,
+    featured: false,
+  },
+  {
+    id: 'pleiades',
+    title: 'Pleiades',
+    catalogId: 'M45',
+    description:
+      'The Seven Sisters, one of the nearest and most obvious star clusters to Earth. Located about 444 light-years away in Taurus, the cluster is surrounded by a stunning blue reflection nebula from interstellar dust.',
+    thumbnail: `${BASE_PATH}/thumbnails/pleiades.jpg`,
+    grid: `${BASE_PATH}/grid/pleiades.jpg`,
+    fullSize: `${BASE_PATH}/full/pleiades.jpg`,
+    featured: false,
+  },
+  {
+    id: 'thors-helmet',
+    title: "Thor's Helmet",
+    catalogId: 'NGC 2359',
+    description:
+      'An emission nebula in Canis Major, about 15,000 light-years away. Shaped by the powerful stellar wind from the central Wolf-Rayet star, it spans roughly 30 light-years and resembles a winged helmet.',
+    thumbnail: `${BASE_PATH}/thumbnails/thors-helmet.jpg`,
+    grid: `${BASE_PATH}/grid/thors-helmet.jpg`,
+    fullSize: `${BASE_PATH}/full/thors-helmet.jpg`,
+    featured: false,
+  },
+  {
+    id: 'eagle-nebula-starless',
+    title: 'Eagle Nebula (Starless)',
+    catalogId: 'M16',
+    description:
+      'A starless rendition of the Eagle Nebula, processed to reveal the intricate structure of the gas and dust without the distraction of foreground stars. The famous Pillars of Creation rise from the center of this star-forming region.',
+    thumbnail: `${BASE_PATH}/thumbnails/eagle-nebula-starless.jpg`,
+    grid: `${BASE_PATH}/grid/eagle-nebula-starless.jpg`,
+    fullSize: `${BASE_PATH}/full/eagle-nebula-starless.jpg`,
+    featured: false,
+  },
+  {
+    id: 'elephants-trunk',
+    title: "Elephant's Trunk Nebula",
+    catalogId: 'IC 1396',
+    description:
+      'A concentration of interstellar gas and dust within the larger ionized gas region IC 1396, located about 2,400 light-years away in Cepheus. The dark, winding trunk is a site of active star formation.',
+    thumbnail: `${BASE_PATH}/thumbnails/elephants-trunk.jpg`,
+    grid: `${BASE_PATH}/grid/elephants-trunk.jpg`,
+    fullSize: `${BASE_PATH}/full/elephants-trunk.jpg`,
+    featured: false,
+  },
+  {
+    id: 'hercules-cluster',
+    title: 'Hercules Globular Cluster',
+    catalogId: 'M13',
+    description:
+      'One of the brightest globular clusters in the northern sky, containing several hundred thousand stars packed into a sphere about 145 light-years across. Located 25,000 light-years away in Hercules.',
+    thumbnail: `${BASE_PATH}/thumbnails/hercules-cluster.jpg`,
+    grid: `${BASE_PATH}/grid/hercules-cluster.jpg`,
+    fullSize: `${BASE_PATH}/full/hercules-cluster.jpg`,
+    featured: false,
+  },
+  {
+    id: 'horsehead-nebula',
+    title: 'Horsehead Nebula',
+    catalogId: 'Barnard 33 / IC 434',
+    description:
+      'One of the most identifiable nebulae in the sky, this dark nebula silhouetted against the bright emission nebula IC 434 lies about 1,500 light-years away in Orion. The distinctive horse-head shape is sculpted by radiation from nearby stars.',
+    thumbnail: `${BASE_PATH}/thumbnails/horsehead-nebula.jpg`,
+    grid: `${BASE_PATH}/grid/horsehead-nebula.jpg`,
+    fullSize: `${BASE_PATH}/full/horsehead-nebula.jpg`,
+    featured: false,
+  },
 ];
 
 /** Photos to display in the homepage carousel */

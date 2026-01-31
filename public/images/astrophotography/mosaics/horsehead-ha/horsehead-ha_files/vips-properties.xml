@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<image xmlns="http://www.vips.ecs.soton.ac.uk//dzsave" date="2026-01-31T12:51:56.370369-07" version="8.18.0">
+  <properties>
+    <property>
+      <name>width</name>
+      <value type="gint">8000</value>
+    </property>
+    <property>
+      <name>height</name>
+      <value type="gint">4700</value>
+    </property>
+    <property>
+      <name>bands</name>
+      <value type="gint">3</value>
+    </property>
+    <property>
+      <name>xoffset</name>
+      <value type="gint">0</value>
+    </property>
+    <property>
+      <name>yoffset</name>
+      <value type="gint">0</value>
+    </property>
+    <property>
+      <name>xres</name>
+      <value type="gdouble">9.4488191604614258</value>
+    </property>
+    <property>
+      <name>yres</name>
+      <value type="gdouble">9.4488191604614258</value>
+    </property>
+    <property>
+      <name>vips-loader</name>
+      <value type="VipsRefString">tiffload</value>
+    </property>
+    <property>
+      <name>n-pages</name>
+      <value type="gint">1</value>
+    </property>
+    <property>
+      <name>resolution-unit</name>
+      <value type="VipsRefString">in</value>
+    </property>
+    <property>
+      <name>bits-per-sample</name>
+      <value type="gint">16</value>
+    </property>
+    <property>
+      <name>orientation</name>
+      <value type="gint">1</value>
+    </property>
+    <property>
+      <name>vips-sequential</name>
+      <value type="gint">1</value>
+    </property>
+  </properties>
+</image>
