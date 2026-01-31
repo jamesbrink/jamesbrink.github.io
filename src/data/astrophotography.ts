@@ -91,6 +91,83 @@ export const astrophotos: AstroPhoto[] = [
     fullSize: `${BASE_PATH}/full/trifid-nebula.jpg`,
     featured: false,
   },
+  {
+    id: 'moon-glow',
+    title: 'The Moon',
+    catalogId: 'Luna',
+    description:
+      'Earth\'s only natural satellite, captured with a 10" Ritchey-Chrétien telescope in November 2022. The terminator reveals dramatic shadows across craters and mountain ranges.',
+    thumbnail: `${BASE_PATH}/thumbnails/moon-glow.jpg`,
+    grid: `${BASE_PATH}/grid/moon-glow.jpg`,
+    fullSize: `${BASE_PATH}/full/moon-glow.jpg`,
+    featured: false,
+  },
+  {
+    id: 'sunflower-galaxy',
+    title: 'Sunflower Galaxy',
+    catalogId: 'M63',
+    description:
+      'A spiral galaxy in Canes Venatici, about 29 million light-years away. Known for its bright, patchy spiral arms wound tightly around a small central region.',
+    thumbnail: `${BASE_PATH}/thumbnails/sunflower-galaxy.jpg`,
+    grid: `${BASE_PATH}/grid/sunflower-galaxy.jpg`,
+    fullSize: `${BASE_PATH}/full/sunflower-galaxy.jpg`,
+    featured: false,
+  },
+  {
+    id: 'bodes-galaxy',
+    title: "Bode's Galaxy",
+    catalogId: 'M81',
+    description:
+      'A grand design spiral galaxy in Ursa Major, about 12 million light-years away. One of the brightest galaxies visible from Earth and a popular target for amateur astronomers.',
+    thumbnail: `${BASE_PATH}/thumbnails/bodes-galaxy.jpg`,
+    grid: `${BASE_PATH}/grid/bodes-galaxy.jpg`,
+    fullSize: `${BASE_PATH}/full/bodes-galaxy.jpg`,
+    featured: false,
+  },
+  {
+    id: 'cigar-galaxy',
+    title: 'Cigar Galaxy',
+    catalogId: 'M82',
+    description:
+      'A starburst galaxy in Ursa Major, about 12 million light-years away. Gravitational interaction with neighboring M81 has triggered intense star formation, making it five times more luminous than our Milky Way.',
+    thumbnail: `${BASE_PATH}/thumbnails/cigar-galaxy.jpg`,
+    grid: `${BASE_PATH}/grid/cigar-galaxy.jpg`,
+    fullSize: `${BASE_PATH}/full/cigar-galaxy.jpg`,
+    featured: false,
+  },
+  {
+    id: 'pinwheel-galaxy-supernova',
+    title: 'Pinwheel Galaxy & Supernova',
+    catalogId: 'M101 / SN2023ixf',
+    description:
+      'The Pinwheel Galaxy in Ursa Major, captured during the historic supernova SN2023ixf — the closest supernova in a decade. This 9-hour exposure shows the annotated position of the exploding star, about 21 million light-years away.',
+    thumbnail: `${BASE_PATH}/thumbnails/pinwheel-galaxy-supernova.jpg`,
+    grid: `${BASE_PATH}/grid/pinwheel-galaxy-supernova.jpg`,
+    fullSize: `${BASE_PATH}/full/pinwheel-galaxy-supernova.jpg`,
+    featured: false,
+  },
+  {
+    id: 'm109-galaxy',
+    title: 'M109',
+    catalogId: 'M109 / NGC 3992',
+    description:
+      'A barred spiral galaxy in Ursa Major, about 83 million light-years away. Captured with a 10" Ritchey-Chrétien telescope.',
+    thumbnail: `${BASE_PATH}/thumbnails/m109-galaxy.jpg`,
+    grid: `${BASE_PATH}/grid/m109-galaxy.jpg`,
+    fullSize: `${BASE_PATH}/full/m109-galaxy.jpg`,
+    featured: false,
+  },
+  {
+    id: 'pillars-of-creation',
+    title: 'Pillars of Creation',
+    catalogId: 'M16 / Eagle Nebula',
+    description:
+      'The iconic Pillars of Creation in the Eagle Nebula, about 7,000 light-years away. These towering columns of gas and dust are active star-forming regions. Captured with a 10" Ritchey-Chrétien telescope.',
+    thumbnail: `${BASE_PATH}/thumbnails/pillars-of-creation.jpg`,
+    grid: `${BASE_PATH}/grid/pillars-of-creation.jpg`,
+    fullSize: `${BASE_PATH}/full/pillars-of-creation.jpg`,
+    featured: false,
+  },
 ];
 
 /** Photos to display in the homepage carousel */
