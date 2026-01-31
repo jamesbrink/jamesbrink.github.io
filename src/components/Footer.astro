@@ -1,24 +1,13 @@
 ---
 import ContainerOuter from './ContainerOuter.astro';
 import ContainerInner from './ContainerInner.astro';
-
-interface NavItem {
-  href: string;
-  label: string;
-}
+import { navItems } from '../data/navigation';
 
 interface SocialLink {
   href: string;
   label: string;
   icon: string;
 }
-
-const navItems: NavItem[] = [
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Articles' },
-  { href: '/resume', label: 'Resume' },
-];
 
 const socialLinks: SocialLink[] = [
   { href: 'https://github.com/jamesbrink', label: 'GitHub', icon: 'github' },

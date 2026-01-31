@@ -1,6 +1,7 @@
 ---
 import Container from './Container.astro';
 import clsx from 'clsx';
+import { navItems } from '../data/navigation';
 
 interface Props {
   class?: string;
@@ -9,19 +10,6 @@ interface Props {
 const { class: className } = Astro.props;
 const pathname = Astro.url.pathname;
 const isHomePage = pathname === '/';
-
-interface NavItem {
-  href: string;
-  label: string;
-}
-
-const navItems: NavItem[] = [
-  { href: '/about', label: 'About' },
-  { href: '/astrophotography', label: 'Photos' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Articles' },
-  { href: '/resume', label: 'Resume' },
-];
 ---
 
 <header class={clsx('pointer-events-none relative z-50 flex flex-none flex-col', className)}>
