@@ -67,7 +67,7 @@
     ]
 
     #job("Quantierra", "Remote", "Principal Consultant", "Sep 2023 - Present")[
-      Microservices platform for NYC real estate intelligence. AI-powered dealflow with agentic email classification and autonomous document processing. Large-scale property datasets, geocoding, high-throughput ACRIS scrapers. NixOS/Terraform production infrastructure.
+      NYC real estate intelligence platform. AI-powered dealflow with agentic workflows, geocoding, ACRIS scrapers. NixOS/Terraform infrastructure.
     ]
 
     #job("NFTCO/Unblocked", "Remote", "Site Reliability Engineer", "Aug 2022 - Apr 2023")[
