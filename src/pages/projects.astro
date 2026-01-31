@@ -1,0 +1,233 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import type { Project } from '../components/ProjectCard.astro';
+
+// Helper to extract owner/repo from GitHub URL
+function getRepoFromUrl(url: string): string | null {
+  const match = url.match(/github\.com\/([^/]+\/[^/]+)/);
+  return match ? match[1] : null;
+}
+
+// Fetch GitHub stats for a repo
+async function fetchGitHubStats(repo: string): Promise<{ stars: number; forks: number } | null> {
+  try {
+    const response = await fetch(`https://api.github.com/repos/${repo}`, {
+      headers: {
+        Accept: 'application/vnd.github.v3+json',
+        'User-Agent': 'jamesbrink-website',
+      },
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return {
+      stars: data.stargazers_count,
+      forks: data.forks_count,
+    };
+  } catch {
+    return null;
+  }
+}
+
+// Base project data (without live stats)
+const baseFeatureProjects: Omit<Project, 'stars' | 'forks'>[] = [
+  {
+    name: 'MCP NixOS',
+    tagline: 'AI meets NixOS',
+    description:
+      'A Model Context Protocol server that enables AI assistants like Claude to query NixOS packages, options, and Home Manager configurations. Makes AI-assisted NixOS development practical and precise.',
+    href: 'https://github.com/utensils/mcp-nixos',
+    techStack: ['Python', 'MCP', 'NixOS', 'AI/LLM'],
+    featured: true,
+  },
+  {
+    name: 'Envisaged',
+    tagline: 'Visualize your git history',
+    description:
+      'Docker-wrapped Gource visualizations that generate stunning videos of repository history. Used by hundreds of developers to create visual retrospectives and project demos without manual setup.',
+    href: 'https://github.com/utensils/Envisaged',
+    techStack: ['Docker', 'Gource', 'FFmpeg', 'Shell'],
+    featured: true,
+  },
+  {
+    name: 'nxv',
+    tagline: 'Fast Nix package version lookup',
+    description:
+      'A blazingly fast CLI tool for finding any version of any Nix package across channels and history. Essential for pinning specific package versions in Nix configurations.',
+    href: 'https://github.com/jamesbrink/nxv',
+    techStack: ['Rust', 'NixOS'],
+    featured: true,
+  },
+  {
+    name: 'ComfyUI Nix',
+    tagline: 'Reproducible AI image generation',
+    description:
+      'A Nix flake for running ComfyUI with a curated selection of custom nodes. Provides reproducible, declarative AI image generation environments for creative workflows.',
+    href: 'https://github.com/utensils/comfyui-nix',
+    techStack: ['Nix', 'Python', 'ComfyUI', 'AI/ML'],
+    featured: true,
+  },
+];
+
+const baseProjects: Omit<Project, 'stars' | 'forks'>[] = [
+  {
+    name: 'Docker OpenGL',
+    tagline: 'Software rendering in containers',
+    description:
+      'Mesa 3D OpenGL software rendering for Docker containers. Enables GPU-less rendering for CI/CD pipelines, headless servers, and testing environments.',
+    href: 'https://github.com/utensils/docker-opengl',
+    techStack: ['Docker', 'Mesa3D', 'OpenGL'],
+  },
+  {
+    name: 'Essex',
+    tagline: 'Docker project scaffolding',
+    description:
+      'A Rust-based CLI tool for generating Docker project templates. Standardizes container project structure with best practices baked in.',
+    href: 'https://github.com/utensils/essex',
+    techStack: ['Rust', 'Docker', 'CLI'],
+  },
+  {
+    name: 'MCP Coroot',
+    tagline: 'AI-powered observability queries',
+    description:
+      'Model Context Protocol server for the Coroot observability platform. Enables AI assistants to query infrastructure metrics and application performance data.',
+    href: 'https://github.com/jamesbrink/mcp-coroot',
+    techStack: ['TypeScript', 'MCP', 'Coroot'],
+  },
+  {
+    name: 'MCP Deadmansnitch',
+    tagline: 'AI monitoring integration',
+    description:
+      "MCP server for Dead Man's Snitch monitoring service. Allows AI assistants to check cron job health and monitoring status.",
+    href: 'https://github.com/jamesbrink/mcp-deadmansnitch',
+    techStack: ['TypeScript', 'MCP', 'Monitoring'],
+  },
+  {
+    name: 'brinkOS',
+    tagline: 'Linux for engineers',
+    description:
+      'A custom Arch-based Linux distribution tailored for software engineers and power users. Includes a curated set of development tools, thoughtful defaults, and automated installation.',
+    href: 'https://github.com/brinkOS/brinkOS',
+    techStack: ['Arch Linux', 'Shell', 'Systemd'],
+  },
+  {
+    name: 'Arch Linux AUR',
+    tagline: 'Package maintainer',
+    description:
+      'Maintainer of several packages in the Arch User Repository. Contributing to the Arch ecosystem by packaging and maintaining software for the community.',
+    href: 'https://github.com/jamesbrink/arch-aur',
+    techStack: ['Arch Linux', 'PKGBUILD', 'Shell'],
+  },
+];
+
+// Fetch GitHub stats for all projects at build time
+async function enrichWithGitHubStats<T extends { href: string }>(
+  projects: T[]
+): Promise<(T & { stars?: number; forks?: number })[]> {
+  const enrichedProjects = await Promise.all(
+    projects.map(async (project) => {
+      const repo = getRepoFromUrl(project.href);
+      if (!repo) return project;
+
+      const stats = await fetchGitHubStats(repo);
+      if (!stats) return project;
+
+      return {
+        ...project,
+        stars: stats.stars,
+        forks: stats.forks,
+      };
+    })
+  );
+  return enrichedProjects;
+}
+
+// Enrich projects with live GitHub stats
+const featuredProjects: Project[] = await enrichWithGitHubStats(baseFeatureProjects);
+const projects: Project[] = await enrichWithGitHubStats(baseProjects);
+---
+
+<SimpleLayout
+  title="Projects"
+  intro="Open source tools and experiments that solve real problems. These projects reflect my interests in infrastructure automation, AI tooling, and developer experience."
+>
+  <div class="space-y-20">
+    <!-- Featured Projects -->
+    <section>
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+        Featured Projects
+      </h2>
+      <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Projects with significant community adoption or technical impact
+      </p>
+      <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {featuredProjects.map((project) => <ProjectCard project={project} featured />)}
+      </div>
+    </section>
+
+    <!-- All Projects -->
+    <section>
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+        More Projects
+      </h2>
+      <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        Tools, utilities, and experiments from across my GitHub
+      </p>
+      <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+
+    <!-- GitHub CTA -->
+    <section class="rounded-2xl border border-zinc-100 p-8 dark:border-zinc-700/40">
+      <div class="flex flex-col items-center text-center">
+        <svg class="h-12 w-12 text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
+          ></path>
+        </svg>
+        <h3 class="mt-4 text-lg font-semibold text-zinc-800 dark:text-zinc-100">
+          Explore more on GitHub
+        </h3>
+        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          These are just the highlights. Check out my full profile for more projects, contributions,
+          and experiments.
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a
+            href="https://github.com/jamesbrink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700 dark:bg-zinc-700 dark:hover:bg-zinc-600"
+          >
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
+              ></path>
+            </svg>
+            @jamesbrink
+          </a>
+          <a
+            href="https://github.com/utensils"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
+          >
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
+              ></path>
+            </svg>
+            @utensils
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</SimpleLayout>

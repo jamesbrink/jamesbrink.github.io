@@ -1,0 +1,104 @@
+---
+import SimpleLayout from '../../../layouts/SimpleLayout.astro';
+import Card from '../../../components/Card.astro';
+import CardTitle from '../../../components/CardTitle.astro';
+import CardDescription from '../../../components/CardDescription.astro';
+import CardCta from '../../../components/CardCta.astro';
+import CardEyebrow from '../../../components/CardEyebrow.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  // Get all unique tags (case-insensitive)
+  const tagMap = new Map<string, string>();
+  posts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+      const lowerTag = tag.toLowerCase();
+      if (!tagMap.has(lowerTag)) {
+        tagMap.set(lowerTag, tag);
+      }
+    });
+  });
+
+  return Array.from(tagMap.entries()).map(([lowerTag, displayTag]) => ({
+    params: { tag: lowerTag },
+    props: { displayTag },
+  }));
+}
+
+interface Props {
+  displayTag: string;
+}
+
+const { tag } = Astro.params;
+const { displayTag } = Astro.props;
+
+const posts = (await getCollection('blog'))
+  .filter(
+    (post) => !post.data.draft && post.data.tags.some((t) => t.toLowerCase() === tag?.toLowerCase())
+  )
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<SimpleLayout
+  title={`Articles tagged "${displayTag}"`}
+  intro={`${posts.length} article${posts.length === 1 ? '' : 's'} tagged with "${displayTag}"`}
+>
+  <div class="mb-8">
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
+    >
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="h-4 w-4 stroke-current">
+        <path
+          d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+      Back to all articles
+    </a>
+  </div>
+
+  <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+    <div class="flex max-w-3xl flex-col space-y-16">
+      {
+        posts.map((post) => (
+          <Card as="article">
+            <CardTitle href={`/blog/${post.slug}/`}>{post.data.title}</CardTitle>
+            <CardEyebrow as="time" dateTime={post.data.date.toISOString()} decorate>
+              {formatDate(post.data.date)}
+            </CardEyebrow>
+            <CardDescription>{post.data.description}</CardDescription>
+            {post.data.tags.length > 0 && (
+              <div class="mt-2 flex flex-wrap gap-1.5">
+                {post.data.tags.map((t) => (
+                  <a
+                    href={`/blog/tag/${t.toLowerCase()}/`}
+                    class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium transition ${
+                      t.toLowerCase() === tag?.toLowerCase()
+                        ? 'bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400'
+                        : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
+                    }`}
+                  >
+                    {t}
+                  </a>
+                ))}
+              </div>
+            )}
+            <CardCta>Read article</CardCta>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</SimpleLayout>

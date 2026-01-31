@@ -2,14 +2,24 @@
 import BaseLayout from './BaseLayout.astro';
 import Container from '../components/Container.astro';
 import Prose from '../components/Prose.astro';
+import { getCollection } from 'astro:content';
+
+interface SeriesPost {
+  slug: string;
+  title: string;
+  order: number;
+}
 
 interface Props {
   title: string;
   description: string;
   date: Date;
+  tags?: string[];
+  series?: string;
+  seriesOrder?: number;
 }
 
-const { title, description, date } = Astro.props;
+const { title, description, date, tags = [], series, seriesOrder } = Astro.props;
 
 function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
@@ -17,6 +27,20 @@ function formatDate(date: Date): string {
     month: 'long',
     day: 'numeric',
   });
+}
+
+// Get series posts if this article is part of a series
+let seriesPosts: SeriesPost[] = [];
+if (series) {
+  const allPosts = await getCollection('blog');
+  seriesPosts = allPosts
+    .filter((post) => post.data.series === series && !post.data.draft)
+    .sort((a, b) => (a.data.seriesOrder || 0) - (b.data.seriesOrder || 0))
+    .map((post) => ({
+      slug: post.slug,
+      title: post.data.title,
+      order: post.data.seriesOrder || 0,
+    }));
 }
 ---
 
@@ -56,7 +80,59 @@ function formatDate(date: Date): string {
               <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
               <span class="ml-3">{formatDate(date)}</span>
             </time>
+            {
+              tags.length > 0 && (
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <a
+                      href={`/blog/tag/${tag.toLowerCase()}/`}
+                      class="inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+                    >
+                      {tag}
+                    </a>
+                  ))}
+                </div>
+              )
+            }
           </header>
+
+          {
+            series && seriesPosts.length > 1 && (
+              <div class="mt-8 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+                <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                  Part of the "{series}" series
+                </h2>
+                <ol class="mt-4 space-y-2 text-sm">
+                  {seriesPosts.map((post, index) => {
+                    const currentOrder = seriesOrder ?? 0;
+                    const isCurrent = post.order === currentOrder;
+                    return (
+                      <li class="flex items-center gap-3">
+                        <span
+                          class={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium ${isCurrent ? 'bg-teal-500 text-white' : 'bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400'}`}
+                        >
+                          {index + 1}
+                        </span>
+                        {isCurrent ? (
+                          <span class="font-medium text-zinc-900 dark:text-zinc-100">
+                            {post.title}
+                          </span>
+                        ) : (
+                          <a
+                            href={`/blog/${post.slug}/`}
+                            class="text-zinc-600 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400"
+                          >
+                            {post.title}
+                          </a>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            )
+          }
+
           <Prose class="mt-8" data-mdx-content>
             <slot />
           </Prose>

@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Nightly rebuild at 6 AM UTC to refresh GitHub star counts
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 permissions:

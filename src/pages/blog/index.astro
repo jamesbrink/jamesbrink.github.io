@@ -11,6 +11,19 @@ const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
+// Get all unique tags with counts
+const tagCounts = posts.reduce(
+  (acc, post) => {
+    post.data.tags.forEach((tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+    });
+    return acc;
+  },
+  {} as Record<string, number>
+);
+
+const sortedTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]);
+
 function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -24,6 +37,25 @@ function formatDate(date: Date): string {
   title="Articles"
   intro="All of my long-form thoughts on programming, infrastructure, and more, collected in chronological order."
 >
+  {
+    sortedTags.length > 0 && (
+      <div class="mb-12">
+        <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Browse by topic</h2>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {sortedTags.map(([tag, count]) => (
+            <a
+              href={`/blog/tag/${tag.toLowerCase()}/`}
+              class="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-600 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            >
+              {tag}
+              <span class="text-xs text-zinc-400 dark:text-zinc-500">({count})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
     <div class="flex max-w-3xl flex-col space-y-16">
       {
@@ -34,6 +66,20 @@ function formatDate(date: Date): string {
               {formatDate(post.data.date)}
             </CardEyebrow>
             <CardDescription>{post.data.description}</CardDescription>
+            {post.data.tags.length > 0 && (
+              <div class="mt-2 flex flex-wrap gap-1.5">
+                {post.data.tags.slice(0, 3).map((tag) => (
+                  <span class="inline-flex items-center rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                    {tag}
+                  </span>
+                ))}
+                {post.data.tags.length > 3 && (
+                  <span class="inline-flex items-center text-xs text-zinc-400 dark:text-zinc-500">
+                    +{post.data.tags.length - 3} more
+                  </span>
+                )}
+              </div>
+            )}
             <CardCta>Read article</CardCta>
           </Card>
         ))
