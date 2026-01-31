@@ -51,6 +51,10 @@
             markdownlint-cli
             config.treefmt.build.wrapper
             inputs.bun2nix.packages.${system}.default
+            # Image manipulation tools
+            imagemagick
+            libwebp
+            oxipng
           ];
 
           # Script to run linting checks

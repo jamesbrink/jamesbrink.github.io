@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
+import Photos from '../components/Photos.astro';
 import Card from '../components/Card.astro';
 import CardTitle from '../components/CardTitle.astro';
 import CardDescription from '../components/CardDescription.astro';
@@ -131,7 +132,9 @@ const socialLinks = [
         I'm James, a battle-hardened SRE/DevOps engineer who's spent decades making computers do
         things they'd rather not. My days are filled with breaking and fixing infrastructure,
         constantly switching between Terraform, NixOS, and whatever shiny tech caught my ADHD
-        brain's attention this week.
+        brain's attention this week. When I'm not debugging production at 2am, I'm outside debugging
+        the universe through a telescope—because apparently staring at nebulae for hours while
+        freezing is my idea of relaxation.
       </p>
       <div class="mt-6 flex gap-6">
         {
@@ -208,6 +211,8 @@ const socialLinks = [
       </div>
     </div>
   </Container>
+
+  <Photos />
 
   <!-- Recent Articles -->
   <Container class="mt-24 md:mt-28">
