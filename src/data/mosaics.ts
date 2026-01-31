@@ -51,6 +51,22 @@ export const mosaics: AstroMosaic[] = [
     },
     featured: true,
   },
+  {
+    id: 'cygnus-mosaic',
+    title: 'Cygnus Region',
+    catalogId: 'Cygnus',
+    description:
+      'A wide-field mosaic of the Cygnus constellation, one of the richest regions of the Milky Way. This area contains numerous emission nebulae, dark nebulae, and star-forming regions along the galactic plane.',
+    thumbnail: `${BASE_PATH}/thumbnails/cygnus-mosaic.jpg`,
+    preview: `${BASE_PATH}/grid/cygnus-mosaic.jpg`,
+    dzi: `${BASE_PATH}/mosaics/cygnus-mosaic/cygnus-mosaic.dzi`,
+    dimensions: { width: 10655, height: 11164 },
+    captureInfo: {
+      location: 'Phoenix, Arizona',
+      equipment: '11" RASA',
+    },
+    featured: true,
+  },
 ];
 
 /** Mosaics to display in featured section */
