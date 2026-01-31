@@ -1,0 +1,241 @@
+---
+/**
+ * Deep-zoom viewer component using OpenSeadragon
+ * Features: pan/zoom, fullscreen toggle, keyboard navigation, touch support
+ */
+interface Props {
+  /** Path to DZI descriptor file */
+  dziPath: string;
+  /** Image title for accessibility */
+  title: string;
+  /** Optional CSS class for container */
+  class?: string;
+}
+
+const { dziPath, title, class: className } = Astro.props;
+---
+
+<div
+  class:list={[
+    'deep-zoom-container relative w-full overflow-hidden rounded-xl bg-zinc-900',
+    className,
+  ]}
+  data-dzi-path={dziPath}
+>
+  <!-- Loading state -->
+  <div class="loading-overlay absolute inset-0 z-10 flex items-center justify-center bg-zinc-900">
+    <div class="flex flex-col items-center gap-3">
+      <svg class="h-8 w-8 animate-spin text-teal-500" viewBox="0 0 24 24" fill="none">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
+        ></circle>
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+      <span class="text-sm text-zinc-400">Loading high-resolution image...</span>
+    </div>
+  </div>
+
+  <!-- OpenSeadragon container -->
+  <div class="openseadragon-viewer h-full w-full" role="img" aria-label={title}></div>
+
+  <!-- Controls overlay -->
+  <div class="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2">
+    <div class="pointer-events-auto flex gap-2 rounded-full bg-black/60 p-2 backdrop-blur-sm">
+      <button
+        type="button"
+        class="zoom-in-btn rounded-full p-2 text-white transition hover:bg-white/20"
+        aria-label="Zoom in"
+        title="Zoom in"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"
+          ></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        class="zoom-out-btn rounded-full p-2 text-white transition hover:bg-white/20"
+        aria-label="Zoom out"
+        title="Zoom out"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"></path>
+        </svg>
+      </button>
+
+      <div class="mx-1 w-px bg-white/20"></div>
+
+      <button
+        type="button"
+        class="home-btn rounded-full p-2 text-white transition hover:bg-white/20"
+        aria-label="Reset view"
+        title="Reset view"
+      >
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+          ></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        class="fullscreen-btn rounded-full p-2 text-white transition hover:bg-white/20"
+        aria-label="Toggle fullscreen"
+        title="Toggle fullscreen"
+      >
+        <svg class="fullscreen-enter h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+          ></path>
+        </svg>
+        <svg
+          class="fullscreen-exit hidden h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 9V4H4m0 5l5-5m6 5V4h5m-5 5l5-5M9 15v5H4m5-5l-5 5m11-5v5h5m-5-5l5 5"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Zoom level indicator -->
+  <div class="absolute top-4 right-4 z-20 rounded-full bg-black/60 px-3 py-1 backdrop-blur-sm">
+    <span class="zoom-level text-sm text-white">100%</span>
+  </div>
+</div>
+
+<script>
+  import OpenSeadragon from 'openseadragon';
+
+  function initDeepZoomViewers() {
+    const containers = document.querySelectorAll<HTMLElement>('.deep-zoom-container');
+
+    containers.forEach((container) => {
+      const viewerEl = container.querySelector<HTMLElement>('.openseadragon-viewer');
+      const loadingOverlay = container.querySelector<HTMLElement>('.loading-overlay');
+      const zoomInBtn = container.querySelector<HTMLButtonElement>('.zoom-in-btn');
+      const zoomOutBtn = container.querySelector<HTMLButtonElement>('.zoom-out-btn');
+      const homeBtn = container.querySelector<HTMLButtonElement>('.home-btn');
+      const fullscreenBtn = container.querySelector<HTMLButtonElement>('.fullscreen-btn');
+      const fullscreenEnter = container.querySelector<HTMLElement>('.fullscreen-enter');
+      const fullscreenExit = container.querySelector<HTMLElement>('.fullscreen-exit');
+      const zoomLevelEl = container.querySelector<HTMLElement>('.zoom-level');
+      const dziPath = container.dataset.dziPath;
+
+      if (!viewerEl || !dziPath) return;
+
+      // Skip if already initialized
+      if (viewerEl.dataset.initialized === 'true') return;
+      viewerEl.dataset.initialized = 'true';
+
+      // Initialize OpenSeadragon
+      const viewer = OpenSeadragon({
+        element: viewerEl,
+        tileSources: dziPath,
+        prefixUrl: '',
+        showNavigationControl: false,
+        showZoomControl: false,
+        showHomeControl: false,
+        showFullPageControl: false,
+        gestureSettingsMouse: {
+          scrollToZoom: true,
+          clickToZoom: true,
+          dblClickToZoom: true,
+        },
+        gestureSettingsTouch: {
+          pinchToZoom: true,
+          flickEnabled: true,
+          flickMinSpeed: 120,
+          flickMomentum: 0.25,
+        },
+        animationTime: 0.3,
+        blendTime: 0.1,
+        constrainDuringPan: true,
+        minZoomLevel: 0.5,
+        maxZoomLevel: 20,
+        visibilityRatio: 0.5,
+        springStiffness: 6.5,
+      });
+
+      // Hide loading overlay when tiles are loaded
+      viewer.addHandler('open', () => {
+        loadingOverlay?.classList.add('opacity-0');
+        setTimeout(() => {
+          loadingOverlay?.classList.add('hidden');
+        }, 300);
+      });
+
+      // Update zoom level indicator
+      viewer.addHandler('zoom', () => {
+        const zoom = viewer.viewport.getZoom();
+        const homeZoom = viewer.viewport.getHomeZoom();
+        const percentage = Math.round((zoom / homeZoom) * 100);
+        if (zoomLevelEl) {
+          zoomLevelEl.textContent = `${percentage}%`;
+        }
+      });
+
+      // Control button handlers
+      zoomInBtn?.addEventListener('click', () => {
+        viewer.viewport.zoomBy(1.5);
+        viewer.viewport.applyConstraints();
+      });
+
+      zoomOutBtn?.addEventListener('click', () => {
+        viewer.viewport.zoomBy(0.667);
+        viewer.viewport.applyConstraints();
+      });
+
+      homeBtn?.addEventListener('click', () => {
+        viewer.viewport.goHome();
+      });
+
+      fullscreenBtn?.addEventListener('click', () => {
+        viewer.setFullScreen(!viewer.isFullPage());
+      });
+
+      // Update fullscreen button icons
+      viewer.addHandler('full-screen', (event: { fullScreen: boolean }) => {
+        if (event.fullScreen) {
+          fullscreenEnter?.classList.add('hidden');
+          fullscreenExit?.classList.remove('hidden');
+        } else {
+          fullscreenEnter?.classList.remove('hidden');
+          fullscreenExit?.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  // Initialize on page load and after navigation
+  document.addEventListener('astro:page-load', initDeepZoomViewers);
+  initDeepZoomViewers();
+</script>
+
+<style>
+  .loading-overlay {
+    transition: opacity 0.3s ease-out;
+  }
+
+  /* OpenSeadragon overrides */
+  .deep-zoom-container :global(.openseadragon-canvas) {
+    outline: none !important;
+  }
+</style>

@@ -55,6 +55,7 @@
             imagemagick
             libwebp
             oxipng
+            vips # For DZI tile generation (deep zoom mosaics)
             # Resume generation
             typst
           ];

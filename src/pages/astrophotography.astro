@@ -1,7 +1,9 @@
 ---
 import SimpleLayout from '../layouts/SimpleLayout.astro';
 import GalleryLightbox from '../components/GalleryLightbox.astro';
+import MosaicCard from '../components/MosaicCard.astro';
 import { astrophotos } from '../data/astrophotography';
+import { featuredMosaics } from '../data/mosaics';
 ---
 
 <SimpleLayout
@@ -34,6 +36,28 @@ import { astrophotos } from '../data/astrophotography';
       ))
     }
   </div>
+
+  {/* High-Resolution Mosaics Section */}
+  {
+    featuredMosaics.length > 0 && (
+      <section class="mt-16 border-t border-zinc-100 pt-16 dark:border-zinc-700/40">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+            High-Resolution Mosaics
+          </h2>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            Explore these images at their full resolution with interactive pan and zoom.
+          </p>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {featuredMosaics.map((mosaic) => (
+            <MosaicCard mosaic={mosaic} />
+          ))}
+        </div>
+      </section>
+    )
+  }
 
   <GalleryLightbox photos={astrophotos} />
 </SimpleLayout>

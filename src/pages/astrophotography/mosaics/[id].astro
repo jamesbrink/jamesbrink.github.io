@@ -1,0 +1,157 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Container from '../../../components/Container.astro';
+import DeepZoomViewer from '../../../components/DeepZoomViewer.astro';
+import { mosaics, getMosaicById } from '../../../data/mosaics';
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return mosaics.map((mosaic) => ({
+    params: { id: mosaic.id },
+  }));
+};
+
+const { id } = Astro.params;
+const mosaic = getMosaicById(id as string);
+
+if (!mosaic) {
+  return Astro.redirect('/404');
+}
+
+function formatDimensions(width: number, height: number): string {
+  return `${width.toLocaleString()} x ${height.toLocaleString()}`;
+}
+---
+
+<BaseLayout
+  title={mosaic.title}
+  description={`Explore ${mosaic.title} (${mosaic.catalogId}) in high resolution. ${mosaic.description}`}
+>
+  <Container class="mt-8 sm:mt-16">
+    {/* Header */}
+    <header class="mb-6">
+      <nav class="mb-4">
+        <a
+          href="/astrophotography"
+          class="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Back to Astrophotography
+        </a>
+      </nav>
+
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1
+            class="text-3xl font-bold tracking-tight text-zinc-800 sm:text-4xl dark:text-zinc-100"
+          >
+            {mosaic.title}
+          </h1>
+          <p class="mt-1 text-lg text-teal-600 dark:text-teal-400">{mosaic.catalogId}</p>
+        </div>
+
+        <div class="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+          <span class="inline-flex items-center gap-1">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+              ></path>
+            </svg>
+            {formatDimensions(mosaic.dimensions.width, mosaic.dimensions.height)} pixels
+          </span>
+        </div>
+      </div>
+    </header>
+
+    {/* Deep Zoom Viewer */}
+    <DeepZoomViewer
+      dziPath={mosaic.dzi}
+      title={mosaic.title}
+      class="aspect-[3/2] sm:aspect-video"
+    />
+
+    {/* Controls hint */}
+    <p class="mt-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
+      Use mouse wheel to zoom, drag to pan. Press <kbd
+        class="rounded bg-zinc-200 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-700">F</kbd
+      > for fullscreen.
+    </p>
+
+    {/* Description and metadata */}
+    <div class="mt-8 grid gap-8 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-100">About this Image</h2>
+        <p class="mt-3 text-zinc-600 dark:text-zinc-400">{mosaic.description}</p>
+      </div>
+
+      {
+        mosaic.captureInfo && (
+          <div class="rounded-xl bg-zinc-100 p-6 dark:bg-zinc-800/50">
+            <h2 class="text-lg font-semibold text-zinc-800 dark:text-zinc-100">Capture Details</h2>
+            <dl class="mt-4 space-y-3 text-sm">
+              {mosaic.captureInfo.location && (
+                <div>
+                  <dt class="text-zinc-500 dark:text-zinc-400">Location</dt>
+                  <dd class="font-medium text-zinc-800 dark:text-zinc-200">
+                    {mosaic.captureInfo.location}
+                  </dd>
+                </div>
+              )}
+              {mosaic.captureInfo.equipment && (
+                <div>
+                  <dt class="text-zinc-500 dark:text-zinc-400">Equipment</dt>
+                  <dd class="font-medium text-zinc-800 dark:text-zinc-200">
+                    {mosaic.captureInfo.equipment}
+                  </dd>
+                </div>
+              )}
+              {mosaic.captureInfo.date && (
+                <div>
+                  <dt class="text-zinc-500 dark:text-zinc-400">Date</dt>
+                  <dd class="font-medium text-zinc-800 dark:text-zinc-200">
+                    {mosaic.captureInfo.date}
+                  </dd>
+                </div>
+              )}
+              {mosaic.captureInfo.exposureTime && (
+                <div>
+                  <dt class="text-zinc-500 dark:text-zinc-400">Exposure</dt>
+                  <dd class="font-medium text-zinc-800 dark:text-zinc-200">
+                    {mosaic.captureInfo.exposureTime}
+                  </dd>
+                </div>
+              )}
+              {mosaic.captureInfo.panels && (
+                <div>
+                  <dt class="text-zinc-500 dark:text-zinc-400">Panels</dt>
+                  <dd class="font-medium text-zinc-800 dark:text-zinc-200">
+                    {mosaic.captureInfo.panels} panel mosaic
+                  </dd>
+                </div>
+              )}
+            </dl>
+          </div>
+        )
+      }
+    </div>
+  </Container>
+</BaseLayout>
+
+<script>
+  // Add keyboard shortcut for fullscreen
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'f' || e.key === 'F') {
+      const fullscreenBtn = document.querySelector<HTMLButtonElement>('.fullscreen-btn');
+      fullscreenBtn?.click();
+    }
+  });
+</script>
