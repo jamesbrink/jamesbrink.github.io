@@ -28,7 +28,7 @@
 }
 
 #let project(name, role, desc) = {
-  v(6pt)
+  v(1pt)
   [*#name* #h(4pt) #text(style: "italic", fill: muted, size: 9pt)[— #role]]
   linebreak()
   text(size: 9pt, fill: muted)[#desc]
@@ -73,11 +73,11 @@
     #text(size: 9.5pt)[Extensive experience with Docker, Terraform, Ansible, Packer, AWS, Apache CloudStack, Kubernetes, Prometheus, InfluxDB, and various other relational database systems.]
 
     #job("Infosys, iCETS Department", "Remote", "Technology Architect", "Oct 2023 - Present")[
-      Working as a Technology Architect in the Research and Development (R&D) focused Infosys Center for Emerging Technology Solutions (iCETS) department, focusing on incubating NextGen services and offerings. Involved in identifying and building technology capabilities to accelerate innovation in areas including AI & ML, cloud technologies, and advanced analytics. Contributing to the development of emerging technology solutions that help enterprises navigate their digital transformation journey through adaptive systems, automation, and cognitive solutions.
+      Working as a Technology Architect in the Research and Development (R&D) focused Infosys Center for Emerging Technology Solutions (iCETS) department, focusing on incubating NextGen services and offerings. Involved in identifying and building technology capabilities to accelerate innovation in areas including AI & ML, cloud technologies, and advanced analytics. Deployed NixOS-based AI sandbox environments on HPE bare-metal servers for rapid prototyping and model experimentation. Contributing to the development of emerging technology solutions that help enterprises navigate their digital transformation journey through adaptive systems, automation, and cognitive solutions.
     ]
 
     #job("Quantierra", "Remote", "Principal Consultant", "Sep 2023 - Present")[
-      Building and maintaining a quantitative real estate platform for NYC property analysis. Developed dealflow automation, AI-powered document processing, geocoding services, and data scrapers using Rails, Go, Python, and React.
+      Architecting and maintaining a microservices platform for NYC commercial real estate intelligence. Built a dealflow automation pipeline with AI-powered email classification using ReACT-style agentic loops, autonomous browser automation, and LLM-based document processing. Developed a geocoding service with sub-20ms query latency. Created high-throughput ACRIS document scrapers. Managing large-scale property datasets with PLUTO zoning and tax data integration. Full NixOS production infrastructure with ZFS, Terraform, Podman, and comprehensive Prometheus/Grafana monitoring. Tech stack spans Rails 8, FastAPI, Go, React, PostgreSQL/PostGIS, Elasticsearch, and AWS.
     ]
 
     #job("NFTCO/Unblocked", "Remote", "Site Reliability Engineer", "Aug 2022 - Apr 2023")[

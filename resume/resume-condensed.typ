@@ -63,11 +63,11 @@
     #section("Experience")
 
     #job("Infosys, iCETS", "Remote", "Technology Architect", "Oct 2023 - Present")[
-      R&D department incubating NextGen services. Building AI/ML capabilities, pioneering agentic workflows and LLM tooling integration.
+      R&D department incubating NextGen services. Building AI/ML capabilities, agentic workflows, LLM tooling. NixOS on HPE bare-metal for AI sandboxes.
     ]
 
     #job("Quantierra", "Remote", "Principal Consultant", "Sep 2023 - Present")[
-      Quantitative real estate platform for NYC property analysis. Dealflow automation, AI document processing, geocoding services.
+      Microservices platform for NYC real estate intelligence. AI-powered dealflow with agentic email classification and autonomous document processing. Large-scale property datasets, geocoding, high-throughput ACRIS scrapers. NixOS/Terraform production infrastructure.
     ]
 
     #job("NFTCO/Unblocked", "Remote", "Site Reliability Engineer", "Aug 2022 - Apr 2023")[
