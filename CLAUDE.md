@@ -121,6 +121,25 @@ Use the `/resume` skill to edit and rebuild:
 
 When updating job descriptions, sync changes to both `.typ` files and `src/pages/resume.astro`.
 
+## Astrophotography Gallery
+
+Photos are managed via `/astrophotography` skill with data in `src/data/astrophotography.ts`.
+
+| Directory                                    | Size   | Purpose              |
+| -------------------------------------------- | ------ | -------------------- |
+| `public/images/astrophotography/thumbnails/` | 400px  | Gallery grid hover   |
+| `public/images/astrophotography/grid/`       | 800px  | Gallery grid display |
+| `public/images/astrophotography/full/`       | 1920px | Lightbox full view   |
+
+Use the `/astrophotography` skill to manage photos:
+
+- `/astrophotography add "SourceFile.jpg" photo-id` — Add new photo
+- `/astrophotography list` — List all photos
+- `/astrophotography update photo-id` — Update metadata
+- `/astrophotography optimize` — Re-optimize all images
+
+Source photos are in `~/Pictures/website/`. The optimization script uses ImageMagick (`magick`).
+
 ## Git Commits
 
 Use conventional prefixes: `fix:`, `feat:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`

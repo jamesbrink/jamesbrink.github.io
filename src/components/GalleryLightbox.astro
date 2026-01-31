@@ -1,0 +1,184 @@
+---
+/**
+ * Lightbox component for viewing full-size gallery images
+ * Features: prev/next navigation, metadata panel, keyboard support
+ */
+import type { AstroPhoto } from '../data/astrophotography';
+
+interface Props {
+  photos: AstroPhoto[];
+}
+
+const { photos } = Astro.props;
+---
+
+<div
+  id="gallery-lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image lightbox"
+>
+  <!-- Close button -->
+  <button
+    type="button"
+    id="lightbox-close"
+    class="absolute top-4 right-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+    aria-label="Close lightbox"
+  >
+    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  </button>
+
+  <!-- Previous button -->
+  <button
+    type="button"
+    id="lightbox-prev"
+    class="absolute top-1/2 left-4 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
+    aria-label="Previous image"
+  >
+    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"
+      ></path>
+    </svg>
+  </button>
+
+  <!-- Next button -->
+  <button
+    type="button"
+    id="lightbox-next"
+    class="absolute top-1/2 right-4 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
+    aria-label="Next image"
+  >
+    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Image container -->
+  <div class="flex max-h-[90vh] max-w-[90vw] flex-col items-center">
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+      class="max-h-[75vh] max-w-full rounded-lg object-contain"
+    />
+
+    <!-- Metadata panel -->
+    <div class="mt-4 text-center text-white">
+      <h2 id="lightbox-title" class="text-xl font-semibold"></h2>
+      <p id="lightbox-catalog" class="text-sm text-teal-400"></p>
+      <p id="lightbox-description" class="mt-2 max-w-2xl text-sm text-zinc-300"></p>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ photos }}>
+  let currentIndex = 0;
+  const photoData = photos;
+
+  function initLightbox() {
+    const lightbox = document.getElementById('gallery-lightbox');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+    const image = document.getElementById('lightbox-image');
+    const title = document.getElementById('lightbox-title');
+    const catalog = document.getElementById('lightbox-catalog');
+    const description = document.getElementById('lightbox-description');
+
+    if (
+      !lightbox ||
+      !closeBtn ||
+      !prevBtn ||
+      !nextBtn ||
+      !image ||
+      !title ||
+      !catalog ||
+      !description
+    )
+      return;
+
+    function showPhoto(index) {
+      const photo = photoData[index];
+      if (!photo) return;
+
+      currentIndex = index;
+      image.src = photo.fullSize;
+      image.alt = `${photo.title} - ${photo.catalogId}`;
+      title.textContent = photo.title;
+      catalog.textContent = photo.catalogId;
+      description.textContent = photo.description;
+
+      // Update button visibility
+      prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
+      nextBtn.style.visibility = index === photoData.length - 1 ? 'hidden' : 'visible';
+    }
+
+    function openLightbox(photoId) {
+      const index = photoData.findIndex((p) => p.id === photoId);
+      if (index === -1) return;
+
+      showPhoto(index);
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function showPrev() {
+      if (currentIndex > 0) {
+        showPhoto(currentIndex - 1);
+      }
+    }
+
+    function showNext() {
+      if (currentIndex < photoData.length - 1) {
+        showPhoto(currentIndex + 1);
+      }
+    }
+
+    // Event listeners
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+
+    // Close on backdrop click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+
+      switch (e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowLeft':
+          showPrev();
+          break;
+        case 'ArrowRight':
+          showNext();
+          break;
+      }
+    });
+
+    // Expose openLightbox globally for gallery items
+    window.openLightbox = openLightbox;
+  }
+
+  // Initialize on page load
+  document.addEventListener('astro:page-load', initLightbox);
+  initLightbox();
+</script>

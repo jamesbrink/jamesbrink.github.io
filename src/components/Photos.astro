@@ -1,18 +1,12 @@
 ---
 // Photo gallery with rotating images - ported from Spotlight template
+import { featuredPhotos } from '../data/astrophotography';
+
 interface Props {
   class?: string;
 }
 
 const { class: className = '' } = Astro.props;
-
-const photos = [
-  { src: '/images/photos/crescent-nebula.jpg', alt: 'Crescent Nebula - NGC 6888' },
-  { src: '/images/photos/ghost-nebula.jpg', alt: 'Ghost Nebula - IC 63' },
-  { src: '/images/photos/andromeda-galaxy.jpg', alt: 'Andromeda Galaxy - M31' },
-  { src: '/images/photos/whirlpool-galaxy.jpg', alt: 'Whirlpool Galaxy - M51' },
-  { src: '/images/photos/m78-nebula.jpg', alt: 'M78 Reflection Nebula' },
-];
 
 const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'];
 ---
@@ -20,23 +14,24 @@ const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 <div class:list={['mt-16 sm:mt-20', className]}>
   <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
     {
-      photos.map((photo, index) => (
-        <div
+      featuredPhotos.map((photo, index) => (
+        <a
+          href="/astrophotography"
           class:list={[
-            'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+            'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 transition hover:scale-105 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
             rotations[index % rotations.length],
           ]}
         >
           <div class="aspect-[9/10]">
             <img
-              src={photo.src}
-              alt={photo.alt}
+              src={photo.grid}
+              alt={`${photo.title} - ${photo.catalogId}`}
               loading="lazy"
               decoding="async"
               class="absolute inset-0 h-full w-full object-cover"
             />
           </div>
-        </div>
+        </a>
       ))
     }
   </div>

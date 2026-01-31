@@ -1,0 +1,39 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import GalleryLightbox from '../components/GalleryLightbox.astro';
+import { astrophotos } from '../data/astrophotography';
+---
+
+<SimpleLayout
+  title="Astrophotography"
+  intro="Images captured from my backyard in Phoenix, Arizona. Each photo represents hours of exposure time, careful calibration, and post-processing to reveal the faint light of distant nebulae and galaxies."
+  description="Astrophotography gallery featuring deep-sky images of nebulae and galaxies captured from Phoenix, Arizona."
+>
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      astrophotos.map((photo) => (
+        <button
+          type="button"
+          class="group relative aspect-square overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800"
+          onclick={`openLightbox('${photo.id}')`}
+          aria-label={`View ${photo.title}`}
+        >
+          <img
+            src={photo.grid}
+            alt={`${photo.title} - ${photo.catalogId}`}
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+          {/* Hover overlay */}
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition duration-300 group-hover:opacity-100">
+            <h3 class="text-lg font-semibold text-white">{photo.title}</h3>
+            <p class="text-sm text-teal-400">{photo.catalogId}</p>
+          </div>
+        </button>
+      ))
+    }
+  </div>
+
+  <GalleryLightbox photos={astrophotos} />
+</SimpleLayout>
