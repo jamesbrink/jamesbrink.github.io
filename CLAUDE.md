@@ -104,6 +104,23 @@ Escape HTML-like syntax in MDX content:
 
 The mdx-validation test catches syntax issues before build.
 
+## Resume System
+
+PDF resumes are generated from Typst source files in `resume/`:
+
+| Template  | Source                        | Output                                   | Pages |
+| --------- | ----------------------------- | ---------------------------------------- | ----- |
+| Full      | `resume/resume.typ`           | `public/JamesBrink-Resume.pdf`           | 2     |
+| Condensed | `resume/resume-condensed.typ` | `public/JamesBrink-Resume-Condensed.pdf` | 1     |
+
+Use the `/resume` skill to edit and rebuild:
+
+- `/resume` or `/resume build` — Edit/build full resume
+- `/resume condensed build` — Build condensed resume
+- `/resume open` — Build and open in Preview
+
+When updating job descriptions, sync changes to both `.typ` files and `src/pages/resume.astro`.
+
 ## Git Commits
 
 Use conventional prefixes: `fix:`, `feat:`, `docs:`, `style:`, `refactor:`, `test:`, `chore:`
