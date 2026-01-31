@@ -4,10 +4,11 @@ import clsx from 'clsx';
 interface Props {
   variant?: 'primary' | 'secondary';
   href?: string;
+  target?: string;
   class?: string;
 }
 
-const { variant = 'primary', href, class: className } = Astro.props;
+const { variant = 'primary', href, target, class: className } = Astro.props;
 
 const variantStyles = {
   primary:
@@ -22,7 +23,12 @@ const baseStyles =
 
 {
   href ? (
-    <a href={href} class={clsx(baseStyles, variantStyles[variant], className)}>
+    <a
+      href={href}
+      target={target}
+      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+      class={clsx(baseStyles, variantStyles[variant], className)}
+    >
       <slot />
     </a>
   ) : (
