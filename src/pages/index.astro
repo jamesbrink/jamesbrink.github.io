@@ -22,6 +22,60 @@ function formatDate(date: Date): string {
   });
 }
 
+// Work history
+interface Job {
+  company: string;
+  role: string;
+  logo: string;
+  startYear: string;
+  endYear: string;
+}
+
+const jobs: Job[] = [
+  {
+    company: 'Infosys',
+    role: 'Technology Architect',
+    logo: '/images/logos/infosys.svg',
+    startYear: '2023',
+    endYear: new Date().getFullYear().toString(),
+  },
+  {
+    company: 'NFTCO/Unblocked',
+    role: 'Site Reliability Engineer',
+    logo: '/images/logos/unblocked.avif',
+    startYear: '2022',
+    endYear: '2023',
+  },
+  {
+    company: 'Blockfolio/FTX',
+    role: 'Site Reliability Engineer',
+    logo: '/images/logos/ftx.svg',
+    startYear: '2020',
+    endYear: '2022',
+  },
+  {
+    company: 'Kadima Ventures',
+    role: 'Director of Infrastructure',
+    logo: '/images/logos/kadima.png',
+    startYear: '2017',
+    endYear: '2019',
+  },
+  {
+    company: 'GoDaddy',
+    role: 'Site Reliability Engineer',
+    logo: '/images/logos/godaddy.svg',
+    startYear: '2015',
+    endYear: '2016',
+  },
+  {
+    company: 'Edward Jones',
+    role: 'Systems Administrator II',
+    logo: '/images/logos/edwardjones.svg',
+    startYear: '2008',
+    endYear: '2015',
+  },
+];
+
 // Social links
 const socialLinks = [
   {
@@ -138,78 +192,40 @@ const socialLinks = [
             <span class="ml-3">Work</span>
           </h2>
           <ol class="mt-6 space-y-4">
-            <li class="flex gap-4">
-              <div
-                class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-              >
-                <span class="text-xs font-bold text-zinc-600 dark:text-zinc-400">IN</span>
-              </div>
-              <dl class="flex flex-auto flex-wrap gap-x-2">
-                <dt class="sr-only">Company</dt>
-                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Infosys
-                </dd>
-                <dt class="sr-only">Role</dt>
-                <dd class="text-xs text-zinc-500 dark:text-zinc-400">Technology Architect</dd>
-                <dt class="sr-only">Date</dt>
-                <dd
-                  class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                  aria-label="2023 until Present"
-                >
-                  <time datetime="2023">2023</time>
-                  <span aria-hidden="true">—</span>
-                  <time datetime={new Date().getFullYear().toString()}>Present</time>
-                </dd>
-              </dl>
-            </li>
-            <li class="flex gap-4">
-              <div
-                class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-              >
-                <span class="text-xs font-bold text-zinc-600 dark:text-zinc-400">FTX</span>
-              </div>
-              <dl class="flex flex-auto flex-wrap gap-x-2">
-                <dt class="sr-only">Company</dt>
-                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Blockfolio/FTX
-                </dd>
-                <dt class="sr-only">Role</dt>
-                <dd class="text-xs text-zinc-500 dark:text-zinc-400">Site Reliability Engineer</dd>
-                <dt class="sr-only">Date</dt>
-                <dd
-                  class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                  aria-label="2020 until 2022"
-                >
-                  <time datetime="2020">2020</time>
-                  <span aria-hidden="true">—</span>
-                  <time datetime="2022">2022</time>
-                </dd>
-              </dl>
-            </li>
-            <li class="flex gap-4">
-              <div
-                class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-              >
-                <span class="text-xs font-bold text-zinc-600 dark:text-zinc-400">GD</span>
-              </div>
-              <dl class="flex flex-auto flex-wrap gap-x-2">
-                <dt class="sr-only">Company</dt>
-                <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  GoDaddy
-                </dd>
-                <dt class="sr-only">Role</dt>
-                <dd class="text-xs text-zinc-500 dark:text-zinc-400">Site Reliability Engineer</dd>
-                <dt class="sr-only">Date</dt>
-                <dd
-                  class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                  aria-label="2015 until 2016"
-                >
-                  <time datetime="2015">2015</time>
-                  <span aria-hidden="true">—</span>
-                  <time datetime="2016">2016</time>
-                </dd>
-              </dl>
-            </li>
+            {
+              jobs.map((job) => (
+                <li class="flex gap-4">
+                  <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:bg-zinc-800 dark:ring-0">
+                    <img
+                      src={job.logo}
+                      alt={`${job.company} logo`}
+                      class="h-7 w-7 object-contain"
+                    />
+                  </div>
+                  <dl class="flex flex-auto flex-wrap gap-x-2">
+                    <dt class="sr-only">Company</dt>
+                    <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                      {job.company}
+                    </dd>
+                    <dt class="sr-only">Role</dt>
+                    <dd class="text-xs text-zinc-500 dark:text-zinc-400">{job.role}</dd>
+                    <dt class="sr-only">Date</dt>
+                    <dd
+                      class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                      aria-label={`${job.startYear} until ${job.endYear === new Date().getFullYear().toString() ? 'Present' : job.endYear}`}
+                    >
+                      <time datetime={job.startYear}>{job.startYear}</time>
+                      <span aria-hidden="true">—</span>
+                      <time datetime={job.endYear}>
+                        {job.endYear === new Date().getFullYear().toString()
+                          ? 'Present'
+                          : job.endYear}
+                      </time>
+                    </dd>
+                  </dl>
+                </li>
+              ))
+            }
           </ol>
           <Button href="/resume" variant="secondary" class="group mt-6 w-full">
             View full resume
