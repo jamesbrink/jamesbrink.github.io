@@ -29,14 +29,8 @@ function formatDate(date: Date): string {
       {
         posts.map((post) => (
           <Card as="article">
-            <CardTitle href={`/blog/${post.slug}/`}>
-              {post.data.title}
-            </CardTitle>
-            <CardEyebrow
-              as="time"
-              dateTime={post.data.date.toISOString()}
-              decorate
-            >
+            <CardTitle href={`/blog/${post.slug}/`}>{post.data.title}</CardTitle>
+            <CardEyebrow as="time" dateTime={post.data.date.toISOString()} decorate>
               {formatDate(post.data.date)}
             </CardEyebrow>
             <CardDescription>{post.data.description}</CardDescription>

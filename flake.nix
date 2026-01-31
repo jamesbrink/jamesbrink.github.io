@@ -1,5 +1,5 @@
 {
-  description = "James Brink personal website";
+  description = "jamesbrink-website - James Brink <brink.james@gmail.com>";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -16,6 +16,12 @@
 
   outputs =
     inputs@{ flake-parts, self, ... }:
+    let
+      # Read metadata from package.json
+      packageJson = builtins.fromJSON (builtins.readFile ./package.json);
+      # Version from last commit date (YYYYMMDD format)
+      version = self.lastModifiedDate or "dev";
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.treefmt-nix.flakeModule
@@ -148,18 +154,22 @@
             default = {
               type = "app";
               program = "${devScript}/bin/dev";
+              meta.description = "Start Astro development server";
             };
             dev = {
               type = "app";
               program = "${devScript}/bin/dev";
+              meta.description = "Start Astro development server";
             };
             lint = {
               type = "app";
               program = "${lintScript}/bin/lint-all";
+              meta.description = "Run ESLint and Markdownlint checks";
             };
             check-all = {
               type = "app";
               program = "${checkAllScript}/bin/check-all";
+              meta.description = "Run formatting, linting, type checks, and tests";
             };
           };
 
@@ -172,7 +182,8 @@
             ];
 
             shellHook = ''
-              echo "Astro + Bun development environment"
+              echo "${packageJson.name} v${version}"
+              echo "${packageJson.author}"
               echo ""
               echo "Commands:"
               echo "  bun install     - Install dependencies"

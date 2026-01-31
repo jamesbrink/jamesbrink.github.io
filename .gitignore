@@ -60,3 +60,6 @@ jamesbrink.github.io/
 
 # Augment tool artifacts
 .augment/
+
+# Claude Code
+.claude/settings.local.json

@@ -15,26 +15,26 @@ bun run build                  # Build for production (includes astro check)
 
 ## Commands
 
-| Command | Purpose |
-|---------|---------|
-| `bun run dev` | Start Astro dev server |
-| `bun run build` | TypeScript check + production build |
-| `bun run check` | TypeScript checks only |
-| `bun run lint` | ESLint checks |
-| `bun run lint:md` | Markdownlint checks |
-| `bun run lint:all` | ESLint + Markdownlint |
-| `bun run test:run` | Run Vitest tests once |
-| `bun run test:visual` | Playwright visual regression |
-| `treefmt` | Format all files (requires Nix shell) |
+| Command               | Purpose                               |
+| --------------------- | ------------------------------------- |
+| `bun run dev`         | Start Astro dev server                |
+| `bun run build`       | TypeScript check + production build   |
+| `bun run check`       | TypeScript checks only                |
+| `bun run lint`        | ESLint checks                         |
+| `bun run lint:md`     | Markdownlint checks                   |
+| `bun run lint:all`    | ESLint + Markdownlint                 |
+| `bun run test:run`    | Run Vitest tests once                 |
+| `bun run test:visual` | Playwright visual regression          |
+| `treefmt`             | Format all files (requires Nix shell) |
 
 ### Nix Commands
 
-| Command | Purpose |
-|---------|---------|
-| `nix run` | Start dev server |
-| `nix run .#lint` | Run all linting |
+| Command               | Purpose                                         |
+| --------------------- | ----------------------------------------------- |
+| `nix run`             | Start dev server                                |
+| `nix run .#lint`      | Run all linting                                 |
 | `nix run .#check-all` | Run formatting, linting, type checks, and tests |
-| `nix flake check` | Verify Nix formatting (pure check) |
+| `nix flake check`     | Verify Nix formatting (pure check)              |
 
 Run a single test:
 

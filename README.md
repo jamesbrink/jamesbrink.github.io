@@ -29,24 +29,24 @@ nix run  # Starts dev server
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `bun run dev` | Start dev server |
-| `bun run build` | Build for production |
-| `bun run check` | TypeScript checks |
-| `bun run lint` | ESLint |
-| `bun run lint:md` | Markdown linting |
-| `bun run test:run` | Run tests |
-| `treefmt` | Format all files |
+| Command            | Description          |
+| ------------------ | -------------------- |
+| `bun run dev`      | Start dev server     |
+| `bun run build`    | Build for production |
+| `bun run check`    | TypeScript checks    |
+| `bun run lint`     | ESLint               |
+| `bun run lint:md`  | Markdown linting     |
+| `bun run test:run` | Run tests            |
+| `treefmt`          | Format all files     |
 
 ### Nix Commands
 
-| Command | Description |
-|---------|-------------|
-| `nix run` | Start dev server |
-| `nix run .#lint` | Run all linting |
-| `nix run .#check-all` | Run all checks |
-| `nix flake check` | Verify Nix formatting |
+| Command               | Description           |
+| --------------------- | --------------------- |
+| `nix run`             | Start dev server      |
+| `nix run .#lint`      | Run all linting       |
+| `nix run .#check-all` | Run all checks        |
+| `nix flake check`     | Verify Nix formatting |
 
 ## Project Structure
 

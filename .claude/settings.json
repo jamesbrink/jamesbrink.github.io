@@ -14,13 +14,7 @@
       "Glob",
       "Grep"
     ],
-    "deny": [
-      "Bash(npm run dev)",
-      "Bash(pnpm dev)",
-      "Bash(run-dev)",
-      "Read(.env)",
-      "Read(.env.*)"
-    ]
+    "deny": ["Bash(npm run dev)", "Bash(pnpm dev)", "Bash(run-dev)", "Read(.env)", "Read(.env.*)"]
   },
   "enableAllProjectMcpServers": true,
   "hooks": {

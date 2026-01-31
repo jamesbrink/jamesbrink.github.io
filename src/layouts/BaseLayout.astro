@@ -21,32 +21,26 @@ const siteTitle = title === 'Home' ? 'James Brink' : `${title} - James Brink`;
     <title>{siteTitle}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="RSS Feed"
-      href="/rss.xml"
-    />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
 
     <!-- Theme initialization script (prevents flash) -->
     <script is:inline>
       (function () {
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (
+          theme === 'dark' ||
+          (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
           document.documentElement.classList.add('dark');
         }
       })();
     </script>
   </head>
-  <body
-    class="flex h-full bg-zinc-50 dark:bg-black"
-  >
+  <body class="flex h-full bg-zinc-50 dark:bg-black">
     <!-- Background decoration -->
     <div class="fixed inset-0 flex justify-center sm:px-8">
       <div class="flex w-full max-w-7xl lg:px-8">
-        <div
-          class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-        >
+        <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
         </div>
       </div>
     </div>

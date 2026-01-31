@@ -18,7 +18,7 @@ test.describe('Visual Regression Tests', () => {
         await page.waitForLoadState('networkidle');
         // Wait for any animations to complete
         await page.waitForTimeout(1000);
-        
+
         await expect(page).toHaveScreenshot(`${name}-light.png`, {
           fullPage: true,
           animations: 'disabled',
@@ -28,12 +28,12 @@ test.describe('Visual Regression Tests', () => {
       test('dark mode screenshot', async ({ page }) => {
         await page.goto(path);
         await page.waitForLoadState('networkidle');
-        
+
         // Toggle to dark mode
         await page.click('button[aria-label*="dark mode" i]');
         // Wait for theme transition
         await page.waitForTimeout(500);
-        
+
         await expect(page).toHaveScreenshot(`${name}-dark.png`, {
           fullPage: true,
           animations: 'disabled',
@@ -47,13 +47,13 @@ test.describe('Visual Regression Tests', () => {
     test('light mode screenshot', async ({ page }) => {
       await page.goto('/blog');
       await page.waitForLoadState('networkidle');
-      
+
       // Click on the first blog post
       const firstPost = page.locator('article').first().locator('a').first();
       await firstPost.click();
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(1000);
-      
+
       await expect(page).toHaveScreenshot('blog-post-light.png', {
         fullPage: true,
         animations: 'disabled',
@@ -63,16 +63,16 @@ test.describe('Visual Regression Tests', () => {
     test('dark mode screenshot', async ({ page }) => {
       await page.goto('/blog');
       await page.waitForLoadState('networkidle');
-      
+
       // Toggle to dark mode first
       await page.click('button[aria-label*="dark mode" i]');
-      
+
       // Click on the first blog post
       const firstPost = page.locator('article').first().locator('a').first();
       await firstPost.click();
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(500);
-      
+
       await expect(page).toHaveScreenshot('blog-post-dark.png', {
         fullPage: true,
         animations: 'disabled',
@@ -87,23 +87,26 @@ test.describe('Component Visual Tests', () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    
+
     // Open mobile menu
     await page.click('button[aria-label="Toggle navigation menu"]');
     await page.waitForTimeout(300); // Wait for animation
-    
+
     await expect(page).toHaveScreenshot('mobile-menu.png');
   });
 
   test('blog tag filters', async ({ page }) => {
     await page.goto('/blog');
     await page.waitForLoadState('networkidle');
-    
+
     // Click on a tag filter
-    const firstTag = page.locator('button').filter({ hasText: /^(javascript|react|nodejs|programming)/i }).first();
+    const firstTag = page
+      .locator('button')
+      .filter({ hasText: /^(javascript|react|nodejs|programming)/i })
+      .first();
     await firstTag.click();
     await page.waitForTimeout(500); // Wait for filter animation
-    
+
     await expect(page).toHaveScreenshot('blog-filtered.png', {
       fullPage: true,
       animations: 'disabled',
@@ -124,7 +127,7 @@ test.describe('Responsive Design Tests', () => {
       await page.goto('/');
       await page.waitForLoadState('networkidle');
       await page.waitForTimeout(1000);
-      
+
       await expect(page).toHaveScreenshot(`home-${name}.png`, {
         fullPage: true,
         animations: 'disabled',

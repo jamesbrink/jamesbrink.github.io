@@ -14,7 +14,7 @@ const dom = new JSDOM('<!DOCTYPE html><html><head></head><body></body></html>', 
 // Add localStorage mock
 const localStorageMock = (() => {
   let store: Record<string, string> = {};
-  
+
   return {
     getItem: (key: string) => store[key] || null,
     setItem: (key: string, value: string) => {
@@ -45,7 +45,7 @@ global.navigator = dom.window.navigator;
 // Mock matchMedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,

@@ -2,6 +2,7 @@
   "name": "jamesbrink-website",
   "type": "module",
   "version": "1.0.0",
+  "author": "James Brink <brink.james@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
