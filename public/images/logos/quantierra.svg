@@ -1,5 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="4" fill="#1E3A5F"/>
-  <circle cx="16" cy="14" r="8" stroke="white" stroke-width="2.5" fill="none"/>
-  <line x1="21" y1="19" x2="26" y2="26" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 100" fill="currentColor">
+  <!-- Serif Q with thicker side strokes (serif style) -->
+  <path d="
+    M42.5 4
+    C16 4 0 24 0 48
+    C0 72 16 92 42.5 92
+    C52 92 60 89 67 84
+    L61 77
+    C55 82 49 84 42.5 84
+    C26 84 16 68 16 48
+    C16 28 26 12 42.5 12
+    C59 12 69 28 69 48
+    C69 58 66 67 60 74
+    L66 81
+    C75 72 85 61 85 48
+    C85 24 69 4 42.5 4
+    Z
+  "/>
+  <!-- Sweeping tail -->
+  <path d="
+    M52 68
+    Q56 72 60 76
+    L76 96
+    Q80 100 82 98
+    Q84 96 82 92
+    L64 70
+    Q60 66 56 66
+    Q52 66 52 68
+    Z
+  "/>
 </svg>
