@@ -1,221 +1,192 @@
 {
-  description = "James Brink's Personal Website";
+  description = "James Brink personal website";
 
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    devshell = {
-      url = "github:numtide/devshell";
+    bun2nix = {
+      url = "github:baileyluTCD/bun2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      devshell,
-    }:
-    let
-      supportedSystems = [
-        "x86_64-linux"
-        "aarch64-darwin"
-        "x86_64-darwin"
+    inputs@{ flake-parts, self, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.treefmt-nix.flakeModule
       ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-    in
-    {
-      devShells = forAllSystems (
-        system:
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+
+      perSystem =
+        {
+          config,
+          pkgs,
+          lib,
+          system,
+          ...
+        }:
         let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ devshell.overlays.default ];
+          # Common packages for development
+          devPackages = with pkgs; [
+            bun
+            nodejs_22
+            git
+            markdownlint-cli
+            config.treefmt.build.wrapper
+            inputs.bun2nix.packages.${system}.default
+          ];
+
+          # Script to run linting checks
+          lintScript = pkgs.writeShellScriptBin "lint-all" ''
+            set -e
+            echo "Running ESLint..."
+            ${pkgs.bun}/bin/bun run lint
+            echo "Running markdownlint..."
+            ${pkgs.markdownlint-cli}/bin/markdownlint '**/*.md' \
+              --ignore node_modules \
+              --ignore dist \
+              --ignore jamesbrink.github.io \
+              --ignore playwright-report \
+              --ignore test-results
+            echo "All linting checks passed!"
+          '';
+
+          # Script to run type checks
+          typeCheckScript = pkgs.writeShellScriptBin "type-check" ''
+            set -e
+            echo "Running TypeScript/Astro checks..."
+            ${pkgs.bun}/bin/bun run check
+            echo "Type checks passed!"
+          '';
+
+          # Script to run all checks
+          checkAllScript = pkgs.writeShellScriptBin "check-all" ''
+            set -e
+            echo "=== Running all checks ==="
+            echo ""
+            echo "--- Formatting ---"
+            ${config.treefmt.build.wrapper}/bin/treefmt --fail-on-change
+            echo ""
+            echo "--- Linting ---"
+            ${lintScript}/bin/lint-all
+            echo ""
+            echo "--- Type Checking ---"
+            ${typeCheckScript}/bin/type-check
+            echo ""
+            echo "--- Tests ---"
+            ${pkgs.bun}/bin/bun run test:run
+            echo ""
+            echo "=== All checks passed! ==="
+          '';
+
+          # Dev server script (runs from current directory)
+          devScript = pkgs.writeShellScriptBin "dev" ''
+            if [ ! -d "node_modules" ]; then
+              echo "Installing dependencies..."
+              ${pkgs.bun}/bin/bun install
+            fi
+            echo "Starting dev server..."
+            exec ${pkgs.bun}/bin/bun run dev
+          '';
+        in
+        {
+          # Treefmt configuration for development (includes prettier)
+          treefmt = {
+            projectRootFile = "flake.nix";
+            # Disable the auto-generated flake check (requires node_modules for prettier)
+            flakeCheck = false;
+            programs = {
+              nixfmt.enable = true;
+              prettier = {
+                enable = true;
+                includes = [
+                  "*.js"
+                  "*.ts"
+                  "*.tsx"
+                  "*.json"
+                  "*.css"
+                  "*.astro"
+                  "*.md"
+                  "*.mdx"
+                ];
+                excludes = [
+                  "node_modules/**"
+                  "dist/**"
+                  ".astro/**"
+                  "bun.lock"
+                  "jamesbrink.github.io/**"
+                  "playwright-report/**"
+                  "test-results/**"
+                ];
+              };
+            };
           };
 
-          # Define minimal-mistakes-jekyll theme as a Ruby gem
-          minimal-mistakes-jekyll = pkgs.buildRubyGem rec {
-            pname = "minimal-mistakes-jekyll";
-            gemName = "minimal-mistakes-jekyll";
-            version = "4.26.2";
+          formatter = config.treefmt.build.wrapper;
 
-            src = pkgs.fetchFromGitHub {
-              owner = "mmistakes";
-              repo = "minimal-mistakes";
-              rev = "4.26.2";
-              sha256 = "sha256-s+w1lSMKCqg1MTrZMJMq6Zx/OhAmvh4FqBKSjF9R5RY=";
-            };
-
-            # Create a proper gemspec file
-            postPatch = ''
-              cat > minimal-mistakes-jekyll.gemspec <<EOF
-              # -*- encoding: utf-8 -*-
-              Gem::Specification.new do |s|
-                s.name = "minimal-mistakes-jekyll"
-                s.version = "4.26.2"
-                s.summary = "A flexible Jekyll theme"
-                s.description = "A flexible Jekyll theme with a minimalist aesthetic."
-                s.authors = ["Michael Rose"]
-                s.email = ["michael@mademistakes.com"]
-                s.homepage = "https://github.com/mmistakes/minimal-mistakes"
-                s.licenses = ["MIT"]
-                s.files = Dir["**/*"]
-                s.require_paths = ["lib"]
-                s.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
-                s.add_runtime_dependency "jekyll-paginate", ">= 1.1", "< 2.0"
-                s.add_runtime_dependency "jekyll-sitemap", ">= 1.3", "< 2.0"
-                s.add_runtime_dependency "jekyll-include-cache", ">= 0.1", "< 1.0"
-              end
-              EOF
+          # Checks run by `nix flake check` - only nixfmt (pure, no node_modules needed)
+          checks = {
+            nix-fmt = pkgs.runCommand "check-nix-fmt" { } ''
+              ${pkgs.nixfmt}/bin/nixfmt --check ${self}/flake.nix
+              touch $out
             '';
           };
 
-          # Define the Ruby environment with all required gems
-          rubyEnv = pkgs.ruby.withPackages (
-            ps: with ps; [
-              # Using 'with ps;' is generally fine
-              # Jekyll Core and Required Runtime
-              jekyll
-              webrick
-
-              # Jekyll plugins (all needed plugins from _config.yml)
-              jekyll-feed
-              jekyll-seo-tag
-              jekyll-sitemap
-              jekyll-paginate
-              jekyll-include-cache
-              jekyll-remote-theme
-              jekyll-watch
-              kramdown-parser-gfm
-              kramdown
-              # Make sure all plugins are included
-              jekyll-sass-converter
-
-              # Additional plugins for minimal-mistakes theme
-              jekyll-gist
-              jemoji
-
-              # Add the minimal-mistakes-jekyll theme as a gem
-              minimal-mistakes-jekyll
-
-              # Native extensions are handled by Nix automatically
-            ]
-          );
-
-        in
-        {
-          default = pkgs.devshell.mkShell {
-            name = "jamesbrink-website";
-
-            # Set environment variables
-            env = [
-              {
-                name = "JEKYLL_ENV";
-                value = "development";
-              }
-            ];
-
-            packages = with pkgs; [
-              # The Ruby environment defined above
-              rubyEnv
-              minimal-mistakes-jekyll
-
-              # Other non-Ruby dependencies
-              git
-              imagemagick
-              libxml2 # Often needed by Nokogiri (a common dep)
-              libxslt # Often needed by Nokogiri (a common dep)
-
-              # Formatters
-              nixfmt-rfc-style # Do not replace this, this is the RFC-style formatter available as nixfmt
-              nodePackages.prettier
-              yamlfmt
-              treefmt
-            ];
-
-            commands = [
-              # ───────────────────────────────────────────────────────
-              # MAIN WORKFLOW COMMANDS
-              # ───────────────────────────────────────────────────────
-              {
-                name = "serve";
-                category = "jekyll";
-                help = "Start Jekyll development server";
-                command = ''
-                  echo "Starting Jekyll server at http://localhost:4000"
-                  jekyll serve --livereload
-                '';
-              }
-              {
-                name = "build";
-                category = "jekyll";
-                help = "Build Jekyll site";
-                command = ''
-                  echo "Building Jekyll site for production"
-                  export JEKYLL_ENV=production
-                  jekyll build
-                '';
-              }
-              # ───────────────────────────────────────────────────────
-              # JEKYLL COMMANDS
-              # ───────────────────────────────────────────────────────
-              {
-                name = "clean";
-                category = "jekyll";
-                help = "Clean Jekyll build files";
-                command = ''
-                  echo "Cleaning Jekyll build files..."
-                  jekyll clean
-                '';
-              }
-              # ───────────────────────────────────────────────────────
-              # UTILITY COMMANDS
-              # ───────────────────────────────────────────────────────
-              {
-                name = "optimize-images";
-                category = "utility";
-                help = "Optimize images in the assets directory";
-                command = ''
-                  echo "Optimizing images in assets/images directory..."
-                  find assets/images -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) -exec sh -c '
-                    echo "Optimizing {}..."
-                    mogrify -strip -quality 85% "{}"
-                  ' \;
-                  echo "✅ Image optimization complete!"
-                '';
-              }
-              {
-                name = "format";
-                category = "utility";
-                help = "Format all files using treefmt";
-                command = ''
-                  echo "Formatting all files with treefmt..."
-                  treefmt
-                  echo "✅ Formatting complete!"
-                '';
-              }
-              {
-                name = "generate-gemfile";
-                category = "utility";
-                help = "Generate Gemfile and Gemfile.lock from current Nix environment";
-                command = ''
-                  ruby -r rubygems -e '
-                    # Filter non-std gems → write Gemfile
-                    g = Gem::Specification.group_by(&:name)
-                      .reject { |_, s| s.any? { |x| x.default_gem? || 
-                        (Gem::Specification.respond_to?(:bundled_gem?) && x.bundled_gem?) || 
-                        x.full_require_paths.any? { |p| $LOAD_PATH.grep(/ruby/).any? { |l| p.start_with?(l) } } }}
-                      .transform_values { |s| s.map(&:version).max.to_s }
-                    File.write("Gemfile", "source \"https://rubygems.org\"\n\n# Generated from Nix environment on #{Time.now}\n" +
-                      "# DO NOT EDIT MANUALLY\n\n" + g.sort.map { |n,v| "gem \"#{n}\", \"#{v}\"" }.join("\n"))
-                  '
-                  rm -f Gemfile.lock && bundle lock --local
-                  echo "✅ Gemfile and Gemfile.lock generated!"
-                '';
-              }
-            ];
+          # Apps run by `nix run`
+          apps = {
+            default = {
+              type = "app";
+              program = "${devScript}/bin/dev";
+            };
+            dev = {
+              type = "app";
+              program = "${devScript}/bin/dev";
+            };
+            lint = {
+              type = "app";
+              program = "${lintScript}/bin/lint-all";
+            };
+            check-all = {
+              type = "app";
+              program = "${checkAllScript}/bin/check-all";
+            };
           };
-        }
-      );
+
+          # DevShell
+          devShells.default = pkgs.mkShell {
+            packages = devPackages ++ [
+              lintScript
+              typeCheckScript
+              checkAllScript
+            ];
+
+            shellHook = ''
+              echo "Astro + Bun development environment"
+              echo ""
+              echo "Commands:"
+              echo "  bun install     - Install dependencies"
+              echo "  bun run dev     - Start dev server"
+              echo "  bun run build   - Build for production"
+              echo "  bun run check   - TypeScript checks"
+              echo "  bun run lint    - ESLint checks"
+              echo "  lint-all        - Run all linting"
+              echo "  type-check      - Run type checks"
+              echo "  check-all       - Run all checks"
+              echo "  treefmt         - Format all files"
+              echo ""
+            '';
+          };
+        };
     };
 }

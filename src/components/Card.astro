@@ -1,0 +1,14 @@
+---
+import clsx from 'clsx';
+
+interface Props {
+  as?: 'div' | 'article' | 'li';
+  class?: string;
+}
+
+const { as: Component = 'div', class: className } = Astro.props;
+---
+
+<Component class={clsx(className, 'group relative flex flex-col items-start')}>
+  <slot />
+</Component>

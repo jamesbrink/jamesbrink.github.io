@@ -1,61 +1,87 @@
-# James Brink's Personal Website
+# James Brink Personal Website
 
-This is the source code for my personal website and blog, built with Jekyll and the Minimal Mistakes theme. The site is designed to be deployed to GitHub Pages but can also be run locally using Nix or Docker.
+Personal website and blog built with Astro, TypeScript, and Tailwind CSS.
 
-## Development
+## Quick Start
 
-### Using Nix (Recommended)
+### Prerequisites
 
-This project uses [Nix](https://nixos.org/) with flakes for dependency management. If you have Nix installed with flakes enabled:
+- [Nix](https://nixos.org/download.html) with flakes enabled
+
+### Development
 
 ```bash
-# Enter development shell
+# Enter development environment
 nix develop
 
-# Start Jekyll server
-jekyll serve
+# Install dependencies
+bun install
+
+# Start dev server (http://localhost:4321)
+bun run dev
 ```
 
-### Using Docker
-
-Alternatively, you can use Docker to build and run the site:
+Or use `nix run` directly:
 
 ```bash
-# Build the Docker image
-podman build -t jamesbrink-site-ghpages .
-
-# Run the container
-podman run --rm -it -p 4000:4000 localhost/jamesbrink-site-ghpages:latest
+nix run  # Starts dev server
 ```
 
-The site will be available at http://localhost:4000
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start dev server |
+| `bun run build` | Build for production |
+| `bun run check` | TypeScript checks |
+| `bun run lint` | ESLint |
+| `bun run lint:md` | Markdown linting |
+| `bun run test:run` | Run tests |
+| `treefmt` | Format all files |
+
+### Nix Commands
+
+| Command | Description |
+|---------|-------------|
+| `nix run` | Start dev server |
+| `nix run .#lint` | Run all linting |
+| `nix run .#check-all` | Run all checks |
+| `nix flake check` | Verify Nix formatting |
 
 ## Project Structure
 
-- `_posts/`: Blog posts in Markdown format
-- `_pages/`: Static pages
-- `assets/`: Images, CSS, and other static assets
-- `_data/`: Data files for navigation and other site configuration
-- `_config.yml`: Main Jekyll configuration
+```
+src/
+├── components/   # Astro components
+├── content/blog/ # MDX blog posts
+├── layouts/      # Page layouts
+├── pages/        # Routes
+└── styles/       # Tailwind CSS
+```
 
-## Dependency Management
+## Adding Blog Posts
 
-This project uses a hybrid approach to dependency management:
+Create `src/content/blog/your-post.mdx`:
 
-- **Local Development**: Dependencies are managed through `flake.nix`
-- **Docker/CI**: Dependencies are resolved using the Gemfile
-- **GitHub Pages**: Uses standard GitHub Pages gem dependencies
+```mdx
+---
+title: 'Post Title'
+description: 'Brief description'
+date: 2024-01-20
+tags: ['tag1', 'tag2']
+---
 
-The Gemfile.lock is intentionally excluded from Git and Docker to allow each environment to resolve its own dependencies.
+Content here...
+```
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+```bash
+bun run build
+```
 
----
+Output is in `dist/`, ready for any static host.
 
-## Resources
+## License
 
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
-- [Minimal Mistakes Theme Documentation](https://mmistakes.github.io/minimal-mistakes/docs/configuration/)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
+MIT

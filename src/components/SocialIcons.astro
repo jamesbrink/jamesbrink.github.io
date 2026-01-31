@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 24 24" aria-hidden="true">
+  <slot />
+</svg>
+
+<!-- Social Icon SVG Paths - Use as children of icon wrapper -->

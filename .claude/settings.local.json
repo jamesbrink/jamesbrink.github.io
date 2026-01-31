@@ -1,12 +1,29 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bundle exec jekyll serve:*)",
-      "Bash(nix develop:*)"
+      "Bash",
+      "Read",
+      "Edit",
+      "Write",
+      "WebFetch",
+      "WebSearch",
+      "MCP",
+      "Task",
+      "NotebookEdit",
+      "Skill",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Bash(npm run dev)",
+      "Bash(pnpm dev)",
+      "Bash(run-dev)"
     ]
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "playwright"
+    "nixos",
+    "playwright",
+    "context7"
   ]
 }

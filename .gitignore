@@ -1,32 +1,62 @@
-# Jekyll build files
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.jekyll-build-cache/
+# Dependencies
+node_modules/
 
-# Bundler files
-.bundle/
-vendor/
-.gem/
-Gemfile.lock
+# Build outputs
+dist/
+.astro/
 
-# NixOS files
-.direnv/
-result
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# OS files
+# OS
 .DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
 *.swp
+*.swo
 *~
 
-# Editor settings
-.idea/
-
-# Log files
-*.log
-
-# Environment variables
+# Environment
 .env
-.env.*
-!.env.example
+.env.local
+.env.production
+
+# Debug
+.pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Playwright
+test-results/
+playwright-report/
+tests/visual-regression/**/*.png
+tests/visual-regression/**/*.png-snapshots/
+
+# Stylelint
+.stylelintcache
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.tmp/
+
+# Clone directory for Jekyll site reference
+jamesbrink.github.io/
+
+# Direnv
+.direnv
+
+# Augment tool artifacts
+.augment/
