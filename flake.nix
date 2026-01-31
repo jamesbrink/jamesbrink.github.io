@@ -55,6 +55,8 @@
             imagemagick
             libwebp
             oxipng
+            # Resume generation
+            typst
           ];
 
           # Script to run linting checks
