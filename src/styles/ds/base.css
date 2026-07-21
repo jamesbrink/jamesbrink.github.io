@@ -1,0 +1,30 @@
+/* ============================================================
+   BASE — James Brink Design System · "EMISSION"
+   Global defaults that can't live on a component: theme
+   color-scheme, link colors, keyboard focus rings, selection.
+   Specificity kept at 0 (:where) so component inline styles win.
+   ============================================================ */
+
+:root { color-scheme: dark; }
+.light { color-scheme: light; }
+
+/* Links — always defined so user-added links never fall back to browser blue. */
+:where(a) {
+  color: var(--text-link);
+  text-decoration-color: color-mix(in srgb, var(--text-link) 40%, transparent);
+  text-underline-offset: 2px;
+}
+:where(a):hover {
+  color: var(--text-link-hover);
+  text-decoration-color: var(--text-link-hover);
+}
+
+/* Keyboard focus — visible emission ring, never on mouse click. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+/* Text selection — a faint emission wash. */
+::selection { background: color-mix(in srgb, var(--emission-500) 32%, transparent); }

@@ -8,6 +8,6 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class={clsx(className, 'prose dark:prose-invert')}>
+<div class={clsx(className, 'prose')}>
   <slot />
 </div>

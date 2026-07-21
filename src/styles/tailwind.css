@@ -1,10 +1,60 @@
 @import 'tailwindcss';
+
+/* Design System "Emission" — token layer (single source of truth).
+   :root is dark; `.light` on <html> flips the semantic tokens. */
+@import './ds/colors.css';
+@import './ds/typography.css';
+@import './ds/spacing.css';
+@import './ds/effects.css';
+@import './ds/base.css';
+
 @import './prism.css' layer(components);
 
 @plugin '@tailwindcss/typography';
 @config '../../typography.ts';
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* Dark-first: the site is dark by default; `.light` is the toggle override. */
+@custom-variant light (&:where(.light, .light *));
+
+/* Bridge the runtime-flipping DS semantic tokens into Tailwind utilities.
+   `@theme inline` inlines the var reference into each utility (e.g.
+   `.text-heading { color: var(--text-heading) }`) so it resolves at the
+   element and follows the .light flip — a plain `@theme` would snapshot the
+   dark value. Border tokens get distinct names (hairline/edge) because
+   Tailwind shares one --color-* namespace across text/bg/border. */
+@theme inline {
+  --color-page: var(--surface-page);
+  --color-card: var(--surface-card);
+  --color-pill: var(--surface-pill);
+  --color-sunken: var(--surface-sunken);
+  --color-code: var(--surface-code);
+
+  --color-heading: var(--text-heading);
+  --color-strong: var(--text-strong);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--text-accent);
+  --color-link: var(--text-link);
+  --color-link-hover: var(--text-link-hover);
+  --color-on-solid: var(--text-on-solid);
+  --color-code-text: var(--code-text);
+
+  --color-hairline: var(--border-subtle);
+  --color-edge: var(--border-default);
+
+  --color-emission: var(--emission-500);
+  --color-emission-hi: var(--emission-400);
+  --color-gold: var(--gold-400);
+
+  --font-sans: var(--font-serif);
+  --font-mono:
+    'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+
+  --shadow-glow: 0 8px 30px -10px color-mix(in srgb, var(--emission-500) 70%, transparent);
+}
 
 @theme {
   --text-xs: 0.8125rem;
@@ -24,9 +74,9 @@
   --text-4xl: 2rem;
   --text-4xl--line-height: 2.5rem;
   --text-5xl: 3rem;
-  --text-5xl--line-height: 3.5rem;
+  --text-5xl--line-height: 3.25rem;
   --text-6xl: 3.75rem;
-  --text-6xl--line-height: 1;
+  --text-6xl--line-height: 1.02;
   --text-7xl: 4.5rem;
   --text-7xl--line-height: 1;
   --text-8xl: 6rem;

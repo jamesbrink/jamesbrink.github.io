@@ -1,47 +1,50 @@
+/* Prism syntax theme — "Emission". Warm code accents on the deep --surface-code
+   panel (which stays dark in both light and dark mode). */
+
 pre[class*='language-'] {
-  color: var(--color-zinc-100);
+  color: var(--code-text);
 }
 
+/* tags, keywords, functions, class/selector names, modules — emission-pink */
 .token.tag,
 .token.class-name,
 .token.selector,
 .token.selector .class,
 .token.selector.class,
-.token.function {
-  color: var(--color-pink-400);
+.token.function,
+.token.keyword,
+.token.module {
+  color: var(--syntax-tag);
 }
 
+/* attr names, rules, pseudo-classes — neutral code text */
 .token.attr-name,
-.token.keyword,
 .token.rule,
 .token.pseudo-class,
 .token.important {
-  color: var(--color-zinc-300);
+  color: var(--code-text);
 }
 
-.token.module {
-  color: var(--color-pink-400);
-}
-
+/* strings, attribute values, properties — gold */
 .token.attr-value,
 .token.class,
 .token.string,
 .token.property {
-  color: var(--color-teal-300);
+  color: var(--syntax-string);
 }
 
-.token.punctuation,
-.token.attr-equals {
-  color: var(--color-zinc-500);
-}
-
+/* units, numbers, css functions — salmon */
 .token.unit,
+.token.number,
 .language-css .token.function {
-  color: var(--color-sky-200);
+  color: var(--syntax-unit);
 }
 
+/* comments, operators, punctuation — muted ink */
 .token.comment,
 .token.operator,
-.token.combinator {
-  color: var(--color-zinc-400);
+.token.combinator,
+.token.punctuation,
+.token.attr-equals {
+  color: var(--syntax-comment);
 }

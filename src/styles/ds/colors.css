@@ -1,0 +1,104 @@
+/* ============================================================
+   COLORS — James Brink Design System · "EMISSION"
+   Dark-first. Palette born from narrowband astrophotography:
+   warm near-black "ink" neutrals + a single H-alpha crimson
+   "emission" accent (hydrogen glowing red at 656nm), with a faint
+   star-gold secondary. :root IS the dark theme; add `.light`
+   on <html> for the warm-paper variant.
+   ============================================================ */
+
+:root {
+  /* --- Base palette: Ink (warm charcoal → warm paper) --- */
+  --ink-50:  #faf5f3;
+  --ink-100: #f1e8e5;
+  --ink-200: #e2d4d1;
+  --ink-300: #cbb4b1;
+  --ink-400: #a98f8d;
+  --ink-500: #806865;
+  --ink-600: #5c4744;
+  --ink-700: #3d2b2a;
+  --ink-800: #241516;
+  --ink-900: #160c0d;
+  --ink-950: #0a0506;
+
+  /* --- Base palette: Emission (H-alpha crimson — the one accent) --- */
+  --emission-300: #ff8098;
+  --emission-400: #ff5c78;
+  --emission-500: #ff3d63;   /* signature crimson */
+  --emission-600: #e11d48;
+  --emission-700: #be123c;
+
+  /* --- Secondary: Star-gold (rare warm highlight; never structural) --- */
+  --gold-400: #f5c06b;
+  --gold-500: #eaa94b;
+
+  /* --- Syntax-highlight accents (warm Emission code theme) --- */
+  --syntax-tag: #ff6b8a;     /* emission-pink — tags, keywords, functions */
+  --syntax-string: #f5c06b;  /* gold       — strings, attr values */
+  --syntax-unit: #ff9e7a;    /* salmon     — units, numbers */
+  --syntax-comment: #806865; /* ink-500    — comments, operators */
+
+  /* --- Deep code surface (dark in BOTH themes, like the source site) --- */
+  --surface-code: #0c0709;
+  --code-text: #f1e8e5;
+
+  /* ---------- Semantic aliases: DARK (the default identity) ---------- */
+  --text-heading: #f8ece9;
+  --text-strong:  #fdf5f3;
+  --text-body:    #cbb0b2;
+  --text-muted:   #a98f8d;   /* eyebrows, timestamps, captions */
+  --text-subtle:  #806865;   /* secondary meta */
+  --text-faint:   #7d5f64;   /* dividers-as-text, quietest labels */
+  --text-link:       var(--emission-400);
+  --text-link-hover: var(--emission-300);
+  --text-accent:     var(--emission-400);  /* taglines, inline highlights */
+  --text-on-solid:   #1a0206;           /* dark ink on the crimson button */
+
+  --surface-page:   var(--ink-950);
+  --surface-card:   var(--ink-900);
+  --surface-sunken: color-mix(in srgb, var(--emission-500) 7%, transparent); /* hover halo */
+  --surface-pill:   var(--ink-800);
+
+  --border-subtle:  rgb(255 255 255 / 0.07);
+  --border-default: rgb(255 255 255 / 0.14);
+  --ring-hairline:  rgb(255 255 255 / 0.09);
+  --shadow-tint:    rgb(0 0 0 / 0.5);
+
+  --btn-primary-bg:        var(--emission-500);
+  --btn-primary-bg-hover:  var(--emission-400);
+  --btn-secondary-bg:      rgb(255 255 255 / 0.05);
+  --btn-secondary-bg-hover:rgb(255 255 255 / 0.1);
+
+  --focus-ring: var(--emission-500);
+}
+
+/* ---------- Semantic aliases: LIGHT (.light on <html>) ---------- */
+.light {
+  --text-heading: var(--ink-800);
+  --text-strong:  var(--ink-900);
+  --text-body:    var(--ink-600);
+  --text-muted:   #a08a87;
+  --text-subtle:  var(--ink-500);
+  --text-faint:   #a08a87;
+  --text-link:       var(--emission-600);
+  --text-link-hover: var(--emission-700);
+  --text-accent:     var(--emission-600);
+  --text-on-solid:   #fff6f4;
+
+  --surface-page:   #faf5f3;
+  --surface-card:   #ffffff;
+  --surface-sunken: #f6efec;
+  --surface-pill:   var(--ink-100);
+
+  --border-subtle:  #f0e5e3;
+  --border-default: #e6d6d4;
+  --ring-hairline:  rgb(30 17 20 / 0.06);
+  --shadow-tint:    rgb(60 20 28 / 0.06);
+
+  --btn-primary-bg:        var(--emission-600);
+  --btn-primary-bg-hover:  var(--emission-700);
+  --btn-secondary-bg:      #faf5f3;
+  --btn-secondary-bg-hover:var(--ink-100);
+
+  --focus-ring: var(--emission-600);
+}
