@@ -244,7 +244,7 @@ const socialLinks = [
         {
           posts.map((post) => (
             <Card as="article">
-              <CardTitle href={`/blog/${post.slug}/`}>{post.data.title}</CardTitle>
+              <CardTitle href={`/blog/${post.id}/`}>{post.data.title}</CardTitle>
               <CardEyebrow as="time" dateTime={post.data.date.toISOString()} decorate>
                 {formatDate(post.data.date)}
               </CardEyebrow>

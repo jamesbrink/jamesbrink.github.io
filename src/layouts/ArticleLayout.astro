@@ -37,7 +37,7 @@ if (series) {
     .filter((post) => post.data.series === series && !post.data.draft)
     .sort((a, b) => (a.data.seriesOrder || 0) - (b.data.seriesOrder || 0))
     .map((post) => ({
-      slug: post.slug,
+      slug: post.id,
       title: post.data.title,
       order: post.data.seriesOrder || 0,
     }));
