@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James Brink — Résumé</title>
+<link rel="stylesheet" href="./styles.css">
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-sizing:border-box}
+  .doc{font-family:var(--font-serif);color:var(--ink-700)}
+  .grid{display:grid;grid-template-columns:2.45in 1fr;min-height:10.6in}
+
+  /* ---------- Sidebar (dark) ---------- */
+  .side{background:var(--ink-950);color:var(--ink-300);padding:0.5in 0.34in;position:relative;overflow:hidden}
+  .side::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(1px 1px at 22% 9%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 70% 14%,rgba(255,200,208,.45),transparent),
+    radial-gradient(1.4px 1.4px at 48% 6%,rgba(255,170,185,.45),transparent),
+    radial-gradient(600px 300px at 30% -40px,rgba(255,61,99,.16),transparent)}
+  .side>*{position:relative}
+  .name{font-size:29pt;line-height:.98;font-weight:700;letter-spacing:-.015em;color:#fdf5f3}
+  .name-rule{width:38px;height:3px;background:var(--emission-500);margin:12px 0 12px}
+  .tagline{font-size:9.5pt;font-style:italic;line-height:1.45;color:var(--ink-300)}
+  .s-lbl{font-family:var(--font-mono);font-size:7.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--emission-500);margin:22px 0 9px}
+  .s-row{font-size:9pt;line-height:1.7;color:var(--ink-200)}
+  .s-row a{color:var(--ink-200);text-decoration:none}
+  .tools{font-size:9pt;line-height:1.65;color:var(--ink-200)}
+  .edu{margin-bottom:9px}
+  .edu-t{font-size:9.5pt;font-weight:600;color:#f1e8e5;line-height:1.25}
+  .edu-m{font-family:var(--font-mono);font-size:8pt;color:var(--ink-400);margin-top:1px}
+
+  /* ---------- Main (paper) ---------- */
+  .main{background:#ffffff;padding:0.5in 0.5in 0.4in}
+  .h{font-family:var(--font-serif);font-size:16pt;font-weight:700;letter-spacing:-.01em;color:var(--emission-600);margin:0 0 12px}
+  .h.mt{margin-top:20px}
+  .job{margin-bottom:11px;padding-left:11px;border-left:2px solid color-mix(in srgb,var(--emission-500) 30%,transparent)}
+  .job-top{position:relative;padding-right:1.35in}
+  .co{font-size:10.5pt;font-weight:700;color:var(--ink-900);line-height:1.2}
+  .dates{position:absolute;right:0;top:2px;font-family:var(--font-mono);font-size:7.5pt;color:var(--ink-400);white-space:nowrap}
+  .role{font-size:9.5pt;font-style:italic;color:var(--emission-600);margin:1px 0 4px}
+  .desc{font-size:9pt;line-height:1.4;color:var(--ink-700);margin:0}
+  .earlier{margin-top:2px}
+  .er{position:relative;padding:4px 1.4in 4px 0;font-size:9pt;border-bottom:1px solid #f0e5e3;line-height:1.35}
+  .er b{color:var(--ink-900);font-weight:700}
+  .er .r{color:var(--ink-500)}
+  .er .d{position:absolute;right:0;top:5px;font-family:var(--font-mono);font-size:7.5pt;color:var(--ink-400);white-space:nowrap}
+  .projs{display:grid;grid-template-columns:1fr 1fr;gap:7px 24px;margin-top:2px}
+  .pr{font-size:9pt;line-height:1.35}
+  .pr b{color:var(--ink-900);font-weight:700}
+  .pr .em{color:var(--ink-500)}
+</style>
+</head>
+<body>
+<doc-page margin="0">
+  <div class="doc"><div class="grid">
+
+    <aside class="side">
+      <div class="name">James<br>Brink</div>
+      <div class="name-rule"></div>
+      <p class="tagline">Infrastructure-as-code specialist building efficient, fault-tolerant environments on CI/CD pipelines.</p>
+
+      <div class="s-lbl">Contact</div>
+      <div class="s-row">Phoenix, AZ</div>
+      <div class="s-row">(480) 410-1846</div>
+      <div class="s-row"><a href="mailto:brink.james@gmail.com">brink.james@gmail.com</a></div>
+      <div class="s-row"><a href="https://jamesbrink.online">jamesbrink.online</a></div>
+      <div class="s-row"><a href="https://github.com/jamesbrink">GitHub</a> · <a href="https://linkedin.com/in/brinkjames">LinkedIn</a></div>
+
+      <div class="s-lbl">Toolbox</div>
+      <div class="tools">Docker · Terraform · Ansible · Packer · AWS · CloudStack · Kubernetes · NixOS · Prometheus · Grafana · InfluxDB · Agentic AI / LLM tooling</div>
+
+      <div class="s-lbl">Education</div>
+      <div class="edu"><div class="edu-t">Certification, CCNA</div><div class="edu-m">Cisco Systems · 2007</div></div>
+      <div class="edu"><div class="edu-t">Network Switching Systems</div><div class="edu-m">General Dynamics · 2001</div></div>
+      <div class="edu"><div class="edu-t">Satellite Communications</div><div class="edu-m">Department of the Army · 2001</div></div>
+    </aside>
+
+    <main class="main">
+      <h2 class="h">Experience</h2>
+
+      <div class="job">
+        <div class="job-top"><span class="co">Infosys — iCETS</span><span class="dates">Oct 2023 — Present</span></div>
+        <div class="role">Technology Architect · Remote</div>
+        <p class="desc">R&D technology architect incubating NextGen AI/ML, cloud, and analytics capabilities; deployed NixOS AI-sandbox environments on HPE bare-metal for rapid model prototyping.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-top"><span class="co">Quantierra</span><span class="dates">Sep 2023 — Present</span></div>
+        <div class="role">Principal Consultant · Remote</div>
+        <p class="desc">Architect a microservices platform for NYC commercial real-estate intelligence — agentic email/dealflow automation, a sub-20ms geocoding service, and full NixOS/ZFS/Terraform infra across Rails, FastAPI, Go, and PostGIS.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-top"><span class="co">NFTCO / Unblocked</span><span class="dates">Aug 2022 — Apr 2023</span></div>
+        <div class="role">Site Reliability Engineer · Remote</div>
+        <p class="desc">Owned AWS infra, monitoring, and CI/CD; cut app operating costs ~45% and built custom Prometheus exporters with self-hosted GitHub Actions runners.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-top"><span class="co">Blockfolio / FTX</span><span class="dates">Nov 2020 — Aug 2022</span></div>
+        <div class="role">Site Reliability Engineer · Remote</div>
+        <p class="desc">Scaled AWS infra for an event-driven, high-traffic app; owned Cassandra and InfluxDB across massive datasets and helped mitigate frequent attacks.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-top"><span class="co">Synapse Studios</span><span class="dates">Jan 2020 — Oct 2020</span></div>
+        <div class="role">Director of Infrastructure · Tempe, AZ</div>
+        <p class="desc">Built modular Terraform for an AWS app stack; managed ~15 customer AWS accounts with custom monitoring, VPN, and faster CI/CD pipelines.</p>
+      </div>
+
+      <h2 class="h mt">Earlier</h2>
+      <div class="earlier">
+        <div class="er"><span><b>Solid Command Inc</b> <span class="r">· Director of Infrastructure</span></span><span class="d">Aug 2019 — Aug 2022</span></div>
+        <div class="er"><span><b>Kadima Ventures</b> <span class="r">· Director of Infrastructure</span></span><span class="d">Dec 2017 — Aug 2022</span></div>
+        <div class="er"><span><b>GoDaddy</b> <span class="r">· Site Reliability Engineer</span></span><span class="d">Sep 2015 — Nov 2016</span></div>
+        <div class="er"><span><b>Taste.com</b> <span class="r">· Lead Engineer</span></span><span class="d">May 2015 — Sep 2015</span></div>
+        <div class="er"><span><b>Yahoo</b> <span class="r">· Senior Operations Engineer</span></span><span class="d">Jul 2015 — Aug 2015</span></div>
+        <div class="er"><span><b>Edward Jones</b> <span class="r">· Systems Administrator II</span></span><span class="d">Jan 2008 — May 2015</span></div>
+        <div class="er"><span><b>Media Solutions Corp</b> <span class="r">· Software Engineer</span></span><span class="d">Sep 2011 — Oct 2012</span></div>
+        <div class="er"><span><b>Accram</b> <span class="r">· Network Engineer / Systems Integrator</span></span><span class="d">Jan 2004 — Jan 2008</span></div>
+      </div>
+
+      <h2 class="h mt">Open-Source Projects</h2>
+      <div class="projs">
+        <div class="pr"><b>MCP NixOS</b> <span class="em">— MCP server for NixOS resources.</span></div>
+        <div class="pr"><b>nxv</b> <span class="em">— Fast CLI for any version of any Nix package.</span></div>
+        <div class="pr"><b>ComfyUI Nix</b> <span class="em">— Nix flake for ComfyUI with curated nodes.</span></div>
+        <div class="pr"><b>Envisaged</b> <span class="em">— Gource git visualizations with Docker.</span></div>
+        <div class="pr"><b>Docker OpenGL</b> <span class="em">— Mesa 3D software rendering drivers.</span></div>
+        <div class="pr"><b>brinkOS</b> <span class="em">— Experimental Arch-based Linux distro.</span></div>
+        <div class="pr"><b>Essex</b> <span class="em">— Docker project template generator in Rust.</span></div>
+        <div class="pr"><b>Arch Linux</b> <span class="em">— AUR package maintainer.</span></div>
+      </div>
+    </main>
+
+  </div></div>
+</doc-page>
+<script src="./doc-page.js"></script>
+</body>
+</html>
