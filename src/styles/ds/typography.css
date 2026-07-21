@@ -1,0 +1,64 @@
+/* ============================================================
+   TYPOGRAPHY — James Brink Design System · "EMISSION"
+   Editorial + technical: a literary serif for everything that
+   speaks (Newsreader) paired with a precise monospace for the
+   things a machine says — eyebrows, timestamps, code, CLI
+   (IBM Plex Mono). The observer's night-log made typographic.
+   ============================================================ */
+
+/* Fonts are loaded via <link> in BaseLayout.astro head (see the Google Fonts
+   preconnect + stylesheet), not @import, so token :root blocks can bundle
+   ahead of them without violating the CSS "@import first" rule. */
+
+:root {
+  /* --- Families --- */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-serif); /* the system voice IS the serif */
+  --font-display: var(--font-serif);
+  --font-mono:
+    'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+
+  /* --- Type scale (rem) with paired line-heights --- */
+  --text-xs: 0.8125rem;
+  --text-xs--lh: 1.5rem;
+  --text-sm: 0.875rem;
+  --text-sm--lh: 1.5rem;
+  --text-base: 1rem;
+  --text-base--lh: 1.75rem;
+  --text-lg: 1.125rem;
+  --text-lg--lh: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--lh: 2rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--lh: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--lh: 2.25rem;
+  --text-4xl: 2rem;
+  --text-4xl--lh: 2.5rem;
+  --text-5xl: 3rem;
+  --text-5xl--lh: 3.25rem;
+  --text-6xl: 3.75rem;
+  --text-6xl--lh: 1.02;
+  --text-7xl: 4.5rem;
+  --text-7xl--lh: 1;
+  --text-8xl: 6rem;
+  --text-8xl--lh: 1;
+  --text-9xl: 8rem;
+  --text-9xl--lh: 1;
+
+  /* --- Weights (Newsreader ships 400–700) --- */
+  --fw-normal: 400; /* @kind other */
+  --fw-medium: 500; /* @kind other */
+  --fw-semibold: 600; /* @kind other */
+  --fw-bold: 700; /* @kind other */
+
+  /* --- Tracking (serif wants far less negative than a grotesk) --- */
+  --tracking-tight: -0.015em; /* display headings */
+  --tracking-normal: 0;
+  --tracking-mono: 0.14em; /* @kind other */
+
+  /* --- Semantic roles --- */
+  --leading-body: 1.75; /* prose line-height */
+  --leading-snug: 1.375;
+}

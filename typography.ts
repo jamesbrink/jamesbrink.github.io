@@ -1,72 +1,33 @@
 import { type Config } from 'tailwindcss';
 
+// Prose theme for the "Emission" design system. Colors resolve to the DS
+// semantic tokens, which flip automatically when `.light` is on <html> — so
+// there is a single theme (no prose-invert). The code panel stays dark in
+// both themes (--surface-code / --code-text do not flip).
 export default {
   theme: {
     typography: ({ theme }) => ({
-      invert: {
-        css: {
-          '--tw-prose-body': 'var(--tw-prose-invert-body)',
-          '--tw-prose-headings': 'var(--tw-prose-invert-headings)',
-          '--tw-prose-links': 'var(--tw-prose-invert-links)',
-          '--tw-prose-links-hover': 'var(--tw-prose-invert-links-hover)',
-          '--tw-prose-underline': 'var(--tw-prose-invert-underline)',
-          '--tw-prose-underline-hover': 'var(--tw-prose-invert-underline-hover)',
-          '--tw-prose-bold': 'var(--tw-prose-invert-bold)',
-          '--tw-prose-counters': 'var(--tw-prose-invert-counters)',
-          '--tw-prose-bullets': 'var(--tw-prose-invert-bullets)',
-          '--tw-prose-hr': 'var(--tw-prose-invert-hr)',
-          '--tw-prose-quote-borders': 'var(--tw-prose-invert-quote-borders)',
-          '--tw-prose-captions': 'var(--tw-prose-invert-captions)',
-          '--tw-prose-code': 'var(--tw-prose-invert-code)',
-          '--tw-prose-code-bg': 'var(--tw-prose-invert-code-bg)',
-          '--tw-prose-pre-code': 'var(--tw-prose-invert-pre-code)',
-          '--tw-prose-pre-bg': 'var(--tw-prose-invert-pre-bg)',
-          '--tw-prose-pre-border': 'var(--tw-prose-invert-pre-border)',
-          '--tw-prose-th-borders': 'var(--tw-prose-invert-th-borders)',
-          '--tw-prose-td-borders': 'var(--tw-prose-invert-td-borders)',
-        },
-      },
       DEFAULT: {
         css: {
-          '--tw-prose-body': theme('colors.zinc.600'),
-          '--tw-prose-headings': theme('colors.zinc.900'),
-          '--tw-prose-links': theme('colors.teal.500'),
-          '--tw-prose-links-hover': theme('colors.teal.600'),
-          '--tw-prose-underline': theme('colors.teal.500 / 0.2'),
-          '--tw-prose-underline-hover': theme('colors.teal.500'),
-          '--tw-prose-bold': theme('colors.zinc.900'),
-          '--tw-prose-counters': theme('colors.zinc.900'),
-          '--tw-prose-bullets': theme('colors.zinc.900'),
-          '--tw-prose-hr': theme('colors.zinc.100'),
-          '--tw-prose-quote-borders': theme('colors.zinc.200'),
-          '--tw-prose-captions': theme('colors.zinc.400'),
-          '--tw-prose-code': theme('colors.zinc.700'),
-          '--tw-prose-code-bg': theme('colors.zinc.300 / 0.2'),
-          '--tw-prose-pre-code': theme('colors.zinc.100'),
-          '--tw-prose-pre-bg': theme('colors.zinc.900'),
+          '--tw-prose-body': 'var(--text-body)',
+          '--tw-prose-headings': 'var(--text-heading)',
+          '--tw-prose-links': 'var(--text-link)',
+          '--tw-prose-links-hover': 'var(--text-link-hover)',
+          '--tw-prose-underline': 'color-mix(in srgb, var(--text-link) 30%, transparent)',
+          '--tw-prose-underline-hover': 'var(--text-link-hover)',
+          '--tw-prose-bold': 'var(--text-strong)',
+          '--tw-prose-counters': 'var(--text-heading)',
+          '--tw-prose-bullets': 'var(--text-heading)',
+          '--tw-prose-hr': 'var(--border-subtle)',
+          '--tw-prose-quote-borders': 'var(--border-default)',
+          '--tw-prose-captions': 'var(--text-muted)',
+          '--tw-prose-code': 'var(--text-heading)',
+          '--tw-prose-code-bg': 'color-mix(in srgb, var(--ink-500) 22%, transparent)',
+          '--tw-prose-pre-code': 'var(--code-text)',
+          '--tw-prose-pre-bg': 'var(--surface-code)',
           '--tw-prose-pre-border': 'transparent',
-          '--tw-prose-th-borders': theme('colors.zinc.200'),
-          '--tw-prose-td-borders': theme('colors.zinc.100'),
-
-          '--tw-prose-invert-body': theme('colors.zinc.400'),
-          '--tw-prose-invert-headings': theme('colors.zinc.200'),
-          '--tw-prose-invert-links': theme('colors.teal.400'),
-          '--tw-prose-invert-links-hover': theme('colors.teal.400'),
-          '--tw-prose-invert-underline': theme('colors.teal.400 / 0.3'),
-          '--tw-prose-invert-underline-hover': theme('colors.teal.400'),
-          '--tw-prose-invert-bold': theme('colors.zinc.200'),
-          '--tw-prose-invert-counters': theme('colors.zinc.200'),
-          '--tw-prose-invert-bullets': theme('colors.zinc.200'),
-          '--tw-prose-invert-hr': theme('colors.zinc.700 / 0.4'),
-          '--tw-prose-invert-quote-borders': theme('colors.zinc.500'),
-          '--tw-prose-invert-captions': theme('colors.zinc.500'),
-          '--tw-prose-invert-code': theme('colors.zinc.300'),
-          '--tw-prose-invert-code-bg': theme('colors.zinc.200 / 0.05'),
-          '--tw-prose-invert-pre-code': theme('colors.zinc.100'),
-          '--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 0.4)',
-          '--tw-prose-invert-pre-border': theme('colors.zinc.200 / 0.1'),
-          '--tw-prose-invert-th-borders': theme('colors.zinc.700'),
-          '--tw-prose-invert-td-borders': theme('colors.zinc.800'),
+          '--tw-prose-th-borders': 'var(--border-default)',
+          '--tw-prose-td-borders': 'var(--border-subtle)',
 
           // Base
           color: 'var(--tw-prose-body)',
@@ -127,6 +88,7 @@ export default {
           code: {
             display: 'inline-block',
             color: 'var(--tw-prose-code)',
+            fontFamily: 'var(--font-mono)',
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.semibold'),
             backgroundColor: 'var(--tw-prose-code-bg)',
@@ -197,6 +159,7 @@ export default {
           // Code blocks
           pre: {
             color: 'var(--tw-prose-pre-code)',
+            fontFamily: 'var(--font-mono)',
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.medium'),
             backgroundColor: 'var(--tw-prose-pre-bg)',

@@ -96,7 +96,7 @@
       Built out a private cloud on bare metal servers using Apache Cloudstack. Built out infrastructure that ran on top of the private cloud. All of this work was infrastructure as code using Ansible, Terraform, Packer, and Docker.
     ]
 
-    #job("Kadima Ventures", "Phoenix, AZ", "Director of Infrastructure", "Dec 2017 - 2019")[
+    #job("Kadima Ventures", "Phoenix, AZ", "Director of Infrastructure", "Dec 2017 - Aug 2022")[
       Building awesome stuff, with an amazing team. Initially hired into a SysOps/DevOps role which also included R&D work and building proof of concepts for various products. Was quickly promoted to Director of Infrastructure where I became responsible for managing the operations team, and all production infrastructure. Extensive work with AWS, Kubernetes, Docker, Terraform, and CI/CD pipelines. Created automated pipelines for an existing production application drastically reducing deployment times.
     ]
 

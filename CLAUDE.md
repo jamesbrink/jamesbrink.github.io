@@ -46,8 +46,8 @@ bun run vitest tests/utils.test.ts
 
 ### Stack
 
-- **Astro 5.x** with MDX for blog posts
-- **Tailwind CSS 4.1** with CSS-first configuration
+- **Astro 7.x** with MDX for blog posts
+- **Tailwind CSS 4.3** with CSS-first configuration
 - **Bun** as package manager
 - **Nix flake-parts** for reproducible dev environment
 - **Vitest** for unit tests, **Playwright** for visual regression
@@ -79,12 +79,33 @@ Blog posts in `src/content/blog/*.mdx` use this schema:
 }
 ```
 
-### Tailwind 4.1 CSS-First
+### "Emission" Design System (dark-first)
+
+The visual identity is **"Emission"** — warm near-black "ink" neutrals + a single
+H-alpha crimson accent, Newsreader serif + IBM Plex Mono, a starfield/nebula-bloom
+backdrop, and floating frosted chrome. It is **dark by default**.
+
+- **Token layer**: `src/styles/ds/{colors,typography,spacing,effects,base}.css`
+  hold the DS semantic tokens (`--surface-*`, `--text-*`, `--emission-*`,
+  `--font-serif`, effects). `:root` is the dark theme; adding `.light` to `<html>`
+  flips every token to the warm-paper variant. `base.css` is imported into
+  `@layer base` so utilities can override its global `:where(a)` link color.
+- **Utilities**: `src/styles/tailwind.css` bridges the tokens to Tailwind via
+  `@theme inline` (e.g. `bg-page`, `bg-card`, `text-heading`, `text-body`,
+  `text-accent`, `text-link`, `border-hairline`, `text-emission`). Because the
+  tokens flip at runtime, components use these **without `dark:` variants**.
+- **Theme toggle**: dark-first. `BaseLayout.astro`'s inline script adds `.light`
+  only when `localStorage.theme === 'light'`; `Header.astro` toggles `.light`.
+  (Note: `@custom-variant light`, not the old `dark` variant.)
+- **Prose/syntax**: `/typography.ts` (single Emission prose theme) + `prism.css`
+  (Emission code theme on the deep `--surface-code` panel, dark in both themes).
+
+### Tailwind 4.3 CSS-First
 
 Styling in `/src/styles/tailwind.css` uses:
 
-- `@theme` directive for custom properties
-- `@custom-variant dark` with `.dark` class on `<html>`
+- `@theme` for the type scale; `@theme inline` for the semantic color/font tokens
+- `@custom-variant light` with `.light` class on `<html>` (dark-first)
 - Typography plugin config in `/typography.ts`
 
 ## Testing
@@ -106,20 +127,24 @@ The mdx-validation test catches syntax issues before build.
 
 ## Resume System
 
-PDF resumes are generated from Typst source files in `resume/`:
+The **published** downloadable resume (`public/JamesBrink-Resume.pdf`) is the
+single-page **Emission**-styled resume, rendered from a self-contained HTML
+source so it is text-selectable (not a rasterized image):
 
-| Template  | Source                        | Output                                   | Pages |
-| --------- | ----------------------------- | ---------------------------------------- | ----- |
-| Full      | `resume/resume.typ`           | `public/JamesBrink-Resume.pdf`           | 2     |
-| Condensed | `resume/resume-condensed.typ` | `public/JamesBrink-Resume-Condensed.pdf` | 1     |
+| Source                                   | Output                         | How                              |
+| ---------------------------------------- | ------------------------------ | -------------------------------- |
+| `resume/emission/JamesBrink-Resume.html` | `public/JamesBrink-Resume.pdf` | `bun resume/emission/render.mjs` |
 
-Use the `/cv` skill to edit and rebuild:
+`render.mjs` uses Playwright Chromium print-to-PDF (`page.pdf` → vector/text,
+`printBackground: true` for the dark sidebar + starfield). The bundle
+(`resume/emission/`: HTML, `styles.css`, `tokens/`, `doc-page.js`) is self-contained;
+edit the HTML then re-run the script. Keep content in sync with
+`src/pages/resume.astro` (dates, roles — e.g. Yahoo = "Senior Operations Engineer").
 
-- `/cv` or `/cv build` — Edit/build full resume
-- `/cv condensed build` — Build condensed resume
-- `/cv open` — Build and open in Preview
-
-When updating job descriptions, sync changes to both `.typ` files and `src/pages/resume.astro`.
+**Legacy (not the published PDF):** the Typst templates `resume/resume.typ` and
+`resume/resume-condensed.typ` (built via the `/cv` skill / `typst compile`) predate
+the Emission redesign and are kept for reference only. They may lag the current
+content; do not treat their output as the live resume.
 
 ## Astrophotography Gallery
 

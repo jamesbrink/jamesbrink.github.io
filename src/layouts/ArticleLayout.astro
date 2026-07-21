@@ -37,7 +37,7 @@ if (series) {
     .filter((post) => post.data.series === series && !post.data.draft)
     .sort((a, b) => (a.data.seriesOrder || 0) - (b.data.seriesOrder || 0))
     .map((post) => ({
-      slug: post.slug,
+      slug: post.id,
       title: post.data.title,
       order: post.data.seriesOrder || 0,
     }));
@@ -51,13 +51,13 @@ if (series) {
         <a
           href="/blog"
           aria-label="Go back to articles"
-          class="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 transition lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
+          class="group bg-card ring-hairline hover:border-edge mb-8 flex h-10 w-10 items-center justify-center rounded-full shadow-md ring-1 transition lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0"
         >
           <svg
             viewBox="0 0 16 16"
             fill="none"
             aria-hidden="true"
-            class="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400"
+            class="stroke-muted group-hover:stroke-subtle h-4 w-4 transition"
           >
             <path
               d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
@@ -68,16 +68,14 @@ if (series) {
         </a>
         <article>
           <header class="flex flex-col">
-            <h1
-              class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
-            >
+            <h1 class="text-heading mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
               {title}
             </h1>
             <time
               datetime={date.toISOString()}
-              class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
+              class="text-muted order-first flex items-center text-base"
             >
-              <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
+              <span class="bg-edge h-4 w-0.5 rounded-full"></span>
               <span class="ml-3">{formatDate(date)}</span>
             </time>
             {
@@ -86,7 +84,7 @@ if (series) {
                   {tags.map((tag) => (
                     <a
                       href={`/blog/tag/${tag.toLowerCase()}/`}
-                      class="inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+                      class="bg-pill text-body hover:bg-edge inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition"
                     >
                       {tag}
                     </a>
@@ -98,10 +96,8 @@ if (series) {
 
           {
             series && seriesPosts.length > 1 && (
-              <div class="mt-8 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-                <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                  Part of the "{series}" series
-                </h2>
+              <div class="border-hairline mt-8 rounded-2xl border p-6">
+                <h2 class="text-heading text-sm font-semibold">Part of the "{series}" series</h2>
                 <ol class="mt-4 space-y-2 text-sm">
                   {seriesPosts.map((post, index) => {
                     const currentOrder = seriesOrder ?? 0;
@@ -109,19 +105,14 @@ if (series) {
                     return (
                       <li class="flex items-center gap-3">
                         <span
-                          class={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium ${isCurrent ? 'bg-teal-500 text-white' : 'bg-zinc-100 text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400'}`}
+                          class={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium ${isCurrent ? 'bg-emission text-on-solid' : 'bg-pill text-subtle'}`}
                         >
                           {index + 1}
                         </span>
                         {isCurrent ? (
-                          <span class="font-medium text-zinc-900 dark:text-zinc-100">
-                            {post.title}
-                          </span>
+                          <span class="text-heading font-medium">{post.title}</span>
                         ) : (
-                          <a
-                            href={`/blog/${post.slug}/`}
-                            class="text-zinc-600 hover:text-teal-500 dark:text-zinc-400 dark:hover:text-teal-400"
-                          >
+                          <a href={`/blog/${post.slug}/`} class="text-body hover:text-link">
                             {post.title}
                           </a>
                         )}

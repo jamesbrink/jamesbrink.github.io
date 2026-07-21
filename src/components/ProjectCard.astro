@@ -26,27 +26,27 @@ const { project, featured = false } = Astro.props;
   rel="noopener noreferrer"
   class={clsx(
     'group relative flex flex-col rounded-2xl border p-6 transition',
-    'border-zinc-100 hover:border-zinc-200 dark:border-zinc-700/40 dark:hover:border-zinc-700',
-    featured && 'bg-zinc-50/50 dark:bg-zinc-800/50'
+    'border-hairline hover:border-edge',
+    featured && 'bg-sunken'
   )}
 >
   <div class="flex items-start justify-between gap-4">
     <div class="flex-1">
       <h3
         class={clsx(
-          'font-semibold text-zinc-800 group-hover:text-teal-500 dark:text-zinc-100 dark:group-hover:text-teal-400',
+          'font-semibold text-heading group-hover:text-link',
           featured ? 'text-lg' : 'text-base'
         )}
       >
         {project.name}
       </h3>
-      <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+      <p class="text-accent mt-1 text-sm font-medium">
         {project.tagline}
       </p>
     </div>
     {
       (project.stars !== undefined || project.forks !== undefined) && (
-        <div class="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+        <div class="text-subtle flex items-center gap-3 text-xs">
           {project.stars !== undefined && (
             <span class="flex items-center gap-1" title={`${project.stars} stars`}>
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -72,23 +72,21 @@ const { project, featured = false } = Astro.props;
     }
   </div>
 
-  <p class={clsx('mt-4 text-zinc-600 dark:text-zinc-400', featured ? 'text-sm' : 'text-sm')}>
+  <p class={clsx('mt-4 text-body', featured ? 'text-sm' : 'text-sm')}>
     {project.description}
   </p>
 
   <div class="mt-4 flex flex-wrap gap-2">
     {
       project.techStack.map((tech) => (
-        <span class="inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+        <span class="bg-pill text-body inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium">
           {tech}
         </span>
       ))
     }
   </div>
 
-  <div
-    class="mt-4 flex items-center gap-2 text-sm text-zinc-500 group-hover:text-teal-500 dark:text-zinc-400 dark:group-hover:text-teal-400"
-  >
+  <div class="text-subtle group-hover:text-link mt-4 flex items-center gap-2 text-sm">
     <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
       <path
         fill-rule="evenodd"

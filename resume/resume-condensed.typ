@@ -86,7 +86,7 @@
       Private cloud on bare metal with Apache CloudStack. IaC with Ansible, Terraform, Packer, Docker.
     ]
 
-    #job("Kadima Ventures", "Phoenix, AZ", "Director of Infrastructure", "Dec 2017 - 2019")[
+    #job("Kadima Ventures", "Phoenix, AZ", "Director of Infrastructure", "Dec 2017 - Aug 2022")[
       Promoted to Director. AWS/Kubernetes infrastructure. Automated pipelines for faster deployments.
     ]
 

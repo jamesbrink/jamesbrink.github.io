@@ -54,10 +54,7 @@ function formatDate(date: Date): string {
   intro={`${posts.length} article${posts.length === 1 ? '' : 's'} tagged with "${displayTag}"`}
 >
   <div class="mb-8">
-    <a
-      href="/blog"
-      class="inline-flex items-center gap-2 text-sm text-zinc-500 transition hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
-    >
+    <a href="/blog" class="text-link inline-flex items-center gap-2 text-sm transition">
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="h-4 w-4 stroke-current">
         <path
           d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
@@ -69,12 +66,12 @@ function formatDate(date: Date): string {
     </a>
   </div>
 
-  <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+  <div class="md:border-hairline md:border-l md:pl-6">
     <div class="flex max-w-3xl flex-col space-y-16">
       {
         posts.map((post) => (
           <Card as="article">
-            <CardTitle href={`/blog/${post.slug}/`}>{post.data.title}</CardTitle>
+            <CardTitle href={`/blog/${post.id}/`}>{post.data.title}</CardTitle>
             <CardEyebrow as="time" dateTime={post.data.date.toISOString()} decorate>
               {formatDate(post.data.date)}
             </CardEyebrow>
@@ -86,8 +83,8 @@ function formatDate(date: Date): string {
                     href={`/blog/tag/${t.toLowerCase()}/`}
                     class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium transition ${
                       t.toLowerCase() === tag?.toLowerCase()
-                        ? 'bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-400'
-                        : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700'
+                        ? 'bg-emission/15 text-accent'
+                        : 'bg-pill text-subtle hover:bg-edge'
                     }`}
                   >
                     {t}

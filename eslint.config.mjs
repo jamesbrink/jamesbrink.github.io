@@ -25,6 +25,9 @@ export default tseslint.config(
       '.astro/**',
       'jamesbrink.github.io/**',
       'public/assets/js/**',
+      // Resume bundle: legacy Typst sources + the vendored Emission HTML/JS
+      // (doc-page.js is a browser web component) and its render script.
+      'resume/**',
     ],
   }
 );

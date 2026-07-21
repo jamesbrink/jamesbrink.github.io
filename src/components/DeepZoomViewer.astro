@@ -16,16 +16,13 @@ const { dziPath, title, class: className } = Astro.props;
 ---
 
 <div
-  class:list={[
-    'deep-zoom-container relative w-full overflow-hidden rounded-xl bg-zinc-900',
-    className,
-  ]}
+  class:list={['deep-zoom-container bg-code relative w-full overflow-hidden rounded-xl', className]}
   data-dzi-path={dziPath}
 >
   <!-- Loading state -->
-  <div class="loading-overlay absolute inset-0 z-10 flex items-center justify-center bg-zinc-900">
+  <div class="loading-overlay bg-code absolute inset-0 z-10 flex items-center justify-center">
     <div class="flex flex-col items-center gap-3">
-      <svg class="h-8 w-8 animate-spin text-teal-500" viewBox="0 0 24 24" fill="none">
+      <svg class="text-emission h-8 w-8 animate-spin" viewBox="0 0 24 24" fill="none">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"
         ></circle>
         <path
@@ -34,7 +31,7 @@ const { dziPath, title, class: className } = Astro.props;
           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         ></path>
       </svg>
-      <span class="text-sm text-zinc-400">Loading high-resolution image...</span>
+      <span class="text-muted text-sm">Loading high-resolution image...</span>
     </div>
   </div>
 

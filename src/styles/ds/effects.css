@@ -1,0 +1,55 @@
+/* ============================================================
+   EFFECTS — radius, elevation, rings, motion
+   James Brink Design System
+   The signature look: soft shadow + hairline ring, generous
+   rounding, quick color/scale transitions. Never harsh borders.
+   ============================================================ */
+
+:root {
+  /* --- Corner radius --- */
+  --radius-sm: 0.25rem; /* small chips */
+  --radius-md: 0.375rem; /* buttons */
+  --radius-lg: 0.5rem; /* inline code */
+  --radius-xl: 0.75rem; /* small image tiles */
+  --radius-2xl: 1rem; /* cards, panels */
+  --radius-3xl: 1.5rem; /* prose images, code blocks, mobile menu */
+  --radius-full: 9999px; /* nav pill, avatar, tags, badges */
+
+  /* --- Elevation: soft shadow + tinted hairline ring together --- */
+  --shadow-md: 0 4px 6px -1px var(--shadow-tint), 0 2px 4px -2px var(--shadow-tint);
+  --shadow-lg: 0 10px 15px -3px var(--shadow-tint), 0 4px 6px -4px var(--shadow-tint);
+  --ring-1: 0 0 0 1px var(--ring-hairline);
+  /* The floating-element recipe (nav pill, avatar frame): */
+  --elevate-pill: var(--shadow-lg), var(--ring-1);
+  --elevate-card: var(--shadow-md), var(--ring-1);
+  /* Emission glow — the crimson bloom under a primary CTA / active state. */
+  --shadow-glow: 0 8px 30px -10px color-mix(in srgb, var(--emission-500) 70%, transparent);
+  --ring-glow: 0 0 0 1px color-mix(in srgb, var(--emission-500) 35%, transparent);
+
+  /* --- Motion --- */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 150ms; /* @kind other */
+  --dur-base: 200ms; /* @kind other */
+  --transition-colors:
+    color var(--dur-fast) var(--ease-in-out), background-color var(--dur-fast) var(--ease-in-out),
+    border-color var(--dur-fast) var(--ease-in-out);
+  --transition-base: all var(--dur-base) var(--ease-in-out);
+
+  /* --- Backdrop blur (frosted floating chrome) --- */
+  --blur-chrome: blur(14px); /* @kind other */
+
+  /* --- Starfield: faint scatter of stars for hero / header backdrops.
+     Layer over --surface-page; pair with --nebula-bloom for a colored haze. */
+  --field-stars:
+    radial-gradient(1px 1px at 15% 12%, rgb(255 255 255 / 0.5), transparent),
+    radial-gradient(1px 1px at 72% 8%, rgb(255 220 224 / 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 45% 22%, rgb(255 180 190 / 0.4), transparent),
+    radial-gradient(1px 1px at 88% 18%, rgb(255 255 255 / 0.3), transparent),
+    radial-gradient(1px 1px at 30% 6%, rgb(255 255 255 / 0.25), transparent),
+    radial-gradient(1px 1px at 60% 26%, rgb(255 255 255 / 0.3), transparent); /* @kind other */
+  --nebula-bloom: radial-gradient(
+    900px 460px at 78% -140px,
+    color-mix(in srgb, var(--emission-500) 14%, transparent),
+    transparent
+  ); /* @kind other */
+}
