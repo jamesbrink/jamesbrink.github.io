@@ -6,7 +6,11 @@
 @import './ds/typography.css';
 @import './ds/spacing.css';
 @import './ds/effects.css';
-@import './ds/base.css';
+/* base.css carries real selector rules (default link color, focus, selection).
+   Import it into @layer base so Tailwind utilities (@layer utilities) can
+   override the global `:where(a)` link color on chrome links — an UNLAYERED
+   import would beat every utility regardless of specificity. */
+@import './ds/base.css' layer(base);
 
 @import './prism.css' layer(components);
 

@@ -5,8 +5,12 @@
    Specificity kept at 0 (:where) so component inline styles win.
    ============================================================ */
 
-:root { color-scheme: dark; }
-.light { color-scheme: light; }
+:root {
+  color-scheme: dark;
+}
+.light {
+  color-scheme: light;
+}
 
 /* Links — always defined so user-added links never fall back to browser blue. */
 :where(a) {
@@ -27,4 +31,6 @@
 }
 
 /* Text selection — a faint emission wash. */
-::selection { background: color-mix(in srgb, var(--emission-500) 32%, transparent); }
+::selection {
+  background: color-mix(in srgb, var(--emission-500) 32%, transparent);
+}

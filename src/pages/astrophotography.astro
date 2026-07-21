@@ -16,7 +16,7 @@ import { featuredMosaics } from '../data/mosaics';
       astrophotos.map((photo) => (
         <button
           type="button"
-          class="group relative aspect-square overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-800"
+          class="group bg-pill relative aspect-square overflow-hidden rounded-2xl"
           onclick={`openLightbox('${photo.id}')`}
           aria-label={`View ${photo.title}`}
         >
@@ -30,7 +30,7 @@ import { featuredMosaics } from '../data/mosaics';
           {/* Hover overlay */}
           <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition duration-300 group-hover:opacity-100">
             <h3 class="text-lg font-semibold text-white">{photo.title}</h3>
-            <p class="text-sm text-teal-400">{photo.catalogId}</p>
+            <p class="text-emission-hi text-sm">{photo.catalogId}</p>
           </div>
         </button>
       ))
@@ -40,12 +40,10 @@ import { featuredMosaics } from '../data/mosaics';
   {/* High-Resolution Mosaics Section */}
   {
     featuredMosaics.length > 0 && (
-      <section class="mt-16 border-t border-zinc-100 pt-16 dark:border-zinc-700/40">
+      <section class="border-hairline mt-16 border-t pt-16">
         <div>
-          <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
-            High-Resolution Mosaics
-          </h2>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <h2 class="text-heading text-2xl font-bold tracking-tight">High-Resolution Mosaics</h2>
+          <p class="text-body mt-2 text-sm">
             Explore these images at their full resolution with interactive pan and zoom.
           </p>
         </div>

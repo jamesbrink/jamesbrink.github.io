@@ -40,15 +40,15 @@ function formatDate(date: Date): string {
   {
     sortedTags.length > 0 && (
       <div class="mb-12">
-        <h2 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Browse by topic</h2>
+        <h2 class="text-heading text-sm font-semibold">Browse by topic</h2>
         <div class="mt-4 flex flex-wrap gap-2">
           {sortedTags.map(([tag, count]) => (
             <a
               href={`/blog/tag/${tag.toLowerCase()}/`}
-              class="inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-600 transition hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+              class="bg-pill text-body hover:bg-edge inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition"
             >
               {tag}
-              <span class="text-xs text-zinc-400 dark:text-zinc-500">({count})</span>
+              <span class="text-muted text-xs">({count})</span>
             </a>
           ))}
         </div>
@@ -56,7 +56,7 @@ function formatDate(date: Date): string {
     )
   }
 
-  <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+  <div class="md:border-hairline md:border-l md:pl-6">
     <div class="flex max-w-3xl flex-col space-y-16">
       {
         posts.map((post) => (
@@ -69,12 +69,12 @@ function formatDate(date: Date): string {
             {post.data.tags.length > 0 && (
               <div class="mt-2 flex flex-wrap gap-1.5">
                 {post.data.tags.slice(0, 3).map((tag) => (
-                  <span class="inline-flex items-center rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                  <span class="bg-pill text-subtle inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium">
                     {tag}
                   </span>
                 ))}
                 {post.data.tags.length > 3 && (
-                  <span class="inline-flex items-center text-xs text-zinc-400 dark:text-zinc-500">
+                  <span class="text-muted inline-flex items-center text-xs">
                     +{post.data.tags.length - 3} more
                   </span>
                 )}

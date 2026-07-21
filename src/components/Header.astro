@@ -90,7 +90,7 @@ const isHomePage = pathname === '/';
                         href={item.href}
                         class={clsx(
                           'relative block px-3 py-2 transition',
-                          isActive ? 'text-link' : 'hover:text-link'
+                          isActive ? 'text-link' : 'text-heading hover:text-link'
                         )}
                       >
                         {item.label}
@@ -175,7 +175,7 @@ const isHomePage = pathname === '/';
       {
         navItems.map((item) => (
           <li>
-            <a href={item.href} class="block py-2">
+            <a href={item.href} class="block py-2 text-inherit">
               {item.label}
             </a>
           </li>

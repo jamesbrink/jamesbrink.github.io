@@ -39,7 +39,9 @@ const siteTitle = title === 'Home' ? 'James Brink' : `${title} - James Brink`;
           if (localStorage.getItem('theme') === 'light') {
             document.documentElement.classList.add('light');
           }
-        } catch (e) {}
+        } catch {
+          /* localStorage unavailable; keep default (dark) theme */
+        }
       })();
     </script>
   </head>
