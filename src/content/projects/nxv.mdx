@@ -1,0 +1,63 @@
+---
+title: nxv
+tagline: Find any version of any Nix package. Instantly.
+description: Search nearly a decade of nixpkgs history, find the exact package version and commit, then use it from the CLI, browser, API, or NixOS module.
+repository: https://github.com/utensils/nxv
+website: https://nxv.urandom.io/
+docs: https://utensils.io/nxv/
+techStack: [Rust, Nix, SQLite, FTS5]
+keywords: [Nix package version search, nixpkgs history, old Nix package version, nxv]
+language: Rust
+license: MIT
+updatedDate: 2026-07-21
+featuredOrder: 3
+problem:
+  body: Sometimes production needs Python 2.7, Ruby 2.6, or another fossil nobody is proud of. nxv finds the nixpkgs commit where that exact fossil still existed.
+  pains:
+    - Guessing which nixpkgs commit carried a version
+    - Searching years of Git history by hand
+    - Re-evaluating old channels for every query
+    - Treating a legacy dependency like a full-time research project
+features:
+  - title: Fast package search
+    description: Bloom filters reject misses quickly and SQLite FTS5 handles the useful work.
+  - title: Version history
+    description: See when a version appeared, changed, and disappeared from channels.
+  - title: Exact commits
+    description: Get a verified nixpkgs revision you can feed directly to Nix.
+  - title: Nested package sets
+    description: Search Python, Haskell, and other nested ecosystems without special pleading.
+  - title: CLI and browser
+    description: Query locally from the terminal or use the hosted web interface.
+  - title: API and NixOS module
+    description: Run nxv as an HTTP service with managed index updates.
+quickStarts:
+  - label: Search without installing
+    code: NXV_API_URL=https://nxv.urandom.io nix run github:utensils/nxv -- search python 2.7
+  - label: Install the CLI
+    code: curl -sSfL https://raw.githubusercontent.com/utensils/nxv/main/install.sh | sh
+  - label: Cargo
+    code: cargo install nxv
+integrations: [Nix, nixpkgs, SQLite, FTS5, HTTP API, NixOS, Docker, shell completions]
+architecture:
+  - title: Channel snapshots
+    description: Hydra-built releases provide verifiable package inventories back to 2016.
+  - title: Indexer
+    description: Historical package sets become a compact SQLite index plus Bloom filters.
+  - title: Query engine
+    description: Local or remote search resolves names, versions, and exact commits quickly.
+  - title: Reproducible result
+    description: Use the returned revision in a shell, flake, profile, or system configuration.
+closing:
+  title: Stop spelunking through nixpkgs
+  body: Ask for the version, get the commit, and return to the legacy problem you were avoiding.
+links:
+  - label: Try nxv
+    url: https://nxv.urandom.io/
+  - label: Read the documentation
+    url: https://utensils.io/nxv/
+  - label: View on GitHub
+    url: https://github.com/utensils/nxv
+---
+
+nxv turns historical nixpkgs lookup from archaeology into a normal command.

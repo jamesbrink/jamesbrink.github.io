@@ -1,0 +1,61 @@
+---
+title: mold
+tagline: Local image generation. No cloud, no Python, no fuss.
+description: Generate images and short video clips on your own GPU with a fast Rust CLI, web studio, desktop app, and remote rendering support for modern diffusion models.
+repository: https://github.com/utensils/mold
+website: https://utensils.io/mold/
+docs: https://utensils.io/mold/
+techStack: [Rust, Candle, CUDA, Metal]
+keywords: [local AI image generator, Rust diffusion CLI, FLUX local GPU, mold AI]
+language: Rust
+license: MIT
+updatedDate: 2026-07-21
+featuredOrder: 6
+problem:
+  body: Local diffusion usually starts with Python archaeology and ends with your GPU judging you. mold ships the runtime, downloads models, and gets out of the way.
+  pains:
+    - Python environments held together by ancient wheel metadata
+    - Model setup spread across scripts and mystery directories
+    - Cloud APIs charging rent for hardware already under your desk
+    - Local and remote GPUs behaving like separate products
+features:
+  - title: Rust-native inference
+    description: Candle runs supported diffusion pipelines without a Python runtime hiding under the floorboards.
+  - title: Modern model support
+    description: Generate with FLUX, SD 1.5, SDXL, Z-Image, and supported image-to-video models.
+  - title: CLI and terminal UI
+    description: Generate, preview, pipe, manage models, and inspect jobs without leaving the terminal.
+  - title: Mold Studio
+    description: Use the bundled web interface for creation, history, models, machines, and settings.
+  - title: Desktop and iPhone
+    description: Drive the same generation system from native desktop and mobile clients.
+  - title: Remote and cloud GPUs
+    description: Route work to remembered machines or provision RunPod capacity when the local GPU taps out.
+quickStarts:
+  - label: Install
+    code: curl -fsSL https://raw.githubusercontent.com/utensils/mold/main/install.sh | sh
+  - label: Generate
+    code: mold run "a cat riding a motorcycle through neon-lit streets"
+  - label: Nix
+    code: nix run github:utensils/mold -- run "a cat"
+integrations: [FLUX, Stable Diffusion, SDXL, Z-Image, Candle, CUDA, Metal, RunPod]
+architecture:
+  - title: Prompt and model
+    description: Resolve a local model variant and generation settings from CLI or Studio.
+  - title: Candle runtime
+    description: Rust loads the pipeline and runs inference through CUDA, Metal, or CPU backends.
+  - title: Machine routing
+    description: Keep the job local or send it to a remembered server or cloud GPU.
+  - title: Durable library
+    description: Outputs, metadata, models, and job state stay available across every client surface.
+closing:
+  title: Make the GPU earn its electricity
+  body: Install one binary, pull a model, and start generating without summoning a Python environment.
+links:
+  - label: Read the documentation
+    url: https://utensils.io/mold/
+  - label: View on GitHub
+    url: https://github.com/utensils/mold
+---
+
+mold is the shortest path from a prompt to pixels on hardware you control.

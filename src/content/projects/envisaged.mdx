@@ -1,0 +1,58 @@
+---
+title: Envisaged
+tagline: Turn repository archaeology into something worth watching.
+description: Render Git history, multi-repository comparisons, and Linux system timelines as polished Gource videos with a Nix-first CLI and web interface.
+repository: https://github.com/utensils/Envisaged
+techStack: [Python, Nix, Gource, FFmpeg]
+keywords:
+  [Git history visualization, Gource video generator, repository visualization, system log timeline]
+language: Python
+license: MIT
+updatedDate: 2026-03-28
+featuredOrder: 2
+problem:
+  body: Git logs are technically complete and spiritually unreadable. Envisaged turns years of commits—or a machine's journal—into a timeline humans can actually absorb.
+  pains:
+    - Gource and FFmpeg commands assembled by ritual sacrifice
+    - Multi-repository timelines that drift out of sync
+    - 4K renders melting the laptop you still need for work
+    - System logs that explain nothing at presentation speed
+features:
+  - title: Repository history
+    description: Render a single Git repository with titles, legends, templates, and sane defaults.
+  - title: Multi-repo comparison
+    description: Synchronize several repositories into one comparable visual timeline.
+  - title: System timelines
+    description: Convert journal, kernel, and authentication logs into service-focused animations.
+  - title: Template families
+    description: Choose core, compare, split, relation, and themed layouts without rebuilding commands.
+  - title: Web interface
+    description: Queue renders from a mobile-first UI when the terminal has had enough attention.
+  - title: Reproducible builds
+    description: Run the CLI, web app, and container builds through a Nix flake.
+quickStarts:
+  - label: Render this repository
+    code: nix run github:utensils/Envisaged -- -o history.mp4 -t "Repo History" .
+  - label: Local Python development
+    code: |-
+      uv sync
+      uv run envisaged --help
+integrations: [Git, Gource, FFmpeg, Nix, journalctl, GitHub Actions, Docker, systemd]
+architecture:
+  - title: Source timeline
+    description: Git repositories or structured system logs become timestamped events.
+  - title: Envisaged templates
+    description: Python normalizes events, layout, timing, legends, and rendering options.
+  - title: Gource and FFmpeg
+    description: The visualizer draws the history while FFmpeg handles production output.
+  - title: Shareable video
+    description: Deliver an MP4 instead of asking everyone to appreciate your git log command.
+closing:
+  title: Make the history visible
+  body: Your repository has a story. It deserves better than monospace archaeology.
+links:
+  - label: View on GitHub
+    url: https://github.com/utensils/Envisaged
+---
+
+Envisaged packages the ugly rendering pipeline so the result—not the command—gets the attention.

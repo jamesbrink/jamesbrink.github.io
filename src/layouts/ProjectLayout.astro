@@ -1,0 +1,289 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Container from '../components/Container.astro';
+import Button from '../components/Button.astro';
+import type { GitHubProjectStats } from '../lib/github';
+
+interface Props {
+  slug: string;
+  project: CollectionEntry<'projects'>['data'];
+  stats: GitHubProjectStats | null;
+}
+
+const { slug, project, stats } = Astro.props;
+const projectURL = new URL(`/projects/${slug}/`, Astro.site).toString();
+const primaryLink = project.links[0];
+const githubLink = project.links.find((link) => link.url === project.repository);
+
+const projectSchema = {
+  '@type': 'SoftwareSourceCode',
+  '@id': `${projectURL}#software`,
+  name: project.title,
+  description: project.description,
+  url: projectURL,
+  codeRepository: project.repository,
+  programmingLanguage: project.language,
+  license: project.license,
+  keywords: project.keywords.join(', '),
+  dateModified: project.updatedDate.toISOString(),
+  author: { '@id': new URL('/#person', Astro.site).toString() },
+};
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  '@id': `${projectURL}#breadcrumb`,
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Projects',
+      item: new URL('/projects/', Astro.site).toString(),
+    },
+    { '@type': 'ListItem', position: 2, name: project.title, item: projectURL },
+  ],
+};
+---
+
+<BaseLayout
+  title={project.title}
+  description={project.description}
+  image={`/projects/og/${slug}.png`}
+  additionalSchema={[projectSchema, breadcrumbSchema]}
+>
+  <Container class="mt-12 sm:mt-20 lg:mt-28">
+    <nav aria-label="Breadcrumb" class="text-muted font-mono text-xs">
+      <a href="/projects/" class="hover:text-link transition">Projects</a>
+      <span class="text-faint mx-2" aria-hidden="true">/</span>
+      <span aria-current="page">{project.title}</span>
+    </nav>
+
+    <header class="mt-10 max-w-4xl">
+      <h1 class="text-heading text-5xl font-bold tracking-tight sm:text-7xl">{project.title}</h1>
+      <p class="text-accent mt-4 text-xl italic sm:text-2xl">{project.tagline}</p>
+      <p class="text-body mt-7 max-w-2xl text-lg">{project.description}</p>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <Button href={primaryLink.url} target="_blank" class="px-5 py-3">
+          {primaryLink.label}
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+            <path d="m7 5 5 5-5 5" stroke="currentColor" stroke-width="1.5"></path>
+          </svg>
+        </Button>
+        {
+          githubLink && githubLink.url !== primaryLink.url && (
+            <Button variant="secondary" href={githubLink.url} target="_blank" class="px-5 py-3">
+              View on GitHub
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" class="h-4 w-4">
+                <path
+                  d="M11 4h5v5M9 11l7-7M16 11v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+              </svg>
+            </Button>
+          )
+        }
+      </div>
+
+      <dl
+        class="border-hairline mt-10 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-5 border-y py-6 sm:grid-cols-4"
+      >
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">Language</dt>
+          <dd class="text-heading mt-1 text-lg font-semibold">{project.language}</dd>
+        </div>
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">License</dt>
+          <dd class="text-heading mt-1 text-lg font-semibold">{project.license}</dd>
+        </div>
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">Stars</dt>
+          <dd class="text-heading mt-1 text-lg font-semibold">{stats?.stars ?? '—'}</dd>
+        </div>
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">Forks</dt>
+          <dd class="text-heading mt-1 text-lg font-semibold">{stats?.forks ?? '—'}</dd>
+        </div>
+      </dl>
+    </header>
+  </Container>
+
+  <div class="border-hairline bg-sunken/45 mt-20 border-y sm:mt-28">
+    <Container class="py-16 sm:py-24">
+      <section aria-labelledby="problem-heading" class="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <div>
+          <h2
+            id="problem-heading"
+            class="text-heading text-3xl font-bold tracking-tight sm:text-4xl"
+          >
+            What it fixes
+          </h2>
+          <p class="text-body mt-5 text-base">{project.problem.body}</p>
+          <div class="text-muted mt-5 text-sm"><slot /></div>
+        </div>
+        <ul class="border-hairline text-body space-y-4 border-l pl-6 font-mono text-sm">
+          {
+            project.problem.pains.map((pain) => (
+              <li class="flex gap-3">
+                <span class="text-emission" aria-hidden="true">
+                  ×
+                </span>
+                {pain}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </Container>
+  </div>
+
+  <Container>
+    <section aria-labelledby="features-heading" class="py-20 sm:py-28">
+      <h2 id="features-heading" class="text-heading text-3xl font-bold tracking-tight sm:text-4xl">
+        What it actually does
+      </h2>
+      <p class="text-body mt-3 max-w-2xl">
+        A useful product surface, not another README wearing a blazer.
+      </p>
+      <div class="mt-10 grid gap-x-14 md:grid-cols-2">
+        {
+          project.features.map((feature, index) => (
+            <article class="border-hairline grid grid-cols-[2.5rem_1fr] gap-3 border-b py-6">
+              <span class="text-accent font-mono text-sm">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 class="text-heading text-lg font-semibold">{feature.title}</h3>
+                <p class="text-body mt-1 text-sm">{feature.description}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="quickstart-heading" class="border-hairline border-t py-20 sm:py-28">
+      <h2
+        id="quickstart-heading"
+        class="text-heading text-3xl font-bold tracking-tight sm:text-4xl"
+      >
+        Pick your poison
+      </h2>
+      <p class="text-body mt-3">Run it the way that annoys you least.</p>
+      <div
+        class:list={[
+          'mt-9 grid gap-4',
+          project.quickStarts.length === 2 && 'lg:grid-cols-2',
+          project.quickStarts.length >= 3 && 'lg:grid-cols-3',
+        ]}
+      >
+        {
+          project.quickStarts.map((quickStart) => (
+            <div class="border-hairline bg-code overflow-hidden rounded-xl border">
+              <div class="border-hairline text-muted border-b px-4 py-3 font-mono text-xs">
+                {quickStart.label}
+              </div>
+              <pre class="text-code-text overflow-x-auto p-4 text-sm leading-6">
+                <code>{quickStart.code}</code>
+              </pre>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="integrations-heading" class="border-hairline border-t py-20 sm:py-24">
+      <h2
+        id="integrations-heading"
+        class="text-heading text-3xl font-bold tracking-tight sm:text-4xl"
+      >
+        Plays well with the tools already causing trouble
+      </h2>
+      <ul
+        class="text-body mt-9 grid grid-cols-2 gap-x-6 gap-y-4 font-mono text-sm sm:grid-cols-3 lg:grid-cols-4"
+      >
+        {
+          project.integrations.map((integration) => (
+            <li class="border-hairline flex items-center gap-3 border-b pb-4">
+              <span
+                class="bg-emission h-2 w-2 rounded-full shadow-[var(--shadow-glow)]"
+                aria-hidden="true"
+              />
+              {integration}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section aria-labelledby="architecture-heading" class="border-hairline border-t py-20 sm:py-28">
+      <h2
+        id="architecture-heading"
+        class="text-heading text-3xl font-bold tracking-tight sm:text-4xl"
+      >
+        Under the hood
+      </h2>
+      <p class="text-body mt-3">
+        Simple enough to explain without a thirty-slide architecture deck.
+      </p>
+      <ol class="mt-10 grid gap-4 lg:grid-cols-4">
+        {
+          project.architecture.map((step, index) => (
+            <li class="border-hairline relative rounded-xl border p-5">
+              <span class="text-accent font-mono text-xs">0{index + 1}</span>
+              <h3 class="text-heading mt-3 font-semibold">{step.title}</h3>
+              <p class="text-body mt-2 text-sm">{step.description}</p>
+              {index < project.architecture.length - 1 && (
+                <span
+                  class="text-emission absolute top-1/2 -right-3 hidden lg:block"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              )}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+  </Container>
+
+  <div class="border-hairline bg-sunken/45 border-t">
+    <Container class="py-16 text-center sm:py-20">
+      <h2 class="text-heading text-3xl font-bold tracking-tight sm:text-4xl">
+        {project.closing.title}
+      </h2>
+      <p class="text-body mx-auto mt-3 max-w-xl">{project.closing.body}</p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        {
+          project.links.map((link, index) => (
+            <Button
+              variant={index === 0 ? 'primary' : 'secondary'}
+              href={link.url}
+              target="_blank"
+              class="px-5 py-3"
+            >
+              {link.label}
+            </Button>
+          ))
+        }
+      </div>
+      {
+        stats?.latestRelease && (
+          <p class="text-muted mt-6 font-mono text-xs">
+            Latest release:{' '}
+            <a
+              href={stats.latestReleaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-link"
+            >
+              {stats.latestRelease}
+            </a>
+          </p>
+        )
+      }
+    </Container>
+  </div>
+</BaseLayout>

@@ -21,6 +21,12 @@ interface OgPost {
   tags: string[];
 }
 
+interface OgProject {
+  title: string;
+  tagline: string;
+  techStack: string[];
+}
+
 // satori element helper (object syntax — no JSX in .ts)
 function el(
   type: string,
@@ -113,5 +119,82 @@ export async function renderOgImage({ title, date, tags }: OgPost): Promise<Arra
 
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
   // Slice out of Node's Buffer pool so Response gets exactly the PNG bytes.
+  return png.buffer.slice(png.byteOffset, png.byteOffset + png.byteLength) as ArrayBuffer;
+}
+
+export async function renderProjectOgImage({
+  title,
+  tagline,
+  techStack,
+}: OgProject): Promise<ArrayBuffer> {
+  const [mono400, mono600] = await fonts;
+  const svg = await satori(
+    el(
+      'div',
+      {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        padding: '68px 80px',
+        backgroundColor: '#0a0506',
+        backgroundImage:
+          'radial-gradient(circle at 86% 18%, rgba(255, 61, 99, 0.3), rgba(10, 5, 6, 0) 52%)',
+        border: '2px solid rgba(255, 61, 99, 0.35)',
+        color: '#f5f1ec',
+        fontFamily: 'IBM Plex Mono',
+      },
+      [
+        el('div', { display: 'flex', flexDirection: 'column', maxWidth: '920px' }, [
+          el(
+            'div',
+            {
+              fontSize: '24px',
+              fontWeight: 600,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#ff3d63',
+            },
+            'James Brink · Projects'
+          ),
+          el(
+            'div',
+            { marginTop: '38px', fontSize: '76px', fontWeight: 600, lineHeight: 1.05 },
+            title
+          ),
+          el(
+            'div',
+            { marginTop: '28px', fontSize: '30px', lineHeight: 1.35, color: '#c9bfb6' },
+            tagline
+          ),
+        ]),
+        el(
+          'div',
+          {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: '22px',
+            color: '#a89f96',
+          },
+          [
+            el('div', { display: 'flex' }, techStack.slice(0, 4).join('  ·  ')),
+            el('div', { display: 'flex' }, 'jamesbrink.online'),
+          ]
+        ),
+      ]
+    ),
+    {
+      width: 1200,
+      height: 630,
+      fonts: [
+        { name: 'IBM Plex Mono', data: mono400, weight: 400, style: 'normal' },
+        { name: 'IBM Plex Mono', data: mono600, weight: 600, style: 'normal' },
+      ],
+    }
+  );
+
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
   return png.buffer.slice(png.byteOffset, png.byteOffset + png.byteLength) as ArrayBuffer;
 }

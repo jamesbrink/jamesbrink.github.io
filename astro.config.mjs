@@ -20,6 +20,16 @@ for (const file of readdirSync('./src/content/blog')) {
   }
 }
 
+const projectLastmod = {};
+for (const file of readdirSync('./src/content/projects')) {
+  if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
+  const source = readFileSync(`./src/content/projects/${file}`, 'utf8');
+  const updated = source.match(/^updatedDate:\s*['"]?([^'"\s]+)/m)?.[1];
+  if (updated) {
+    projectLastmod[`/projects/${file.replace(/\.mdx?$/, '').toLowerCase()}/`] = new Date(updated);
+  }
+}
+
 export default defineConfig({
   site: 'https://jamesbrink.online',
   // Removed near-duplicate post; keep its URL alive for anyone who bookmarked it.
@@ -34,7 +44,8 @@ export default defineConfig({
     mdx(),
     sitemap({
       serialize(item) {
-        const lastmod = postLastmod[new URL(item.url).pathname];
+        const pathname = new URL(item.url).pathname;
+        const lastmod = postLastmod[pathname] || projectLastmod[pathname];
         return lastmod ? { ...item, lastmod: lastmod.toISOString() } : item;
       },
     }),
