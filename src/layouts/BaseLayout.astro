@@ -1,15 +1,50 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+// Self-hosted fonts (no third-party Google Fonts request). Newsreader as a
+// variable font with the optical-size axis (matches the old opsz 6..72), plus
+// IBM Plex Mono at the three weights the design system uses.
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/newsreader/opsz-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-mono/600.css';
 import '../styles/tailwind.css';
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = 'James Brink - SRE/DevOps Engineer' } = Astro.props;
+const {
+  title,
+  description = 'James Brink - SRE/DevOps Engineer, infrastructure automator, and astrophotographer.',
+  image = '/images/og.png',
+} = Astro.props;
 const siteTitle = title === 'Home' ? 'James Brink' : `${title} - James Brink`;
+
+// Absolute URLs for canonical + social cards (Astro.site = https://jamesbrink.online)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'James Brink',
+  url: Astro.site?.toString(),
+  image: ogImageURL.toString(),
+  jobTitle: 'Site Reliability / DevOps Engineer',
+  description,
+  sameAs: [
+    'https://github.com/jamesbrink',
+    'https://linkedin.com/in/brinkjames',
+    'https://twitter.com/brinkoo7',
+    'https://bsky.app/profile/jamesbrink.bsky.social',
+    'https://medium.com/@jamesbrink',
+    'https://instagram.com/brink.james/',
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,18 +53,37 @@ const siteTitle = title === 'Home' ? 'James Brink' : `${title} - James Brink`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="author" content="James Brink" />
     <title>{siteTitle}</title>
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
 
-    <!-- Fonts: Newsreader (serif voice) + IBM Plex Mono (machine text) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="James Brink" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="James Brink — SRE/DevOps Engineer" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@brinkoo7" />
+    <meta name="twitter:creator" content="@brinkoo7" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
+    <!-- Fonts self-hosted via Fontsource (imported in the layout frontmatter). -->
 
     <!-- Theme initialization (prevents flash). Dark-first: default dark;
          only add `.light` when the visitor has explicitly chosen light. -->

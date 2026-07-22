@@ -19,6 +19,17 @@ export default tseslint.config(
     },
   },
   {
+    // Node build scripts; browser globals cover the page.evaluate() bodies.
+    files: ['scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        document: 'readonly',
+      },
+    },
+  },
+  {
     ignores: [
       'node_modules/**',
       'dist/**',

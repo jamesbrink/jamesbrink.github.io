@@ -116,6 +116,11 @@ const socialLinks = [
     label: 'Follow on Instagram',
     icon: 'instagram',
   },
+  {
+    href: 'mailto:brink.james@gmail.com',
+    label: 'Email James',
+    icon: 'email',
+  },
 ];
 ---
 
@@ -137,24 +142,26 @@ const socialLinks = [
         the universe through a telescope—because apparently staring at nebulae for hours in the
         desert heat is my idea of relaxation.
       </p>
-      <!-- Open to Opportunities Banner -->
-      <div
-        class="text-accent mt-6 inline-flex items-center gap-2 rounded-full bg-[color-mix(in_srgb,var(--emission-500)_12%,var(--surface-card))] px-4 py-2 text-sm font-medium ring-1 ring-[color-mix(in_srgb,var(--emission-500)_28%,transparent)]"
-      >
-        <span class="relative flex h-2 w-2">
-          <span
-            class="bg-emission absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
-          ></span>
-          <span class="bg-emission relative inline-flex h-2 w-2 rounded-full"></span>
-        </span>
-        Open to opportunities
-        <a
-          href="mailto:brink.james@gmail.com"
-          class="ml-1 underline decoration-[color-mix(in_srgb,var(--emission-400)_50%,transparent)] underline-offset-2 hover:decoration-[var(--emission-400)]"
-        >
-          Get in touch
-        </a>
-      </div>
+
+      <!-- Selected wins — quantified proof to balance the self-deprecation -->
+      <dl class="border-hairline mt-8 grid max-w-xl grid-cols-3 gap-4 border-y py-6">
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">Cloud cost cut</dt>
+          <dd class="text-heading mt-1 text-3xl font-bold tracking-tight">45%</dd>
+        </div>
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">OSS projects</dt>
+          <dd class="text-heading mt-1 text-3xl font-bold tracking-tight">
+            20<span class="text-muted text-lg font-normal">+</span>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-muted font-mono text-xs tracking-wide uppercase">In production</dt>
+          <dd class="text-heading mt-1 text-3xl font-bold tracking-tight">
+            20<span class="text-muted text-lg font-normal">yrs</span>
+          </dd>
+        </div>
+      </dl>
 
       <div class="mt-6 flex gap-6">
         {
@@ -163,8 +170,8 @@ const socialLinks = [
               href={link.href}
               class="group -m-1 p-1"
               aria-label={link.label}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={link.icon === 'email' ? undefined : '_blank'}
+              rel={link.icon === 'email' ? undefined : 'noopener noreferrer'}
             >
               {link.icon === 'github' && (
                 <svg
@@ -223,6 +230,16 @@ const socialLinks = [
                 >
                   <path d="M12 3c-2.444 0-2.75.01-3.71.054-.959.044-1.613.196-2.185.418A4.412 4.412 0 0 0 4.51 4.511c-.5.5-.809 1.002-1.039 1.594-.222.572-.374 1.226-.418 2.184C3.01 9.25 3 9.556 3 12s.01 2.75.054 3.71c.044.959.196 1.613.418 2.185.23.592.538 1.094 1.039 1.595.5.5 1.002.808 1.594 1.038.572.222 1.226.374 2.184.418C9.25 20.99 9.556 21 12 21s2.75-.01 3.71-.054c.959-.044 1.613-.196 2.185-.419a4.412 4.412 0 0 0 1.595-1.038c.5-.5.808-1.002 1.038-1.594.222-.572.374-1.226.418-2.184.044-.96.054-1.267.054-3.711s-.01-2.75-.054-3.71c-.044-.959-.196-1.613-.419-2.185A4.412 4.412 0 0 0 19.49 4.51c-.5-.5-1.002-.809-1.594-1.039-.572-.222-1.226-.374-2.184-.418C14.75 3.01 14.444 3 12 3zm0 1.622c2.403 0 2.688.009 3.637.052.877.04 1.354.187 1.67.31.421.163.72.358 1.036.673.315.315.51.615.673 1.035.123.317.27.794.31 1.671.043.95.052 1.234.052 3.637s-.009 2.688-.052 3.637c-.04.877-.187 1.354-.31 1.67-.163.421-.358.72-.673 1.036a2.79 2.79 0 0 1-1.035.673c-.317.123-.794.27-1.671.31-.95.043-1.234.052-3.637.052s-2.688-.009-3.637-.052c-.877-.04-1.354-.187-1.67-.31a2.789 2.789 0 0 1-1.036-.673 2.79 2.79 0 0 1-.673-1.035c-.123-.317-.27-.794-.31-1.671-.043-.95-.052-1.234-.052-3.637s.009-2.688.052-3.637c.04-.877.187-1.354.31-1.67.163-.421.358-.72.673-1.036.315-.315.615-.51 1.035-.673.317-.123.794-.27 1.671-.31.95-.043 1.234-.052 3.637-.052z" />
                   <path d="M12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-7.622a4.622 4.622 0 1 0 0 9.244 4.622 4.622 0 0 0 0-9.244zm5.884-.182a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0z" />
+                </svg>
+              )}
+              {link.icon === 'email' && (
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  class="fill-muted group-hover:fill-subtle h-6 w-6 transition"
+                >
+                  <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                  <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
                 </svg>
               )}
             </a>
