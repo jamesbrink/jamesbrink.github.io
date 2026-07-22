@@ -131,12 +131,12 @@ const socialLinks = [
   <Container class="mt-9">
     <div class="max-w-2xl">
       <h1 class="text-heading text-4xl font-bold tracking-tight sm:text-5xl">
-        SRE/DevOps Engineer, Infrastructure Automator
+        James Brink — SRE/DevOps Engineer, Infrastructure Automator
       </h1>
       <p class="text-accent mt-2 text-lg italic">...and Tinkerer of Terror</p>
       <p class="text-body mt-6 text-base">
-        I'm James, a battle-hardened SRE/DevOps engineer who's spent decades making computers do
-        things they'd rather not. My days are filled with breaking and fixing infrastructure,
+        I'm James Brink, a battle-hardened SRE/DevOps engineer who's spent decades making computers
+        do things they'd rather not. My days are filled with breaking and fixing infrastructure,
         constantly switching between Terraform, NixOS, and whatever shiny tech caught my ADHD
         brain's attention this week. When I'm not debugging production at 2am, I'm outside debugging
         the universe through a telescope—because apparently staring at nebulae for hours in the
@@ -171,7 +171,7 @@ const socialLinks = [
               class="group -m-1 p-1"
               aria-label={link.label}
               target={link.icon === 'email' ? undefined : '_blank'}
-              rel={link.icon === 'email' ? undefined : 'noopener noreferrer'}
+              rel={link.icon === 'email' ? undefined : 'me noopener noreferrer'}
             >
               {link.icon === 'github' && (
                 <svg
@@ -269,7 +269,7 @@ const socialLinks = [
           ))
         }
         <div class="mt-8">
-          <Button href="/blog" variant="secondary"> View all articles </Button>
+          <Button href="/blog/" variant="secondary"> View all articles </Button>
         </div>
       </div>
       <div class="space-y-10 lg:pl-16 xl:pl-24">
@@ -328,7 +328,7 @@ const socialLinks = [
               ))
             }
           </ol>
-          <Button href="/resume" variant="secondary" class="group mt-6 w-full">
+          <Button href="/resume/" variant="secondary" class="group mt-6 w-full">
             View full resume
             <svg
               viewBox="0 0 16 16"

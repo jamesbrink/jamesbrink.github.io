@@ -1,0 +1,17 @@
+# James Brink
+
+> James Brink is an SRE/DevOps engineer and infrastructure automator with 20+ years running production systems, specializing in NixOS, Terraform, Kubernetes, and AI/LLM tooling (including the mcp-nixos Model Context Protocol server). He is also an astrophotographer based in Arizona.
+
+- [About](https://jamesbrink.online/about/): Background, skills, and what he's looking for
+- [Projects](https://jamesbrink.online/projects/): Open-source work including mcp-nixos and infrastructure tooling
+- [Resume](https://jamesbrink.online/resume/): Experience and technical expertise
+- [Articles](https://jamesbrink.online/blog/): Writing on NixOS, DevOps, and AI-assisted infrastructure
+- [Astrophotography](https://jamesbrink.online/astrophotography/): Deep-sky imaging gallery
+
+## Profiles
+
+- [GitHub](https://github.com/jamesbrink)
+- [LinkedIn](https://linkedin.com/in/brinkjames)
+- [Medium](https://medium.com/@jamesbrink)
+- [Bluesky](https://bsky.app/profile/jamesbrink.bsky.social)
+- [X/Twitter](https://twitter.com/brinkoo7)
