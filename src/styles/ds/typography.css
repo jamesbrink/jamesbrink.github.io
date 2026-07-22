@@ -11,8 +11,8 @@
    ahead of them without violating the CSS "@import first" rule. */
 
 :root {
-  /* --- Families --- */
-  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  /* --- Families (self-hosted via Fontsource; 'Variable' = optical-size axis) --- */
+  --font-serif: 'Newsreader Variable', 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-serif); /* the system voice IS the serif */
   --font-display: var(--font-serif);
   --font-mono:

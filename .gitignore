@@ -63,3 +63,6 @@ jamesbrink.github.io/
 
 # Claude Code
 .claude/settings.local.json
+
+# Playwright MCP scratch output
+.playwright-mcp/
