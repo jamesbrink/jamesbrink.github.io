@@ -54,7 +54,7 @@ const baseFeatureProjects: Omit<Project, 'stars' | 'forks'>[] = [
     tagline: 'Fast Nix package version lookup',
     description:
       'A blazingly fast CLI tool for finding any version of any Nix package across channels and history. Essential for pinning specific package versions in Nix configurations.',
-    href: 'https://github.com/jamesbrink/nxv',
+    href: 'https://github.com/utensils/nxv',
     techStack: ['Rust', 'NixOS'],
     featured: true,
   },
@@ -65,6 +65,24 @@ const baseFeatureProjects: Omit<Project, 'stars' | 'forks'>[] = [
       'A Nix flake for running ComfyUI with a curated selection of custom nodes. Provides reproducible, declarative AI image generation environments for creative workflows.',
     href: 'https://github.com/utensils/comfyui-nix',
     techStack: ['Nix', 'Python', 'ComfyUI', 'AI/ML'],
+    featured: true,
+  },
+  {
+    name: 'Claudette',
+    tagline: "Claude Code's better half",
+    description:
+      'A Tauri companion app for Claude Code that manages git worktrees, remote workspaces, and multi-agent orchestration — the missing better half for anyone living in Claude Code all day.',
+    href: 'https://github.com/utensils/claudette',
+    techStack: ['Rust', 'Tauri', 'Claude Code', 'MCP'],
+    featured: true,
+  },
+  {
+    name: 'mold',
+    tagline: 'Local diffusion image generation',
+    description:
+      'A fast Rust CLI for local AI image generation — FLUX, SD 1.5, SDXL, and Z-Image models running on your own GPU via Candle. No cloud, no API keys, no rate limits.',
+    href: 'https://github.com/utensils/mold',
+    techStack: ['Rust', 'Candle', 'CUDA', 'Diffusion'],
     featured: true,
   },
 ];
@@ -117,6 +135,78 @@ const baseProjects: Omit<Project, 'stars' | 'forks'>[] = [
       'Maintainer of several packages in the Arch User Repository. Contributing to the Arch ecosystem by packaging and maintaining software for the community.',
     href: 'https://github.com/jamesbrink/arch-aur',
     techStack: ['Arch Linux', 'PKGBUILD', 'Shell'],
+  },
+  {
+    name: 'koban',
+    tagline: 'Invoice Ninja from the terminal',
+    description:
+      'A scriptable Rust CLI and client library for Invoice Ninja — clients, invoices, payments, and reports from the terminal, designed for humans and AI agents alike.',
+    href: 'https://github.com/jamesbrink/koban',
+    techStack: ['Rust', 'CLI', 'Nix', 'REST API'],
+  },
+  {
+    name: 'claudex',
+    tagline: 'Search your Claude Code sessions',
+    description:
+      'A Rust CLI to query, search, and analyze Claude Code session history, backed by SQLite full-text search. Observability for your AI pair-programming.',
+    href: 'https://github.com/utensils/claudex',
+    techStack: ['Rust', 'SQLite', 'FTS5', 'CLI'],
+  },
+  {
+    name: 'aethon',
+    tagline: 'Pi with a face',
+    description:
+      'A Tauri desktop shell that embeds the pi coding agent and renders its output as live, interactive UI via the A2UI protocol — a canvas the agent populates, not a fixed IDE layout.',
+    href: 'https://github.com/utensils/aethon',
+    techStack: ['Tauri', 'React', 'A2UI', 'Rust'],
+  },
+  {
+    name: 'yeet',
+    tagline: 'Brutally rude AI commit messages',
+    description:
+      "A lazy developer's git tool that uses a local Ollama model to write technically accurate — but hilariously offensive — conventional commit messages, then pushes them for you.",
+    href: 'https://github.com/utensils/yeet',
+    techStack: ['Bash', 'Ollama', 'Local LLM'],
+  },
+  {
+    name: 'why',
+    tagline: 'Offline error explanations',
+    description:
+      'A CLI that explains programming errors using a locally-embedded LLM. No API keys. No internet. No patience required.',
+    href: 'https://github.com/jamesbrink/why',
+    techStack: ['Rust', 'LLM', 'Offline', 'Nix'],
+  },
+  {
+    name: 'burnrate',
+    tagline: 'AI spend at a glance',
+    description:
+      'A menu-bar usage monitor for Claude Code, Codex, OpenRouter, Runpod, and AWS — quotas, credits, spend, and subscription limits without leaving your status bar.',
+    href: 'https://github.com/jamesbrink/burnrate',
+    techStack: ['Rust', 'Tauri', 'React'],
+  },
+  {
+    name: 'strainer',
+    tagline: 'Rate limiting for AI APIs',
+    description:
+      'Process-level rate limiting and spend management for AI API consumers — prevents rate-limit errors by controlling how fast processes execute.',
+    href: 'https://github.com/utensils/strainer',
+    techStack: ['Rust', 'CLI', 'AI/LLM'],
+  },
+  {
+    name: 'pasta',
+    tagline: 'Clipboard to keystrokes',
+    description:
+      "A cross-platform system-tray app that converts clipboard content into simulated keyboard input, bridging apps that don't support a direct paste.",
+    href: 'https://github.com/utensils/pasta',
+    techStack: ['Rust', 'Tauri', 'Cross-platform'],
+  },
+  {
+    name: 'Docker Darling',
+    tagline: 'macOS runtime in a container',
+    description:
+      'An experimental Docker container running Darling — the Darwin/macOS translation layer — to execute macOS binaries on Linux.',
+    href: 'https://github.com/utensils/docker-darling',
+    techStack: ['Docker', 'Darling', 'macOS'],
   },
 ];
 
