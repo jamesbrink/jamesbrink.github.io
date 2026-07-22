@@ -10,41 +10,89 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '@fontsource/ibm-plex-mono/600.css';
 import '../styles/tailwind.css';
+import { IDENTITY, profileUrls } from '../data/profiles';
 
 interface Props {
   title: string;
   description?: string;
   image?: string;
+  /** 'article' emits BlogPosting schema + article OG tags; 'profile' emits ProfilePage schema */
+  type?: 'website' | 'article' | 'profile';
+  publishDate?: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'James Brink - SRE/DevOps Engineer, infrastructure automator, and astrophotographer.',
   image = '/images/og.png',
+  type = 'website',
+  publishDate,
+  updatedDate,
+  tags = [],
+  noindex = false,
 } = Astro.props;
-const siteTitle = title === 'Home' ? 'James Brink' : `${title} - James Brink`;
+const siteTitle = title === 'Home' ? 'James Brink — SRE/DevOps Engineer' : `${title} - James Brink`;
 
 // Absolute URLs for canonical + social cards (Astro.site = https://jamesbrink.online)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
+// The default og.png is 2400x1260; per-post hero images have unknown dimensions.
+const isDefaultOgImage = image === '/images/og.png';
+
+const personId = new URL('/#person', Astro.site).toString();
 
 const personSchema = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'James Brink',
+  '@id': personId,
+  name: IDENTITY.name,
+  givenName: IDENTITY.givenName,
+  familyName: IDENTITY.familyName,
   url: Astro.site?.toString(),
-  image: ogImageURL.toString(),
-  jobTitle: 'Site Reliability / DevOps Engineer',
-  description,
-  sameAs: [
-    'https://github.com/jamesbrink',
-    'https://linkedin.com/in/brinkjames',
-    'https://twitter.com/brinkoo7',
-    'https://bsky.app/profile/jamesbrink.bsky.social',
-    'https://medium.com/@jamesbrink',
-    'https://instagram.com/brink.james/',
-  ],
+  image: new URL('/images/avatar.jpg', Astro.site).toString(),
+  jobTitle: IDENTITY.jobTitle,
+  description: IDENTITY.bio,
+  knowsAbout: IDENTITY.knowsAbout,
+  sameAs: profileUrls,
 };
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': new URL('/#website', Astro.site).toString(),
+  name: IDENTITY.name,
+  url: Astro.site?.toString(),
+  publisher: { '@id': personId },
+};
+
+const graph: Record<string, unknown>[] = [personSchema, websiteSchema];
+
+if (type === 'article' && publishDate) {
+  graph.push({
+    '@type': 'BlogPosting',
+    headline: title,
+    description,
+    url: canonicalURL.toString(),
+    mainEntityOfPage: canonicalURL.toString(),
+    image: ogImageURL.toString(),
+    datePublished: publishDate.toISOString(),
+    dateModified: (updatedDate ?? publishDate).toISOString(),
+    ...(tags.length > 0 && { keywords: tags.join(', ') }),
+    author: { '@id': personId },
+    publisher: { '@id': personId },
+  });
+}
+
+if (type === 'profile') {
+  graph.push({
+    '@type': 'ProfilePage',
+    url: canonicalURL.toString(),
+    mainEntity: { '@id': personId },
+  });
+}
+
+const structuredData = { '@context': 'https://schema.org', '@graph': graph };
 ---
 
 <!doctype html>
@@ -55,22 +103,48 @@ const personSchema = {
     <meta name="description" content={description} />
     <meta name="author" content="James Brink" />
     <title>{siteTitle}</title>
-    <link rel="canonical" href={canonicalURL} />
+    {
+      noindex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <link rel="canonical" href={canonicalURL} />
+      )
+    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="James Brink — RSS Feed"
+      href="/rss.xml"
+    />
+
+    <!-- Identity: machine-readable claim that these profiles are the same person -->
+    {profileUrls.map((url) => <link rel="me" href={url} />)}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type === 'article' ? 'article' : 'website'} />
     <meta property="og:site_name" content="James Brink" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    {isDefaultOgImage && <meta property="og:image:width" content="2400" />}
+    {isDefaultOgImage && <meta property="og:image:height" content="1260" />}
     <meta property="og:image:alt" content="James Brink — SRE/DevOps Engineer" />
+    {
+      type === 'article' && publishDate && (
+        <meta property="article:published_time" content={publishDate.toISOString()} />
+      )
+    }
+    {
+      type === 'article' && updatedDate && (
+        <meta property="article:modified_time" content={updatedDate.toISOString()} />
+      )
+    }
+    {type === 'article' && <meta property="article:author" content="James Brink" />}
+    {type === 'article' && tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
     <!-- Twitter / X card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -80,8 +154,8 @@ const personSchema = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <!-- Structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <!-- Structured data: Person + WebSite (+ BlogPosting / ProfilePage per page type) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Fonts self-hosted via Fontsource (imported in the layout frontmatter). -->
 

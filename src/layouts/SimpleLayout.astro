@@ -6,12 +6,14 @@ interface Props {
   title: string;
   intro: string;
   description?: string;
+  /** Forwarded to BaseLayout — 'profile' emits ProfilePage structured data */
+  type?: 'website' | 'article' | 'profile';
 }
 
-const { title, intro, description } = Astro.props;
+const { title, intro, description, type } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description || intro}>
+<BaseLayout title={title} description={description || intro} type={type}>
   <Container class="mt-16 sm:mt-32">
     <header class="max-w-2xl">
       <h1 class="text-heading text-4xl font-bold tracking-tight sm:text-5xl">

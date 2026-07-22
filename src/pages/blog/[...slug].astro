@@ -3,7 +3,8 @@ import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  // Drafts stay reachable in dev but are never built (or sitemapped) in prod.
+  const posts = await getCollection('blog', ({ data }) => !import.meta.env.PROD || !data.draft);
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -18,6 +19,8 @@ const { Content } = await render(post);
   title={post.data.title}
   description={post.data.description}
   date={post.data.date}
+  updatedDate={post.data.updatedDate}
+  heroImage={post.data.heroImage}
   tags={post.data.tags}
   series={post.data.series}
   seriesOrder={post.data.seriesOrder}
