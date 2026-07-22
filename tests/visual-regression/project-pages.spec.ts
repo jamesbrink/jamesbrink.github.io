@@ -25,6 +25,28 @@ test.describe('project landing pages', () => {
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(
         await page.evaluate(() => document.documentElement.clientWidth)
       );
+
+      await page.setViewportSize({ width: 390, height: 844 });
+      const codeBlocks = page.locator('#quickstart-heading + p + div pre');
+      await expect(codeBlocks.first()).toBeVisible();
+
+      for (const codeBlock of await codeBlocks.all()) {
+        const dimensions = await codeBlock.evaluate((element) => {
+          const preRect = element.getBoundingClientRect();
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          const textRect = range.getClientRects()[0];
+
+          return {
+            clientWidth: element.clientWidth,
+            scrollWidth: element.scrollWidth,
+            textOffset: textRect ? Math.round(textRect.left - preRect.left) : -1,
+          };
+        });
+
+        expect(dimensions.scrollWidth).toBe(dimensions.clientWidth);
+        expect(dimensions.textOffset).toBe(16);
+      }
     });
   }
 

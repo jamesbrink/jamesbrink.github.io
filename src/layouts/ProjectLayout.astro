@@ -180,13 +180,14 @@ const breadcrumbSchema = {
       >
         {
           project.quickStarts.map((quickStart) => (
-            <div class="border-hairline bg-code overflow-hidden rounded-xl border">
+            <div class="border-hairline bg-code min-w-0 overflow-hidden rounded-xl border">
               <div class="border-hairline text-muted border-b px-4 py-3 font-mono text-xs">
                 {quickStart.label}
               </div>
-              <pre class="text-code-text overflow-x-auto p-4 text-sm leading-6">
-                <code>{quickStart.code}</code>
-              </pre>
+              <pre
+                class="text-code-text m-0 max-w-full p-4 text-left text-sm leading-6 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
+                set:text={quickStart.code}
+              />
             </div>
           ))
         }
