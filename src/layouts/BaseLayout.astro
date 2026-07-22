@@ -27,7 +27,7 @@ interface Props {
 const {
   title,
   description = 'James Brink - SRE/DevOps Engineer, infrastructure automator, and astrophotographer.',
-  image = '/images/og.png',
+  image = '/images/og.jpg',
   type = 'website',
   publishDate,
   updatedDate,
@@ -39,8 +39,8 @@ const siteTitle = title === 'Home' ? 'James Brink — SRE/DevOps Engineer' : `${
 // Absolute URLs for canonical + social cards (Astro.site = https://jamesbrink.online)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
-// The default og.png is 2400x1260; per-post hero images have unknown dimensions.
-const isDefaultOgImage = image === '/images/og.png';
+// The default card and generated post cards are 1200x630; hero images have unknown dimensions.
+const hasKnownOgDims = image === '/images/og.jpg' || image.startsWith('/blog/og/');
 
 const personId = new URL('/#person', Astro.site).toString();
 
@@ -111,6 +111,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
       )
     }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="alternate"
@@ -130,8 +132,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
-    {isDefaultOgImage && <meta property="og:image:width" content="2400" />}
-    {isDefaultOgImage && <meta property="og:image:height" content="1260" />}
+    {hasKnownOgDims && <meta property="og:image:width" content="1200" />}
+    {hasKnownOgDims && <meta property="og:image:height" content="630" />}
     <meta property="og:image:alt" content="James Brink — SRE/DevOps Engineer" />
     {
       type === 'article' && publishDate && (

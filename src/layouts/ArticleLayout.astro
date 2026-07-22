@@ -117,7 +117,16 @@ if (series) {
           {
             series && seriesPosts.length > 1 && (
               <div class="border-hairline mt-8 rounded-2xl border p-6">
-                <h2 class="text-heading text-sm font-semibold">Part of the "{series}" series</h2>
+                <h2 class="text-heading text-sm font-semibold">
+                  Part of the{' '}
+                  <a
+                    href={`/blog/series/${slugify(series)}/`}
+                    class="hover:text-link underline decoration-dotted underline-offset-4 transition"
+                  >
+                    "{series}"
+                  </a>{' '}
+                  series
+                </h2>
                 <ol class="mt-4 space-y-2 text-sm">
                   {seriesPosts.map((post, index) => {
                     const currentOrder = seriesOrder ?? 0;
