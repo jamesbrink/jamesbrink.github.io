@@ -10,6 +10,13 @@ interface Props {
 const { class: className } = Astro.props;
 const pathname = Astro.url.pathname;
 const isHomePage = pathname === '/';
+
+// Trailing-slash-insensitive active-link check ('/blog/' matches '/blog/tag/x/')
+function isActivePath(href: string): boolean {
+  const current = pathname.replace(/\/+$/, '') || '/';
+  const target = href.replace(/\/+$/, '') || '/';
+  return current === target || current.startsWith(target + '/');
+}
 ---
 
 <header class={clsx('pointer-events-none relative z-50 flex flex-none flex-col', className)}>
@@ -23,7 +30,7 @@ const isHomePage = pathname === '/';
               <a href="/" aria-label="Home" class="pointer-events-auto block h-16 w-16 origin-left">
                 <img
                   src="/images/avatar.jpg"
-                  alt=""
+                  alt="James Brink"
                   class="bg-pill h-16 w-16 rounded-full object-cover"
                 />
               </a>
@@ -43,7 +50,7 @@ const isHomePage = pathname === '/';
                 <a href="/" aria-label="Home" class="pointer-events-auto">
                   <img
                     src="/images/avatar.jpg"
-                    alt=""
+                    alt="James Brink"
                     class="bg-pill h-9 w-9 rounded-full object-cover"
                   />
                 </a>
@@ -83,7 +90,7 @@ const isHomePage = pathname === '/';
             >
               {
                 navItems.map((item) => {
-                  const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+                  const isActive = isActivePath(item.href);
                   return (
                     <li>
                       <a

@@ -12,9 +12,9 @@ export interface NavItem {
  * Order: About (intro) → Projects (work) → Photos (hobby) → Articles (blog) → Resume (professional)
  */
 export const navItems: NavItem[] = [
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/astrophotography', label: 'Photos' },
-  { href: '/blog', label: 'Articles' },
-  { href: '/resume', label: 'Resume' },
+  { href: '/about/', label: 'About' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/astrophotography/', label: 'Photos' },
+  { href: '/blog/', label: 'Articles' },
+  { href: '/resume/', label: 'Resume' },
 ];

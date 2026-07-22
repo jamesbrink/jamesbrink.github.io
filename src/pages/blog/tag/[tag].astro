@@ -6,23 +6,24 @@ import CardDescription from '../../../components/CardDescription.astro';
 import CardCta from '../../../components/CardCta.astro';
 import CardEyebrow from '../../../components/CardEyebrow.astro';
 import { getCollection } from 'astro:content';
+import { slugify } from '../../../lib/utils';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
 
-  // Get all unique tags (case-insensitive)
+  // Get all unique tags, keyed by URL-safe slug (e.g. "AI & Automation" -> "ai-automation")
   const tagMap = new Map<string, string>();
   posts.forEach((post) => {
     post.data.tags.forEach((tag) => {
-      const lowerTag = tag.toLowerCase();
-      if (!tagMap.has(lowerTag)) {
-        tagMap.set(lowerTag, tag);
+      const tagSlug = slugify(tag);
+      if (!tagMap.has(tagSlug)) {
+        tagMap.set(tagSlug, tag);
       }
     });
   });
 
-  return Array.from(tagMap.entries()).map(([lowerTag, displayTag]) => ({
-    params: { tag: lowerTag },
+  return Array.from(tagMap.entries()).map(([tagSlug, displayTag]) => ({
+    params: { tag: tagSlug },
     props: { displayTag },
   }));
 }
@@ -35,9 +36,7 @@ const { tag } = Astro.params;
 const { displayTag } = Astro.props;
 
 const posts = (await getCollection('blog'))
-  .filter(
-    (post) => !post.data.draft && post.data.tags.some((t) => t.toLowerCase() === tag?.toLowerCase())
-  )
+  .filter((post) => !post.data.draft && post.data.tags.some((t) => slugify(t) === tag))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 function formatDate(date: Date): string {
@@ -54,7 +53,7 @@ function formatDate(date: Date): string {
   intro={`${posts.length} article${posts.length === 1 ? '' : 's'} tagged with "${displayTag}"`}
 >
   <div class="mb-8">
-    <a href="/blog" class="text-link inline-flex items-center gap-2 text-sm transition">
+    <a href="/blog/" class="text-link inline-flex items-center gap-2 text-sm transition">
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" class="h-4 w-4 stroke-current">
         <path
           d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
@@ -80,9 +79,9 @@ function formatDate(date: Date): string {
               <div class="mt-2 flex flex-wrap gap-1.5">
                 {post.data.tags.map((t) => (
                   <a
-                    href={`/blog/tag/${t.toLowerCase()}/`}
+                    href={`/blog/tag/${slugify(t)}/`}
                     class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium transition ${
-                      t.toLowerCase() === tag?.toLowerCase()
+                      slugify(t) === tag
                         ? 'bg-emission/15 text-accent'
                         : 'bg-pill text-subtle hover:bg-edge'
                     }`}

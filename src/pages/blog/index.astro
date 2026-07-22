@@ -6,6 +6,7 @@ import CardDescription from '../../components/CardDescription.astro';
 import CardCta from '../../components/CardCta.astro';
 import CardEyebrow from '../../components/CardEyebrow.astro';
 import { getCollection } from 'astro:content';
+import { slugify } from '../../lib/utils';
 
 const posts = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
@@ -44,7 +45,7 @@ function formatDate(date: Date): string {
         <div class="mt-4 flex flex-wrap gap-2">
           {sortedTags.map(([tag, count]) => (
             <a
-              href={`/blog/tag/${tag.toLowerCase()}/`}
+              href={`/blog/tag/${slugify(tag)}/`}
               class="bg-pill text-body hover:bg-edge inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition"
             >
               {tag}
