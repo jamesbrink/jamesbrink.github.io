@@ -23,8 +23,12 @@ for (const file of readdirSync('./src/content/blog')) {
 export default defineConfig({
   site: 'https://jamesbrink.online',
   // Removed near-duplicate post; keep its URL alive for anyone who bookmarked it.
+  // Tag archives moved from raw lowercased names to slugs; redirect the two
+  // multi-word tags whose old URLs differed.
   redirects: {
     '/blog/installing-python-macos': '/blog/installing-python-macos-preview',
+    '/blog/tag/operating systems': '/blog/tag/operating-systems',
+    '/blog/tag/ai & automation': '/blog/tag/ai-automation',
   },
   integrations: [
     mdx(),
