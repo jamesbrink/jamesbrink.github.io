@@ -1,0 +1,62 @@
+---
+title: Claudette
+tagline: Claude Code's missing better half.
+description: Run parallel coding agents in isolated worktrees, manage sessions and pull requests, and connect remote workspaces from a native Tauri desktop control center.
+repository: https://github.com/utensils/claudette
+website: https://utensils.github.io/claudette/
+docs: https://utensils.github.io/claudette/
+techStack: [Rust, Tauri, React, TypeScript]
+keywords: [Claude Code GUI, Claude Code worktree manager, parallel coding agents, Claudette app]
+language: Rust
+license: MIT
+updatedDate: 2026-07-17
+featuredOrder: 5
+problem:
+  body: Running one coding agent is easy. Running six means terminal roulette, mystery branches, and at least one agent quietly doing something cursed. Claudette turns that mess into a control surface.
+  pains:
+    - Agents trampling the same checkout
+    - No useful view of parallel session state
+    - Pull requests and CI scattered across browser tabs
+    - Remote machines feeling like a completely different workflow
+features:
+  - title: Isolated worktrees
+    description: Give every agent its own branch and checkout so parallelism stops meaning merge-conflict roulette.
+  - title: Session control
+    description: Start, inspect, pause, fork, and resume agent conversations from one native interface.
+  - title: Plan and question handling
+    description: Approve plans and answer agent questions without hunting for the terminal that asked.
+  - title: Pull request workflow
+    description: Track reviews, checks, and merges through extensible SCM-provider plugins.
+  - title: Remote workspaces
+    description: Pair with another machine over encrypted WebSocket and manage its repositories as local surfaces.
+  - title: CLI and agent skill
+    description: Script Claudette itself or let a coordinator agent fan work across isolated workspaces.
+quickStarts:
+  - label: Development
+    code: |-
+      git clone https://github.com/utensils/claudette
+      cd claudette
+      ./scripts/dev.sh --new
+  - label: Build
+    code: cargo tauri build
+integrations: [Claude Code, Codex, Ollama, OpenAI, GitHub, GitLab, MCP, Nix]
+architecture:
+  - title: Native shell
+    description: Tauri provides a cross-platform desktop surface around Rust orchestration services.
+  - title: Workspace isolation
+    description: Repositories, worktrees, branches, and agents stay explicitly connected.
+  - title: Provider layer
+    description: Agent, SCM, environment, and MCP providers remain replaceable instead of welded together.
+  - title: Local or remote control
+    description: The same UI drives this machine, paired hosts, or a standalone headless server.
+closing:
+  title: Stop tabbing through terminal purgatory
+  body: Give every agent a lane and keep the entire coding circus visible.
+links:
+  - label: Read the documentation
+    url: https://utensils.github.io/claudette/
+  - label: View on GitHub
+    url: https://github.com/utensils/claudette
+---
+
+Claudette is a native cockpit for the moment one coding agent becomes an accidental engineering department.

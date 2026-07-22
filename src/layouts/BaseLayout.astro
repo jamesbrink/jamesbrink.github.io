@@ -22,6 +22,7 @@ interface Props {
   updatedDate?: Date;
   tags?: string[];
   noindex?: boolean;
+  additionalSchema?: Record<string, unknown>[];
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   updatedDate,
   tags = [],
   noindex = false,
+  additionalSchema = [],
 } = Astro.props;
 const siteTitle = title === 'Home' ? 'James Brink — SRE/DevOps Engineer' : `${title} - James Brink`;
 
@@ -67,6 +69,7 @@ const websiteSchema = {
 };
 
 const graph: Record<string, unknown>[] = [personSchema, websiteSchema];
+graph.push(...additionalSchema);
 
 if (type === 'article' && publishDate) {
   graph.push({

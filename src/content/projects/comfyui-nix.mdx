@@ -1,0 +1,62 @@
+---
+title: ComfyUI Nix
+tagline: Reproducible image generation, even when Python has other plans.
+description: Run ComfyUI through a pure Nix flake with curated custom nodes and practical GPU support for Apple Silicon, NVIDIA CUDA, AMD ROCm, and Intel XPU.
+repository: https://github.com/utensils/comfyui-nix
+website: https://flakehub.com/flake/utensils/comfyui
+techStack: [Nix, Python, ComfyUI, PyTorch]
+keywords: [ComfyUI Nix flake, reproducible ComfyUI, ComfyUI CUDA NixOS, Apple Silicon ComfyUI]
+language: Nix
+license: MIT
+updatedDate: 2026-07-20
+featuredOrder: 4
+problem:
+  body: ComfyUI is powerful. Its Python environment, binary wheels, custom nodes, and GPU matrix are a hostage negotiation. This flake makes the negotiation reproducible.
+  pains:
+    - Python environments that decay between launches
+    - Custom nodes pulling incompatible dependencies
+    - CUDA builds consuming hours and absurd amounts of memory
+    - Different setup rituals for every GPU vendor
+features:
+  - title: Pure Nix environment
+    description: Pin ComfyUI, Python, dependencies, and curated nodes in one reproducible input graph.
+  - title: Apple Silicon
+    description: Run on macOS with the platform's native acceleration path and normal data locations.
+  - title: NVIDIA CUDA
+    description: Use pre-built PyTorch wheels from Pascal through Blackwell instead of compiling the universe.
+  - title: AMD ROCm
+    description: Launch the ROCm variant with bundled runtime dependencies for supported hardware.
+  - title: Intel XPU
+    description: Use current oneAPI and SYCL wheels for supported Arc and Core Ultra GPUs.
+  - title: Curated custom nodes
+    description: Enable a maintained collection of popular nodes without dependency roulette.
+quickStarts:
+  - label: Default
+    code: nix run github:utensils/comfyui-nix -- --open
+  - label: NVIDIA CUDA
+    code: nix run github:utensils/comfyui-nix#cuda
+  - label: AMD or Intel
+    code: |-
+      nix run github:utensils/comfyui-nix#rocm
+      nix run github:utensils/comfyui-nix#xpu
+integrations: [ComfyUI, Nix, FlakeHub, Cachix, CUDA, ROCm, Intel XPU, Apple Silicon]
+architecture:
+  - title: Pinned flake
+    description: Nix locks the application, Python environment, nodes, and platform variants.
+  - title: Hardware target
+    description: Select the default, CUDA, ROCm, or XPU output for the machine in front of you.
+  - title: Binary runtime
+    description: Cached packages and upstream wheels avoid gratuitous source builds.
+  - title: ComfyUI workspace
+    description: Models, outputs, and configuration stay in predictable persistent locations.
+closing:
+  title: Generate images, not dependency conflicts
+  body: Pick the hardware output, run the flake, and let Nix remember what worked.
+links:
+  - label: Open on FlakeHub
+    url: https://flakehub.com/flake/utensils/comfyui
+  - label: View on GitHub
+    url: https://github.com/utensils/comfyui-nix
+---
+
+ComfyUI Nix keeps the creative workflow weird and the dependency graph boring.

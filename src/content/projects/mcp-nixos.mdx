@@ -1,0 +1,65 @@
+---
+title: MCP NixOS
+tagline: Because your AI shouldn't hallucinate package names.
+description: Give Claude, Codex, and other AI assistants accurate NixOS packages, options, Home Manager modules, and official documentation through MCP.
+repository: https://github.com/utensils/mcp-nixos
+website: https://mcp-nixos.io/
+docs: https://mcp-nixos.io/
+techStack: [Python, MCP, NixOS, FastMCP]
+keywords: [NixOS MCP server, Model Context Protocol, Nix package search, Home Manager options]
+language: Python
+license: MIT
+updatedDate: 2026-07-22
+featuredOrder: 1
+problem:
+  body: AI assistants are great right up until they confidently invent a package, option, or module that has never existed. MCP NixOS replaces the vibes with live, authoritative Nix data.
+  pains:
+    - Hallucinated package names and versions
+    - Outdated or incorrect NixOS options
+    - Missing Home Manager and nix-darwin modules
+    - Broken links to docs and manual pages
+features:
+  - title: NixOS packages
+    description: Search packages, inspect versions, and retrieve metadata across current channels.
+  - title: NixOS options
+    description: Query types, defaults, declarations, and full option context.
+  - title: Home Manager
+    description: Browse user-level modules and release-specific configuration options.
+  - title: nix-darwin
+    description: Find the macOS options your future self will otherwise swear do not exist.
+  - title: Nixvim and NVF
+    description: Search editor module options without spelunking through generated manuals.
+  - title: FlakeHub and Noogle
+    description: Discover flakes and search Nix functions from the same MCP surface.
+  - title: Official documentation
+    description: Pull relevant NixOS Wiki and nix.dev material into the answer.
+  - title: One query interface
+    description: Use one unified tool instead of teaching every agent a pile of bespoke APIs.
+quickStarts:
+  - label: uvx
+    code: uvx mcp-nixos
+  - label: Nix
+    code: nix run github:utensils/mcp-nixos --
+  - label: Docker
+    code: docker run --rm -i ghcr.io/utensils/mcp-nixos:latest
+integrations: [Claude Desktop, Claude Code, Codex, Cursor, Zed, VS Code, Goose, Windsurf]
+architecture:
+  - title: Your MCP client
+    description: Claude, Codex, an editor, or whatever else currently owns your attention.
+  - title: MCP NixOS
+    description: FastMCP exposes a focused, read-only query surface over stdio or HTTP.
+  - title: Authoritative sources
+    description: NixOS, Home Manager, nix-darwin, FlakeHub, Noogle, wiki, and docs data.
+  - title: Useful answers
+    description: Current package and option results instead of confident synthetic nonsense.
+closing:
+  title: Give your agent real Nix data
+  body: Stop fighting invented options and spend that time breaking something more interesting.
+links:
+  - label: Read the documentation
+    url: https://mcp-nixos.io/
+  - label: View on GitHub
+    url: https://github.com/utensils/mcp-nixos
+---
+
+MCP NixOS is the plumbing between AI assistants and the sprawling, fast-moving Nix ecosystem.

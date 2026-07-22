@@ -1,314 +1,83 @@
 ---
+import { getCollection } from 'astro:content';
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import type { Project } from '../components/ProjectCard.astro';
+import ProjectCard, { type ProjectSummary } from '../components/ProjectCard.astro';
+import { otherProjects } from '../data/projects';
+import { fetchGitHubProjectStats } from '../lib/github';
 
-// Helper to extract owner/repo from GitHub URL
-function getRepoFromUrl(url: string): string | null {
-  const match = url.match(/github\.com\/([^/]+\/[^/]+)/);
-  return match ? match[1] : null;
+async function enrich(project: ProjectSummary): Promise<ProjectSummary> {
+  const stats = await fetchGitHubProjectStats(project.repository);
+  return stats ? { ...project, ...stats } : project;
 }
 
-// Fetch GitHub stats for a repo
-async function fetchGitHubStats(repo: string): Promise<{ stars: number; forks: number } | null> {
-  try {
-    const response = await fetch(`https://api.github.com/repos/${repo}`, {
-      headers: {
-        Accept: 'application/vnd.github.v3+json',
-        'User-Agent': 'jamesbrink-website',
-      },
-    });
-    if (!response.ok) return null;
-    const data = await response.json();
-    return {
-      stars: data.stargazers_count,
-      forks: data.forks_count,
-    };
-  } catch {
-    return null;
-  }
-}
+const projectEntries = (await getCollection('projects')).sort(
+  (a, b) => a.data.featuredOrder - b.data.featuredOrder
+);
 
-// Base project data (without live stats)
-const baseFeatureProjects: Omit<Project, 'stars' | 'forks'>[] = [
-  {
-    name: 'MCP NixOS',
-    tagline: 'AI meets NixOS',
-    description:
-      'A Model Context Protocol server that enables AI assistants like Claude to query NixOS packages, options, and Home Manager configurations. Makes AI-assisted NixOS development practical and precise.',
-    href: 'https://github.com/utensils/mcp-nixos',
-    techStack: ['Python', 'MCP', 'NixOS', 'AI/LLM'],
-    featured: true,
-  },
-  {
-    name: 'Envisaged',
-    tagline: 'Visualize your git history',
-    description:
-      'Docker-wrapped Gource visualizations that generate stunning videos of repository history. Used by hundreds of developers to create visual retrospectives and project demos without manual setup.',
-    href: 'https://github.com/utensils/Envisaged',
-    techStack: ['Docker', 'Gource', 'FFmpeg', 'Shell'],
-    featured: true,
-  },
-  {
-    name: 'nxv',
-    tagline: 'Fast Nix package version lookup',
-    description:
-      'A blazingly fast CLI tool for finding any version of any Nix package across channels and history. Essential for pinning specific package versions in Nix configurations.',
-    href: 'https://github.com/utensils/nxv',
-    techStack: ['Rust', 'NixOS'],
-    featured: true,
-  },
-  {
-    name: 'ComfyUI Nix',
-    tagline: 'Reproducible AI image generation',
-    description:
-      'A Nix flake for running ComfyUI with a curated selection of custom nodes. Provides reproducible, declarative AI image generation environments for creative workflows.',
-    href: 'https://github.com/utensils/comfyui-nix',
-    techStack: ['Nix', 'Python', 'ComfyUI', 'AI/ML'],
-    featured: true,
-  },
-  {
-    name: 'Claudette',
-    tagline: "Claude Code's better half",
-    description:
-      'A Tauri companion app for Claude Code that manages git worktrees, remote workspaces, and multi-agent orchestration — the missing better half for anyone living in Claude Code all day.',
-    href: 'https://github.com/utensils/claudette',
-    techStack: ['Rust', 'Tauri', 'Claude Code', 'MCP'],
-    featured: true,
-  },
-  {
-    name: 'mold',
-    tagline: 'Local diffusion image generation',
-    description:
-      'A fast Rust CLI for local AI image generation — FLUX, SD 1.5, SDXL, and Z-Image models running on your own GPU via Candle. No cloud, no API keys, no rate limits.',
-    href: 'https://github.com/utensils/mold',
-    techStack: ['Rust', 'Candle', 'CUDA', 'Diffusion'],
-    featured: true,
-  },
-];
-
-const baseProjects: Omit<Project, 'stars' | 'forks'>[] = [
-  {
-    name: 'Docker OpenGL',
-    tagline: 'Software rendering in containers',
-    description:
-      'Mesa 3D OpenGL software rendering for Docker containers. Enables GPU-less rendering for CI/CD pipelines, headless servers, and testing environments.',
-    href: 'https://github.com/utensils/docker-opengl',
-    techStack: ['Docker', 'Mesa3D', 'OpenGL'],
-  },
-  {
-    name: 'Essex',
-    tagline: 'Docker project scaffolding',
-    description:
-      'A Rust-based CLI tool for generating Docker project templates. Standardizes container project structure with best practices baked in.',
-    href: 'https://github.com/utensils/essex',
-    techStack: ['Rust', 'Docker', 'CLI'],
-  },
-  {
-    name: 'MCP Coroot',
-    tagline: 'AI-powered observability queries',
-    description:
-      'Model Context Protocol server for the Coroot observability platform. Enables AI assistants to query infrastructure metrics and application performance data.',
-    href: 'https://github.com/jamesbrink/mcp-coroot',
-    techStack: ['TypeScript', 'MCP', 'Coroot'],
-  },
-  {
-    name: 'MCP Deadmansnitch',
-    tagline: 'AI monitoring integration',
-    description:
-      "MCP server for Dead Man's Snitch monitoring service. Allows AI assistants to check cron job health and monitoring status.",
-    href: 'https://github.com/jamesbrink/mcp-deadmansnitch',
-    techStack: ['TypeScript', 'MCP', 'Monitoring'],
-  },
-  {
-    name: 'brinkOS',
-    tagline: 'Linux for engineers',
-    description:
-      'A custom Arch-based Linux distribution tailored for software engineers and power users. Includes a curated set of development tools, thoughtful defaults, and automated installation.',
-    href: 'https://github.com/brinkOS/brinkOS',
-    techStack: ['Arch Linux', 'Shell', 'Systemd'],
-  },
-  {
-    name: 'Arch Linux AUR',
-    tagline: 'Package maintainer',
-    description:
-      'Maintainer of several packages in the Arch User Repository. Contributing to the Arch ecosystem by packaging and maintaining software for the community.',
-    href: 'https://github.com/jamesbrink/arch-aur',
-    techStack: ['Arch Linux', 'PKGBUILD', 'Shell'],
-  },
-  {
-    name: 'koban',
-    tagline: 'Invoice Ninja from the terminal',
-    description:
-      'A scriptable Rust CLI and client library for Invoice Ninja — clients, invoices, payments, and reports from the terminal, designed for humans and AI agents alike.',
-    href: 'https://github.com/jamesbrink/koban',
-    techStack: ['Rust', 'CLI', 'Nix', 'REST API'],
-  },
-  {
-    name: 'claudex',
-    tagline: 'Search your Claude Code sessions',
-    description:
-      'A Rust CLI to query, search, and analyze Claude Code session history, backed by SQLite full-text search. Observability for your AI pair-programming.',
-    href: 'https://github.com/utensils/claudex',
-    techStack: ['Rust', 'SQLite', 'FTS5', 'CLI'],
-  },
-  {
-    name: 'aethon',
-    tagline: 'Pi with a face',
-    description:
-      'A Tauri desktop shell that embeds the pi coding agent and renders its output as live, interactive UI via the A2UI protocol — a canvas the agent populates, not a fixed IDE layout.',
-    href: 'https://github.com/utensils/aethon',
-    techStack: ['Tauri', 'React', 'A2UI', 'Rust'],
-  },
-  {
-    name: 'yeet',
-    tagline: 'Brutally rude AI commit messages',
-    description:
-      "A lazy developer's git tool that uses a local Ollama model to write technically accurate — but hilariously offensive — conventional commit messages, then pushes them for you.",
-    href: 'https://github.com/utensils/yeet',
-    techStack: ['Bash', 'Ollama', 'Local LLM'],
-  },
-  {
-    name: 'why',
-    tagline: 'Offline error explanations',
-    description:
-      'A CLI that explains programming errors using a locally-embedded LLM. No API keys. No internet. No patience required.',
-    href: 'https://github.com/jamesbrink/why',
-    techStack: ['Rust', 'LLM', 'Offline', 'Nix'],
-  },
-  {
-    name: 'burnrate',
-    tagline: 'AI spend at a glance',
-    description:
-      'A menu-bar usage monitor for Claude Code, Codex, OpenRouter, Runpod, and AWS — quotas, credits, spend, and subscription limits without leaving your status bar.',
-    href: 'https://github.com/jamesbrink/burnrate',
-    techStack: ['Rust', 'Tauri', 'React'],
-  },
-  {
-    name: 'strainer',
-    tagline: 'Rate limiting for AI APIs',
-    description:
-      'Process-level rate limiting and spend management for AI API consumers — prevents rate-limit errors by controlling how fast processes execute.',
-    href: 'https://github.com/utensils/strainer',
-    techStack: ['Rust', 'CLI', 'AI/LLM'],
-  },
-  {
-    name: 'pasta',
-    tagline: 'Clipboard to keystrokes',
-    description:
-      "A cross-platform system-tray app that converts clipboard content into simulated keyboard input, bridging apps that don't support a direct paste.",
-    href: 'https://github.com/utensils/pasta',
-    techStack: ['Rust', 'Tauri', 'Cross-platform'],
-  },
-  {
-    name: 'Docker Darling',
-    tagline: 'macOS runtime in a container',
-    description:
-      'An experimental Docker container running Darling — the Darwin/macOS translation layer — to execute macOS binaries on Linux.',
-    href: 'https://github.com/utensils/docker-darling',
-    techStack: ['Docker', 'Darling', 'macOS'],
-  },
-];
-
-// Fetch GitHub stats for all projects at build time
-async function enrichWithGitHubStats<T extends { href: string }>(
-  projects: T[]
-): Promise<(T & { stars?: number; forks?: number })[]> {
-  const enrichedProjects = await Promise.all(
-    projects.map(async (project) => {
-      const repo = getRepoFromUrl(project.href);
-      if (!repo) return project;
-
-      const stats = await fetchGitHubStats(repo);
-      if (!stats) return project;
-
-      return {
-        ...project,
-        stars: stats.stars,
-        forks: stats.forks,
-      };
+const featuredProjects = await Promise.all(
+  projectEntries.map((entry) =>
+    enrich({
+      slug: entry.id,
+      name: entry.data.title,
+      tagline: entry.data.tagline,
+      description: entry.data.description,
+      repository: entry.data.repository,
+      techStack: entry.data.techStack,
+      featured: true,
     })
-  );
-  return enrichedProjects;
-}
+  )
+);
 
-// Enrich projects with live GitHub stats
-const featuredProjects: Project[] = await enrichWithGitHubStats(baseFeatureProjects);
-const projects: Project[] = await enrichWithGitHubStats(baseProjects);
+const projects = await Promise.all(otherProjects.map(enrich));
 ---
 
 <SimpleLayout
   title="Projects"
   intro="Open source tools and experiments that solve real problems. These projects reflect my interests in infrastructure automation, AI tooling, and developer experience."
+  description="Open-source NixOS, AI infrastructure, developer tooling, and automation projects created and maintained by James Brink."
 >
   <div class="space-y-20">
-    <!-- Featured Projects -->
     <section>
       <h2 class="text-heading text-2xl font-bold tracking-tight">Featured Projects</h2>
       <p class="text-body mt-2 text-sm">
-        Projects with significant community adoption or technical impact
+        The projects with enough scars to deserve the full story.
       </p>
       <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {featuredProjects.map((project) => <ProjectCard project={project} featured />)}
       </div>
     </section>
 
-    <!-- All Projects -->
     <section>
       <h2 class="text-heading text-2xl font-bold tracking-tight">More Projects</h2>
-      <p class="text-body mt-2 text-sm">Tools, utilities, and experiments from across my GitHub</p>
+      <p class="text-body mt-2 text-sm">Tools, utilities, and experiments from across my GitHub.</p>
       <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => <ProjectCard project={project} />)}
       </div>
     </section>
 
-    <!-- GitHub CTA -->
-    <section class="border-hairline rounded-2xl border p-8">
-      <div class="flex flex-col items-center text-center">
-        <svg class="text-muted h-12 w-12" fill="currentColor" viewBox="0 0 24 24">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
-          ></path>
-        </svg>
-        <h3 class="text-heading mt-4 text-lg font-semibold">Explore more on GitHub</h3>
-        <p class="text-body mt-2 text-sm">
-          These are just the highlights. Check out my full profile for more projects, contributions,
-          and experiments.
-        </p>
-        <div class="mt-6 flex gap-4">
-          <a
-            href="https://github.com/jamesbrink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-emission text-on-solid inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium shadow-[var(--shadow-glow)] transition"
-          >
-            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
-              ></path>
-            </svg>
-            @jamesbrink
-          </a>
-          <a
-            href="https://github.com/utensils"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-pill text-body inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition"
-          >
-            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
-              ></path>
-            </svg>
-            @utensils
-          </a>
-        </div>
+    <section class="border-hairline rounded-2xl border p-8 text-center">
+      <h2 class="text-heading text-xl font-semibold">The rest of the workshop</h2>
+      <p class="text-body mx-auto mt-2 max-w-xl text-sm">
+        These are the highlights. The stranger experiments and unfinished crimes against software
+        live on GitHub.
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-3">
+        <a
+          href="https://github.com/jamesbrink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-emission text-on-solid rounded-md px-4 py-2 text-sm font-semibold"
+        >
+          @jamesbrink
+        </a>
+        <a
+          href="https://github.com/utensils"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-hairline text-body rounded-md border px-4 py-2 text-sm font-medium"
+        >
+          @utensils
+        </a>
       </div>
     </section>
   </div>
