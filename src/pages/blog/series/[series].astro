@@ -11,33 +11,32 @@ import { slugify } from '../../../lib/utils';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
 
-  // Get all unique tags, keyed by URL-safe slug (e.g. "AI & Automation" -> "ai-automation")
-  const tagMap = new Map<string, string>();
+  // Unique series, keyed by URL-safe slug
+  const seriesMap = new Map<string, string>();
   posts.forEach((post) => {
-    post.data.tags.forEach((tag) => {
-      const tagSlug = slugify(tag);
-      if (!tagMap.has(tagSlug)) {
-        tagMap.set(tagSlug, tag);
+    if (post.data.series) {
+      const seriesSlug = slugify(post.data.series);
+      if (!seriesMap.has(seriesSlug)) {
+        seriesMap.set(seriesSlug, post.data.series);
       }
-    });
+    }
   });
 
-  return Array.from(tagMap.entries()).map(([tagSlug, displayTag]) => ({
-    params: { tag: tagSlug },
-    props: { displayTag },
+  return Array.from(seriesMap.entries()).map(([seriesSlug, displaySeries]) => ({
+    params: { series: seriesSlug },
+    props: { displaySeries },
   }));
 }
 
 interface Props {
-  displayTag: string;
+  displaySeries: string;
 }
 
-const { tag } = Astro.params;
-const { displayTag } = Astro.props;
+const { displaySeries } = Astro.props;
 
 const posts = (await getCollection('blog'))
-  .filter((post) => !post.data.draft && post.data.tags.some((t) => slugify(t) === tag))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  .filter((post) => !post.data.draft && post.data.series === displaySeries)
+  .sort((a, b) => (a.data.seriesOrder || 0) - (b.data.seriesOrder || 0));
 
 function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
@@ -49,8 +48,8 @@ function formatDate(date: Date): string {
 ---
 
 <SimpleLayout
-  title={`Articles tagged "${displayTag}"`}
-  intro={`${posts.length} article${posts.length === 1 ? '' : 's'} tagged with "${displayTag}"`}
+  title={`The "${displaySeries}" series`}
+  intro={`${posts.length} article${posts.length === 1 ? '' : 's'} by James Brink in the "${displaySeries}" series, in reading order.`}
 >
   <div class="mb-8">
     <a href="/blog/" class="text-link inline-flex items-center gap-2 text-sm transition">
@@ -68,29 +67,15 @@ function formatDate(date: Date): string {
   <div class="md:border-hairline md:border-l md:pl-6">
     <div class="flex max-w-3xl flex-col space-y-16">
       {
-        posts.map((post) => (
+        posts.map((post, index) => (
           <Card as="article">
-            <CardTitle href={`/blog/${post.id}/`}>{post.data.title}</CardTitle>
+            <CardTitle
+              href={`/blog/${post.id}/`}
+            >{`Part ${index + 1}: ${post.data.title}`}</CardTitle>
             <CardEyebrow as="time" dateTime={post.data.date.toISOString()} decorate>
               {formatDate(post.data.date)}
             </CardEyebrow>
             <CardDescription>{post.data.description}</CardDescription>
-            {post.data.tags.length > 0 && (
-              <div class="mt-2 flex flex-wrap gap-1.5">
-                {post.data.tags.map((t) => (
-                  <a
-                    href={`/blog/tag/${slugify(t)}/`}
-                    class={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium transition ${
-                      slugify(t) === tag
-                        ? 'bg-emission/15 text-accent'
-                        : 'bg-pill text-subtle hover:bg-edge'
-                    }`}
-                  >
-                    {t}
-                  </a>
-                ))}
-              </div>
-            )}
             <CardCta>Read article</CardCta>
           </Card>
         ))
