@@ -193,6 +193,8 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
+        // gtag.js requires the Arguments object itself; a rest-param array is ignored.
+        // eslint-disable-next-line prefer-rest-params
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
