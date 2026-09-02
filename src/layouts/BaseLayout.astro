@@ -187,6 +187,17 @@ const structuredData = { '@context': 'https://schema.org', '@graph': graph };
         }
       })();
     </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-1TKY2EW79S"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-1TKY2EW79S');
+    </script>
   </head>
   <body class="bg-page flex h-full font-sans antialiased">
     <!-- Background decoration: starfield + nebula bloom band, then the
